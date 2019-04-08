@@ -161,7 +161,7 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 
    Upon measurement, the qubit loses its superposition and irreversibly
    collapses into one of the two basis states, either |0> or |1>.  Which
-   of the two states it ends up in is not deterministic.  The
+   of the two states it ends up in is not deterministic, but it can be
 
 
 
@@ -170,11 +170,12 @@ Kozlowski               Expires October 11, 2019                [Page 3]
 Internet-Draft      Principles for a Quantum Internet         April 2019
 
 
-   probability of measuring the state in the |0> state is |a|^2 and
-   similarly the probability of measuring the state in the |1> state
-   is |b|^2.  This randomness is not due to our ignorance of the
-   underlying mechanisms, but rather it is a fundamental feature of a
-   quantum mechanical system [6].
+   determined from the readout of the measurement, a classical bit, 0 or
+   1 respectively.  The probability of measuring the state in the |0>
+   state is |a|^2 and similarly the probability of measuring the state
+   in the |1> state is |b|^2.  This randomness is not due to our
+   ignorance of the underlying mechanisms, but rather it is a
+   fundamental feature of a quantum mechanical system [6].
 
    The superposition property plays an important role in fundamental
    gate operations on qubits.  Since a qubit can exist in a
@@ -215,7 +216,6 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    qubit CNOT gate.  The CNOT gate takes as input two qubits, a control
    and target, and applies the NOT gate to the target if the control
    qubit is set.  The truth table looks like
-
 
 
 
@@ -264,7 +264,7 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 3.  Entanglement as the fundamental service
 
    Entanglement is the fundamental building block of quantum networks.
-   To see this, consider the final state from the previous section:
+   To see this, consider the state from the previous section:
 
    (|00> + |11>)/sqrt(2).
 
@@ -272,8 +272,8 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    need to know the state of the entire register to be able to fully
    describe the behaviour of the two qubits.
 
-   Now consider sending one of the qubits to another device.  This
-   device can be anywhere: on the other side of the room, in a different
+   Entangled qubits have interesting non-local properties.  Consider
+   sending one of the qubits to another device.  This device can be
 
 
 
@@ -282,10 +282,11 @@ Kozlowski               Expires October 11, 2019                [Page 5]
 Internet-Draft      Principles for a Quantum Internet         April 2019
 
 
-   country, or even on a different planet.  Provided negligible noise
-   has been introduced, the two qubits will forever remain in the
-   entangled state until a measurement is performed.  The physical
-   distance does not matter at all for entanglement.
+   anywhere: on the other side of the room, in a different country, or
+   even on a different planet.  Provided negligible noise has been
+   introduced, the two qubits will forever remain in the entangled state
+   until a measurement is performed.  The physical distance does not
+   matter at all for entanglement.
 
    This lies at the heart of quantum networking, because it is possible
    to leverage these non-classical correlations in order to design
@@ -316,8 +317,8 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 
    A quantum network is defined as a collection of nodes that is able to
    distribute entangled states amongst themselves.  A quantum computer
-   that is able to communicate classically with another quantum computer
-   is not a member of a quantum network.
+   that is able only to communicate classically with another quantum
+   computer is not a member of a quantum network.
 
    This is a crucial difference between classical and quantum networks.
    Classical applications transmit data over the network to synchronise
@@ -327,7 +328,6 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 
    More complex services and applications can be built on top of
    entangled states distributed by the network.
-
 
 
 
@@ -424,24 +424,24 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    arbitrary entangled state.  This can be achieved via quantum state
    teleportation.  Quantum state teleportation consumes an unknown
    quantum state that we want to transmit and recreates it at the
-   desired destination.
+   desired destination.  This does not violate the no-cloning theorem as
+   the original state is destroyed in the process
 
    To achieve this, a Bell Pair needs to be distributed between the
-   source and destination.  The source then entangles the transmission
-   qubit with its end of the Bell Pair and performs a measurement.  This
-   consumes the Bell Pair's entanglement turning the source and
-   destination qubits into independent states.  However, this process
-   transforms the Bell Pair's qubit at the destination into the
-   transmission qubit's original state.  Note he process requires the
-   source to also communicate its two-bit measurement result so that the
-   destination can correct for the randomness of the outcome.
+   source and destination before teleportation commences.  The source
+   then entangles the transmission qubit with its end of the Bell Pair
+   and performs a measurement.  This consumes the Bell Pair's
+   entanglement turning the source and destination qubits into
+   independent states.  The measurements yields two classical bits which
+   the source sends to the destination over a classical channel.  Based
+   on the value of the received two classical bits, the destination
+   performs one of four possible operations on its end of the Bell Pair,
+   which results in a clone of the unknown quantum state of the
+   transmission qubit.
 
    The unknown quantum state that was transmitted never entered the
    network itself.  Therefore, the network needs to only be able to
    reliably produce Bell Pairs between any two nodes in the network.
-
-
-
 
 
 
@@ -520,15 +520,12 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    is the architecture that we will focus on in the rest of this memo
    for practical reasons.
 
-   Nevertheless, we are not entirely discarding the direct transmission
-   proposal.  Whilst it does enable the fault-tolerant transmission of
-   unknown quantum states, it might still be more beneficial to use it
-   to distribute Bell Pairs instead.  Distributing Bell Pairs via direct
-   transmission means that one can leverage the advantages of
-   entanglement swapping which allows for paralellisation as the Bell
-   Pairs can be built up from both ends simultaneously.  Furthermore,
-   the generic nature of the Bell Pair means that a network may
-   provision resources better before it receives any request.
+   Nevertheless, the direct transmission proposal may be relevant in the
+   future as it does enable the fault-tolerant transmission of unknown
+   quantum states.  It might even be beneficial to utilise a hybrid
+   approach that combines the fault-tolerance of direct transmission
+   with the generic nature of Bell Pairs which lends itself to
+   paralellisation and resource provisioning.
 
 5.  Architecture of a quantum internet
 
@@ -555,6 +552,9 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    terminology from this point on.  End-hosts connecting at the edge of
    the network are not necessarily repeaters themselves.
 
+   The key message here is that a network stack relies on the hardware
+   being able to provide two services: Bell Pair generation across a
+
 
 
 Kozlowski               Expires October 11, 2019               [Page 10]
@@ -562,8 +562,6 @@ Kozlowski               Expires October 11, 2019               [Page 10]
 Internet-Draft      Principles for a Quantum Internet         April 2019
 
 
-   The key message here is that a network stack relies on the hardware
-   being able to provide two services: Bell Pair generation across a
    link, and swap operation.  In any network model it is assumed that
    the physical device is capable of providing both of these services
    and offers a suitable interface for their usage.
@@ -577,10 +575,11 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 
    Furthermore, it is also assumed that the applications are able to
    communicate classically, and that the nodes themselves are also
-   connected over some classical channel.  The classical links between
-   the nodes need not always have an associated quantum link, but it is
-   assumed that any quantum link has a classical link running in
-   parallel.
+   connected over some logical classical channel.  The classical and
+   quantum links do not have to coincide.  The classical messaging may
+   take a completely different path to the quantum channel as long as
+   the latency characteristics meet the requirements of the control
+   protocol.
 
 5.2.  Physical constraints
 
@@ -610,6 +609,7 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    a further reduction in the fidelity of the final state.  Two
    imperfect Bell Pairs when combined will produce a slightly worse Bell
    Pair.  Whilst distillation is one of the available mechanisms to
+   correct for these errors it requires additional Bell Pairs to be
 
 
 
@@ -618,7 +618,6 @@ Kozlowski               Expires October 11, 2019               [Page 11]
 Internet-Draft      Principles for a Quantum Internet         April 2019
 
 
-   correct for these errors it requires additional Bell Pairs to be
    produced.  There will be a trade-off between how much distillation is
    to be done versus what fidelity is acceptable.
 
@@ -666,6 +665,7 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
    using any memory qubit that they have access to.  In these systems,
    entanglement is generated using a communication qubit and once a Bell
    Pair has been generated, the qubit state is transferred into memory.
+   This may impose additional limitations on the network.  In particular
 
 
 
@@ -674,7 +674,6 @@ Kozlowski               Expires October 11, 2019               [Page 12]
 Internet-Draft      Principles for a Quantum Internet         April 2019
 
 
-   This may impose additional limitations on the network.  In particular
    if a given node has only one communication qubit it cannot
    simultaneously generate Bell Pairs over two links.  It must generate
    entanglement over the links one at a time.
@@ -722,6 +721,7 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
 
        The primary purpose of a quantum internet is to run distributed
        quantum algorithms and it is of utmost importance that they can
+
 
 
 
@@ -903,14 +903,14 @@ Internet-Draft      Principles for a Quantum Internet         April 2019
        classical communication needed between quantum operations to
        synchronise state.
 
-       For example, some quantum protocols may need to perform a correct
-       for the random outcome of a quantum measurement.  For this, they
-       will block the state from further operations until a classical
-       message is received with the information necessary to perform the
-       correction.  The time during which the quantum state is blocked
-       is effectively wasted.  It reduces the time available for
-       subsequent operations possibly rendering the state useless for an
-       application.
+       For example, some quantum protocols may need to perform a
+       correction for the random outcome of a quantum measurement.  For
+       this, they will block the state from further operations until a
+       classical message is received with the information necessary to
+       perform the correction.  The time during which the quantum state
+       is blocked is effectively wasted.  It reduces the time available
+       for subsequent operations possibly rendering the state useless
+       for an application.
 
        Trade-offs that allow a protocol to limit the number of blocking
        classical communication rounds once quantum operations have

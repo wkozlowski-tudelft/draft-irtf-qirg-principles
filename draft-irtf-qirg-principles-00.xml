@@ -177,12 +177,13 @@
 
        <t>Upon measurement, the qubit loses its superposition and irreversibly
        collapses into one of the two basis states, either |0> or |1>.  Which of
-       the two states it ends up in is not deterministic.  The probability of
-       measuring the state in the |0> state is |a|^2 and similarly the
-       probability of measuring the state in the |1> state is |b|^2.  This
-       randomness is not due to our ignorance of the underlying mechanisms, but
-       rather it is a fundamental feature of a quantum mechanical system <xref
-       target="aspect81"></xref>.</t>
+       the two states it ends up in is not deterministic, but it can be
+       determined from the readout of the measurement, a classical bit, 0 or 1
+       respectively.  The probability of measuring the state in the |0> state
+       is |a|^2 and similarly the probability of measuring the state in the |1>
+       state is |b|^2.  This randomness is not due to our ignorance of the
+       underlying mechanisms, but rather it is a fundamental feature of a
+       quantum mechanical system <xref target="aspect81"></xref>.</t>
 
        <t>The superposition property plays an important role in fundamental
        gate operations on qubits.  Since a qubit can exist in a superposition
@@ -262,7 +263,7 @@
    <section title="Entanglement as the fundamental service">
 
      <t>Entanglement is the fundamental building block of quantum networks.  To
-     see this, consider the final state from the previous section:</t>
+     see this, consider the state from the previous section:</t>
 
      <t>(|00> + |11>)/sqrt(2).</t>
 
@@ -270,12 +271,13 @@
      to know the state of the entire register to be able to fully describe the
      behaviour of the two qubits.</t>
 
-     <t>Now consider sending one of the qubits to another device.  This device
-     can be anywhere: on the other side of the room, in a different country, or
-     even on a different planet.  Provided negligible noise has been
-     introduced, the two qubits will forever remain in the entangled state
-     until a measurement is performed.  The physical distance does not matter
-     at all for entanglement.</t>
+     <t>Entangled qubits have interesting non-local properties.  Consider
+     sending one of the qubits to another device.  This device can be anywhere:
+     on the other side of the room, in a different country, or even on a
+     different planet.  Provided negligible noise has been introduced, the two
+     qubits will forever remain in the entangled state until a measurement is
+     performed.  The physical distance does not matter at all for
+     entanglement.</t>
 
      <t>This lies at the heart of quantum networking, because it is possible to
      leverage these non-classical correlations in order to design completely
@@ -306,8 +308,8 @@
 
      <t>A quantum network is defined as a collection of nodes that is able to
      distribute entangled states amongst themselves.  A quantum computer that
-     is able to communicate classically with another quantum computer is not a
-     member of a quantum network.</t>
+     is able only to communicate classically with another quantum computer is
+     not a member of a quantum network.</t>
 
      <t>This is a crucial difference between classical and quantum networks.
      Classical applications transmit data over the network to synchronise
@@ -405,17 +407,20 @@
          other arbitrary entangled state.  This can be achieved via quantum
          state teleportation. Quantum state teleportation consumes an unknown
          quantum state that we want to transmit and recreates it at the desired
-         destination.</t>
+         destination.  This does not violate the no-cloning theorem as the
+         original state is destroyed in the process</t>
 
          <t>To achieve this, a Bell Pair needs to be distributed between the
-         source and destination.  The source then entangles the transmission
-         qubit with its end of the Bell Pair and performs a measurement.  This
-         consumes the Bell Pair's entanglement turning the source and
-         destination qubits into independent states.  However, this process
-         transforms the Bell Pair's qubit at the destination into the
-         transmission qubit's original state.  Note he process requires the
-         source to also communicate its two-bit measurement result so that the
-         destination can correct for the randomness of the outcome.</t>
+         source and destination before teleportation commences.  The source
+         then entangles the transmission qubit with its end of the Bell Pair
+         and performs a measurement.  This consumes the Bell Pair's
+         entanglement turning the source and destination qubits into
+         independent states.  The measurements yields two classical bits which
+         the source sends to the destination over a classical channel. Based on
+         the value of the received two classical bits, the destination performs
+         one of four possible operations on its end of the Bell Pair, which
+         results in a clone of the unknown quantum state of the transmission
+         qubit.</t>
 
          <t>The unknown quantum state that was transmitted never entered the
          network itself.  Therefore, the network needs to only be able to
@@ -493,15 +498,12 @@
        architecture that we will focus on in the rest of this memo for
        practical reasons.</t>
 
-       <t>Nevertheless, we are not entirely discarding the direct transmission
-       proposal.  Whilst it does enable the fault-tolerant transmission of
-       unknown quantum states, it might still be more beneficial to use it to
-       distribute Bell Pairs instead.  Distributing Bell Pairs via direct
-       transmission means that one can leverage the advantages of entanglement
-       swapping which allows for paralellisation as the Bell Pairs can be built
-       up from both ends simultaneously.  Furthermore, the generic nature of
-       the Bell Pair means that a network may provision resources better before
-       it receives any request.</t>
+       <t>Nevertheless, the direct transmission proposal may be relevant in the
+       future as it does enable the fault-tolerant transmission of unknown
+       quantum states.  It might even be beneficial to utilise a hybrid
+       approach that combines the fault-tolerance of direct transmission with
+       the generic nature of Bell Pairs which lends itself to paralellisation
+       and resource provisioning.</t>
      </section>
    </section>
 
@@ -547,9 +549,11 @@
 
        <t>Furthermore, it is also assumed that the applications are able to
        communicate classically, and that the nodes themselves are also
-       connected over some classical channel.  The classical links between the
-       nodes need not always have an associated quantum link, but it is assumed
-       that any quantum link has a classical link running in parallel.</t>
+       connected over some logical classical channel.  The classical and
+       quantum links do not have to coincide.  The classical messaging may take
+       a completely different path to the quantum channel as long as the
+       latency characteristics meet the requirements of the control
+       protocol.</t>
      </section>
 
      <section title="Physical constraints">
@@ -848,14 +852,14 @@
              state.
              <vspace blankLines="1" />
 
-             For example, some quantum protocols may need to perform a correct
-             for the random outcome of a quantum measurement.  For this, they
-             will block the state from further operations until a classical
-             message is received with the information necessary to perform the
-             correction.  The time during which the quantum state is blocked is
-             effectively wasted.  It reduces the time available for subsequent
-             operations possibly rendering the state useless for an
-             application.
+             For example, some quantum protocols may need to perform a
+             correction for the random outcome of a quantum measurement.  For
+             this, they will block the state from further operations until a
+             classical message is received with the information necessary to
+             perform the correction.  The time during which the quantum state
+             is blocked is effectively wasted.  It reduces the time available
+             for subsequent operations possibly rendering the state useless for
+             an application.
              <vspace blankLines="1" />
 
              Trade-offs that allow a protocol to limit the number of blocking

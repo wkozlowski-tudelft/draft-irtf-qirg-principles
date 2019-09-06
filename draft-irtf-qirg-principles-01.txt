@@ -9,7 +9,7 @@ Expires: March 9, 2020                                 September 6, 2019
 
 
             Architectural Principles for a Quantum Internet
-                     draft-irtf-qirg-principles-00
+                     draft-irtf-qirg-principles-01
 
 Abstract
 

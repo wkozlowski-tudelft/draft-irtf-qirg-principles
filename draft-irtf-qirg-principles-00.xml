@@ -186,14 +186,14 @@
      transmissions.</t>
    </section>
 
-   <section title="Model of computation">
+   <section title="Model of communication">
      <t>In order to understand the framework for quantum networking a basic
-     understanding of quantum information is necessary.  The following sections
-     aim to introduce the bare minimum necessary to be understand the
-     principles of operation of a quantum network.  This exposition was written
-     with a classical networking audience in mind.  It is assumed that the
-     reader has never before been exposed to any quantum physics.  We refer to
-     e.g. <xref target="nielsen"/> for an in-depth introduction to quantum
+     understanding of quantum information is necessary. The following sections
+     aim to introduce the bare minimum necessary to understand the principles
+     of operation of a quantum network. This exposition was written with a
+     classical networking audience in mind. It is assumed that the reader has
+     never before been exposed to any quantum physics. We refer to e.g. <xref
+     target="nielsen"/> for an in-depth introduction to quantum
      information.</t>
 
      <section title="Qubit">
@@ -212,14 +212,15 @@
        levels, and so on.</t>
 
        <t>Upon measurement, the qubit loses its superposition and irreversibly
-       collapses into one of the two basis states, either |0> or |1>.  Which of
+       collapses into one of the two basis states, either |0> or |1>. Which of
        the two states it ends up in is not deterministic, but it can be
        determined from the readout of the measurement, a classical bit, 0 or 1
-       respectively.  The probability of measuring the state in the |0> state
-       is |a|^2 and similarly the probability of measuring the state in the |1>
-       state is |b|^2.  This randomness is not due to our ignorance of the
-       underlying mechanisms, but rather it is a fundamental feature of a
-       quantum mechanical system <xref target="aspect81"></xref>.</t>
+       respectively. The probability of measuring the state in the |0> state is
+       |a|^2 and similarly the probability of measuring the state in the |1>
+       state is |b|^2, where |a|^2 + |b|^2 = 1. This randomness is not due to
+       our ignorance of the underlying mechanisms, but rather it is a
+       fundamental feature of a quantum mechanical system <xref
+       target="aspect81"></xref>.</t>
 
        <t>The superposition property plays an important role in fundamental
        gate operations on qubits.  Since a qubit can exist in a superposition
@@ -233,23 +234,23 @@
      <section title="Multiple qubits">
        <t>When multiple qubits are combined in a single quantum state the space
        of possible states grows exponentially and all these states can coexist
-       in a superposition.  For example, the general form of a two qubit
+       in a superposition. For example, the general form of a two-qubit
        register is</t>
 
        <t>a |00> + b |01> + c |10> + d |11></t>
 
        <t>where the coefficients have the same probability amplitude
-       interpretation as for the single qubit state.  Each state represents a
-       possible outcome of a measurement of the two qubit register.  For
+       interpretation as for the single qubit state. Each state represents a
+       possible outcome of a measurement of the two-qubit register. For
        example, |01>, denotes a state in which the first qubit is in the state
        |0> and the second is in the state |1>.</t>
 
        <t>Performing single qubit gates affects the relevant qubit in each of
-       the superposition states.  Similarly, two qubit gates also act on all
+       the superposition states.  Similarly, two-qubit gates also act on all
        the relevant superposition states, but their outcome is far more
        interesting.</t>
 
-       <t>Consider a two qubit register where the first qubit is in the
+       <t>Consider a two-qubit register where the first qubit is in the
        superposed state (|0> + |1>)/sqrt(2) and the other is in the state |0>.
        This combined state can be written as:</t>
 
@@ -271,7 +272,7 @@
        </texttable>
 
        <t>Now, consider performing a CNOT gate on the ensemble with the first
-       qubit being the control.  We apply a two qubit gate on all the
+       qubit being the control.  We apply a two-qubit gate on all the
        superposition states:</t>
 
        <t>CNOT (|00> + |10>)/sqrt(2) -> (|00> + |11>)/sqrt(2).</t>
@@ -317,10 +318,10 @@
 
      <t>This lies at the heart of quantum networking, because it is possible to
      leverage the non-classical correlations provided by entanglement in order
-     to design completely new types of algorithms that are not possible to
-     achieve with just classical communication.  Examples of such applications
-     are quantum cryptography, blind quantum computation, or distributed
-     quantum computation.</t>
+     to design completely new types of application protocols that are not
+     possible to achieve with just classical communication. Examples of such
+     applications are quantum cryptography, blind quantum computation, or
+     distributed quantum computation.</t>
 
      <t>Entanglement has two very special features from which one can derive
      some intuition about the types of applications enabled by a quantum
@@ -357,14 +358,8 @@
 
      <t>A quantum network is defined as a collection of nodes that is able to
      exchange qubits and distribute entangled states amongst themselves.  A
-     quantum computer that is able only to communicate classically with another
-     quantum computer is not a member of a quantum network.</t>
-
-     <t>This is a crucial difference between classical and quantum networks.
-     Classical applications transmit data over the network to synchronise
-     distributed state.  Quantum network applications obtain distributed
-     states, synchronised at the physical level via entanglement, from the
-     network to perform quantum algorithms.</t>
+     quantum node that is able only to communicate classically with another
+     quantum node is not a member of a quantum network.</t>
 
      <t>More complex services and applications can be built on top of entangled
      states distributed by the network, see e.g. <xref
@@ -379,29 +374,29 @@
        the no-cloning theorem.</t>
 
        <t>The no-cloning theorem states that it is impossible to create an
-       identical copy of an arbitrary unknown quantum state.  Since performing
-       a measurement on a quantum state destroys its superposition, there is no
+       identical copy of an arbitrary unknown quantum state. Since performing a
+       measurement on a quantum state destroys its superposition, there is no
        practical way of learning the exact state of a qubit in an unknown
-       state.  Therefore, it is impossible to use the same mechanisms that
+       state. Therefore, it is impossible to use the same mechanisms that
        worked for classical networks for signal amplification, retransmission,
        and so on as they all rely on the ability to copy the underlying data.
-       Since any physical channel will always be lossy, connecting a quantum
-       network is a challenging endeavour and its architecture must at its core
-       address this very issue.</t>
+       Since any physical channel will always be lossy, connecting nodes within
+       a quantum network is a challenging endeavour and its architecture must
+       at its core address this very issue.</t>
      </section>
 
      <section title="Direct transmission">
        <t>The most straightforward way to distribute an entangled state is to
        simply transmit one of the qubits directly to the other end across a
-       series of nodes while performing sufficient forward error correction to
-       bring losses down to an acceptable level.  Despite the no-cloning
-       theorem and the inability to directly measure a quantum state
+       series of nodes while performing sufficient forward quantum error
+       correction to bring losses down to an acceptable level. Despite the
+       no-cloning theorem and the inability to directly measure a quantum state
        error-correcting mechanisms for quantum communication exist <xref
-       target="mural14"></xref>.  However, even in the most optimistic
-       scenarios the hardware requirements to fault-tolerantly transmit a
-       single qubit are far beyond near-term capabilities.  Nevertheless, due
-       to the promise of fault-tolerance and its favourable poly-logarithmic
-       scaling with distance, this may eventually become a desirable method for
+       target="mural14"></xref>. However, even in the most optimistic scenarios
+       the hardware requirements to fault-tolerantly transmit a single qubit
+       are far beyond near-term capabilities. Nevertheless, due to the promise
+       of fault-tolerance and direct transmission's favourable poly-logarithmic
+       scaling with distance, it may eventually become a desirable method for
        entanglement distribution.</t>
      </section>
 
@@ -471,8 +466,8 @@
        </section>
 
        <section title="Bell Pair links and entanglement swapping">
-         <t>Reducing the problem to one of generating a Bell Pair state has
-         facilitated the problem, but it has not solved it.</t>
+         <t>Reducing the problem of quantum connectivity to one of generating a
+         Bell Pair has facilitated the problem, but it has not solved it.</t>
 
          <t>The technology to generate a Bell Pair between two directly
          connected quantum nodes, store the qubits, and perform teleportation,
@@ -523,13 +518,13 @@
        </section>
 
        <section title="Distillation">
-         <t>Neither the Bell Pair or the swapping operations are lossless
-         operations.  Therefore, with each link and each swap the quality of
-         the state degrades.  However, it is possible to create higher quality
-         Bell Pair states from two or more lower quality Bell Pair states.
-         Therefore, once the quality loss over a given distance become
-         prohibitive, additional redundancy may be used to restore the state
-         quality.</t>
+         <t>Neither the generation of Bell Pairs or the swapping operations are
+         lossless operations. Therefore, with each link and each swap the
+         quality of the state degrades. However, it is possible to create
+         higher quality Bell Pair states from two or more lower quality Bell
+         Pair states through a process called distillation. Therefore, once the
+         quality loss over a given distance become prohibitive, additional
+         redundancy may be used to restore the state quality.</t>
        </section>
      </section>
 
@@ -625,12 +620,12 @@
          correctness of their algorithm and it is the responsibility of the
          network to provide such a state.</t>
 
-         <t>Additionally, entanglement swap operations, even if perfect, lead
-         to a further reduction in the fidelity of the final state.  Two
+         <t>Additionally, entanglement swapping operations, even if perfect,
+         lead to a further reduction in the fidelity of the final state. Two
          imperfect Bell Pairs when combined will produce a slightly worse Bell
-         Pair.  Whilst distillation is one of the available mechanisms to
+         Pair. Whilst distillation is one of the available mechanisms to
          correct for these errors it requires additional Bell Pairs to be
-         produced.  There will be a trade-off between how much distillation is
+         produced. There will be a trade-off between how much distillation is
          to be done versus what fidelity is acceptable.</t>
 
          <t>This is a fundamental constraint as perfect noiseless operations
@@ -728,11 +723,10 @@
              <vspace blankLines="1" />
 
              The primary purpose of a quantum internet is to run distributed
-             quantum algorithms and it is of utmost importance that they can
-             run well and efficiently.  Therefore, the needs of quantum
-             applications should always be considered first.  The requirements
-             for different applications can be found in <xref
-             target="wehner18"></xref>.
+             quantum protocols and it is of utmost importance that they can run
+             well and efficiently. Therefore, the needs of quantum applications
+             should always be considered first. The requirements for different
+             applications can be found in <xref target="wehner18"></xref>.
              <vspace blankLines="1" />
 
              If a network is able to distribute entanglement it is officially
@@ -1014,8 +1008,9 @@
    <!-- Possibly a 'Contributors' section ... -->
 
    <section anchor="Acknowledgements" title="Acknowledgements">
-     <t>The authors of this memo acknowledge funding received the EU Flagship
-     on Quantum Technologies, Quantum Internet Alliance.</t>
+     <t>The authors of this memo acknowledge funding received from the EU
+     Flagship on Quantum Technologies through Quantum Internet Alliance
+     project.</t>
 
      <t>The authors would further like to acknowledge Carlo Delle Donne,
      Matthew Skrzypczyk, and Axel Dahlberg for useful discussions on this topic

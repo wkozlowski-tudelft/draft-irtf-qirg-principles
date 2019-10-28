@@ -9,7 +9,7 @@ Expires: May 4, 2020                                    November 1, 2019
 
 
             Architectural Principles for a Quantum Internet
-                     draft-irtf-qirg-principles-01
+                     draft-irtf-qirg-principles-02
 
 Abstract
 
@@ -156,7 +156,7 @@ Internet-Draft      Principles for a Quantum Internet      November 2019
 
    The differences between quantum computation and classical computation
    begin at the bit-level.  A classical computer operates on the binary
-   alphabet { 0, 1 }.  A quantum bit, a qubit, exists over the same
+   alphabet { 0, 1 }. A quantum bit, a qubit, exists over the same
    binary space, but unlike the classical bit, it can exist in a so-
    called superposition of the two possibilities:
 
@@ -250,7 +250,7 @@ Internet-Draft      Principles for a Quantum Internet      November 2019
    CNOT (|00> + |10>)/sqrt(2) -> (|00> + |11>)/sqrt(2).
 
    What is so interesting about this two-qubit gate operation?  The
-   final state is *entangled*.  There is no possible way of representing
+   final state is *entangled*. There is no possible way of representing
    that quantum state as a product of two individual qubits, they are no
    longer independent and their behaviour cannot be fully described
    without accounting for the other qubit.  The states of the two
@@ -575,7 +575,7 @@ Internet-Draft      Principles for a Quantum Internet      November 2019
            ----------------        ----------------
 
    Where "App" is some application running over a quantum network,
-   --CC-- denote classical communication links (e.g.  over the public
+   --CC-- denote classical communication links (e.g. over the public
    Internet or a private LAN), and "QNet" is a generic network stack.
    Architectures for the network stack have been proposed already
    [9][10], but their discussion is beyond the scope of this memo.

@@ -699,53 +699,274 @@
    </section>
 
    <section title="Architecture of a quantum internet">
-     <section title="Model of a quantum network">
-       <t>A generic quantum network of three nodes could be represented as</t>
 
-       <figure align="center">
-         <artwork align="left"><![CDATA[
-| App |--------------------CC--------------------| App |
-   ||                                              ||
- ------                  ------                  ------
-| QNet |-------CC-------| QNet |-------CC-------| QNet |
- ------                  ------                  ------
-       \ Bell Pair Gen. / SWAP \ Bell Pair Gen. /
-        ----------------        ----------------
-         ]]></artwork>
-       </figure>
+     <t>It is evident from the previous sections that the fundamental service
+     provided by a quantum network significantly differs from that of a
+     classical network. Therefore, it is not surprising that the architecture
+     of a quantum internet will itself be very different from that of the
+     classical Internet.</t>
 
-       <t>Where "App" is some application running over a quantum network,
-       --CC-- denote classical communication links (e.g. over the public
-       Internet or a private LAN), and "QNet" is a generic network stack.
-       Architectures for the network stack have been proposed already <xref
-       target="meter13"></xref><xref target="dahlberg18"></xref>, but their
-       discussion is beyond the scope of this memo. However, they all map onto
-       this generic diagram. Nodes within a quantum network that are capable of
-       performing the entanglement swap operation are often referred to as
-       quantum repeaters and we shall adopt this terminology from this point
-       on. End-hosts connecting at the edge of the network are not necessarily
-       repeaters themselves.</t>
+     <section title="New challenges">
 
-       <t>The key message here is that a network stack relies on the hardware
-       being able to provide two services: Bell Pair generation across a link,
-       and swap operation. In any network model it is assumed that the physical
-       device is capable of providing both of these services and offers a
-       suitable interface for their usage.</t>
+       <t>This subsection covers the major fundamental challenges building quantum
+       networks. Here, we only describe the fundamental differences,
+       technological limitations are described later.</t>
 
-       <t>Strictly speaking (under idealised conditions) quantum memories are
-       not needed for a functional quantum network as long as the network is
-       able to simultaneously generate all the Bell Pairs, swap the
-       entanglement, and deliver the final Bell Pair to the application in a
-       usable form. However, realistically, to be able to provide the two
-       services above, the hardware will also need to be able to store the
-       qubits in memory which is highly non-trivial.</t>
+       <t>
+         <list style="numbers">
+           <t>There is no quantum equivalent of a payload carrying packet.
+           <vspace blankLines="1" />
 
-       <t>Furthermore, it is also assumed that the applications are able to
-       communicate classically, and that the nodes themselves are also
-       connected over some logical classical channel. The classical and quantum
-       links do not have to coincide. The classical messaging may take a
-       completely different path to the quantum channel as long as the latency
-       characteristics meet the requirements of the control protocol.</t>
+           In most classical networks, including Ethernet, Internet Protocol
+           (IP), and Multi-Protocol Label Switching (MPLS) networks, user data
+           is grouped into packets. In addition to the user data each packet
+           also contains a series of headers which contain the control
+           information that lets routers and switches forward it towards its
+           destination. Packets are the fundamental unit in a classical
+           network.
+           <vspace blankLines="1" />
+
+           In a quantum network the entangled pairs of qubits are the basic
+           unit of networking. These pairs are handled individually -- they are
+           not grouped into packets and they do not carry any headers.
+           Therefore, quantum networks will have to send all control
+           information via separate classical channels which the repeaters will
+           have to correlate with the qubits stored in their memory.</t>
+
+           <t>An entangled pair is only useful if the locations of both qubits
+           are known.
+           <vspace blankLines="1" />
+
+           A classical network packet logically exists only at one location at
+           any point in time. If a packet is modified in some way, headers or
+           payload, this information does not need to be conveyed to anybody
+           else in the network. The packet can be simply forwarded as before.
+           <vspace blankLines="1" />
+
+           In contrast, entanglement is a phenomenon in which two or more
+           qubits exist in a physically distributed state. Operations on one of
+           the qubits change the mutual state of the pair. Since the owner of a
+           particular qubit cannot just read out its state, it must coordinate
+           all its actions with the owner of the pair's other qubit. Therefore,
+           the owner of any qubit that is part of an entangled pair must know
+           the location of its counterpart. Location, in this context, need not
+           be the explicit spatial location. A relevant pair identifier, a
+           means of communication between the pair owners, and an association
+           between the pair ID and the individual qubits is sufficient.</t>
+
+           <t>Generating entanglement requires temporary state.
+           <vspace blankLines="1" />
+
+           Packet forwarding in a classical network is largely a stateless
+           operation. When a packet is received, the router looks up its
+           forwarding table and sends the packet out of the appropriate output.
+           There is no need to keep any memory of the packet any more.
+           <vspace blankLines="1" />
+
+           A quantum repeater must be able to make decisions about qubits that
+           it receives and is holding in its memory. Since qubits do not carry
+           headers, the receipt of an entangled pair conveys no control
+           information based on which the repeater can make a decision. The
+           relevant control information will arrive separately over a classical
+           channel. This implies that a repeater must store temporary state as
+           the control information and the qubit it pertains to will, in
+           general, not arrive at the same time.</t>
+
+           <t>Generating end-to-end entanglement is a parallelisable operation.
+           <vspace blankLines="1" />
+
+           Classical packets carry user data from source destination by
+           performing a series of hops across the network. This process is
+           necessarily sequential -- it is impossible to forward a packet ahead
+           of time as the user data it carries cannot be known in advance.
+
+           A quantum network does not carry any user data. It is only
+           responsible for generating entangled pairs in any of the generic
+           Bell states. The process of creating an end-to-end Bell pair is by
+           its nature parallelisable -- all of the individual link pairs can be
+           generated independently of one another. Furthermore, there is no
+           ordering requirement on the entanglement swapping operations either,
+           they can happen in any order as long as the network can keep track
+           of which pairs were swapped so that it can correctly identify the
+           two ends of the final Bell pair. This parallelism must be exploited
+           to make the most efficient use of the quantum network's
+           resources.</t>
+
+         </list>
+       </t>
+
+     </section>
+
+     <section title="Classical communication">
+
+       <t>In this memo we have already covered two different roles that classical
+       communication must perform:</t>
+
+       <t>
+         <list style="symbols">
+
+           <t>communicate classical bits of information as part of distributed
+           protocols such as entanglement swapping and teleportation,</t>
+
+           <t>communicate control information within a network - this includes
+           both background protocols such as routing as well as signalling
+           protocols to set up end-to-end entanglement generation.</t>
+
+         </list>
+       </t>
+
+       <t>Classical communication is a crucial building block of any quantum
+       network. All nodes in a quantum network are assumed to have classical
+       connectivity with each other (within typical administrative domain
+       limts). Therefore, quantum routers will need to manage two data planes
+       in parallel, a classical one and a quantum one. Additionally, it must be
+       able to correlate information between them so that the control
+       information received on a classical channel can be applied to the qubits
+       managed by the quantum data plane.</t>
+
+     </section>
+
+     <section title="Abstract model of the network">
+
+       <section title="Elements of a quantum network">
+
+         <t>Collecting all the pieces described so far, a quantum network will
+         consist of the following elements:</t>
+
+         <t>
+           <list style="symbols">
+
+             <t>Quantum repeaters - A quantum repeater is a node in the network
+             that is capable of generating entangled pairs with its directly
+             connected neighbours and performing entanglement swap operations
+             on them.</t>
+
+             <t>Quantum routers - A quantum router is a quantum repeater that is
+             connected to more than two quantum repeaters as neighbours. This
+             distinguishes it from quantum repeaters composed into a linear
+             chain to connect two quantum routers (since no-cloning prohibits
+             quantum signal amplification).</t>
+
+             <t>End-nodes - End-nodes in a quantum network must be able to receive
+             and handle an entangled pair, but they do not need to be able to
+             perform an entanglement swap (and thus are not necessarily quantum
+             repeaters). End-nodes are also not required to have any quantum
+             memory as certain quantum applications can be realised by having
+             the end-node measure its qubit as soon as it is received.</t>
+
+             <t>Non-quantum nodes - Not all nodes in a quantum network need to
+             have a quantum data plane. A non-quantum node is any device that
+             can handle classical network traffic.</t>
+
+             <t>Quantum links - A quantum link is a link which can be used to
+             generate an entangled pair between two directly connected quantum
+             repeaters. It may include a dedicated classical channel that is to
+             be used solely for the purpose of coordinating the entanglement
+             generation on this quantum link.</t>
+
+             <t>Classical links - A classical link is a link between any node
+             in the network that is capable of carrying classical network
+             traffic.</t>
+
+           </list>
+         </t>
+
+       </section>
+
+       <section title="Putting it all together">
+
+         <t>A two-hop path in a generic quantum network can be represented
+         as:</t>
+
+         <figure align="center">
+           <artwork align="left"><![CDATA[
+| App |-------------------CC-------------------| App |
+   ||                                            ||
+ ------                 ------                 ------
+|  EN  |----QC & CC----|  QR  |----QC & CC----|  EN  |
+ ------                 ------                 ------
+
+App - user-level application
+QR - quantum repeater
+EN - end-node
+QC - quantum channel
+CC - classical channel
+           ]]></artwork>
+         </figure>
+
+         <t>An application running on two end-nodes attached to a network will at
+         some point need the network to generate entangled pairs for its use.
+         This will require negotiation between the end-nodes, because they must
+         both open a communication end-point (a quantum socket) which the
+         network can use to identify the two ends of the connection. The two
+         end-nodes use the classical connectivity available in the network to
+         achieve this goal.</t>
+
+         <t>When the network receives a request to generate end-to-end entangled
+         pairs it uses the classical communication channels to coordinate and
+         claim the resources necessary to fulfil this request. This may be some
+         combination of prior control information (e.g. routing tables) and
+         signalling protocols, but the details of how this is achieved are an
+         active research question and thus beyond the scope of this memo.</t>
+
+         <t>During or after the control information is distributed the network
+         performs the necessary quantum operations such as generating entangled
+         over individual links, performing entanglement swaps, and further
+         signalling to transmit the swap outcomes and other control
+         information. Since none of the entangled pairs carry any user data,
+         some of these operations can be performed before the request is
+         received in anticipation of the demand.</t>
+
+         <t>The entangled pair is delivered to the application once it is ready,
+         together with the relevant pair identifier. However, being ready does
+         not necessarily mean once all link pairs and entanglement swaps are
+         complete as some applications can start executing on an incomplete
+         pair. In this case the remaining entanglement swaps will propagate the
+         actions across the network to the other end.</t>
+
+       </section>
+
+     </section>
+
+     <section title="Network boundaries">
+
+       <t>Just like classical network, there will various boundaries will exist in
+       quantum networks.</t>
+
+       <section title="Boundaries between different physical architectures">
+
+         <t>There are many different physical architectures for implementing
+         quantum repeater technology. The different technologies differ in how
+         they store and manipulate qubits in memory and how they generate
+         entanglement across a link with their neighbours. Different
+         architectures come with different trade-offs and thus a functional
+         network will likely consist of a mixture of different types of quantum
+         repeaters.</t>
+
+         <t>For example, architectures based on optical elements and atomic
+         ensembles are very efficient at generating entanglement, but provide
+         little control over the qubits once the pair is generated. On the
+         other hand nitrogen-vacancy architectures offer a much greater degree
+         of control over qubits, but have a harder time generating the
+         entanglement across a link.</t>
+
+         <t>It is an open research question where exactly the boundary will lie.
+         It could be that a single quantum repeater node provides some
+         backplane connection between the architectures, but it also could be
+         that special quantum links delineate the boundary.</t>
+
+       </section>
+
+       <section title="Boundaries between different administrative regions">
+
+         <t>Just like in classical networks, multiple quantum networks will
+         connect into a global quantum internet. This necessarily implies the
+         existence of borders between different administrative regions. How
+         these boundaries will be handled is also an open question and thus
+         beyond the scope of this memo.</t>
+
+       </section>
+
      </section>
 
      <section title="Physical constraints">

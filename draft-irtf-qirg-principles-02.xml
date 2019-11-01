@@ -93,6 +93,33 @@
      </address>
    </author>
 
+   <author fullname="Rodney Van Meter" initials="R" surname="Van Meter">
+     <organization>Keio Univeristy</organization>
+
+     <address>
+       <postal>
+         <street>5322 Endo</street>
+
+         <!-- Reorder these if your country does things differently -->
+         <city>Fujisawa</city>
+         <region>Kanagawa</region>
+         <code>252-0882</code>
+         <country>Japan</country>
+       </postal>
+
+       <email>rdv@sfc.wide.ad.jp</email>
+
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
+
+   <author fullname="Bruno Rijsman" initials="B" surname="Rijsman">
+     <organization>Individual</organization>
+     <address>
+       <email>brunorijsman@gmail.com</email>
+     </address>
+   </author>
+
    <date year="2019" />
 
    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
@@ -358,181 +385,317 @@
    </section>
 
    <section title="Achieving quantum connectivity">
-     <section title="No-cloning theorem">
-       <t>To build a network we must first physically connect all the nodes
-       with quantum channels that enable them to distribute the entanglement.
-       Unfortunately, our ability to transfer quantum states is complicated by
-       the no-cloning theorem.</t>
 
-       <t>The no-cloning theorem states that it is impossible to create an
-       identical copy of an arbitrary unknown quantum state. Since performing a
-       measurement on a quantum state destroys its superposition, there is no
-       practical way of learning the exact state of a qubit in an unknown
-       state. Therefore, it is impossible to use the same mechanisms that
-       worked for classical networks for signal amplification, retransmission,
-       and so on as they all rely on the ability to copy the underlying data.
-       Since any physical channel will always be lossy, connecting nodes within
-       a quantum network is a challenging endeavour and its architecture must
-       at its core address this very issue.</t>
-     </section>
+     <t>This section explains the meaning of quantum connectivity and the
+     necessary physical processes at an abstract level.</t>
 
-     <section title="Direct transmission">
-       <t>The most straightforward way to distribute an entangled state is to
-       simply transmit one of the qubits directly to the other end across a
-       series of nodes while performing sufficient forward quantum error
-       correction to bring losses down to an acceptable level. Despite the
-       no-cloning theorem and the inability to directly measure a quantum state
-       error-correcting mechanisms for quantum communication exist <xref
-       target="mural14"></xref>. However, even in the most optimistic scenarios
-       the hardware requirements to fault-tolerantly transmit a single qubit
-       are far beyond near-term capabilities. Nevertheless, due to the promise
-       of fault-tolerance and direct transmission's favourable poly-logarithmic
-       scaling with distance, it may eventually become a desirable method for
-       entanglement distribution.</t>
-     </section>
+     <section title="Challenges">
 
-     <section title="Bell pairs and entanglement swapping">
-       <section title="Bell Pairs">
-         <t>An alternative relies on the observation that we do not need to be
-         able to distribute any arbitrary entangled quantum state. We only need
-         to be able to distribute any one of what are known as the Bell Pair
-         states. Bell Pair states are the entangled two-qubit states:</t>
+       <t>A quantum network cannot be built by simply extrapolating all the
+       classical models to their quantum analogues. One cannot just send qubits
+       like one can send bits over a wire. There are several technological as
+       well as fundamental challenges that make classical approaches unsuitable
+       in a quantum context.</t>
 
-         <t>
-           |00> + |11>,<vspace blankLines="0" />
-           |00> - |11>,<vspace blankLines="0" />
-           |01> + |10>,<vspace blankLines="0" />
-           |01> - |10>,
-         </t>
+       <section title="The measurement problem">
 
-         <t>where the constant 1/sqrt(2) normalisation factor has been ignored
-         for clarity. Any of the four Bell Pair state above will do as it is
-         possible to transform any Bell Pair into another Bell Pair with local
-         operations performed on only one of the qubits. That is, either of the
-         nodes that hold the two qubits of the Bell Pair can apply a series of
-         single qubit gates to just their qubit in order to transform the
-         ensemble between the different variants.</t>
+         <t>In classical computers and networks we can read out the bits stored
+         in memory at any time. This is helpful for a variety of purposes such
+         as copying, error detection and correction, and so on. This is not
+         possible with qubits.</t>
 
-         <t>Distributing a Bell Pair between two nodes is much easier than
-         transmitting an arbitrary quantum state over a network. Since the
-         state is known handling errors becomes easier and small-scale
-         error-correction (such as entanglement distillation) combined with
-         reattempts becomes a valid strategy.</t>
+         <t>A measurement of a qubit's state will destroy its superposition and
+         with it any entanglement it may have been part of. Once a qubit is
+         being processed, it cannot be read out until a suitable point in the
+         computation, determined by the protocol handling the qubit, has been
+         reached. Therefore, we cannot use the same methods known from
+         classical computing for the purposes of error detection and
+         correction.</t>
 
-         <t>The reason for using Bell Pairs specifically as opposed to any
-         other two-qubit state, is that they are the maximally entangled
-         two-qubit set of basis states. Maximal entanglement means that these
-         states have the strongest non-classical correlations of all possible
-         two-qubit states. Furthermore, since single-qubit local operations can
-         never increase entanglement, less entangled states would impose some
-         constraints on distributed quantum algorithms. This makes Bell Pairs
-         particularly useful as a generic building block for distributed
-         quantum applications.</t>
        </section>
 
-       <section title="Teleportation">
-         <t>The observation that we only need to be able to distribute Bell
-         Pairs relies on the fact that this enables the distribution of any
-         other arbitrary entangled state. This can be achieved via quantum
-         state teleportation. Quantum state teleportation consumes an unknown
-         quantum state that we want to transmit and recreates it at the desired
-         destination. This does not violate the no-cloning theorem as the
-         original state is destroyed in the process</t>
+       <section title="No-cloning theorem">
 
-         <t>To achieve this, a Bell Pair needs to be distributed between the
-         source and destination before teleportation commences. The source then
-         entangles the transmission qubit with its end of the Bell Pair and
-         performs a measurement. This consumes the Bell Pair's entanglement
-         turning the source and destination qubits into independent states. The
-         measurements yields two classical bits which the source sends to the
-         destination over a classical channel. Based on the value of the
-         received two classical bits, the destination performs one of four
-         possible operations on its end of the Bell Pair, which results in a
-         clone of the unknown quantum state of the transmission qubit.</t>
+         <t>Since directly reading the state of a qubit is not possible, one could
+         ask the question if we can simply copy a qubit without looking at it.
+         Unfortunately, this is fundamentally not possible in quantum
+         mechanics.</t>
 
-         <t>The unknown quantum state that was transmitted never entered the
-         network itself. Therefore, the network needs to only be able to
-         reliably produce Bell Pairs between any two nodes in the network.</t>
+         <t>The no-cloning theorem states that it is impossible to create an
+         identical copy of an arbitrary unknown quantum state. Therefore, it is
+         also impossible to use the same mechanisms that worked for classical
+         networks for signal amplification, retransmission, and so on as they
+         all rely on the ability to copy the underlying data. Since any
+         physical channel will always be lossy, connecting nodes within a
+         quantum network is a challenging endeavour and its architecture must
+         at its core address this very issue.</t>
+
        </section>
 
-       <section title="Bell Pair links and entanglement swapping">
-         <t>Reducing the problem of quantum connectivity to one of generating a
-         Bell Pair has facilitated the problem, but it has not solved it.</t>
+       <section title="Fidelity">
 
-         <t>The technology to generate a Bell Pair between two directly
-         connected quantum nodes, store the qubits, and perform teleportation,
-         already exists and has been demonstrated in laboratory conditions
-         <xref target="humph18"></xref>. Interestingly, neither of the two
-         qubits of the pair need to be transmitted any further.</t>
+         <t>In general, it is expected that a classical packet arrives at its
+         destination without any errors introduced by hardware noise along the
+         way. This is verified at various levels through a variety of
+         checksums. Since we cannot read or copy a quantum state a similar
+         approach is out of question for quantum networks.</t>
 
-         <t>A Bell Pair between any two nodes in the network can be constructed
-         from Bell Pairs generated along each individual link on the path
+         <t>To describe the quality of a quantum state a physical quantity called
+         fidelity is used. Fidelity takes a value between 0 and 1 -- higher is
+         better, and less than 0.5 means the state is unusable. It measures how
+         close a quantum state is to the state we desire it to be in. It
+         expresses the probability that one state will pass a test to identify
+         as the other. Fidelity is an important property of a quantum system
+         that allows us to quantify how much a particular state has been
+         affected by noise from various sources (gate errors, channel losses,
+         environment noise).</t>
+
+         <t>Interestingly, quantum applications do not need perfect fidelity to be
+         able to execute -- as long as it is above some application-specific
+         threshold, they will simply operate at lower rates. Therefore, rather
+         than trying to ensure that we always deliver perfect states (a
+         technologically challenging task) applications will specify a minimum
+         threshold for the fidelity and the network will try its best to
+         deliver it.</t>
+
+       </section>
+
+     </section>
+
+     <section title="Bell pairs">
+
+       <t>Conceptually, the most straightforward way to distribute an entangled
+       state is to simply transmit one of the qubits directly to the other end
+       across a series of nodes while performing sufficient forward quantum
+       error correction to bring losses down to an acceptable level. Despite
+       the no-cloning theorem and the inability to directly measure a quantum
+       state error-correcting mechanisms for quantum communication exist <xref
+       target="mural14"></xref>. However, quantum error correction makes very
+       high demands on both resources (physical qubits needed) and their
+       initial fidelity. Implementation is very challenging and quantum error
+       correction is not expected to be used until later generations of quantum
+       networks.</t>
+
+       <t>An alternative relies on the observation that we do not need to be able
+       to distribute any arbitrary entangled quantum state. We only need to be
+       able to distribute any one of what are known as the Bell pair states.
+       Bell pair states are the entangled two-qubit states:</t>
+
+       <t>
+         |00> + |11>,<vspace blankLines="0" />
+         |00> - |11>,<vspace blankLines="0" />
+         |01> + |10>,<vspace blankLines="0" />
+         |01> - |10>,
+       </t>
+
+       <t>where the constant 1/sqrt(2) normalisation factor has been ignored for
+       clarity. Any of the four Bell pair state above will do as it is possible
+       to transform any Bell pair into another Bell pair with local operations
+       performed on only one of the qubits. That is, either of the nodes that
+       hold the two qubits of the Bell pair can apply a series of single qubit
+       gates to just their qubit in order to transform the ensemble between the
+       different variants.</t>
+
+       <t>Distributing a Bell pair between two nodes is much easier than
+       transmitting an arbitrary quantum state over a network. Since the state
+       is known handling errors becomes easier and small-scale error-correction
+       (such as entanglement distillation discussed in a later section)
+       combined with reattempts becomes a valid strategy.</t>
+
+       <t>The reason for using Bell pairs specifically as opposed to any other
+       two-qubit state, is that they are the maximally entangled two-qubit set
+       of basis states. Maximal entanglement means that these states have the
+       strongest non-classical correlations of all possible two-qubit states.
+       Furthermore, since single-qubit local operations can never increase
+       entanglement, less entangled states would impose some constraints on
+       distributed quantum algorithms. This makes Bell pairs particularly
+       useful as a generic building block for distributed quantum
+       applications.</t>
+
+     </section>
+
+     <section title="Teleportation">
+
+       <t>The observation that we only need to be able to distribute Bell pairs
+       relies on the fact that this enables the distribution of any other
+       arbitrary entangled state. This can be achieved via quantum state
+       teleportation. Quantum state teleportation consumes an unknown quantum
+       state that we want to transmit and recreates it at the desired
+       destination. This does not violate the no-cloning theorem as the
+       original state is destroyed in the process.</t>
+
+       <t>To achieve this, an entangled pair needs to be distributed between the
+       source and destination before teleportation commences. The source then
+       entangles the transmission qubit with its end of the pair and performs a
+       read out on the two qubits (the sum of these operations is called a Bell
+       state measurement). This consumes the Bell pair's entanglement turning
+       the source and destination qubits into independent states. The
+       measurements yields two classical bits which the source sends to the
+       destination over a classical channel. Based on the value of the received
+       two classical bits, the destination performs one of four possible
+       corrections (called the Pauli corrections) on its end of the pair which
+       turns it into the unknown quantum state that we wanted to transmit.</t>
+
+       <t>The unknown quantum state that was transmitted never entered the network
+       itself. Therefore, the network needs to only be able to reliably produce
+       Bell pairs between any two nodes in the network.</t>
+
+     </section>
+
+     <section title="The life cycle of entanglement">
+
+       <t>Reducing the problem of quantum connectivity to one of generating a Bell
+       pair has facilitated the problem, but it has not solved it. In this
+       section we discuss, how these entangled pairs are generated in the first
+       place, and how its two qubits are delivered to the end-points.</t>
+
+       <section title="Link generation">
+
+         <t>[waiting for contrib]</t>
+
+       </section>
+
+       <section title="Entanglement swapping">
+
+         <t>The problem with generating entangled pairs directly across a link is
+         that its efficiency decreases with its length. Beyond a few 10s of kms
+         the rate is effectively zero and due to the no-cloning theorem we
+         cannot simply amplify the signal. The solution is entanglement
+         swapping.</t>
+
+         <t>A Bell pair between any two nodes in the network can be constructed by
+         combining the pairs generated along each individual link on the path
          between the two end-points. Each node along the path can consume the
-         two Bell Pairs on the two links that it is connected to in order to
-         produce a new Bell Pair between the two far ends. This process is
+         two pairs on the two links that it is connected to in order to produce
+         a new entangled Pair between the two remote ends. This process is
          known as entanglement swapping. Pictorially it can be represented as
          follows:</t>
 
          <figure align="center">
            <artwork align="left"><![CDATA[
- x~~~~~~~~~~~~~x x~~~~~~~~~~~~~x
-[ ]-----------[   ]-----------[ ]
++---------+      +---------+      +---------+
+|    A    |      |    B    |      |    C    |
+|         |------|         |------|         |
+|      X1~~~~~~~~~~X2   Y1~~~~~~~~~~Y2      |
++---------+      +---------+      +---------+
            ]]></artwork>
          </figure>
 
-         <t>where x~~x denotes a Bell Pair with individual qubits represented
-         by x, -- denotes a quantum link, and [ ] denotes a node. The diagram
-         above represents the situation after the middle node has generated a
-         Bell Pair with two of its directly connected neighbours. Now, the
-         middle node performs an entanglement swap operation (the exact details
-         of the mechanism are beyond the scope of this memo). This operation
-         consumes the two Bell Pairs and produces a new Bell Pair between the
-         two far ends of this three-node network as follows:</t>
+         <t>where X1 and X2 are the qubits of the entangled pair X and Y1 and
+         Y2 are the qubits of entangled pair Y. The entanglement is denoted
+         with ~~. In the diagram above nodes A and B share the pair X and nodes
+         B and C share the pair Y, but we want entanglement between A and
+         C.</t>
+
+         <t>To achieve this goal we simply teleport the qubit X2 using the pair Y.
+         This requires node B to performs a Bell state measurement on the
+         qubits X2 and Y1 which result in the destruction of the entanglement
+         between Y1 and Y2. However, X2 is transmitted and recreated in Y2's
+         place carrying with it its entanglement with X1. The end-result is
+         shown below:</t>
 
          <figure align="center">
            <artwork align="left"><![CDATA[
- x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
-[ ]-----------[   ]-----------[ ]
++---------+      +---------+      +---------+
+|    A    |      |    B    |      |    C    |
+|         |------|         |------|         |
+|      X1~~~~~~~~~~~~~~~~~~~~~~~~~~~X2      |
++---------+      +---------+      +---------+
            ]]></artwork>
          </figure>
 
-         <t>The outcome is guaranteed to be a Bell Pair between the two end
-         nodes, but which of the four possible Bell Pairs is produced is not
-         deterministic. However, the middle node will know which one was
-         produced as the entanglement swap is a measurement operation that
-         yields two classical bits. The final state can be inferred from this
-         two-bit readout. Therefore, the middle node needs only to communicate
-         the outcome over a classical channel to one or both ends who can apply
-         a correction to transform the pair into any of its other forms (if so
-         desired).</t>
+         <t>Depending on the needs of the network and/or application a final Pauli
+         correction at the recipient node may not be necessary since the result
+         of this operation is also a Bell pair. However, the two classical bits
+         that form the read out from the measurement at node B must still be
+         communicated, because they carry information about which of the four
+         Bell pairs was actually produced. If a correction is not performed,
+         the recipient must be informed which Bell pair was received.</t>
+
+         <t>This process of teleporting Bell pairs using other entangled pairs is
+         called entanglement swapping.</t>
+
+         <section title="Distillation">
+
+           <t>Neither the generation of Bell pairs nor the swapping operations are
+           noiseless operations. Therefore, with each link and each swap the
+           fidelity of the state degrades. However, it is possible to create
+           higher fidelity Bell pair states from two or more lower fidelity
+           pairs through a process called distillation or purification.</t>
+
+           <t>To purify a quantum state, a second (and sometimes third) quantum
+           state is used as a "test tool" to test a proposition about the first
+           state, e.g., "the parity of the first state is even." When the test
+           succeeds, confidence in the state is improved, and thus the fidelity
+           is improved. The test tool states are destroyed in the process, so
+           resource demands increase substantially when distillation is used.
+           When the test fails, the tested state must also be discarded.
+           Purification makes low demands on fidelity and resources, but
+           distributed protocols incur round-trip delays <xref
+           target="epp"></xref>.</t>
+
+         </section>
+
+         <section title="Delivery">
+
+           <t>The bare minimum requirements of an application for every Bell pair
+           delivered to the two end-nodes are:</t>
+
+           <t>
+             <list style="numbers">
+
+               <t>Information about which of the four Bell pairs was delivered.
+               The network may choose to not perform Pauli corrections at all
+               and simply notify the application of which state the delivered
+               pair is in or it may perform the Pauli corrections and always
+               deliver the same state.</t>
+
+               <t>An identifier that allows the applicatqion to unambiguously
+               determine which qubits at the two end-points belong to which
+               entangled pair.</t>
+
+               <t>An estimate of the fidelity of the delivered pair. This should
+               be above the minimum threshold determined by the application.
+               However, this will only be an estimate and not a guarantee. This
+               has security implications for applications which will be
+               discussed in the section on security.</t>
+
+             </list>
+           </t>
+
+           <t>There are several other features an application might want to be
+           able to request (e.g. multiple pairs delivered together close in
+           time, but doesn't matter when they are delivered), but they are
+           beyond the scope of this memo.</t>
+
+         </section>
+
        </section>
 
-       <section title="Distillation">
-         <t>Neither the generation of Bell Pairs or the swapping operations are
-         lossless operations. Therefore, with each link and each swap the
-         quality of the state degrades. However, it is possible to create
-         higher quality Bell Pair states from two or more lower quality Bell
-         Pair states through a process called distillation. Therefore, once the
-         quality loss over a given distance become prohibitive, additional
-         redundancy may be used to restore the state quality.</t>
+       <section title="Direct transmission vs. entanglement swapping">
+
+         <t>Direct state transmission whilst simpler conceptually is much more
+         demanding to implement reliably in practice which means that any
+         near-term practical realisation is more likely to succeed if it is
+         based on the Bell pair and entanglement swapping architecture. All
+         near-term experimental implementations of quantum repeaters are based
+         on this approach. Therefore, this is the architecture that we will
+         focus on in the rest of this memo.</t>
+
+         <t>Nevertheless, the direct transmission proposal may be relevant in the
+         future as it has better fault-tolerance properties and much better
+         scaling with transmission distance. It might even be beneficial to
+         utilise a hybrid approach that combines the fault-tolerance of direct
+         transmission with the generic nature of Bell pairs which lends itself
+         to paralellisation and resource provisioning. That is, we still use
+         Bell pairs for transmission of user data, but direct transmission may
+         be used for some of hops for the purposes of Bell pair generation
+         rather than just relying solely on entanglement swapping.</t>
+
        </section>
+
      </section>
 
-     <section title="Direct transmission vs. swapping">
-       <t>Direct state transmission whilst simpler conceptually is much more
-       demanding to implement reliably in practice which means that any
-       near-term practical realisation is more likely to succeed if it is based
-       on the Bell Pair and entanglement swapping architecture. This is the
-       architecture that we will focus on in the rest of this memo for
-       practical reasons.</t>
-
-       <t>Nevertheless, the direct transmission proposal may be relevant in the
-       future as it does enable the fault-tolerant transmission of unknown
-       quantum states. It might even be beneficial to utilise a hybrid approach
-       that combines the fault-tolerance of direct transmission with the
-       generic nature of Bell Pairs which lends itself to paralellisation and
-       resource provisioning.</t>
-     </section>
    </section>
 
    <section title="Architecture of a quantum internet">
@@ -594,34 +757,6 @@
        the early stages of a new technology. We here consider a highly abstract
        scenario and refer to <xref target="wehner18"/> for pointers to the
        physics literature.</t>
-
-       <section title="Fidelity">
-         <t>The quality of a quantum state is described by a physical quantity
-         called fidelity, that takes a value between 0 and 1 (higher is
-         better). Fidelity is the measure of how close a quantum state is to
-         the quantum state we desire it to be in. It expresses the probability
-         that one state will pass a test to identify as the other.</t>
-
-         <t>Fidelity is an important property of a quantum system that stems
-         from the fact that no physical operation is perfect. Furthermore,
-         applications will in general require the fidelity of a quantum state
-         to be above some minimum threshold in order to guarantee the
-         correctness of their algorithm and it is the responsibility of the
-         network to provide such a state.</t>
-
-         <t>Additionally, entanglement swapping operations, even if perfect,
-         lead to a further reduction in the fidelity of the final state. Two
-         imperfect Bell Pairs when combined will produce a slightly worse Bell
-         Pair. Whilst distillation is one of the available mechanisms to
-         correct for these errors it requires additional Bell Pairs to be
-         produced. There will be a trade-off between how much distillation is
-         to be done versus what fidelity is acceptable.</t>
-
-         <t>This is a fundamental constraint as perfect noiseless operations
-         and lossless communication channels are unachievable. Therefore, no
-         Bell Pair will be generated with perfect fidelity and the network must
-         account for this.</t>
-       </section>
 
        <section title="Memory lifetimes">
          <t>In addition to discrete operations being imperfect, storing a qubit
@@ -1121,25 +1256,6 @@
        <seriesInfo name="Phys. Rev. Lett." value="112 (25-27), 250501" />
      </reference>
 
-     <reference anchor="humph18" target="https://arxiv.org/abs/1712.07567">
-       <front>
-         <title>Deterministic delivery of remote entanglement on a quantum
-         network</title>
-
-         <author initials="P.C" surname="Humphreys" />
-         <author initials="N" surname="Kalb" />
-         <author initials="J.P.J" surname="Morits" />
-         <author initials="R.N" surname="Schouten" />
-         <author initials="R.F.L" surname="Vermeulen" />
-         <author initials="D.J" surname="Twitchen" />
-         <author initials="M" surname="Markham" />
-         <author initials="R" surname="Hanson" />
-
-         <date year="2018" />
-       </front>
-       <seriesInfo name="Nature" value="558, 268-273" />
-     </reference>
-
      <reference anchor="meter13" target="https://ieeexplore.ieee.org/document/6576340">
        <front>
          <title>Designing quantum repeater networks</title>
@@ -1184,6 +1300,20 @@
          <date year="2011" />
        </front>
        <seriesInfo name="Cambridge University Press" value="" />
+     </reference>
+
+     <reference anchor="epp" target="https://arxiv.org/abs/quant-ph/9604024">
+       <front>
+         <title>Mixed State Entanglement and Quantum Error Correction</title>
+
+         <author initials="C.H" surname="Bennett" />
+         <author initials="D.P" surname="DiVincenzo" />
+         <author initials="J.A" surname="Smolin" />
+         <author initials="W.K" surname="Wootters" />
+
+         <date year="1996" />
+       </front>
+       <seriesInfo name="Phys. Rev. A" value="Vol. 54, Iss. 5" />
      </reference>
 
    </references>

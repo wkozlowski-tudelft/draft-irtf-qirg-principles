@@ -862,11 +862,12 @@
 
              <t>Quantum links - A quantum link is a link which can be used to
              generate an entangled pair between two directly connected quantum
-             repeaters. It may include a dedicated classical channel that is to
+             repeaters and thus may include a source of bell pair. 
+	     It may include a dedicated classical channel that is to
              be used solely for the purpose of coordinating the entanglement
              generation on this quantum link.</t>
 
-             <t>Classical links - A classical link is a link between any node
+             <t>Classical links - A classical link is a physical or logical (e.g dense coding) link between any node
              in the network that is capable of carrying classical network
              traffic.</t>
 
@@ -963,8 +964,9 @@ CC - classical channel
 
          <t>Just like in classical networks, multiple quantum networks will
          connect into a global quantum internet. This necessarily implies the
-         existence of borders between different administrative regions. How
-         these boundaries will be handled is also an open question and thus
+         existence of borders between different administrative regions and to define 
+	 an inter-autonomous system interconnection protocol to distributing quantum entanglement. 
+	 How these boundaries will be handled is also an open question and thus
          beyond the scope of this memo.</t>
 
        </section>

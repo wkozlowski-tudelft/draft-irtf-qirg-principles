@@ -731,7 +731,9 @@
            not grouped into packets and they do not carry any headers.
            Therefore, quantum networks will have to send all control
            information via separate classical channels which the repeaters will
-           have to correlate with the qubits stored in their memory.</t>
+           have to correlate with the qubits stored in their memory or to send all control information by using dense coding 
+	   which send classical bit on the same quantum network. The control plan will be a quantum application that consume 
+	   bell pair to send quantum control plane (Patrick Gelard)</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

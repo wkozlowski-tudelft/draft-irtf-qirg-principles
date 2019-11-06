@@ -733,7 +733,7 @@
            information via separate classical channels which the repeaters will
            have to correlate with the qubits stored in their memory or to send all control information by using dense coding 
 	   which send classical bit on the same quantum network. The control plan will be a quantum application that consume 
-	   bell pair to send quantum control plane (Patrick Gelard)</t>
+	   bell pair to send quantum control plane.</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

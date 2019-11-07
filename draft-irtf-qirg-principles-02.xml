@@ -1102,6 +1102,20 @@ CC - classical channel
              architecture to allow for a large variety of hardware
              implementations.</t>
 
+             <t>Encoding  diversity
+             <vspace blankLines="1" />
+
+             There are several possible types of encoding, such as continuous variables (e.g quadrature of light, time-energy, etc.)
+	     or/and discrete variables (polarization of light, time-bin, etc.), which can be used for entanglement of Bell pairs.
+             Each of them has advantages and disadvantages. Continuous variables can benefit from unconditional operations, 
+	     high detection efficiencies, unambiguous state discrimination, and more practical interfacing with conventional
+	     information technology. However, they suffer from strong sensitivity to losses and intrinsically limited fidelities.
+	     On the other hand, DV approaches can achieve fidelity close to unity, but usually at the expense of probabilistic
+	     implementations. Combining the two in hybrid architectures is possible [12]
+	     It should be an explicit goal  that Quantum Internet must be compatible with the different methods 
+	     of encoding quantum information.</t>
+
+		   
              <t>Be flexible with regards to hardware capabilities and
              limitations
              <vspace blankLines="1" />
@@ -1540,7 +1554,26 @@ CC - classical channel
        </front>
        <seriesInfo name="Phys. Rev. A" value="Vol. 54, Iss. 5" />
      </reference>
+	   
+     <reference anchor="Demid V. Sychev" target="https://www.nature.com/articles/s41467-018-06055-x">
+       <front>
+         <title>Entanglement and teleportation between polarization and wave-like encodings of an optical qubit</title>
 
+         <author initials="A" surname="Sychev" />
+         <author initials="M" surname="Ulanov" />
+         <author initials="T" surname="Tiunov" />
+         <author initials="L" surname="Pushkina" />
+         <author initials="F" surname="Kuzhamuratov" />
+         <author initials="M" surname="Novikov" />
+         <author initials="A" surname="Lvovsky" />
+         
+         <date year="2018" />
+       </front>
+       <seriesInfo name="Nature Communications" value="3672" />
+     </reference>
+
+	   
+	   
    </references>
 
  </back>

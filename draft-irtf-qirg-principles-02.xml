@@ -1107,11 +1107,14 @@ CC - classical channel
 
              There are several possible types of encoding, such as continuous variables (e.g quadrature of light, time-energy, etc.)
 	     or/and discrete variables (polarization of light, time-bin, etc.), which can be used for entanglement of Bell pairs.
-             Each of them has advantages and disadvantages. Continuous variables can benefit from unconditional operations, 
+             Each of them has advantages and disadvantages. Continuous variables (CV) can benefit from unconditional operations, 
 	     high detection efficiencies, unambiguous state discrimination, and more practical interfacing with conventional
 	     information technology. However, they suffer from strong sensitivity to losses and intrinsically limited fidelities.
-	     On the other hand, DV approaches can achieve fidelity close to unity, but usually at the expense of probabilistic
-	     implementations. Combining the two in hybrid architectures is possible [12]
+	     On the other hand, Discret Variable (DV) approaches can achieve fidelity close to unity, but usually at the expense 
+	     of probabilistic implementations. Combining the two in hybrid architectures is possible [12].
+	     in fact,  "Qubits" can be based on discrete variables or by exploiting symmetries can be based on continuous variables 
+	     (e.g  encoded into coherent states, where two phase-opposite coherent states are used for the qubits. 
+	     This digital encoding is different from the analog encoding representing Qmodes).  
 	     It should be an explicit goal  that Quantum Internet must be compatible with the different methods 
 	     of encoding quantum information.</t>
 

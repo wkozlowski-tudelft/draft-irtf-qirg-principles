@@ -501,6 +501,12 @@
        is known handling errors becomes easier and small-scale error-correction
        (such as entanglement distillation discussed in a later section)
        combined with reattempts becomes a valid strategy.</t>
+	     
+       <t>Bell pairs are also the basic fundamental unit for building complex 
+       multi-partite entanglement state shared among several nodes of the network.
+       This opens the way for distributed applications based on multi-party quantum 
+       communication such as secret voting and secret sharing, conference key agreement,
+       clock synchronization, or distributed quantum computation.</t>
 
        <t>The reason for using Bell pairs specifically as opposed to any other
        two-qubit state, is that they are the maximally entangled two-qubit set
@@ -731,7 +737,9 @@
            not grouped into packets and they do not carry any headers.
            Therefore, quantum networks will have to send all control
            information via separate classical channels which the repeaters will
-           have to correlate with the qubits stored in their memory.</t>
+           have to correlate with the qubits stored in their memory or to send all control information by using dense coding 
+	   which send classical bit on the same quantum network. The control plan will be a quantum application that consume 
+	   bell pair to send quantum control plane.</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.
@@ -860,11 +868,12 @@
 
              <t>Quantum links - A quantum link is a link which can be used to
              generate an entangled pair between two directly connected quantum
-             repeaters. It may include a dedicated classical channel that is to
+             repeaters and thus may include a source of bell pair. 
+	     It may include a dedicated classical channel that is to
              be used solely for the purpose of coordinating the entanglement
              generation on this quantum link.</t>
 
-             <t>Classical links - A classical link is a link between any node
+             <t>Classical links - A classical link is a physical or logical (e.g dense coding) link between any node
              in the network that is capable of carrying classical network
              traffic.</t>
 
@@ -961,8 +970,9 @@ CC - classical channel
 
          <t>Just like in classical networks, multiple quantum networks will
          connect into a global quantum internet. This necessarily implies the
-         existence of borders between different administrative regions. How
-         these boundaries will be handled is also an open question and thus
+         existence of borders between different administrative regions and to define 
+	 an inter-autonomous system interconnection protocol to distributing quantum entanglement. 
+	 How these boundaries will be handled is also an open question and thus
          beyond the scope of this memo.</t>
 
        </section>
@@ -1098,6 +1108,23 @@ CC - classical channel
              architecture to allow for a large variety of hardware
              implementations.</t>
 
+             <t>Encoding  diversity
+             <vspace blankLines="1" />
+
+             There are several possible types of encoding, such as continuous variables (e.g quadrature of light, time-energy, etc.)
+	     or/and discrete variables (polarization of light, time-bin, etc.), which can be used for entanglement of Bell pairs.
+             Each of them has advantages and disadvantages. Continuous variables (CV) can benefit from unconditional operations, 
+	     high detection efficiencies, unambiguous state discrimination, and more practical interfacing with conventional
+	     information technology. However, they suffer from strong sensitivity to losses and intrinsically limited fidelities.
+	     On the other hand, Discret Variable (DV) approaches can achieve fidelity close to unity, but usually at the expense 
+	     of probabilistic implementations. Combining the two in hybrid architectures is possible [12].
+	     in fact,  "Qubits" can be based on discrete variables or by exploiting symmetries can be based on continuous variables 
+	     (e.g  encoded into coherent states, where two phase-opposite coherent states are used for the qubits. 
+	     This digital encoding is different from the analog encoding representing Qmodes).  
+	     It should be an explicit goal  that Quantum Internet must be compatible with the different methods 
+	     of encoding quantum information.</t>
+
+		   
              <t>Be flexible with regards to hardware capabilities and
              limitations
              <vspace blankLines="1" />
@@ -1536,7 +1563,25 @@ CC - classical channel
        </front>
        <seriesInfo name="Phys. Rev. A" value="Vol. 54, Iss. 5" />
      </reference>
+	   
+     <reference anchor="Demid V. Sychev" target="https://www.nature.com/articles/s41467-018-06055-x">
+       <front>
+         <title>Entanglement and teleportation between polarization and wave-like encodings of an optical qubit</title>
 
+         <author initials="A" surname="Sychev" />
+         <author initials="M" surname="Ulanov" />
+         <author initials="T" surname="Tiunov" />
+         <author initials="L" surname="Pushkina" />
+         <author initials="F" surname="Kuzhamuratov" />
+         <author initials="M" surname="Novikov" />
+         <author initials="A" surname="Lvovsky" />
+         
+         <date year="2018" />
+       </front>
+       <seriesInfo name="Nature Communications" value="3672" />
+     </reference>
+	   
+	   
    </references>
 
  </back>

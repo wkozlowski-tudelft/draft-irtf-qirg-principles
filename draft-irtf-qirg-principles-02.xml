@@ -501,6 +501,12 @@
        is known handling errors becomes easier and small-scale error-correction
        (such as entanglement distillation discussed in a later section)
        combined with reattempts becomes a valid strategy.</t>
+	     
+       <t>Bell pairs are also the basic fundamental unit for building complex 
+       multi-partite entanglement state shared among several nodes of the network.
+       This opens the way for distributed applications based on multi-party quantum 
+       communication such as secret voting and secret sharing, conference key agreement,
+       clock synchronization, or distributed quantum computation.</t>
 
        <t>The reason for using Bell pairs specifically as opposed to any other
        two-qubit state, is that they are the maximally entangled two-qubit set

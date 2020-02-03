@@ -79,7 +79,7 @@ Table of Contents
    2.  Quantum information . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Qubit . . . . . . . . . . . . . . . . . . . . . . . . . .   4
      2.2.  Multiple qubits . . . . . . . . . . . . . . . . . . . . .   5
-   3.  Entanglement as the fundamental service . . . . . . . . . . .   6
+   3.  Entanglement as the fundamental resource  . . . . . . . . . .   6
    4.  Achieving quantum connectivity  . . . . . . . . . . . . . . .   8
      4.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .   8
        4.1.1.  The measurement problem . . . . . . . . . . . . . . .   8
@@ -89,7 +89,7 @@ Table of Contents
      4.3.  Bell pairs  . . . . . . . . . . . . . . . . . . . . . . .  10
      4.4.  Teleportation . . . . . . . . . . . . . . . . . . . . . .  10
      4.5.  The life cycle of entanglement  . . . . . . . . . . . . .  11
-       4.5.1.  Link generation . . . . . . . . . . . . . . . . . . .  11
+       4.5.1.  Elementary link generation  . . . . . . . . . . . . .  11
        4.5.2.  Entanglement swapping . . . . . . . . . . . . . . . .  11
        4.5.3.  Distillation  . . . . . . . . . . . . . . . . . . . .  12
        4.5.4.  Delivery  . . . . . . . . . . . . . . . . . . . . . .  13
@@ -302,7 +302,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    same measurement is to be repeated, the entangled state must be
    prepared again.
 
-3.  Entanglement as the fundamental service
+3.  Entanglement as the fundamental resource
 
    Entanglement is the fundamental building block of quantum networks.
    To see this, consider the state from the previous section:
@@ -516,11 +516,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    |01> - |10>,
 
    where the constant 1/sqrt(2) normalisation factor has been ignored
-   for clarity.  Any of the four Bell pair state above will do as it is
-   possible to transform any Bell pair into another Bell pair with local
-   operations performed on only one of the qubits.  That is, either of
-   the nodes that hold the two qubits of the Bell pair can apply a
-   series of single qubit gates to just their qubit in order to
+   for clarity.  Any of the four Bell pair states above will do, as it
+   is possible to transform any Bell pair into another Bell pair with
+   local operations performed on only one of the qubits.  That is,
+   either of the nodes that hold the two qubits of the Bell pair can
+   apply a series of single qubit gates to just their qubit in order to
    transform the ensemble between the different variants.
 
    Distributing a Bell pair between two nodes is much easier than
@@ -570,7 +570,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    Pauli corrections) on its end of the pair which turns it into the
    unknown quantum state that we wanted to transmit.
 
-   The unknown quantum state that was transmitted never entered the
+   The unknown quantum state that was transmitted was never fed into the
    network itself.  Therefore, the network needs to only be able to
    reliably produce Bell pairs between any two nodes in the network.
 
@@ -582,7 +582,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    the first place, and how its two qubits are delivered to the end-
    points.
 
-4.5.1.  Link generation
+4.5.1.  Elementary link generation
 
    [waiting for contrib]
 
@@ -590,9 +590,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
    The problem with generating entangled pairs directly across a link is
    that its efficiency decreases with its length.  Beyond a few 10s of
-   kms the rate is effectively zero and due to the no-cloning theorem we
-   cannot simply amplify the signal.  The solution is entanglement
-   swapping.
+   kms in optical fibre or 1000 kms in free space (via satellite) the
+   rate is effectively zero and due to the no-cloning theorem we cannot
+   simply amplify the signal.  The solution is entanglement swapping.
 
    A Bell pair between any two nodes in the network can be constructed
    by combining the pairs generated along each individual link on the
@@ -991,11 +991,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
    Entanglement generation on a link between two connected nodes is not
    a very efficient process and it requires many attempts to succeed.  A
-   fast repetition rate for Bell Pair generation is achievable, but only
-   one in a few thousands will succeed.  Currently, the highest
-   achievable rates of success between nodes capable of storing the
-   resulting qubits are of the order of 10 Hz.  Combined with short
-   memory lifetimes this leads to very tight timing windows to build up
+   fast repetition rate for Bell pair generation is achievable, but only
+   a small fraction will succeed.  Currently, the highest achievable
+   rates of success between nodes capable of storing the resulting
+   qubits are of the order of 10 Hz.  Combined with short memory
+   lifetimes this leads to very tight timing windows to build up
    network-wide connectivity.
 
 

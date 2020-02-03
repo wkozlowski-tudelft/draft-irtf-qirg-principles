@@ -315,7 +315,7 @@
      </section>
    </section>
 
-   <section title="Entanglement as the fundamental service">
+   <section title="Entanglement as the fundamental resource">
 
      <t>Entanglement is the fundamental building block of quantum networks. To
      see this, consider the state from the previous section:</t>
@@ -495,13 +495,13 @@
          |01> - |10>,
        </t>
 
-       <t>where the constant 1/sqrt(2) normalisation factor has been ignored for
-       clarity. Any of the four Bell pair state above will do as it is possible
-       to transform any Bell pair into another Bell pair with local operations
-       performed on only one of the qubits. That is, either of the nodes that
-       hold the two qubits of the Bell pair can apply a series of single qubit
-       gates to just their qubit in order to transform the ensemble between the
-       different variants.</t>
+       <t>where the constant 1/sqrt(2) normalisation factor has been ignored
+       for clarity. Any of the four Bell pair states above will do, as it is
+       possible to transform any Bell pair into another Bell pair with local
+       operations performed on only one of the qubits. That is, either of the
+       nodes that hold the two qubits of the Bell pair can apply a series of
+       single qubit gates to just their qubit in order to transform the
+       ensemble between the different variants.</t>
 
        <t>Distributing a Bell pair between two nodes is much easier than
        transmitting an arbitrary quantum state over a network. Since the state
@@ -543,9 +543,9 @@
        corrections (called the Pauli corrections) on its end of the pair which
        turns it into the unknown quantum state that we wanted to transmit.</t>
 
-       <t>The unknown quantum state that was transmitted never entered the network
-       itself. Therefore, the network needs to only be able to reliably produce
-       Bell pairs between any two nodes in the network.</t>
+       <t>The unknown quantum state that was transmitted was never fed into the
+       network itself. Therefore, the network needs to only be able to reliably
+       produce Bell pairs between any two nodes in the network.</t>
 
      </section>
 
@@ -556,7 +556,7 @@
        section we discuss, how these entangled pairs are generated in the first
        place, and how its two qubits are delivered to the end-points.</t>
 
-       <section title="Link generation">
+       <section title="Elementary link generation">
 
          <t>[waiting for contrib]</t>
 
@@ -564,11 +564,11 @@
 
        <section title="Entanglement swapping">
 
-         <t>The problem with generating entangled pairs directly across a link is
-         that its efficiency decreases with its length. Beyond a few 10s of kms
-         the rate is effectively zero and due to the no-cloning theorem we
-         cannot simply amplify the signal. The solution is entanglement
-         swapping.</t>
+         <t>The problem with generating entangled pairs directly across a link
+         is that its efficiency decreases with its length. Beyond a few 10s of
+         kms in optical fibre or 1000 kms in free space (via satellite) the
+         rate is effectively zero and due to the no-cloning theorem we cannot
+         simply amplify the signal. The solution is entanglement swapping.</t>
 
          <t>A Bell pair between any two nodes in the network can be constructed by
          combining the pairs generated along each individual link on the path
@@ -980,12 +980,12 @@ CC - classical channel
        <section title="Rates">
          <t>Entanglement generation on a link between two connected nodes is
          not a very efficient process and it requires many attempts to succeed.
-         A fast repetition rate for Bell Pair generation is achievable, but
-         only one in a few thousands will succeed. Currently, the highest
-         achievable rates of success between nodes capable of storing the
-         resulting qubits are of the order of 10 Hz. Combined with short memory
-         lifetimes this leads to very tight timing windows to build up
-         network-wide connectivity.</t>
+         A fast repetition rate for Bell pair generation is achievable, but
+         only a small fraction will succeed. Currently, the highest achievable
+         rates of success between nodes capable of storing the resulting qubits
+         are of the order of 10 Hz. Combined with short memory lifetimes this
+         leads to very tight timing windows to build up network-wide
+         connectivity.</t>
        </section>
 
        <section title="Communication qubits">

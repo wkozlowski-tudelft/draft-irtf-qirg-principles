@@ -200,11 +200,11 @@
      but all sending, receiving, buffer management, connection synchronisation,
      and so on, must be managed by the application itself at what is even lower
      than assembly level where no common interfaces yet exist. Furthermore,
-     whilst physical mechanisms for forwarding quantum states exist, there are
-     no robust protocols for managing such transmissions.</t>
+     whilst physical mechanisms for transmitting quantum states exist, there
+     are no robust protocols for managing such transmissions.</t>
    </section>
 
-   <section title="Model of communication">
+   <section title="Quantum information">
      <t>In order to understand the framework for quantum networking a basic
      understanding of quantum information is necessary. The following sections
      aim to introduce the bare minimum necessary to understand the principles
@@ -365,14 +365,15 @@
      entanglement. Hence, entanglement forms a sort of private and inherently
      untappable connection between two nodes once established.</t>
 
-     <t>It is impossible to entangle two qubits without ever having them
-     directly interact with each other (e.g. by performing a local two-qubit
-     gate, such as the CNOT). A local - or mediated - interaction is necessary
-     to create entanglement and thus such states cannot be created between two
-     quantum nodes that cannot transmit quantum states to each other.
-     Therefore, it is the transmission of qubits that draws the line between a
-     genuine quantum network and a collection of quantum computers connected
-     over a classical network.</t>
+     <t>Entanglement is created through local interactions between two qubits
+     or as a product of the way the qubits were created (e.g. entangled photon
+     pairs). To create a distributed entangled state one can then physically
+     send one of the qubits to a remote node. It is also possible to directly
+     entangle qubits that are physically separated, but this still requires
+     local interactions between some other qubits that the separated qubits are
+     initially entangled with. Therefore, it is the transmission of qubits that
+     draws the line between a genuine quantum network and a collection of
+     quantum computers connected over a classical network.</t>
 
      <t>A quantum network is defined as a collection of nodes that is able to
      exchange qubits and distribute entangled states amongst themselves. A
@@ -462,24 +463,30 @@
 
      </section>
 
-     <section title="Bell pairs">
+     <section title="Direct transmission">
 
        <t>Conceptually, the most straightforward way to distribute an entangled
        state is to simply transmit one of the qubits directly to the other end
        across a series of nodes while performing sufficient forward quantum
        error correction to bring losses down to an acceptable level. Despite
        the no-cloning theorem and the inability to directly measure a quantum
-       state error-correcting mechanisms for quantum communication exist <xref
+       state, error-correcting mechanisms for quantum communication exist <xref
        target="mural14"></xref>. However, quantum error correction makes very
        high demands on both resources (physical qubits needed) and their
        initial fidelity. Implementation is very challenging and quantum error
        correction is not expected to be used until later generations of quantum
        networks.</t>
 
-       <t>An alternative relies on the observation that we do not need to be able
-       to distribute any arbitrary entangled quantum state. We only need to be
-       able to distribute any one of what are known as the Bell pair states.
-       Bell pair states are the entangled two-qubit states:</t>
+       <t>An alternative relies on the observation that we do not need to be
+       able to distribute any arbitrary entangled quantum state. We only need
+       to be able to distribute any one of what are known as the Bell pair
+       states<xref target="briegel98"></xref>.</t>
+
+     </section>
+
+     <section title="Bell pairs">
+
+       <t>Bell pair states are the entangled two-qubit states:</t>
 
        <t>
          |00> + |11>,<vspace blankLines="0" />
@@ -612,85 +619,44 @@
          Bell pairs was actually produced. If a correction is not performed,
          the recipient must be informed which Bell pair was received.</t>
 
-         <t>This process of teleporting Bell pairs using other entangled pairs is
-         called entanglement swapping.</t>
-
-         <section title="Distillation">
-
-           <t>Neither the generation of Bell pairs nor the swapping operations are
-           noiseless operations. Therefore, with each link and each swap the
-           fidelity of the state degrades. However, it is possible to create
-           higher fidelity Bell pair states from two or more lower fidelity
-           pairs through a process called distillation or purification.</t>
-
-           <t>To purify a quantum state, a second (and sometimes third) quantum
-           state is used as a "test tool" to test a proposition about the first
-           state, e.g., "the parity of the first state is even." When the test
-           succeeds, confidence in the state is improved, and thus the fidelity
-           is improved. The test tool states are destroyed in the process, so
-           resource demands increase substantially when distillation is used.
-           When the test fails, the tested state must also be discarded.
-           Purification makes low demands on fidelity and resources, but
-           distributed protocols incur round-trip delays <xref
-           target="epp"></xref>.</t>
-
-         </section>
-
-         <section title="Delivery">
-
-           <t>The bare minimum requirements of an application for every Bell pair
-           delivered to the two end-nodes are:</t>
-
-           <t>
-             <list style="numbers">
-
-               <t>Information about which of the four Bell pairs was delivered.
-               The network may choose to not perform Pauli corrections at all
-               and simply notify the application of which state the delivered
-               pair is in or it may perform the Pauli corrections and always
-               deliver the same state.</t>
-
-               <t>An identifier that allows the applicatqion to unambiguously
-               determine which qubits at the two end-points belong to which
-               entangled pair.</t>
-
-               <t>An estimate of the fidelity of the delivered pair. This should
-               be above the minimum threshold determined by the application.
-               However, this will only be an estimate and not a guarantee. This
-               has security implications for applications which will be
-               discussed in the section on security.</t>
-
-             </list>
-           </t>
-
-           <t>There are several other features an application might want to be
-           able to request (e.g. multiple pairs delivered together close in
-           time, but doesn't matter when they are delivered), but they are
-           beyond the scope of this memo.</t>
-
-         </section>
+         <t>This process of teleporting Bell pairs using other entangled pairs
+         is called entanglement swapping. Quantum nodes that create
+         long-distance entangled pairs via entanglement swapping are called
+         quantum repeaters in academic literature <xref
+         target="briegel98"></xref> and we will use the same terminology in
+         this memo.</t>
 
        </section>
 
-       <section title="Direct transmission vs. entanglement swapping">
+       <section title="Distillation">
 
-         <t>Direct state transmission whilst simpler conceptually is much more
-         demanding to implement reliably in practice which means that any
-         near-term practical realisation is more likely to succeed if it is
-         based on the Bell pair and entanglement swapping architecture. All
-         near-term experimental implementations of quantum repeaters are based
-         on this approach. Therefore, this is the architecture that we will
-         focus on in the rest of this memo.</t>
+         <t>Neither the generation of Bell pairs nor the swapping operations
+         are noiseless operations. Therefore, with each link and each swap the
+         fidelity of the state degrades. However, it is possible to create
+         higher fidelity Bell pair states from two or more lower fidelity pairs
+         through a process called distillation (sometimes also referred to as
+         purification).</t>
 
-         <t>Nevertheless, the direct transmission proposal may be relevant in the
-         future as it has better fault-tolerance properties and much better
-         scaling with transmission distance. It might even be beneficial to
-         utilise a hybrid approach that combines the fault-tolerance of direct
-         transmission with the generic nature of Bell pairs which lends itself
-         to paralellisation and resource provisioning. That is, we still use
-         Bell pairs for transmission of user data, but direct transmission may
-         be used for some of hops for the purposes of Bell pair generation
-         rather than just relying solely on entanglement swapping.</t>
+         <t>To distil a quantum state, a second (and sometimes third) quantum
+         state is used as a "test tool" to test a proposition about the first
+         state, e.g., "the parity of the first state is even." When the test
+         succeeds, confidence in the state is improved, and thus the fidelity
+         is improved. The test tool states are destroyed in the process, so
+         resource demands increase substantially when distillation is used.
+         When the test fails, the tested state must also be discarded.
+         Distillation makes low demands on fidelity and resources, but
+         distributed protocols incur round-trip delays <xref
+         target="epp"></xref>.</t>
+
+       </section>
+
+       <section title="Delivery">
+
+         <t>Eventually the Bell pairs must be delivered to an application (or
+         higher layer protocol) at the two end-nodes. A detailed list of such
+         requirements is beyond the scope of this memo. At minimum, the
+         end-nodes require information to map a particular Bell pair to the
+         qubit in their local memory that is part of this entangled pair.</t>
 
        </section>
 
@@ -708,13 +674,13 @@
 
      <section title="New challenges">
 
-       <t>This subsection covers the major fundamental challenges building quantum
-       networks. Here, we only describe the fundamental differences,
+       <t>This subsection covers the major fundamental challenges building
+       quantum networks. Here, we only describe the fundamental differences,
        technological limitations are described later.</t>
 
        <t>
          <list style="numbers">
-           <t>There is no quantum equivalent of a payload carrying packet.
+           <t>Bell pairs are not equivalent to payload carrying packets.
            <vspace blankLines="1" />
 
            In most classical networks, including Ethernet, Internet Protocol
@@ -763,34 +729,14 @@
            There is no need to keep any memory of the packet any more.
            <vspace blankLines="1" />
 
-           A quantum repeater must be able to make decisions about qubits that
-           it receives and is holding in its memory. Since qubits do not carry
+           A quantum node must be able to make decisions about qubits that it
+           receives and is holding in its memory. Since qubits do not carry
            headers, the receipt of an entangled pair conveys no control
            information based on which the repeater can make a decision. The
            relevant control information will arrive separately over a classical
            channel. This implies that a repeater must store temporary state as
            the control information and the qubit it pertains to will, in
            general, not arrive at the same time.</t>
-
-           <t>Generating end-to-end entanglement is a parallelisable operation.
-           <vspace blankLines="1" />
-
-           Classical packets carry user data from source destination by
-           performing a series of hops across the network. This process is
-           necessarily sequential -- it is impossible to forward a packet ahead
-           of time as the user data it carries cannot be known in advance.
-
-           A quantum network does not carry any user data. It is only
-           responsible for generating entangled pairs in any of the generic
-           Bell states. The process of creating an end-to-end Bell pair is by
-           its nature parallelisable -- all of the individual link pairs can be
-           generated independently of one another. Furthermore, there is no
-           ordering requirement on the entanglement swapping operations either,
-           they can happen in any order as long as the network can keep track
-           of which pairs were swapped so that it can correctly identify the
-           two ends of the final Bell pair. This parallelism must be exploited
-           to make the most efficient use of the quantum network's
-           resources.</t>
 
          </list>
        </t>
@@ -830,33 +776,66 @@
 
        <section title="Elements of a quantum network">
 
-         <t>Collecting all the pieces described so far, a quantum network will
-         consist of the following elements:</t>
+         <t>We have identified quantum repeaters as the core building block of
+         a quantum network. However, a quantum repeater will have to do more
+         than just entanglement swapping in a functional quantum network. Its
+         key responsibilities will include:</t>
+
+         <t>
+           <list style="numbers">
+
+             <t>Creating link-local entanglement between neighbouring
+             nodes.</t>
+
+             <t>Extending entanglement from link-local pairs to long-range
+             pairs through entanglement swapping.</t>
+
+             <t>Performing distillation to manage the fidelity of the produced
+             pairs</t>
+
+             <t>Participate in the management of the network (routing
+             etc.).</t>
+
+           </list>
+         </t>
+
+         <t>Not all quantum repeaters in the network will be the same, here we
+         break them down further:</t>
 
          <t>
            <list style="symbols">
 
-             <t>Quantum repeaters - A quantum repeater is a node in the network
-             that is capable of generating entangled pairs with its directly
-             connected neighbours and performing entanglement swap operations
-             on them.</t>
+             <t>Quantum routers (controllable quantum nodes) - A quantum router
+             is a quantum repeater with a control plane that participates in
+             the management of the network and will make decisions about which
+             qubits to swap to generate the requested end-to-end pairs.</t>
 
-             <t>Quantum routers - A quantum router is a quantum repeater that is
-             connected to more than two quantum repeaters as neighbours. This
-             distinguishes it from quantum repeaters composed into a linear
-             chain to connect two quantum routers (since no-cloning prohibits
-             quantum signal amplification).</t>
+             <t>Automated quantum nodes - An automated quantum node is a data
+             plane only quantum repeater that does not participate in network
+             management. Since the no-cloning theorem precludes the use of
+             amplification long-range links will be established by chaining
+             multiple such automated nodes together.</t>
 
-             <t>End-nodes - End-nodes in a quantum network must be able to receive
-             and handle an entangled pair, but they do not need to be able to
-             perform an entanglement swap (and thus are not necessarily quantum
-             repeaters). End-nodes are also not required to have any quantum
-             memory as certain quantum applications can be realised by having
-             the end-node measure its qubit as soon as it is received.</t>
+             <t>End-nodes - End-nodes in a quantum network must be able to
+             receive and handle an entangled pair, but they do not need to be
+             able to perform an entanglement swap (and thus are not necessarily
+             quantum repeaters). End-nodes are also not required to have any
+             quantum memory as certain quantum applications can be realised by
+             having the end-node measure its qubit as soon as it is
+             received.</t>
 
              <t>Non-quantum nodes - Not all nodes in a quantum network need to
              have a quantum data plane. A non-quantum node is any device that
              can handle classical network traffic.</t>
+
+           </list>
+         </t>
+
+         <t>Additionally, we need to identify two kinds of links that will
+         be used in a quantum network:</t>
+
+         <t>
+           <list style="symbols">
 
              <t>Quantum links - A quantum link is a link which can be used to
              generate an entangled pair between two directly connected quantum
@@ -975,9 +954,9 @@ CC - classical channel
        to be considered in order to build a practical network. Some of these
        are fundamental constraints and no matter how much the technology
        improves, they will always need to be addressed. Others are artefacts of
-       the early stages of a new technology. We here consider a highly abstract
-       scenario and refer to <xref target="wehner18"/> for pointers to the
-       physics literature.</t>
+       the early stages of a new technology. Here, we consider a highly
+       abstract scenario and refer to <xref target="wehner18"/> for pointers to
+       the physics literature.</t>
 
        <section title="Memory lifetimes">
          <t>In addition to discrete operations being imperfect, storing a qubit
@@ -994,8 +973,8 @@ CC - classical channel
          These values have increased tremendously over the lifetime of the
          different technologies and are bound to keep increasing. However, if
          quantum networks are to be realised in the near future, they need to
-         be able to handle short memory lifetimes. An architecture that handles
-         short lifetimes may also be more cost-efficient in the future.</t>
+         be able to handle short memory lifetimes, for example by reducing
+         latency on critical paths.</t>
        </section>
 
        <section title="Rates">
@@ -1006,16 +985,13 @@ CC - classical channel
          achievable rates of success between nodes capable of storing the
          resulting qubits are of the order of 10 Hz. Combined with short memory
          lifetimes this leads to very tight timing windows to build up
-         network-wide connectivity. Achievable rates are likely to increase
-         with time, but just like with quantum memories, it may be more
-         cost-efficient in the future to provide low-rate links in some parts
-         of the network.</t>
+         network-wide connectivity.</t>
        </section>
 
-       <section title="Communication qubit">
+       <section title="Communication qubits">
          <t>Most physical architectures capable of storing qubits are only able
          to generate entanglement using only a subset of its available qubits
-         called communication qubits. Once a Bell Pair has been generated using
+         called communication qubits. Once a Bell pair has been generated using
          a communication qubit, its state can be transferred into memory. This
          may impose additional limitations on the network. In particular if a
          given node has only one communication qubit it cannot simultaneously
@@ -1481,7 +1457,7 @@ CC - classical channel
        <front>
          <title>Designing quantum repeater networks</title>
 
-         <author initials="R.V" surname="Meter" />
+         <author initials="R" surname="Van Meter" />
          <author initials="J" surname="Touch" />
 
          <date year="2013" />
@@ -1535,6 +1511,21 @@ CC - classical channel
          <date year="1996" />
        </front>
        <seriesInfo name="Phys. Rev. A" value="Vol. 54, Iss. 5" />
+     </reference>
+
+     <reference anchor="briegel98" target="https://arxiv.org/abs/quant-ph/9803056">
+       <front>
+         <title>Quantum Repeaters: The Role of Imperfect Local Operations in
+         Quantum Communication</title>
+
+         <author initials="H.-J" surname="Briegel" />
+         <author initials="W" surname="Dur" />
+         <author initials="J.I" surname="Cirac" />
+         <author initials="P" surname="Zoller" />
+
+         <date year="1998" />
+       </front>
+       <seriesInfo name="Phys. Rev. Lett." value="Vol. 81, Num. 26" />
      </reference>
 
    </references>

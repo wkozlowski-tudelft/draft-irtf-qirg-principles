@@ -5,11 +5,14 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: August 6, 2020                                     R. Van Meter
+Expires: August 20, 2020                                    R. Van Meter
                                                          Keio Univeristy
                                                               B. Rijsman
                                                               Individual
-                                                        February 3, 2019
+                                                       A. S. Cacciapuoti
+                                                              M. Caleffi
+                                        University of Naples Federico II
+                                                       February 17, 2019
 
 
             Architectural Principles for a Quantum Internet
@@ -44,16 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 6, 2020.
+   This Internet-Draft will expire on August 20, 2020.
 
 
 
 
 
-
-
-
-Kozlowski, et al.        Expires August 6, 2020                 [Page 1]
+Kozlowski, et al.        Expires August 20, 2020                [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -90,39 +90,39 @@ Table of Contents
      4.4.  Teleportation . . . . . . . . . . . . . . . . . . . . . .  10
      4.5.  The life cycle of entanglement  . . . . . . . . . . . . .  11
        4.5.1.  Elementary link generation  . . . . . . . . . . . . .  11
-       4.5.2.  Entanglement swapping . . . . . . . . . . . . . . . .  11
-       4.5.3.  Distillation  . . . . . . . . . . . . . . . . . . . .  12
-       4.5.4.  Delivery  . . . . . . . . . . . . . . . . . . . . . .  13
-   5.  Architecture of a quantum internet  . . . . . . . . . . . . .  13
-     5.1.  New challenges  . . . . . . . . . . . . . . . . . . . . .  13
-     5.2.  Classical communication . . . . . . . . . . . . . . . . .  14
-     5.3.  Abstract model of the network . . . . . . . . . . . . . .  15
-       5.3.1.  Elements of a quantum network . . . . . . . . . . . .  15
-       5.3.2.  Putting it all together . . . . . . . . . . . . . . .  16
-     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  17
-       5.4.1.  Boundaries between different physical architectures .  17
-       5.4.2.  Boundaries between different administrative regions .  17
-     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  18
-       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  18
-       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  18
-       5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  19
+       4.5.2.  Entanglement swapping . . . . . . . . . . . . . . . .  12
+       4.5.3.  Distillation  . . . . . . . . . . . . . . . . . . . .  13
+       4.5.4.  Delivery  . . . . . . . . . . . . . . . . . . . . . .  14
+   5.  Architecture of a quantum internet  . . . . . . . . . . . . .  14
+     5.1.  New challenges  . . . . . . . . . . . . . . . . . . . . .  14
+     5.2.  Classical communication . . . . . . . . . . . . . . . . .  15
+     5.3.  Abstract model of the network . . . . . . . . . . . . . .  16
+       5.3.1.  Elements of a quantum network . . . . . . . . . . . .  16
+       5.3.2.  Putting it all together . . . . . . . . . . . . . . .  17
+     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  18
+       5.4.1.  Boundaries between different physical architectures .  18
+       5.4.2.  Boundaries between different administrative regions .  18
+     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  19
+       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  19
+       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  19
+       5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  20
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 2]
+Kozlowski, et al.        Expires August 20, 2020                [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
-       5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  19
-     5.6.  Architectural principles  . . . . . . . . . . . . . . . .  19
-       5.6.1.  Goals of a quantum internet . . . . . . . . . . . . .  19
-       5.6.2.  The principles of a quantum internet  . . . . . . . .  22
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  24
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  25
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  25
-   9.  Informative References  . . . . . . . . . . . . . . . . . . .  25
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  26
+       5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  20
+     5.6.  Architectural principles  . . . . . . . . . . . . . . . .  20
+       5.6.1.  Goals of a quantum internet . . . . . . . . . . . . .  20
+       5.6.2.  The principles of a quantum internet  . . . . . . . .  23
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  25
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  26
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  26
+   9.  Informative References  . . . . . . . . . . . . . . . . . . .  26
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  27
 
 1.  Introduction
 
@@ -165,7 +165,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 3]
+Kozlowski, et al.        Expires August 20, 2020                [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -221,7 +221,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 4]
+Kozlowski, et al.        Expires August 20, 2020                [Page 4]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -277,7 +277,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 5]
+Kozlowski, et al.        Expires August 20, 2020                [Page 5]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -333,7 +333,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 6]
+Kozlowski, et al.        Expires August 20, 2020                [Page 6]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -389,7 +389,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 7]
+Kozlowski, et al.        Expires August 20, 2020                [Page 7]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -445,7 +445,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 8]
+Kozlowski, et al.        Expires August 20, 2020                [Page 8]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -501,7 +501,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                 [Page 9]
+Kozlowski, et al.        Expires August 20, 2020                [Page 9]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -557,7 +557,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 10]
+Kozlowski, et al.        Expires August 20, 2020               [Page 10]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -584,7 +584,65 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 4.5.1.  Elementary link generation
 
-   [waiting for contrib]
+   In a quantum network, entanglement is always first generated locally
+   (at a node or an auxiliary element) followed by a movement of one or
+   both of the entangled qubits across the link through quantum
+   channels.  In this context, photons (particles of light) are the
+   natural candidate for entanglement carriers, the so-called flying
+   qubits.  The rationale for this choice is related to the advantages
+   provided by photons such as moderate interaction with the environment
+   leading to moderate decoherence, convenient control with standard
+   optical components, and high-speed low-loss transmissions.  However,
+   since photons cannot be stored, a transducer must transfer the flying
+   qubit's state to a qubit suitable for information processing and/or
+   storage (often referred to as a matter qubit).
+
+   Since this process may fail, in order to generate and store
+   entanglement efficiently, we must be able to distinguish successful
+   attempts from failures.  Entanglement generation schemes that are
+   able to announce successful generation are called heralded
+   entanglement generation schemes.
+
+   There exist three basic schemes for heralded entanglement generation
+   on a link through coordinated action of the two nodes at the two ends
+   of the link [13]:
+
+   o  "At mid-point" scheme: the key idea is that an entangled pair
+      source sends an entangled photon through a quantum channel to each
+      of the nodes, where transducers are invoked to transfer the
+
+
+
+Kozlowski, et al.        Expires August 20, 2020               [Page 11]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
+      entanglement from the flying qubits to the matter qubits.  In this
+      scheme, the transducers know if the transfers succeeded and are
+      able to herald successful entanglement generation via a message
+      exchange over the classical channel.
+
+   o  "At source" scheme: the key idea is that one of the two nodes
+      sends a flying qubit that is entangled with one of its matter
+      qubits.  A transducer at the other end of the link will transfer
+      the entanglement from the flying qubit to one of its matter
+      qubits.  Also in this scheme, the transducer knows if its transfer
+      succeeded and is able to herald successful entanglement generation
+      with a classical message sent to the other node.
+
+   o  "At both end-points" scheme: the key idea is that both nodes send
+      a flying qubit that is entangled with one of their matter qubits.
+      A detector somewhere in between the nodes performs a joint
+      measurement on the two qubits, which stochastically projects the
+      remote matter qubits into an entangled quantum state.  In this
+      scheme, the detector knows if the entanglement succeeded and is
+      able to herald successful entanglement generation by sending a
+      message to each node over the classical channel.
+
+   The "mid-point" scheme is more robust to photon loss, but in the
+   other schemes the nodes retain greater control over the entangled
+   pair generation.
 
 4.5.2.  Entanglement swapping
 
@@ -608,16 +666,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    |      X1~~~~~~~~~~X2   Y1~~~~~~~~~~Y2      |
    +---------+      +---------+      +---------+
 
-   where X1 and X2 are the qubits of the entangled pair X and Y1 and Y2
-   are the qubits of entangled pair Y.  The entanglement is denoted with
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 11]
+Kozlowski, et al.        Expires August 20, 2020               [Page 12]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
+   where X1 and X2 are the qubits of the entangled pair X and Y1 and Y2
+   are the qubits of entangled pair Y.  The entanglement is denoted with
    ~~. In the diagram above nodes A and B share the pair X and nodes B
    and C share the pair Y, but we want entanglement between A and C.
 
@@ -664,16 +722,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    succeeds, confidence in the state is improved, and thus the fidelity
    is improved.  The test tool states are destroyed in the process, so
    resource demands increase substantially when distillation is used.
-   When the test fails, the tested state must also be discarded.
 
 
 
-
-Kozlowski, et al.        Expires August 6, 2020                [Page 12]
+Kozlowski, et al.        Expires August 20, 2020               [Page 13]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
+   When the test fails, the tested state must also be discarded.
    Distillation makes low demands on fidelity and resources, but
    distributed protocols incur round-trip delays [11].
 
@@ -721,15 +778,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
        A classical network packet logically exists only at one location
        at any point in time.  If a packet is modified in some way,
-       headers or payload, this information does not need to be conveyed
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 13]
+Kozlowski, et al.        Expires August 20, 2020               [Page 14]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
+       headers or payload, this information does not need to be conveyed
        to anybody else in the network.  The packet can be simply
        forwarded as before.
 
@@ -777,15 +834,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
    Classical communication is a crucial building block of any quantum
    network.  All nodes in a quantum network are assumed to have
-   classical connectivity with each other (within typical administrative
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 14]
+Kozlowski, et al.        Expires August 20, 2020               [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
+   classical connectivity with each other (within typical administrative
    domain limts).  Therefore, quantum routers will need to manage two
    data planes in parallel, a classical one and a quantum one.
    Additionally, it must be able to correlate information between them
@@ -836,8 +893,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-
-Kozlowski, et al.        Expires August 6, 2020                [Page 15]
+Kozlowski, et al.        Expires August 20, 2020               [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -893,7 +949,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 16]
+Kozlowski, et al.        Expires August 20, 2020               [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -949,7 +1005,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 17]
+Kozlowski, et al.        Expires August 20, 2020               [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1005,7 +1061,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 18]
+Kozlowski, et al.        Expires August 20, 2020               [Page 19]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1061,7 +1117,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 19]
+Kozlowski, et al.        Expires August 20, 2020               [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1117,7 +1173,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 20]
+Kozlowski, et al.        Expires August 20, 2020               [Page 21]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1173,7 +1229,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 21]
+Kozlowski, et al.        Expires August 20, 2020               [Page 22]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1229,7 +1285,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 22]
+Kozlowski, et al.        Expires August 20, 2020               [Page 23]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1285,7 +1341,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 23]
+Kozlowski, et al.        Expires August 20, 2020               [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1341,7 +1397,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 24]
+Kozlowski, et al.        Expires August 20, 2020               [Page 25]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1397,7 +1453,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 25]
+Kozlowski, et al.        Expires August 20, 2020               [Page 26]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1437,7 +1493,26 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
               Quantum Communication", Phys. Rev. Lett. Vol. 81, Num. 26,
               1998, <https://arxiv.org/abs/quant-ph/9803056>.
 
+   [13]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
+              "When Entanglement meets Classical Communications: Quantum
+              Teleportation for the Quantum Internet",   , 2019,
+              <https://arxiv.org/abs/1907.06197>.
+
 Authors' Addresses
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires August 20, 2020               [Page 27]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
 
    Wojciech Kozlowski
    QuTech
@@ -1449,15 +1524,6 @@ Authors' Addresses
    Email: w.kozlowski@tudelft.nl
 
 
-
-
-
-
-Kozlowski, et al.        Expires August 6, 2020                [Page 26]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
-
    Stephanie Wehner
    QuTech
    Building 22
@@ -1465,7 +1531,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    Delft  2628 CJ
    Netherlands
 
-   Email: S.D.C.Wehner@tudelft.nl
+   Email: s.d.c.wehner@tudelft.nl
 
 
    Rodney Van Meter
@@ -1483,6 +1549,35 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    Email: brunorijsman@gmail.com
 
 
+   Angela Sara Cacciapuoti
+   University of Naples Federico II
+   Department of Electrical Engineering and Information Technologies
+   Claudio 21
+   Naples  80125
+   Italy
+
+   Email: angelasara.cacciapuoti@unina.it
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires August 20, 2020               [Page 28]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
+   Marcello Caleffi
+   University of Naples Federico II
+   Department of Electrical Engineering and Information Technologies
+   Claudio 21
+   Naples  80125
+   Italy
+
+   Email: marcello.caleffi@unina.it
 
 
 
@@ -1509,4 +1604,21 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 6, 2020                [Page 27]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires August 20, 2020               [Page 29]

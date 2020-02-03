@@ -87,7 +87,7 @@
          <country>Netherlands</country>
        </postal>
 
-       <email>S.D.C.Wehner@tudelft.nl</email>
+       <email>s.d.c.wehner@tudelft.nl</email>
 
        <!-- uri and facsimile elements may also be added -->
      </address>
@@ -117,6 +117,46 @@
      <organization>Individual</organization>
      <address>
        <email>brunorijsman@gmail.com</email>
+     </address>
+   </author>
+
+   <author fullname="Angela Sara Cacciapuoti" initials="A" surname="S. Cacciapuoti">
+     <organization>University of Naples Federico II</organization>
+
+     <address>
+       <postal>
+         <street>Department of Electrical Engineering and Information Technologies</street>
+         <street>Claudio 21</street>
+
+         <!-- Reorder these if your country does things differently -->
+         <code>80125</code>
+         <city>Naples</city>
+         <country>Italy</country>
+       </postal>
+
+       <email>angelasara.cacciapuoti@unina.it</email>
+
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
+
+   <author fullname="Marcello Caleffi" initials="M" surname="Caleffi">
+     <organization>University of Naples Federico II</organization>
+
+     <address>
+       <postal>
+         <street>Department of Electrical Engineering and Information Technologies</street>
+         <street>Claudio 21</street>
+
+         <!-- Reorder these if your country does things differently -->
+         <code>80125</code>
+         <city>Naples</city>
+         <country>Italy</country>
+       </postal>
+
+       <email>marcello.caleffi@unina.it</email>
+
+       <!-- uri and facsimile elements may also be added -->
      </address>
    </author>
 
@@ -558,7 +598,63 @@
 
        <section title="Elementary link generation">
 
-         <t>[waiting for contrib]</t>
+         <t>In a quantum network, entanglement is always first generated
+         locally (at a node or an auxiliary element) followed by a movement of
+         one or both of the entangled qubits across the link through quantum
+         channels. In this context, photons (particles of light) are the
+         natural candidate for entanglement carriers, the so-called flying
+         qubits. The rationale for this choice is related to the advantages
+         provided by photons such as moderate interaction with the environment
+         leading to moderate decoherence, convenient control with standard
+         optical components, and high-speed low-loss transmissions. However,
+         since photons cannot be stored, a transducer must transfer the flying
+         qubit's state to a qubit suitable for information processing and/or
+         storage (often referred to as a matter qubit).</t>
+
+         <t>Since this process may fail, in order to generate and store
+         entanglement efficiently, we must be able to distinguish successful
+         attempts from failures. Entanglement generation schemes that are able
+         to announce successful generation are called heralded entanglement
+         generation schemes.</t>
+
+         <t>There exist three basic schemes for heralded entanglement
+         generation on a link through coordinated action of the two nodes at
+         the two ends of the link <xref target="cacc19"></xref>:</t>
+
+         <t>
+           <list style="symbols">
+
+             <t>"At mid-point" scheme: the key idea is that an entangled pair
+             source sends an entangled photon through a quantum channel to each
+             of the nodes, where transducers are invoked to transfer the
+             entanglement from the flying qubits to the matter qubits. In this
+             scheme, the transducers know if the transfers succeeded and are
+             able to herald successful entanglement generation via a message
+             exchange over the classical channel.</t>
+
+             <t>"At source" scheme: the key idea is that one of the two nodes
+             sends a flying qubit that is entangled with one of its matter
+             qubits. A transducer at the other end of the link will transfer
+             the entanglement from the flying qubit to one of its matter
+             qubits. Also in this scheme, the transducer knows if its transfer
+             succeeded and is able to herald successful entanglement generation
+             with a classical message sent to the other node.</t>
+
+             <t>"At both end-points" scheme: the key idea is that both nodes
+             send a flying qubit that is entangled with one of their matter
+             qubits. A detector somewhere in between the nodes performs a joint
+             measurement on the two qubits, which stochastically projects the
+             remote matter qubits into an entangled quantum state. In this
+             scheme, the detector knows if the entanglement succeeded and is
+             able to herald successful entanglement generation by sending a
+             message to each node over the classical channel.</t>
+
+           </list>
+         </t>
+
+         <t>The "mid-point" scheme is more robust to photon loss, but in the
+         other schemes the nodes retain greater control over the entangled pair
+         generation.</t>
 
        </section>
 
@@ -1526,6 +1622,21 @@ CC - classical channel
          <date year="1998" />
        </front>
        <seriesInfo name="Phys. Rev. Lett." value="Vol. 81, Num. 26" />
+     </reference>
+
+     <reference anchor="cacc19" target="https://arxiv.org/abs/1907.06197">
+       <front>
+         <title>When Entanglement meets Classical Communications: Quantum
+         Teleportation for the Quantum Internet</title>
+
+         <author initials="A.S" surname="Cacciapuoti" />
+         <author initials="M" surname="Caleffi" />
+         <author initials="R" surname="Van Meter" />
+         <author initials="L" surname="Hanzo" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name=" " value=" " />
      </reference>
 
    </references>

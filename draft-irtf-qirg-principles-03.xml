@@ -1299,6 +1299,151 @@ CC - classical channel
      </section>
    </section>
 
+   <section title="Comparison with multi-protocol label switched (MPLS) networks">
+
+     <t>In quantum networks, quantum applications running on end-points
+     establish quantum virtual circuit (QVC) amongst themselves.</t>
+
+     <t>The purpose of these quantum virtual circuit is to produce end-to-end
+     Bell pairs at a given rate and at a given fidelity as requested by the
+     application.</t>
+
+     <t>To produce these end-to-end Bell pairs at the required rate and
+     fidelity, the quantum routers on the path of the virtual circuit must
+     produce point-to-point local Bell pairs, swap them, and distil them.</t>
+
+     <t>Quantum network use a routing protocols to choose the path for each
+     quantum virtual circuit, i.e. the sequence of quantum routers that connect
+     one end point to the other end point for a given quantum virtual
+     circuit.</t>
+
+     <t>The quantum network uses a signaling protocol to install the rules into
+     the quantum routers that produce the local Bell pairs, swap them, and
+     distil them in such a manner that the end-to-end Bell pairs for all virtual
+     circuits are produced at the required rate and fidelity.</t>
+
+     <t>Each quantum router and each quantum link has a finite capacity for
+     producing local Bell pairs as well a finite capacity for performing swaps
+     and distillations. In fact, in the current generation of quantum networks,
+     the available resources are very scarce.</t>
+
+     <t>The quantum routing and signaling protocols must keep track of which
+     resources are available, which resources have already been consumed, and
+     must route the virtual circuits in such a manner that the available
+     resources are not oversubscribed.</t>
+
+      <t>In addition to capacity constraints, there are other constraints that
+      the quantum routing and signaling protocols must take into consideration.
+      For example, if local point-to-point Bell pairs are not swapped quickly
+      enough, they decohere and their fidelity drops below the acceptable
+      threshold.</t>
+
+      <t>The quantum routing and signaling protocols must also perform call
+      admission control (CAC): if a requested virtual circuit cannot be placed
+      in a manner that satisfies all constraints, it must be denied.</t>
+
+      <t>There are strong analogies between the quantum routing and signaling
+      protocols to be developed for establishing quantum virtual circuits and
+      the existing routing and signaling protocols for traffic-engineered (TE)
+      multi-protocol label switching (MPLS) classical networks.</t>
+      
+      <t>These analogies include:</t>
+
+      <t>
+      <list style="numbers">
+
+        <t>A quantum router is analogous to a label switch router (LSR).</t>
+
+        <t>A quantum virtual circuit is analogous to a multi-protocol label
+        switched path (LSP).</t>
+
+        <t> We need a quantum routing protocol to discover the topology of the
+        quantum network and to choose the optimal path for each requested
+        quantum virtual circuit. This is analogous to the role of classical
+        routing protocols such as open shortest path first (OSPF) and
+        intermediate system to intermediate system (ISIS) when computing the
+        optimal route for a LSP.</t>
+
+        <t>When choosing the optimal path for each virtual circuit, the quantum
+        routing protocol needs to take into account the remaining capacity in
+        terms of Bell pairs per second on each quantum router and each quantum
+        link. This is analogous to how the traffic engineering (TE) extensions
+        for OSPF and ISIS distribute information about the remaining available
+        capacity.</t>
+
+        <t>When the quantum routing protocol choses the optimal path for a
+        quantum virtual circuit, it must pick a path that has sufficient
+        remaining capacity for the requested quantum virtual circuit. This is
+        analogous to how the constrained shorted path first (CSPF) algorithm
+        computes the shortest path in classical MPLS networks.</t>
+
+        <t>The quantum routing protocol needs to take other constraints into
+        account beyond just the capacity of each link and router. This is
+        analogous to how OSPF-TE and ISIS-TE and CSPF support additional
+        constraints (e.g. link color) beyond simple bandwidth constraints.</t>
+
+        <t>Just like classical MPLS networks, quantum routing and signaling
+        protocols need to perform call admission control: a requested quantum
+        virtual circuit must be denied if it cannot be placed due to capacity
+        or other infeasible constraints. More sophisticated call admission
+        techniques may be employed such as pre-empting lower priority existing
+        quantum virtual circuits to make room for a higher priority new quantum
+        virtual circuit.</t>
+
+        <t>The quantum signaling protocol needs to install rules into each
+        quantum router on the chosen path. These rules inform the quantum router
+        when to produce local Bell pairs, which Bell pairs to swap and when, and
+        which Bell pairs to distil. This is roughly analogous to what classical
+        MPLS signaling protocols such as the resource reservation protocol
+        (RSVP) and the label distribution protocol (LDP) do. These classical
+        protocols also install "match-action" rules into the MPLS forwarding
+        tables, where the match rule match an MPLS label and the action rule
+        performs some action such as a label swap, push, or pop.</t>
+
+        <t>Quantum routing and signaling protocols may be fully distributed,
+        fully centralized, or a hybrid of distributed and centralized. This is
+        analogous to the current state of affairs in classical MPLS networks:
+        there are fully distributed protocols (OSPF-TE, ISIS-TE, RSVP, LDP,
+        etc.), fully centralized protocols (OpenFlow etc.), as well as hybrid
+        protocols (e.g. the path computation element protocol PCEP). A
+        centralized controller may enable more sophisticated and globally
+        optimal placement protocols than greedy fully distributed protocols.</t>
+
+      </list>
+      </t>
+
+      <t>There are also some clear differences between quantum networks and
+      traffic-engineered multi-protocol label switched networks:</t>
+
+      <t>
+      <list style="numbers">
+
+        <t>In quantum networks capacity calculations are much more complicated
+        and non-linear than in MPLS networks. For example, an MPLS LSP of
+        bandwidth B simply consumes bandwidth B on each link on the path. A
+        quantum virtual circuit that needs to produce B end-to-end Bell pairs
+        per second needs to produce many more than B point-to-point Bell pairs
+        per second on each link. As a result, the algorithms for optimally
+        placing quantum virtual circuits are much more complex than CSFP.</t>
+
+        <t>Classical MPLS networks only deal with stateless hop-by-hop
+        forwarding of packets. As a result, the programming of the MPLS
+        forwarding tables consists of simple match-action rules. In contrast,
+        quantum networks need to produce end-to-end entangled Bell pairs at a
+        specific rate and at a specific fidelity. All of the local operations
+        such as producing local point-to-point Bell pairs, swapping then, and
+        distilling them are non-deterministic and stateful. Thus, the "rules"
+        that are installed into the quantum forwarding plane will be much more
+        complex and stateful than the simple stateless match-action rules in an
+        MPLS network. In fact, finding the right forwarding plane abstractions
+        for a quantum network is one of the most important unsolved research
+        questions.</t>
+
+      </list>
+      </t>
+
+   </section>
+
    <section anchor="Security" title="Security Considerations">
      <t>Even though no user data enters a quantum network security is listed as
      an explicit goal for the architecture and this issue is addressed in the

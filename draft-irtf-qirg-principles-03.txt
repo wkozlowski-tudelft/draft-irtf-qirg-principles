@@ -1366,11 +1366,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    virtual circuit.  The routing function may be centralized or
    distributed.  In the latter case, the quantum network needs a
    distributed routing protocol.  As an analogy, classical networks use
-   routing protocls such as open shortest path first (OSPF) and
+   routing protocols such as open shortest path first (OSPF) and
    intermediate-system to intermediate system (ISIS).
 
    Given the very scarce availability of resources in early quantum
-   networks, a traffic enginering function is likely to be beneficial.
+   networks, a traffic engineering function is likely to be beneficial.
 
    Without traffic engineering, quantum virtual circuits always use the
    shortest path.  In this case, the quantum network cannot guarantee
@@ -1388,7 +1388,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    resource availability and other constraints into account when
    computing the optimal path.
 
-   The use of traffic engineering implies the use of call admision
+   The use of traffic engineering implies the use of call admission
    control (CAC): the network denies any virtual circuits for which it
    cannot guarantee the requested quality of service a-priori.  Or
    alternatively, the network pre-empts lower priority circuits to make
@@ -1414,15 +1414,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    (routing and signaling) from the data plane (actual creation of Bell
    pairs).  The forwarding rules are specified using abstract building
    blocks such as "creating local Bell pairs", "swapping Bell pairs",
-   "destilation of Bell pairs".  As an analogy, classical networks use
+   "distilation of Bell pairs".  As an analogy, classical networks use
    abstractions that as based on match conditions (e.g. looking up
    header fields in tables) and actions (e.g. modifying fields or
    forwarding a packet to a specific interface).  The data-plane
    abstractions in quantum networks will be very different from those in
-   classical networks due to the fundamential differences in technology
+   classical networks due to the fundamental differences in technology
    and the stateful nature of quantum networks.  In fact, choosing the
-   righ abstractions will be one of the biggest challenges when
-   architecting interoperable quantum networks.
+   right abstractions will be one of the biggest challenges when
+   designing interoperable quantum network protocols.
 
    In quantum networks, control plane traffic (routing and signaling
    messages) is exchanged over a classical channel, whereas data plane

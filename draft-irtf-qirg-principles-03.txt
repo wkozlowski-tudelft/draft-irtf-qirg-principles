@@ -1414,7 +1414,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    (routing and signaling) from the data plane (actual creation of Bell
    pairs).  The forwarding rules are specified using abstract building
    blocks such as "creating local Bell pairs", "swapping Bell pairs",
-   "distilation of Bell pairs".  As an analogy, classical networks use
+   "distillation of Bell pairs".  As an analogy, classical networks use
    abstractions that as based on match conditions (e.g. looking up
    header fields in tables) and actions (e.g. modifying fields or
    forwarding a packet to a specific interface).  The data-plane

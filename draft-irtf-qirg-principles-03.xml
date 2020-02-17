@@ -1372,7 +1372,7 @@ CC - classical channel
      forwarding rules. This allows us to de-couple the control plane (routing
      and signaling) from the data plane (actual creation of Bell pairs). The
      forwarding rules are specified using abstract building blocks such as
-     "creating local Bell pairs", "swapping Bell pairs", "distilation of Bell
+     "creating local Bell pairs", "swapping Bell pairs", "distillation of Bell
      pairs". As an analogy, classical networks use abstractions that as based
      on match conditions (e.g. looking up header fields in tables) and actions
      (e.g. modifying fields or forwarding a packet to a specific interface).

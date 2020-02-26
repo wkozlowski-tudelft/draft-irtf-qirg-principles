@@ -5,14 +5,14 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: August 24, 2020                                    R. Van Meter
-                                                         Keio Univeristy
+Expires: August 29, 2020                                    R. Van Meter
+                                                         Keio University
                                                               B. Rijsman
                                                               Individual
                                                        A. S. Cacciapuoti
                                                               M. Caleffi
                                         University of Naples Federico II
-                                                       February 21, 2019
+                                                       February 26, 2019
 
 
             Architectural Principles for a Quantum Internet
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 24, 2020.
+   This Internet-Draft will expire on August 29, 2020.
 
 
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 1]
+Kozlowski, et al.        Expires August 29, 2020                [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 2]
+Kozlowski, et al.        Expires August 29, 2020                [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -119,9 +119,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
      6.1.  Goals of a quantum internet . . . . . . . . . . . . . . .  20
      6.2.  The principles of a quantum internet  . . . . . . . . . .  23
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  25
-   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  26
-   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  26
-   10. Informative References  . . . . . . . . . . . . . . . . . . .  26
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  25
+   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  25
+   10. Informative References  . . . . . . . . . . . . . . . . . . .  25
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  27
 
 1.  Introduction
@@ -165,7 +165,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 3]
+Kozlowski, et al.        Expires August 29, 2020                [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -221,7 +221,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 4]
+Kozlowski, et al.        Expires August 29, 2020                [Page 4]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -277,7 +277,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 5]
+Kozlowski, et al.        Expires August 29, 2020                [Page 5]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -333,7 +333,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 6]
+Kozlowski, et al.        Expires August 29, 2020                [Page 6]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -389,7 +389,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 7]
+Kozlowski, et al.        Expires August 29, 2020                [Page 7]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -445,7 +445,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 8]
+Kozlowski, et al.        Expires August 29, 2020                [Page 8]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -501,7 +501,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020                [Page 9]
+Kozlowski, et al.        Expires August 29, 2020                [Page 9]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -557,7 +557,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 10]
+Kozlowski, et al.        Expires August 29, 2020               [Page 10]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -613,7 +613,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 11]
+Kozlowski, et al.        Expires August 29, 2020               [Page 11]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -669,7 +669,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 12]
+Kozlowski, et al.        Expires August 29, 2020               [Page 12]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -725,7 +725,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 13]
+Kozlowski, et al.        Expires August 29, 2020               [Page 13]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -781,7 +781,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 14]
+Kozlowski, et al.        Expires August 29, 2020               [Page 14]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -837,7 +837,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 15]
+Kozlowski, et al.        Expires August 29, 2020               [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -893,7 +893,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 16]
+Kozlowski, et al.        Expires August 29, 2020               [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -949,7 +949,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 17]
+Kozlowski, et al.        Expires August 29, 2020               [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 18]
+Kozlowski, et al.        Expires August 29, 2020               [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 19]
+Kozlowski, et al.        Expires August 29, 2020               [Page 19]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1096,16 +1096,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    importantly: they work.  Furthermore, how do we design networks so
    that they work under the constraints imposed by the hardware
    available today, but do not impose unnecessary burden on future
-   technology.  Redeploying network technology is a non-trivial process.
+   technology.
 
    As this is a completely new technology that is likely to see many
    iterations over its lifetime, this memo must not serve as a
    definitive set of rules, but merely as a general set of recommended
-   guidelines based on principles and observations made by the
-   community.  The benefit of having a community built document at this
-   early stage is that expertise in both quantum information and network
-   architecture is needed in order to successfully build a quantum
-   internet.
+   guidelines for the first generations of quantum networks based on
+   principles and observations made by the community.  The benefit of
+   having a community built document at this early stage is that
+   expertise in both quantum information and network architecture is
+   needed in order to successfully build a quantum internet.
 
 6.1.  Goals of a quantum internet
 
@@ -1117,7 +1117,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 20]
+Kozlowski, et al.        Expires August 29, 2020               [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
@@ -1127,34 +1127,71 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
    1.  Support distributed quantum applications
 
-       The primary purpose of a quantum internet is to run distributed
-       quantum protocols and it is of utmost importance that they can
-       run well and efficiently.  Therefore, the needs of quantum
-       applications should always be considered first.  The requirements
-       for different applications can be found in [5].
+       This goal seems trivially obvious, but makes a subtle, but
+       important point which highlights a key difference between quantum
+       and classical networks.  Ultimately, quantum data transmission is
+       not the goal of a quantum network - it is only one possible
+       component of more advanced quantum application protocols.  Whilst
+       transmission certainly could be used as a building block for all
+       quantum applications, it is certainly not the most basic one
+       possible.  For example, QKD, the most well known quantum
+       application protocol only relies on the stronger than classical
+       correlations and inherent secrecy of entangled Bell pairs and
+       does not transmit arbitrary quantum states.
 
-       If a network is able to distribute entanglement it is officially
-       quantum.  However, if it is unable to distribute these states
-       with a sufficiently high fidelity at a reasonable rate for a
-       majority of potential applications it is not practical.
+       The primary purpose of a quantum internet is to support
+       distributed quantum application protocols and it is of utmost
+       importance that they can run well and efficiently.  Thus, it is
+       important to develop performance metrics meaningful to
+       application to drive the development of quantum network
+       protocols.  For example, the Bell pair generation rate is
+       meaningless if one does not also consider their fidelity.  It is
+       generally, much easier to generate pairs of lower fidelity, but
+       quantum applications may have to make multiple re-attempts or
+       even abort if the fidelity is too low.  A review of the
+       requirements for different known quantum applications can be
+       found in [5].
 
    2.  Support tomorrow's distributed quantum applications
 
-       There are many applications already proposed to run over a
-       quantum internet.  However, more algorithms will be invented as
-       the community grows as well as the robustness and the reliability
-       of the technology.  Any proposed architecture should not
-       constrain the capabilities of the network for short-term benefit.
+       Early-stage quantum networks will be very limited in terms of
+       their capabilities and will only be able to run a limited set of
+       applications.  As quantum repeater technology becomes more
+       advanced and acquire more sophisticated capabilities, new
+       applications will become possible.  The different stages of this
+       development are described in [5].
 
-   3.  Hardware heterogeneity
+       Therefore, it is important that any proposed architecture for
+       general purpose quantum repeater networks should not constrain
+       their potential capabilities for the benefit of being able to run
+       early-stage applications more efficiently.  For example, it is
+       already possible to run QKD efficiently on metropolitan scales
+       and such networks are already commercially available.  However,
+       they are not based on quantum repeaters and thus will not be able
+       to easily transition more sophisticated applications.
+
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 21]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
+   3.  Support hardware heterogeneity
 
        There are multiple proposals for realising practical quantum
-       repeaters and they all have their advantages and disadvantages.
-       It is also very likely that the most optimal technologies in the
-       future will be hybrid combinations of the many different
-       solutions currently under development.  It should be an explicit
-       goal of the architecture to allow for a large variety of hardware
-       implementations.
+       repeater hardware and they all have their advantages and
+       disadvantages.  Some may offer higher Bell pair generation rates
+       on individual links at the cost of more difficult entanglement
+       swap operations.  Other platforms may be good all around, but are
+       more difficult to build.
+
+       Whilst conceptually they are all capable of the same tasks the
+       optimal network configuration will likely leverage the advantages
+       of multiple platforms to optimise the provided service.
+       Therefore, it is an explicit goal to incorporate varied hardware
+       support from the beginning.
 
    4.  Be flexible with regards to hardware capabilities and limitations
 
@@ -1166,21 +1203,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
        capabilities of repeaters will improve and redeploying a
        technology is extremely challenging.
 
-   5.  Security
+   5.  Ensure security at the network level
 
        Whilst the priority for the first quantum networks should be to
        simply work, we cannot forget that ultimately they have to also
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 21]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
-
-       be secure.  This has implications for the physical realisations
-       (do they satisfy the idealised theoretical models) and also the
-       design of the control stack.
+       be secure.  This is particularly important for quantum networks
+       given that one of the key driving factors for the technology is
+       the enhance security offered by quantum entanglement.  This has
+       implications for the physical realisations (do they satisfy the
+       idealised theoretical models) and also the design of the control
+       stack.
 
        It is actually difficult to guarantee security at the network
        level and even if the network did provide such guarantees, the
@@ -1193,46 +1225,45 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
        of quantum cryptography, quantum cryptographic protocols do not
        need the network to provide any guarantees about the
        authenticity, confidentiality, or integrity of the transmitted
-       qubits or the generated entanglement.  Instead, applications such
-       as QKD establish such guarantees using the classical network in
-       conjunction with he quantum one.  This is much easier than
-       demanding that the network deliver secure entanglement, which
-       indeed is not needed for quantum applications.
+       qubits or the generated entanglement.  Instead, applications,
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 22]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
+       such as QKD, establish such guarantees using the classical
+       network in conjunction with he quantum one.  This is much easier
+       than demanding that the network deliver secure entanglement in
+       the first place.
 
        Nevertheless, control protocols themselves should be security
        aware in order to protect the operation of the network itself and
-       limit disruption.
+       limit disruption.  This will primarily involve securing the
+       classical control and management traffic by means of
+       authentication and possibly encryption.
 
-   6.  Availability and resilience
+   6.  Make them easy to manage and monitor
+
+       The fundamental unit of quantum information, the qubit, cannot be
+       actively monitored as any readout irreversibly destroys its
+       contents.  Furthermore, given one end of an entangled pair, it is
+       impossible to tell where the other qubit is without any
+       additional information.  Therefore, monitoring quantum networks
+       will be more challenging and more important if any meaningful
+       network management solution is to be developed.
+
+   7.  Ensure availability and resilience
 
        A practical and usable network is able to continue to operate
        despite losses and failures, and will be robust to malicious
        actors trying to disable connectivity.  These may be simply
        considered different aspects of security, but it is worthwhile to
-       address them explicitly at the architectural level already.
-
-   7.  Easy to manage and monitor
-
-       Quantum networks rely on complex physical phenomena and require
-       hardware that is challenging to build.  Furthermore, the quantum
-       resources will at first be very scarce and potentially very
-       expensive.  This entails a need for a robust management solution.
-       It is important that a good management solution needs to come
-       with adequate monitoring capabilities.
-
-       Good management solutions may also be key to optimising the
-       networks which in turn may be crucial in making them economically
-       feasible.  Unlike user data that is transmitted over classical
-       networks, quantum networks only need to generate generic Bell
-       Pairs.  This leaves a lot of room for pre-allocating resources in
-       an efficient manner.
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 22]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
+       address them explicitly at the architectural level already.  The
+       coexistence of two separate channels, a quantum and a classical
+       one, will likely prove to be challenging.
 
 6.2.  The principles of a quantum internet
 
@@ -1250,10 +1281,31 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
        distribution of entanglement between the nodes in a network.
        This point additionally specifies that the entanglement is
        primarily distributed in the form of the entangled Bell Pair
+
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 23]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
        states which should be used as a building block in providing
        other services, including more complex entangled states.
 
-   2.  Fidelity is part of the service
+   2.  Bell Pairs are indistinguishable
+
+       Any two Bell Pairs between the same two nodes are
+       indistinguishable for the purposes of an application provided
+       they both satisfy its required fidelity threshold.  This point is
+       crucial in enabling the reuse of resources of a network and for
+       the purposes of provisioning resources to meet application
+       demand.  However, the qubits that make up the pair themselves are
+       not indistinguishable and the two nodes operating on a pair must
+       coordinate to make sure they are operating on qubits that belong
+       to the same Bell Pair.
+
+   3.  Fidelity is part of the service
 
        In addition to being able to deliver Bell Pairs to the
        communication end-points, the Bell Pairs must be of sufficient
@@ -1269,26 +1321,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
        to guarantee high fidelity pairs to all applications regardless
        of their requirements.
 
-   3.  Bell Pairs are indistinguishable
-
-       Any two Bell Pairs between the same two nodes are
-       indistinguishable for the purposes of an application provided
-       they both satisfy its required fidelity threshold.  This point is
-       crucial in enabling the reuse of resources of a network and for
-       the purposes of provisioning resources to meet application
-       demand.  However, the qubits that make up the pair themselves are
-       not indistinguishable and the two nodes operating on a pair must
-       coordinate to make sure they are operating on qubits that belong
-       to the same Bell Pair.
-
-   4.  Time as an expensive resource
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 23]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
+   4.  Time is part of the service
 
        With the current technology, time is the most expensive resource.
        It is not the only resource that is in short supply (memory, and
@@ -1301,83 +1334,17 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
        waiting queue at some node could be enough for the Bell Pairs to
        decohere.
 
-       However, time is only expensive once quantum operations are
-       underway.  If no quantum operations are currently being processed
-       then the network can use this time to prepare and provision
-       resources.
-
-       As hardware improves, the need for carefully timing quantum
-       operations may become smaller.  It is currently unknown what the
-       cost of these improvements will be, but it is conceivable that
-       there is value in having relatively cheap and undemanding links
-       connected at the edges of a network which will have very short
-       memory lifetimes and low rates of Bell Pair generation.
-
-   5.  Limit classical communication
-
-       This point offers a practical guideline to the issue of timing.
-       A bottleneck in many quantum networked algorithms is the
-       classical communication needed between quantum operations to
-       synchronise state.  Ideally, classical control mechanisms that
-       require increased memory lifetimes should be avoided.
-
-       For example, some quantum protocols may need to perform a
-       correction for the random outcome of a quantum measurement.  For
-       this, they will block the state from further operations until a
-       classical message is received with the information necessary to
-       perform the correction.  The time during which the quantum state
-       is blocked is effectively wasted.  It reduces the time available
-       for subsequent operations possibly rendering the state useless
-       for an application.
-
-       Trade-offs that allow a protocol to limit the number of blocking
-       classical communication rounds once quantum operations have
-       commenced will in general be worth considering.
-
-   6.  Parallelise quantum operations
-
-       A further point to address the issue of timing constraints in the
-       network.  The Bell Pairs on the individual links need not be
 
 
 
-Kozlowski, et al.        Expires August 24, 2020               [Page 24]
+
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet      February 2019
 
-
-       generated one after another along the path between the
-       communication end-points.  The order does not matter at all.
-       Furthermore, the order of the swap operations is flexible as long
-       as they don't reduce the fidelity too much.  Parallelising these
-       operations is key to optimising quantum protocols.
-
-   7.  Avoid time-based coordination when possible
-
-       A solution to timing constraints is to synchronise clocks and
-       agree on the timing of events.  However, such solutions have
-       several downsides.  Whilst network clock synchronisation may be
-       accurate enough for certain purposes it introduces an additional
-       element of complexity, especially when multiple nodes in
-       different networks must be synchronised.  Furthermore, clock
-       synchronisation will never be perfect and it is conceivable that
-       hardware capabilities advance so much that time-based mechanisms
-       under-utilise resources in the more efficient parts of the
-       network.
-
-       Nevertheless, it may not be possible to avoid clocks, but such
-       solutions should be adequately justified.
-
-   8.  Pre-allocate resources
-
-       Regardless of what application is running over the network it
-       will have the same needs as any other application: a number of
-       Bell Pairs of sufficient fidelity.  Whilst the fidelity is a
-       variable number, the indistinguishability of Bell Pairs means
-       that there is lots of flexibility in how a network may provision
-       resources to meet demand.  The additional timing constraints mean
-       that pre-allocation of resources will be central to a usable
-       quantum network.
 
 7.  Security Considerations
 
@@ -1394,14 +1361,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    As long as the underlying implementation corresponds to (or
    sufficiently approximates) theoretical models of quantum
    cryptography, quantum cryptographic protocols do not need the network
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 25]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
-
    to provide any guarantees about the authenticity, confidentiality, or
    integrity of the transmitted qubits or the generated entanglement.
    Instead, applications such as QKD establish such guarantees using the
@@ -1435,6 +1394,14 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
               of Computing , 2002,
               <https://arxiv.org/abs/quant-ph/0206138>.
 
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 25]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
    [3]        Giovanetti, V., Lloyd, S., and L. Maccone, "Quantum-
               enhanced measurements: beating the standard quantum
               limit", Science 306(5700), 1330-1336, 2004,
@@ -1448,15 +1415,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
               A vision for the road ahead", Science 362, 6412, 2018,
               <http://science.sciencemag.org/content/362/6412/
               eaam9288.full>.
-
-
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 26]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
 
    [6]        Aspect, A., Grangier, P., and G. Roger, "Experimental
               Tests of Realistic Local Theories via Bell's Theorem",
@@ -1493,26 +1451,19 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
               Quantum Communication", Phys. Rev. Lett. Vol. 81, Num. 26,
               1998, <https://arxiv.org/abs/quant-ph/9803056>.
 
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 26]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
    [13]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
               "When Entanglement meets Classical Communications: Quantum
               Teleportation for the Quantum Internet",   , 2019,
               <https://arxiv.org/abs/1907.06197>.
 
 Authors' Addresses
-
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 27]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
-
 
    Wojciech Kozlowski
    QuTech
@@ -1535,7 +1486,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
    Rodney Van Meter
-   Keio Univeristy
+   Keio University
    5322 Endo
    Fujisawa, Kanagawa  252-0882
    Japan
@@ -1549,6 +1500,20 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    Email: brunorijsman@gmail.com
 
 
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires August 29, 2020               [Page 27]
+
+Internet-Draft      Principles for a Quantum Internet      February 2019
+
+
    Angela Sara Cacciapuoti
    University of Naples Federico II
    Department of Electrical Engineering and Information Technologies
@@ -1557,17 +1522,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
    Italy
 
    Email: angelasara.cacciapuoti@unina.it
-
-
-
-
-
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 28]
-
-Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
    Marcello Caleffi
@@ -1611,14 +1565,4 @@ Internet-Draft      Principles for a Quantum Internet      February 2019
 
 
 
-
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.        Expires August 24, 2020               [Page 29]
+Kozlowski, et al.        Expires August 29, 2020               [Page 28]

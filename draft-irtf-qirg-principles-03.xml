@@ -160,6 +160,26 @@
      </address>
    </author>
 
+   <author fullname="Shota Nagayama" initials="S" surname="Nagayama">
+     <organization>Mercari, Inc.</organization>
+
+     <address>
+       <postal>
+         <street>Roppongi Hills Mori Tower 18F</street>
+         <street>6-10-1 Roppongi, Minato-ku</street>
+
+         <!-- Reorder these if your country does things differently -->
+         <code>106-6118</code>
+         <city>Tokyo</city>
+         <country>Japan</country>
+       </postal>
+
+       <email>marcello.caleffi@unina.it</email>
+
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
+
    <date year="2019" />
 
    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
@@ -656,6 +676,11 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
+         <t> Note that photons flies in direction, however, residual
+         entanglements are undirected resources. Therefore we can choice
+         any type of link generation and any direction of photon transmission,
+         depending on policy, or for optimization.</t>
+
        </section>
 
        <section title="Entanglement swapping">
@@ -795,6 +820,43 @@
            information via separate classical channels which the repeaters will
            have to correlate with the qubits stored in their memory.</t>
 
+           <t> The first quantum networks may not be "routing and forwarding"
+           networks.
+           <vspace blankLines="1" />
+
+           Quantum links provide Bell pairs that are undirected network
+           resources, in contrast to directed links of classical networks.
+           This phenomenological distinction requires architectural differences
+           between quantum networks and classical networks.
+           <vspace blankLines="1" />
+
+           Classical networks have routing and forwarding; routing decides
+           the way to go and forwarding executes actual data transfer,
+           obeying the decision. Quantum networks execute routing in a control
+           plane and execute entanglement swapping instead of forwarding in
+           a data plane. Such quantum networks are "routing and swapping" networks.
+           In "routing and swapping" networks, we do not need to care
+           the order of generating link Bell pairs, since Bell pairs are
+           undirected resources. This distinction makes control algorithms and
+           optimization of quantum networks different from classical ones.
+           <vspace blankLines="1" />
+
+           Technically, entanglement swapping first generates a large entangled
+           state among four qubits over three nodes and then measures
+           two qubits in the middle node to leave a Bell pair between
+           two distant nodes. In this sense, "routing and swapping" networks
+           also belong to "routing and measuring" networks.
+           Entanglement swapping is a specific algorithm for a set of Bell pairs.
+           More algorithms to build a quantum network from Bell pairs.
+           have been proposed. "Routing and measuring" is a broader category
+           and more types of quantum networks belong to it.
+           <vspace blankLines="1" />
+
+           Meanwhile, quantum networks of direct transmission are "routing
+           and forwarding" networks. Such quantum networks can carry
+           arbitrary states hop by hop, therefore they are also
+           "store and forward" networks. </t>
+           
            <t>An entangled pair is only useful if the locations of both qubits
            are known.
            <vspace blankLines="1" />

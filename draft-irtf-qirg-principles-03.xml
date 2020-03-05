@@ -857,8 +857,9 @@
            Meanwhile, quantum networks of direct transmission are "routing
            and forwarding" networks. Such quantum networks can carry
            arbitrary states hop by hop, therefore they are also
-           "store and forward" networks. Hence direct transmission quantum network
-           could be more similar to classical networks in networking algorithms.</t>
+           "store and forward" networks. Hence this later generation of
+           quantum networks could have more in common with classical networks
+           than the first quantum networks in networking algorithms.</t>
            
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

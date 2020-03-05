@@ -644,10 +644,10 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    other schemes the nodes retain greater control over the entangled
    pair generation.
 
-   Note that photons flies in a direction, however, residual
-   entanglements are undirected resources.  Therefore we can choice any
-   type of link generation and any direction of photon transmission,
-   depending on policy, or for optimization.
+   Note that photons fly in a direction, however, residual entanglements
+   are undirected resources.  Therefore we can choice any type of link
+   generation and any direction of photon transmission, depending on
+   policy, or for optimization.
 
 4.5.2.  Entanglement swapping
 
@@ -821,7 +821,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        and forwarding" networks.  Such quantum networks can carry
        arbitrary states hop by hop, therefore they are also "store and
        forward" networks.  Hence this later generation of quantum
-       networks could have more in common with classical networks than
+       networks would have more in common with classical networks than
        the first quantum networks in networking algorithms.
 
    3.  An entangled pair is only useful if the locations of both qubits

@@ -676,7 +676,7 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
-         <t> Note that photons flies in direction, however, residual
+         <t> Note that photons flies in a direction, however, residual
          entanglements are undirected resources. Therefore we can choice
          any type of link generation and any direction of photon transmission,
          depending on policy, or for optimization.</t>
@@ -826,8 +826,8 @@
 
            Quantum links provide Bell pairs that are undirected network
            resources, in contrast to directed links of classical networks.
-           This phenomenological distinction requires architectural differences
-           between quantum networks and classical networks.
+           This phenomenological distinction should result in architectural
+           differences between quantum networks and classical networks.
            <vspace blankLines="1" />
 
            Classical networks have routing and forwarding; routing decides
@@ -839,6 +839,8 @@
            the order of generating link Bell pairs, since Bell pairs are
            undirected resources. This distinction makes control algorithms and
            optimization of quantum networks different from classical ones.
+           Additionally, "routing and swapping" quantum networks are not
+           "store and forward" networks.
            <vspace blankLines="1" />
 
            Technically, entanglement swapping first generates a large entangled
@@ -847,15 +849,16 @@
            two distant nodes. In this sense, "routing and swapping" networks
            also belong to "routing and measuring" networks.
            Entanglement swapping is a specific algorithm for a set of Bell pairs.
-           More algorithms to build a quantum network from Bell pairs.
+           More algorithms to build a quantum network from Bell pairs
            have been proposed. "Routing and measuring" is a broader category
-           and more types of quantum networks belong to it.
+           and more types of quantum networks should belong to it.
            <vspace blankLines="1" />
 
            Meanwhile, quantum networks of direct transmission are "routing
            and forwarding" networks. Such quantum networks can carry
-           arbitrary states hop by hop, therefore they are also
-           "store and forward" networks. </t>
+           arbitrary states hop by hop. Therefore they are also
+           "store and forward" networks, in contrast to "routing and swapping"
+           quantum networks. </t>
            
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

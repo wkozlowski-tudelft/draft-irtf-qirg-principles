@@ -102,7 +102,7 @@ Table of Contents
      5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  19
        5.4.1.  Boundaries between different physical architectures .  19
        5.4.2.  Boundaries between different administrative regions .  19
-     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  19
+     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  20
        5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  20
        5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  20
        5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  20
@@ -122,7 +122,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  26
    9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  26
    10. Informative References  . . . . . . . . . . . . . . . . . . .  26
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  27
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  28
 
 1.  Introduction
 
@@ -795,12 +795,12 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        differences between quantum networks and classical networks.
 
        Classical networks have routing and forwarding; routing decides
-       the way to go and forwarding executes actual data transfer,
-       obeying the decision.  Quantum networks execute routing in a
+       the way to go, and forwarding executes actual data transfer,
+       obeying the decision.  Quantum networks perform routing in a
        control plane and execute entanglement swapping instead of
        forwarding in a data plane.  Such quantum networks are "routing
        and swapping" networks.  In "routing and swapping" networks, we
-       do not need to care the order of generating link Bell pairs,
+       do not need to care about the order of generating link Bell pairs
        since Bell pairs are undirected resources.  This distinction
        makes control algorithms and optimization of quantum networks
        different from classical ones.  Additionally, "routing and
@@ -814,13 +814,15 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        Entanglement swapping is a specific algorithm for a set of Bell
        pairs.  More algorithms to build a quantum network from Bell
        pairs have been proposed.  "Routing and measuring" is a broader
-       category and more types of quantum networks should belong to it.
+       category, and more types of quantum networks will be categorized
+       into it.
 
        Meanwhile, quantum networks of direct transmission are "routing
        and forwarding" networks.  Such quantum networks can carry
-       arbitrary states hop by hop.  Therefore they are also "store and
-       forward" networks, in contrast to "routing and swapping" quantum
-       networks.
+       arbitrary states hop by hop, therefore they are also "store and
+       forward" networks.  Hence direct transmission quantum network
+       could be more similar to classical networks in networking
+       algorithms.
 
    3.  An entangled pair is only useful if the locations of both qubits
        are known.
@@ -831,9 +833,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        to anybody else in the network.  The packet can be simply
        forwarded as before.
 
-       In contrast, entanglement is a phenomenon in which two or more
-       qubits exist in a physically distributed state.  Operations on
-       one of the qubits change the mutual state of the pair.  Since the
+
 
 
 
@@ -842,6 +842,9 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 15]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+       In contrast, entanglement is a phenomenon in which two or more
+       qubits exist in a physically distributed state.  Operations on
+       one of the qubits change the mutual state of the pair.  Since the
        owner of a particular qubit cannot just read out its state, it
        must coordinate all its actions with the owner of the pair's
        other qubit.  Therefore, the owner of any qubit that is part of
@@ -887,9 +890,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    domain limts).  Therefore, quantum routers will need to manage two
    data planes in parallel, a classical one and a quantum one.
    Additionally, it must be able to correlate information between them
-   so that the control information received on a classical channel can
-   be applied to the qubits managed by the quantum data plane.
-
 
 
 
@@ -897,6 +897,9 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+   so that the control information received on a classical channel can
+   be applied to the qubits managed by the quantum data plane.
 
 5.3.  Abstract model of the network
 
@@ -942,9 +945,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
       have a quantum data plane.  A non-quantum node is any device that
       can handle classical network traffic.
 
-   Additionally, we need to identify two kinds of links that will be
-   used in a quantum network:
-
 
 
 
@@ -953,6 +953,9 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+   Additionally, we need to identify two kinds of links that will be
+   used in a quantum network:
 
    o  Quantum links - A quantum link is a link which can be used to
       generate an entangled pair between two directly connected quantum
@@ -999,9 +1002,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    entangled over individual links, performing entanglement swaps, and
    further signalling to transmit the swap outcomes and other control
    information.  Since none of the entangled pairs carry any user data,
-   some of these operations can be performed before the request is
-   received in anticipation of the demand.
-
 
 
 
@@ -1009,6 +1009,9 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+   some of these operations can be performed before the request is
+   received in anticipation of the demand.
 
    The entangled pair is delivered to the application once it is ready,
    together with the relevant pair identifier.  However, being ready
@@ -1052,12 +1055,9 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    these boundaries will be handled is also an open question and thus
    beyond the scope of this memo.
 
-5.5.  Physical constraints
 
-   The model above has effectively abstracted away the particulars of
-   the hardware implementation.  However, certain physical constraints
-   need to be considered in order to build a practical network.  Some of
-   these are fundamental constraints and no matter how much the
+
+
 
 
 
@@ -1066,6 +1066,12 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 19]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+5.5.  Physical constraints
+
+   The model above has effectively abstracted away the particulars of
+   the hardware implementation.  However, certain physical constraints
+   need to be considered in order to build a practical network.  Some of
+   these are fundamental constraints and no matter how much the
    technology improves, they will always need to be addressed.  Others
    are artefacts of the early stages of a new technology.  Here, we
    consider a highly abstract scenario and refer to [5] for pointers to
@@ -1108,12 +1114,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    called communication qubits.  Once a Bell pair has been generated
    using a communication qubit, its state can be transferred into
    memory.  This may impose additional limitations on the network.  In
-   particular if a given node has only one communication qubit it cannot
-   simultaneously generate Bell Pairs over two links.  It must generate
-   entanglement over the links one at a time.
-
-
-
 
 
 
@@ -1121,6 +1121,10 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+   particular if a given node has only one communication qubit it cannot
+   simultaneously generate Bell Pairs over two links.  It must generate
+   entanglement over the links one at a time.
 
 5.5.4.  Homogeneity
 
@@ -1166,10 +1170,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
 
        This goal seems trivially obvious, but makes a subtle, but
        important point which highlights a key difference between quantum
-       and classical networks.  Ultimately, quantum data transmission is
-       not the goal of a quantum network - it is only one possible
-       component of more advanced quantum application protocols.  Whilst
-       transmission certainly could be used as a building block for all
 
 
 
@@ -1178,6 +1178,10 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 21]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+       and classical networks.  Ultimately, quantum data transmission is
+       not the goal of a quantum network - it is only one possible
+       component of more advanced quantum application protocols.  Whilst
+       transmission certainly could be used as a building block for all
        quantum applications, it is certainly not the most basic one
        possible.  For example, QKD, the most well known quantum
        application protocol only relies on the stronger than classical
@@ -1221,11 +1225,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        repeater hardware and they all have their advantages and
        disadvantages.  Some may offer higher Bell pair generation rates
        on individual links at the cost of more difficult entanglement
-       swap operations.  Other platforms may be good all around, but are
-       more difficult to build.
 
-       Whilst conceptually they are all capable of the same tasks the
-       optimal network configuration will likely leverage the advantages
 
 
 
@@ -1234,6 +1234,11 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 22]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+       swap operations.  Other platforms may be good all around, but are
+       more difficult to build.
+
+       Whilst conceptually they are all capable of the same tasks the
+       optimal network configuration will likely leverage the advantages
        of multiple platforms to optimise the provided service.
        Therefore, it is an explicit goal to incorporate varied hardware
        support from the beginning.
@@ -1276,11 +1281,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
        than demanding that the network deliver secure entanglement in
        the first place.
 
-       Nevertheless, control protocols themselves should be security
-       aware in order to protect the operation of the network itself and
-       limit disruption.  This will primarily involve securing the
-       classical control and management traffic by means of
-       authentication and possibly encryption.
 
 
 
@@ -1289,6 +1289,12 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 23]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+       Nevertheless, control protocols themselves should be security
+       aware in order to protect the operation of the network itself and
+       limit disruption.  This will primarily involve securing the
+       classical control and management traffic by means of
+       authentication and possibly encryption.
 
    6.  Make them easy to manage and monitor
 
@@ -1331,13 +1337,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
 
    2.  Bell Pairs are indistinguishable
 
-       Any two Bell Pairs between the same two nodes are
-       indistinguishable for the purposes of an application provided
-       they both satisfy its required fidelity threshold.  This point is
-       crucial in enabling the reuse of resources of a network and for
-       the purposes of provisioning resources to meet application
-       demand.  However, the qubits that make up the pair themselves are
-       not indistinguishable and the two nodes operating on a pair must
+
 
 
 
@@ -1346,6 +1346,13 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 24]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+       Any two Bell Pairs between the same two nodes are
+       indistinguishable for the purposes of an application provided
+       they both satisfy its required fidelity threshold.  This point is
+       crucial in enabling the reuse of resources of a network and for
+       the purposes of provisioning resources to meet application
+       demand.  However, the qubits that make up the pair themselves are
+       not indistinguishable and the two nodes operating on a pair must
        coordinate to make sure they are operating on qubits that belong
        to the same Bell Pair.
 
@@ -1388,13 +1395,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    communication.  However, as this is an informational memo it does not
    propose any concrete mechanisms to achieve these goals.
 
-   In summary:
-
-   As long as the underlying implementation corresponds to (or
-   sufficiently approximates) theoretical models of quantum
-   cryptography, quantum cryptographic protocols do not need the network
-   to provide any guarantees about the authenticity, confidentiality, or
-
 
 
 Kozlowski, et al.       Expires September 6, 2020              [Page 25]
@@ -1402,6 +1402,12 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 25]
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
 
+   In summary:
+
+   As long as the underlying implementation corresponds to (or
+   sufficiently approximates) theoretical models of quantum
+   cryptography, quantum cryptographic protocols do not need the network
+   to provide any guarantees about the authenticity, confidentiality, or
    integrity of the transmitted qubits or the generated entanglement.
    Instead, applications such as QKD establish such guarantees using the
    classical network in conjunction with he quantum one.  This is much
@@ -1443,12 +1449,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
               it hasn't)", Nature 554, 289-292, 2018,
               <https://www.nature.com/articles/d41586-018-01835-3>.
 
-   [5]        Wehner, S., Elkouss, D., and R. Hanson, "Quantum internet:
-              A vision for the road ahead", Science 362, 6412, 2018,
-              <http://science.sciencemag.org/content/362/6412/
-              eaam9288.full>.
-
-
 
 
 
@@ -1457,6 +1457,11 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 26]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+   [5]        Wehner, S., Elkouss, D., and R. Hanson, "Quantum internet:
+              A vision for the road ahead", Science 362, 6412, 2018,
+              <http://science.sciencemag.org/content/362/6412/
+              eaam9288.full>.
 
    [6]        Aspect, A., Grangier, P., and G. Roger, "Experimental
               Tests of Realistic Local Theories via Bell's Theorem",
@@ -1498,11 +1503,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
               Teleportation for the Quantum Internet",   , 2019,
               <https://arxiv.org/abs/1907.06197>.
 
-Authors' Addresses
-
-
-
-
 
 
 
@@ -1513,6 +1513,8 @@ Kozlowski, et al.       Expires September 6, 2020              [Page 27]
 
 Internet-Draft      Principles for a Quantum Internet         March 2019
 
+
+Authors' Addresses
 
    Wojciech Kozlowski
    QuTech
@@ -1557,8 +1559,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2019
    Italy
 
    Email: angelasara.cacciapuoti@unina.it
-
-
 
 
 

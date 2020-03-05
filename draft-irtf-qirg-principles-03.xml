@@ -831,12 +831,12 @@
            <vspace blankLines="1" />
 
            Classical networks have routing and forwarding; routing decides
-           the way to go and forwarding executes actual data transfer,
-           obeying the decision. Quantum networks execute routing in a control
+           the way to go, and forwarding executes actual data transfer,
+           obeying the decision. Quantum networks perform routing in a control
            plane and execute entanglement swapping instead of forwarding in
            a data plane. Such quantum networks are "routing and swapping" networks.
-           In "routing and swapping" networks, we do not need to care
-           the order of generating link Bell pairs, since Bell pairs are
+           In "routing and swapping" networks, we do not need to care about
+           the order of generating link Bell pairs since Bell pairs are
            undirected resources. This distinction makes control algorithms and
            optimization of quantum networks different from classical ones.
            Additionally, "routing and swapping" quantum networks are not
@@ -850,15 +850,15 @@
            also belong to "routing and measuring" networks.
            Entanglement swapping is a specific algorithm for a set of Bell pairs.
            More algorithms to build a quantum network from Bell pairs
-           have been proposed. "Routing and measuring" is a broader category
-           and more types of quantum networks should belong to it.
+           have been proposed. "Routing and measuring" is a broader category,
+           and more types of quantum networks will be categorized into it.
            <vspace blankLines="1" />
 
            Meanwhile, quantum networks of direct transmission are "routing
            and forwarding" networks. Such quantum networks can carry
-           arbitrary states hop by hop. Therefore they are also
-           "store and forward" networks, in contrast to "routing and swapping"
-           quantum networks. </t>
+           arbitrary states hop by hop, therefore they are also
+           "store and forward" networks. Hence direct transmission quantum network
+           could be more similar to classical networks in networking algorithms.</t>
            
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

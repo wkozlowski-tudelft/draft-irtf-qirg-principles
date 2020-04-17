@@ -523,7 +523,7 @@
 
      </section>
 
-     <section title="Direct transmission">
+     <section anchor="dt" title="Direct transmission">
 
        <t>Conceptually, the most straightforward way to distribute an entangled
        state is to simply transmit one of the qubits directly to the other end
@@ -616,7 +616,7 @@
        section we discuss, how these entangled pairs are generated in the first
        place, and how its two qubits are delivered to the end-points.</t>
 
-       <section title="Elementary link generation">
+       <section anchor="elg" title="Elementary link generation">
 
          <t>In a quantum network, entanglement is always first generated
          locally (at a node or an auxiliary element) followed by a movement of
@@ -676,14 +676,14 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
-         <t> Note that photons fly in a direction, however, residual
+         <t> Note that photons fly in a direction, however, resulting
          entanglements are undirected resources. Therefore we can choice
          any type of link generation and any direction of photon transmission,
          depending on policy, or for optimization.</t>
 
        </section>
 
-       <section title="Entanglement swapping">
+       <section anchor="es" title="Entanglement swapping">
 
          <t>The problem with generating entangled pairs directly across a link
          is that its efficiency decreases with its length. Beyond a few 10s of
@@ -785,6 +785,106 @@
 
    </section>
 
+
+     <section title="Generations of Quantum Networks">
+
+       <t>Quantum networks are categorized into three generations
+       <xref target="mural14"></xref>. Those generations are defined by
+       the directions of signaling required in their distributed protocols
+       for loss tolerance and error tolerance. Such signalings
+       block the networking procedure; hence they affect the performance
+       of quantum networks, especially between non-adjacent nodes.
+       Table <xref target="gens"></xref> summalizes the generations.</t>
+
+
+       <texttable anchor="gens">
+         <ttcol align="center"></ttcol>
+         <ttcol align="center">First generation</ttcol>
+         <ttcol align="center">Second generation</ttcol>
+         <ttcol align="center">Third generation</ttcol>
+         
+         <c>Loss tolerance</c>
+         <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+         <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
+         
+         <c>Error tolerance</c>
+         <c>Entanglement distillation (bi-directional classical signaling)</c>
+         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
+         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
+       </texttable>
+
+       <t>
+       <list style="numbers">
+         <t>Quantum networks of the first generation generate end-to-end
+         physical Bell pairs. The procedure is:
+         <list style="numbers">
+           <t> Generate physical Bell pairs between adjacent nodes. Photon
+           losses are managed by the heralded entanglement generation schemes
+           shown in <xref target="elg"></xref>. Classical messages are sent in
+           the reverse way to tell which photons are received (hence
+           bi-directional signaling between adjacent nodes).</t>
+           <t> Entanglement distillation between adjacent nodes is executed
+           if the fidelity of Bell pairs is not enough. Claccical messages
+           are sent to tell the measurement outcomes to each other
+           (bi-directional signaling between adjacent nodes).</t>
+           <t> Entanglement swapping is executed. The measurement outcome
+           must be sent to a node that holds the other half Bell pair,
+           however, processing the measurement outcomes does not
+           block the networking procedure.</t>
+           <t> If the fidelity of Bell pairs between non-adjacent nodes
+           is estimated to be low, entanglement distillation is performed.
+           This entanglement distillation requires nodes to send measurement
+           outcomes to each other, which blocks the networking procedure
+           (bi-directional signaling between non-adjacent nodes).</t> 
+         </list>
+         </t>
+
+         <t>The second generations generate end-to-end logical Bell pairs
+         encoded on physical Bell pairs by quantum error correcting codes.
+         The procedure:
+         <list style="numbers">
+           <t> Generate physical Bell pairs between adjacent nodes. Photon
+           losses are managed by the heralded entanglement generation schemes
+           shown in <xref target="elg"></xref>. Classical messages are sent in
+           the reverse way to tell which photons are received (hence
+           bi-directional signaling between adjacent nodes).</t>
+           <t> Entanglement distillation between adjacent nodes is executed
+           if the fidelity of Bell pairs is not enough. Claccical messages
+           are sent to tell the measurement outcomes to each other
+           (bi-directional signaling between adjacent nodes).</t>
+           <t> Encode (|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2)
+           and |0> by a quantum  error correcting code in a set of adjacent
+           nodes respectively. Errors will be managed by this error correcting
+           code locally.</t>
+           <t> Execute teleportation-based transversal non-local CNOT gates 
+           to generate logical Bell pairs between adjacent nodes.</t>
+           <t> (Logicl) entanglement swapping is executed. The measurement
+           outcome must be sent to a node that holds the other half Bell pair,
+           however, processing the measurement outcomes does not
+           block the networking procedure.</t>
+         </list>
+         </t>
+         
+         <t>The third genereations are of direct transmission discussed in
+         <xref target="dt"></xref>, that forwards logical qubits hop by hop.
+         The procedure is:
+         <list style="numbers">
+           <t> Encode arbitrary quantum state on photons with a quantum
+           error correcting code.</t>
+           <t> Send the photons to an adjacent node. (uni-directional signaling
+           between adjacent nodes)</t>
+           <t> Execute error correction to restore lost photons and to
+           correct errors.</t>
+         </list>
+         </t>
+       </list>
+       </t>
+
+       <t>The later generation requires higher technologies. This document
+       concentrates the first generation of the quantum networks.</t>
+     </section>
+     
    <section title="Architecture of a quantum internet">
 
      <t>It is evident from the previous sections that the fundamental service
@@ -820,44 +920,34 @@
            information via separate classical channels which the repeaters will
            have to correlate with the qubits stored in their memory.</t>
 
-           <t> The first quantum networks may not be "routing and forwarding"
+           <t> First generations of quantum networks will not be store-and-forward
            networks.
            <vspace blankLines="1" />
 
+           As described in <xref target="elg"></xref>,
            Quantum links provide Bell pairs that are undirected network
            resources, in contrast to directed links of classical networks.
            This phenomenological distinction should result in architectural
-           differences between quantum networks and classical networks.
+           differences between quantum networks and classical networks;
+           quantum networks put link Bell pairs together to an end-to-end
+           Bell pair where classical networks deliver messages from an end
+           to the other end hop by hop.
            <vspace blankLines="1" />
 
-           Classical networks have routing and forwarding; routing decides
-           the way to go, and forwarding executes actual data transfer,
-           obeying the decision. Quantum networks perform routing in a control
-           plane and execute entanglement swapping instead of forwarding in
-           a data plane. Such quantum networks are "routing and swapping" networks.
-           In "routing and swapping" networks, we do not need to care about
+           Classical networks store data coming from an interface, then forward
+           the data to another appropreate interface.
+           Quantum networks store a couple of half Bell pairs, then
+           execute entanglement swapping instead of forwarding in a data plane.
+           Such quantum networks are "store and swap" networks.
+           In "store and swap" networks, we do not need to care about
            the order of generating link Bell pairs since Bell pairs are
            undirected resources. This distinction makes control algorithms and
            optimization of quantum networks different from classical ones.
-           Additionally, "routing and swapping" quantum networks are not
-           "store and forward" networks.
            <vspace blankLines="1" />
 
-           Technically, entanglement swapping first generates a large entangled
-           state among four qubits over three nodes and then measures
-           two qubits in the middle node to leave a Bell pair between
-           two distant nodes. In this sense, "routing and swapping" networks
-           also belong to "routing and measuring" networks.
-           Entanglement swapping is a specific algorithm for a set of Bell pairs.
-           More algorithms to build a quantum network from Bell pairs
-           have been proposed. "Routing and measuring" is a broader category,
-           and more types of quantum networks will be categorized into it.
-           <vspace blankLines="1" />
-
-           Meanwhile, quantum networks of direct transmission are "routing
-           and forwarding" networks. Such quantum networks can carry
-           arbitrary states hop by hop, therefore they are also
-           "store and forward" networks. Hence this later generation of
+           Meanwhile, third generations of quantum networks of direct transmission
+           are "store and forward" networks, since such quantum networks can carry
+           arbitrary states hop by hop. Hence those later generations of
            quantum networks would have more in common with classical networks
            than the first quantum networks in networking algorithms.</t>
            

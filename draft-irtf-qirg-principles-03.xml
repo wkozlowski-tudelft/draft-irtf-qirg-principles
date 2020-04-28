@@ -676,11 +676,10 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
-         <t> Note that photons fly in a direction, however, resulting
-         entanglements are undirected resources. Therefore we can choice
-         any type of link generation and any direction of photon transmission,
-         depending on policy, or for optimization.</t>
-
+         <t> Note that whilst photons are emitted in a particular direction the 
+         resulting entangled pair of qubits does not have a direction associated 
+         with it. Physically, there is no upstream or downstream end of the 
+         pair.</t>   
        </section>
 
        <section anchor="es" title="Entanglement swapping">

@@ -936,7 +936,7 @@
            Classical networks receive data on one interface, store it on local buffers, 
            then forward the data to another appropriate interface.
            Quantum networks store Bell pairs and then
-           execute entanglement swapping instead of forwarding in a data plane.
+           execute entanglement swapping instead of forwarding in the data plane.
            Such quantum networks are "store and swap" networks.
            In "store and swap" networks, we do not need to care about
            the order of generating link Bell pairs since Bell pairs are

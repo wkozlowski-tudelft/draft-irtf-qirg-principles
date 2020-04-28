@@ -174,7 +174,7 @@
          <country>Japan</country>
        </postal>
 
-       <email>marcello.caleffi@unina.it</email>
+       <email>shota.nagayama@mercari.com</email>
 
        <!-- uri and facsimile elements may also be added -->
      </address>
@@ -531,7 +531,7 @@
        error correction to bring losses down to an acceptable level. Despite
        the no-cloning theorem and the inability to directly measure a quantum
        state, error-correcting mechanisms for quantum communication exist <xref
-       target="mural14"></xref>. However, quantum error correction makes very
+       target="mural16"></xref>. However, quantum error correction makes very
        high demands on both resources (physical qubits needed) and their
        initial fidelity. Implementation is very challenging and quantum error
        correction is not expected to be used until later generations of quantum
@@ -785,10 +785,10 @@
    </section>
 
 
-     <section title="Generations of Quantum Networks">
+     <section anchor="gqn" title="Generations of Quantum Networks">
 
        <t>Quantum networks are categorized into three generations
-       <xref target="mural14"></xref>. Those generations are defined by
+       <xref target="mural16"></xref>. Those generations are defined by
        the directions of signaling required in their distributed protocols
        for loss tolerance and error tolerance. Such signalings
        block the networking procedure; hence they affect the performance
@@ -925,7 +925,7 @@
 
            As described in <xref target="elg"></xref>,
            Quantum links provide Bell pairs that are undirected network
-           resources, in contrast to directed links of classical networks.
+           resources, in contrast to directed frames of classical networks.
            This phenomenological distinction should result in architectural
            differences between quantum networks and classical networks;
            quantum networks put link Bell pairs together to an end-to-end
@@ -944,7 +944,7 @@
            optimization of quantum networks different from classical ones.
            <vspace blankLines="1" />
 
-           It is worth noting, that third generation <refer to generations section> 
+           It is worth noting, that third generation <xref target="gqn"></xref>
            quantum repeaters will be able to transmit qubits directly
            in a "store and forward" manner since they will be able to carry
            arbitrary states hop by hop. Thus, the networking algorithms of the
@@ -1729,7 +1729,7 @@ CC - classical channel
        <seriesInfo name="Phys. Rev. Lett." value="47 (7): 460-463" />
      </reference>
 
-     <reference anchor="mural14" target="https://arxiv.org/abs/1310.5291">
+     <reference anchor="mural16" target="https://www.nature.com/articles/srep20463">
        <front>
          <title>Ultrafast and Fault-Tolerant Quantum Communication across Long
          Distances</title>

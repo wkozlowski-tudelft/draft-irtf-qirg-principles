@@ -933,8 +933,8 @@
            to the other end hop by hop.
            <vspace blankLines="1" />
 
-           Classical networks store data coming from an interface, then forward
-           the data to another appropreate interface.
+           Classical networks receive data on one interface, store it on local buffers, 
+           then forward the data to another appropriate interface.
            Quantum networks store a couple of half Bell pairs, then
            execute entanglement swapping instead of forwarding in a data plane.
            Such quantum networks are "store and swap" networks.

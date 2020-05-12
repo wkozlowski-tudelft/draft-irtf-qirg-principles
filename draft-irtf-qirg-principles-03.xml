@@ -676,10 +676,10 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
-         <t> Note that whilst photons are emitted in a particular direction the 
-         resulting entangled pair of qubits does not have a direction associated 
-         with it. Physically, there is no upstream or downstream end of the 
-         pair.</t>   
+         <t> Note that whilst photons are emitted in a particular direction the
+         resulting entangled pair of qubits does not have a direction
+         associated with it. Physically, there is no upstream or downstream end
+         of the pair.</t>
        </section>
 
        <section anchor="es" title="Entanglement swapping">
@@ -690,13 +690,13 @@
          rate is effectively zero and due to the no-cloning theorem we cannot
          simply amplify the signal. The solution is entanglement swapping.</t>
 
-         <t>A Bell pair between any two nodes in the network can be constructed by
-         combining the pairs generated along each individual link on the path
-         between the two end-points. Each node along the path can consume the
-         two pairs on the two links that it is connected to in order to produce
-         a new entangled Pair between the two remote ends. This process is
-         known as entanglement swapping. Pictorially it can be represented as
-         follows:</t>
+         <t>A Bell pair between any two nodes in the network can be constructed
+         by combining the pairs generated along each individual link on the
+         path between the two end-points. Each node along the path can consume
+         the two pairs on the two links that it is connected to in order to
+         produce a new entangled Pair between the two remote ends. This process
+         is known as entanglement swapping. Pictorially it can be represented
+         as follows:</t>
 
          <figure align="center">
            <artwork align="left"><![CDATA[
@@ -823,26 +823,25 @@
            networks.
            <vspace blankLines="1" />
 
-           As described in <xref target="elg"></xref>,
-           Quantum links provide Bell pairs that are undirected network
-           resources, in contrast to directed frames of classical networks.
-           This phenomenological distinction should result in architectural
-           differences between quantum networks and classical networks;
-           quantum networks put link Bell pairs together to an end-to-end
-           Bell pair where classical networks deliver messages from an end
-           to the other end hop by hop.
+           As described in <xref target="elg"></xref>, Quantum links provide
+           Bell pairs that are undirected network resources, in contrast to
+           directed frames of classical networks. This phenomenological
+           distinction should result in architectural differences between
+           quantum networks and classical networks; quantum networks combine
+           multiple elementary link Bell pairs together to create one an
+           end-to-end Bell pair where classical networks deliver messages from
+           one end to the other end hop by hop.
            <vspace blankLines="1" />
 
-           Classical networks receive data on one interface, store it on local buffers, 
-           then forward the data to another appropriate interface.
-           Quantum networks store Bell pairs and then
-           execute entanglement swapping instead of forwarding in the data plane.
-           Such quantum networks are "store and swap" networks.
-           In "store and swap" networks, we do not need to care about
-           the order in which the Bell pairs were generated since they are
-           undirected. This distinction makes control algorithms and
-           optimization of quantum networks different from classical ones.
-           <vspace blankLines="1" />
+           Classical networks receive data on one interface, store it in local
+           buffers, then forward the data to another appropriate interface.
+           Quantum networks store Bell pairs and then execute entanglement
+           swapping instead of forwarding in the data plane. Such quantum
+           networks are "store and swap" networks. In "store and swap"
+           networks, we do not need to care about the order in which the Bell
+           pairs were generated since they are undirected. This distinction
+           makes control algorithms and optimization of quantum networks
+           different from classical ones.</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

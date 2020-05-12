@@ -844,13 +844,6 @@
            optimization of quantum networks different from classical ones.
            <vspace blankLines="1" />
 
-           It is worth noting, that third generation <refer to generations section>
-           quantum repeaters will be able to transmit qubits directly
-           in a "store and forward" manner since they will be able to carry
-           arbitrary states hop by hop. Thus, the networking algorithms of the
-           later generations of quantum networks may end up having more in 
-           common with classical networks.</t>
-           
            <t>An entangled pair is only useful if the locations of both qubits
            are known.
            <vspace blankLines="1" />

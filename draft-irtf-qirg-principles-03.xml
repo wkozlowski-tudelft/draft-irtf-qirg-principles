@@ -160,7 +160,27 @@
      </address>
    </author>
 
-   <date year="2019" />
+   <author fullname="Shota Nagayama" initials="S" surname="Nagayama">
+     <organization>Mercari, Inc.</organization>
+
+     <address>
+       <postal>
+         <street>Roppongi Hills Mori Tower 18F</street>
+         <street>6-10-1 Roppongi, Minato-ku</street>
+
+         <!-- Reorder these if your country does things differently -->
+         <code>106-6118</code>
+         <city>Tokyo</city>
+         <country>Japan</country>
+       </postal>
+
+       <email>shota.nagayama@mercari.com</email>
+
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
+
+   <date year="2020" />
 
    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
         in the current day for you. If only the current year is specified, xml2rfc will fill
@@ -503,7 +523,7 @@
 
      </section>
 
-     <section title="Direct transmission">
+     <section anchor="dt" title="Direct transmission">
 
        <t>Conceptually, the most straightforward way to distribute an entangled
        state is to simply transmit one of the qubits directly to the other end
@@ -596,7 +616,7 @@
        section we discuss, how these entangled pairs are generated in the first
        place, and how its two qubits are delivered to the end-points.</t>
 
-       <section title="Elementary link generation">
+       <section anchor="elg" title="Elementary link generation">
 
          <t>In a quantum network, entanglement is always first generated
          locally (at a node or an auxiliary element) followed by a movement of
@@ -656,9 +676,13 @@
          other schemes the nodes retain greater control over the entangled pair
          generation.</t>
 
+         <t> Note that whilst photons are emitted in a particular direction the
+         resulting entangled pair of qubits does not have a direction
+         associated with it. Physically, there is no upstream or downstream end
+         of the pair.</t>
        </section>
 
-       <section title="Entanglement swapping">
+       <section anchor="es" title="Entanglement swapping">
 
          <t>The problem with generating entangled pairs directly across a link
          is that its efficiency decreases with its length. Beyond a few 10s of
@@ -666,13 +690,13 @@
          rate is effectively zero and due to the no-cloning theorem we cannot
          simply amplify the signal. The solution is entanglement swapping.</t>
 
-         <t>A Bell pair between any two nodes in the network can be constructed by
-         combining the pairs generated along each individual link on the path
-         between the two end-points. Each node along the path can consume the
-         two pairs on the two links that it is connected to in order to produce
-         a new entangled Pair between the two remote ends. This process is
-         known as entanglement swapping. Pictorially it can be represented as
-         follows:</t>
+         <t>A Bell pair between any two nodes in the network can be constructed
+         by combining the pairs generated along each individual link on the
+         path between the two end-points. Each node along the path can consume
+         the two pairs on the two links that it is connected to in order to
+         produce a new entangled Pair between the two remote ends. This process
+         is known as entanglement swapping. Pictorially it can be represented
+         as follows:</t>
 
          <figure align="center">
            <artwork align="left"><![CDATA[
@@ -892,6 +916,30 @@
            Therefore, quantum networks will have to send all control
            information via separate classical channels which the repeaters will
            have to correlate with the qubits stored in their memory.</t>
+
+           <t> First generations of quantum networks will not be store-and-forward
+           networks.
+           <vspace blankLines="1" />
+
+           As described in <xref target="elg"></xref>, Quantum links provide
+           Bell pairs that are undirected network resources, in contrast to
+           directed frames of classical networks. This phenomenological
+           distinction should result in architectural differences between
+           quantum networks and classical networks; quantum networks combine
+           multiple elementary link Bell pairs together to create one an
+           end-to-end Bell pair where classical networks deliver messages from
+           one end to the other end hop by hop.
+           <vspace blankLines="1" />
+
+           Classical networks receive data on one interface, store it in local
+           buffers, then forward the data to another appropriate interface.
+           Quantum networks store Bell pairs and then execute entanglement
+           swapping instead of forwarding in the data plane. Such quantum
+           networks are "store and swap" networks. In "store and swap"
+           networks, we do not need to care about the order in which the Bell
+           pairs were generated since they are undirected. This distinction
+           makes control algorithms and optimization of quantum networks
+           different from classical ones.</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.

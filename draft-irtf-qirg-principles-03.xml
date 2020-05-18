@@ -874,6 +874,12 @@
            <t> Execute error correction to restore lost photons and to
            correct errors.</t>
          </list>
+         It is worth noting, that third generation quantum repeaters will be
+         able to transmit qubits directly in a "store and forward" manner
+         since they will be able to carry arbitrary states hop by hop.
+         Thus, the networking algorithms of the later generations of
+         quantum networks may end up having more in common with
+         classical networks.
          </t>
        </list>
      </t>

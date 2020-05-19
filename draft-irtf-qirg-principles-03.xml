@@ -555,12 +555,13 @@
          |01> - |10>,
        </t>
 
-       <t>where the constant 1/sqrt(2) normalisation factor has been ignored
-       for clarity. Any of the four Bell pair states above will do, as it is
+       <t>where the constant 1/sqrt(2) normalisation factor has been ignored for
+       clarity. Any of the four Bell pair states above will do, as it is
        possible to transform any Bell pair into another Bell pair with local
-       operations performed on only one of the qubits. When each qubit in a Bell pair is held by a separate node, either can apply a series of
-       single qubit gates to their qubit alone in order to transform the
-       state between the different variants.</t>
+       operations performed on only one of the qubits. When each qubit in a Bell
+       pair is held by a separate node, either can apply a series of single
+       qubit gates to their qubit alone in order to transform the state between
+       the different variants.</t>
 
        <t>Distributing a Bell pair between two nodes is much easier than
        transmitting an arbitrary quantum state over a network. Since the state

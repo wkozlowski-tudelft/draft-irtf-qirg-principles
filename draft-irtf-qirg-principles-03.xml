@@ -270,7 +270,7 @@
      aim to introduce the bare minimum necessary to understand the principles
      of operation of a quantum network. This exposition was written with a
      classical networking audience in mind. It is assumed that the reader has
-     never before been exposed to any quantum physics. We refer to e.g. <xref target="sutor"> <xref
+     never before been exposed to any quantum physics. We refer to e.g. <xref target="sutor" /> <xref
      target="nielsen"/> for an in-depth introduction to quantum
      information.</t>
 

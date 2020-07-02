@@ -1128,7 +1128,8 @@ CC - classical channel
          Quantum networks have been categorized into three "generations"
          by error management schemes<xref target="mural16"></xref>.
          Note that those "generations" are more like categories;
-         they do not mean time progression and do not obsolete each other.
+         they do not mean time progression and do not obsolete each other,
+         though the later generation requires higher technologies.
          Which generation is used depends on the hardware platform and the
          design choise.</t>
          
@@ -1211,8 +1212,8 @@ CC - classical channel
            </list>
          </t>
          
-         <t>The later generation requires higher technologies. This document
-         concentrates quantum networks of entanglement swapping.</t>
+         <t>How to interconnect those schemes is also an open research question.
+         This document concentrates quantum networks of entanglement swapping.</t>
        </section>
        
      </section>

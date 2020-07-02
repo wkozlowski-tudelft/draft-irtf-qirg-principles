@@ -1130,7 +1130,7 @@ CC - classical channel
          Note that those "generations" are more like categories;
          they do not mean time progression and do not obsolete each other.
          Which generation is used depends on the hardware platform and the
-         choise by upper layers.</t>
+         design choise.</t>
          
          <t>Table <xref target="gens"></xref> summalizes the generations.
          Every scheme requires uni-directional quantum signaling beforehand.</t>
@@ -1161,11 +1161,13 @@ CC - classical channel
          
          <t>Loss tolerance is how to tolerate photon losses. Heralded
          entanglement generation is, as described in <xref target="elg"></xref>,
-         confirming receiption of qubits by herald signal.
+         confirming receiption of qubits by herald signal. Quantum memory
+         repeats to transmit photons until the herald is achieved.
          As described in <xref target="qec"></xref>, QEC can be applied to
          complement lost qubits and the correction procedure is composed of
-         local operations, therefore it does not require classical signaling,
-         provided loss rate is less than 0.5.</t>
+         local operations, therefore it does not require classical signaling.
+         This scheme does not need repeating, however, it is feasible
+         only when the photon loss rate is less than 0.5. </t>
          
          <t>Error tolerance is how to tolerate state errors.
          Entanglement distillation is easier to implement,
@@ -1742,22 +1744,6 @@ CC - classical channel
          <date year="1981" />
        </front>
        <seriesInfo name="Phys. Rev. Lett." value="47 (7): 460-463" />
-     </reference>
-
-     <reference anchor="mural16" target="https://www.nature.com/articles/srep20463">
-       <front>
-         <title>Optimal architectures for long distance quantum communication</title>
-
-         <author initials="S" surname="Muralidharan" />
-         <author initials="L" surname="Li" />
-         <author initials="J" surname="Kim" />
-         <author initials="N" surname="Lutkenhaus" />
-         <author initials="M" surname="Lukin" />
-         <author initials="L" surname="Jiang" />
-
-         <date year="2016" />
-       </front>
-       <seriesInfo name="Scientific Reports" value="6, 20463" />
      </reference>
 
      <reference anchor="mural16" target="https://www.nature.com/articles/srep20463">

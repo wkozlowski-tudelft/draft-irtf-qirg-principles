@@ -1130,7 +1130,7 @@ CC - classical channel
          Note that those "generations" are more like categories;
          they do not mean time progression and do not obsolete each other.
          Which generation is used depends on the hardware platform and the
-         choise by upper layers.</t>
+         design choise.</t>
          
          <t>Table <xref target="gens"></xref> summalizes the generations.
          Every scheme requires uni-directional quantum signaling beforehand.</t>

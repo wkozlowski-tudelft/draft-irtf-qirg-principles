@@ -5,7 +5,7 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: November 13, 2020                                  R. Van Meter
+Expires: November 20, 2020                                  R. Van Meter
                                                          Keio University
                                                               B. Rijsman
                                                               Individual
@@ -14,7 +14,7 @@ Expires: November 13, 2020                                  R. Van Meter
                                         University of Naples Federico II
                                                              S. Nagayama
                                                            Mercari, Inc.
-                                                            May 12, 2020
+                                                            May 19, 2020
 
 
             Architectural Principles for a Quantum Internet
@@ -29,10 +29,10 @@ Abstract
    is fundamentally different.  The first realisations of quantum
    networks are imminent, but there is no practical proposal for how to
    organise, utilise, and manage such networks.  In this memo, we
-   attempt lay down the framework and introduce some basic architectural
-   principles for a quantum internet.  This is intended for general
-   guidance and general interest, but also to provide a foundation for
-   discussion between physicists and network specialists.
+   attempt to lay down the framework and introduce some basic
+   architectural principles for a quantum internet.  This is intended
+   for general guidance and general interest, but also to provide a
+   foundation for discussion between physicists and network specialists.
 
 Status of This Memo
 
@@ -49,11 +49,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 13, 2020.
+   This Internet-Draft will expire on November 20, 2020.
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 1]
+Kozlowski, et al.       Expires November 20, 2020               [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -98,18 +98,18 @@ Table of Contents
      5.2.  Classical communication . . . . . . . . . . . . . . . . .  16
      5.3.  Abstract model of the network . . . . . . . . . . . . . .  16
        5.3.1.  Elements of a quantum network . . . . . . . . . . . .  16
-       5.3.2.  Putting it all together . . . . . . . . . . . . . . .  17
-     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  18
+       5.3.2.  Putting it all together . . . . . . . . . . . . . . .  18
+     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  19
        5.4.1.  Boundaries between different physical architectures .  19
        5.4.2.  Boundaries between different administrative regions .  19
      5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  19
-       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  19
+       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  20
        5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  20
        5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  20
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 2]
+Kozlowski, et al.       Expires November 20, 2020               [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -120,7 +120,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
      6.2.  The principles of a quantum internet  . . . . . . . . . .  24
    7.  Comparison with classical networks  . . . . . . . . . . . . .  25
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .  27
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  27
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  28
    10. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  28
    11. Informative References  . . . . . . . . . . . . . . . . . . .  28
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  29
@@ -150,13 +150,13 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    quantum states in order to send, receive, and manipulate distributed
    quantum information are now imminent [4] [5].  Whilst a lot of effort
    has gone into physically realising and connecting such devices, and
-   making improvements to their speed and error tolerance there are no
+   making improvements to their speed and error tolerance, there are no
    worked out proposals for how to run these networks.  To draw an
    analogy with a classical network, we are at a stage where we can
    start to physically connect our devices and send data, but all
    sending, receiving, buffer management, connection synchronisation,
-   and so on, must be managed by the application itself at what is even
-   lower than assembly level where no common interfaces yet exist.
+   and so on, must be managed by the application itself at a level below
+   convential assembly language, where no common interfaces yet exist.
    Furthermore, whilst physical mechanisms for transmitting quantum
    states exist, there are no robust protocols for managing such
    transmissions.
@@ -165,20 +165,20 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 3]
+Kozlowski, et al.       Expires November 20, 2020               [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 2.  Quantum information
 
-   In order to understand the framework for quantum networking a basic
+   In order to understand the framework for quantum networking, a basic
    understanding of quantum information is necessary.  The following
    sections aim to introduce the bare minimum necessary to understand
    the principles of operation of a quantum network.  This exposition
    was written with a classical networking audience in mind.  It is
    assumed that the reader has never before been exposed to any quantum
-   physics.  We refer to e.g. [10] for an in-depth introduction to
+   physics.  We refer to e.g. [10] [11] for an in-depth introduction to
    quantum information.
 
 2.1.  Qubit
@@ -186,8 +186,8 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    The differences between quantum computation and classical computation
    begin at the bit-level.  A classical computer operates on the binary
    alphabet { 0, 1 }. A quantum bit, a qubit, exists over the same
-   binary space, but unlike the classical bit, it can exist in a so-
-   called superposition of the two possibilities:
+   binary space, but unlike the classical bit, it can exist in a
+   superposition of the two possibilities:
 
    a |0> + b |1>,
 
@@ -221,7 +221,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 4]
+Kozlowski, et al.       Expires November 20, 2020               [Page 4]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -238,7 +238,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    where the coefficients have the same probability amplitude
    interpretation as for the single qubit state.  Each state represents
    a possible outcome of a measurement of the two-qubit register.  For
-   example, |01>, denotes a state in which the first qubit is in the
+   example, |01> denotes a state in which the first qubit is in the
    state |0> and the second is in the state |1>.
 
    Performing single qubit gates affects the relevant qubit in each of
@@ -254,9 +254,9 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    where x denotes a tensor product (the mathematical mechanism for
    combining quantum states together).  Let us now consider the two-
-   qubit CNOT gate.  The CNOT gate takes as input two qubits, a control
-   and target, and applies the NOT gate to the target if the control
-   qubit is set.  The truth table looks like
+   qubit controlled-NOT, or CNOT, gate.  The CNOT gate takes as input
+   two qubits, a control and target, and applies the NOT gate to the
+   target if the control qubit is set.  The truth table looks like
 
                                +----+-----+
                                | IN | OUT |
@@ -267,7 +267,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
                                | 11 |  10 |
                                +----+-----+
 
-   Now, consider performing a CNOT gate on the ensemble with the first
+   Now, consider performing a CNOT gate on the state with the first
    qubit being the control.  We apply a two-qubit gate on all the
    superposition states:
 
@@ -277,17 +277,17 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 5]
+Kozlowski, et al.       Expires November 20, 2020               [Page 5]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
    What is so interesting about this two-qubit gate operation?  The
    final state is *entangled*. There is no possible way of representing
-   that quantum state as a product of two individual qubits, they are no
-   longer independent and their behaviour cannot be fully described
-   without accounting for the other qubit.  The states of the two
-   individual qubits are now correlated beyond what is possible to
+   that quantum state as a product of two individual qubits; they are no
+   longer independent and the behaviour of either qubit cannot be fully
+   described without accounting for the other qubit.  The states of the
+   two individual qubits are now correlated beyond what is possible to
    achieve classically.  Neither qubit is in a definite |0> or |1>
    state, but if we perform a measurement on either one, the outcome of
    the partner qubit will *always* yield the exact same outcome.  The
@@ -305,7 +305,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 3.  Entanglement as the fundamental resource
 
    Entanglement is the fundamental building block of quantum networks.
-   To see this, consider the state from the previous section:
+   Consider the state from the previous section:
 
    (|00> + |11>)/sqrt(2).
 
@@ -333,7 +333,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 6]
+Kozlowski, et al.       Expires November 20, 2020               [Page 6]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -344,12 +344,12 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    The first stems from the fact that entanglement enables stronger than
    classical correlations, leading to opportunities for tasks that
-   require coordination.  As a trivial example consider the problem of
+   require coordination.  As a trivial example, consider the problem of
    consensus between two nodes who want to agree on the value of a
    single bit.  They can use the quantum network to prepare the state
    (|00> + |11>)/sqrt(2) with each node holding one of the two qubits.
-   Once any of the two nodes performs a measurement the state of the two
-   qubits collapses to either |00> or |11> so whilst the outcome is
+   Once either of the two nodes performs a measurement, the state of the
+   two qubits collapses to either |00> or |11>, so whilst the outcome is
    random and does not exist before measurement, the two nodes will
    always measure the same value.  We can also build the more general
    multi-qubit state (|00...> + |11...>)/sqrt(2) and perform the same
@@ -359,14 +359,14 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    The second feature of entanglement is that it cannot be shared, in
    the sense that if two qubits are maximally entangled with each other,
-   than it is physically impossible for any other system to have any
+   then it is physically impossible for any other system to have any
    share of this entanglement.  Hence, entanglement forms a sort of
    private and inherently untappable connection between two nodes once
    established.
 
    Entanglement is created through local interactions between two qubits
    or as a product of the way the qubits were created (e.g. entangled
-   photon pairs).  To create a distributed entangled state one can then
+   photon pairs).  To create a distributed entangled state, one can then
    physically send one of the qubits to a remote node.  It is also
    possible to directly entangle qubits that are physically separated,
    but this still requires local interactions between some other qubits
@@ -389,7 +389,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 7]
+Kozlowski, et al.       Expires November 20, 2020               [Page 7]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -430,7 +430,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    mechanics.
 
    The no-cloning theorem states that it is impossible to create an
-   identical copy of an arbitrary unknown quantum state.  Therefore, it
+   identical copy of an arbitrary, unknown quantum state.  Therefore, it
    is also impossible to use the same mechanisms that worked for
    classical networks for signal amplification, retransmission, and so
    on as they all rely on the ability to copy the underlying data.
@@ -445,7 +445,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 8]
+Kozlowski, et al.       Expires November 20, 2020               [Page 8]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -458,23 +458,23 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    checksums.  Since we cannot read or copy a quantum state a similar
    approach is out of question for quantum networks.
 
-   To describe the quality of a quantum state a physical quantity called
-   fidelity is used.  Fidelity takes a value between 0 and 1 -- higher
-   is better, and less than 0.5 means the state is unusable.  It
-   measures how close a quantum state is to the state we desire it to be
-   in.  It expresses the probability that one state will pass a test to
-   identify as the other.  Fidelity is an important property of a
+   To describe the quality of a quantum state, a physical quantity
+   called fidelity is used.  Fidelity takes a value between 0 and 1 --
+   higher is better, and less than 0.5 means the state is unusable.  It
+   measures how close a quantum state is to the state we have tried to
+   create.  It expresses the probability that one state will pass a test
+   to identify as the other.  Fidelity is an important property of a
    quantum system that allows us to quantify how much a particular state
    has been affected by noise from various sources (gate errors, channel
    losses, environment noise).
 
    Interestingly, quantum applications do not need perfect fidelity to
-   be able to execute -- as long as it is above some application-
-   specific threshold, they will simply operate at lower rates.
-   Therefore, rather than trying to ensure that we always deliver
-   perfect states (a technologically challenging task) applications will
-   specify a minimum threshold for the fidelity and the network will try
-   its best to deliver it.
+   be able to execute -- as long as the fidelity is above some
+   application-specific threshold, they will simply operate at lower
+   rates.  Therefore, rather than trying to ensure that we always
+   deliver perfect states (a technologically challenging task)
+   applications will specify a minimum threshold for the fidelity and
+   the network will try its best to deliver it.
 
 4.2.  Direct transmission
 
@@ -493,7 +493,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    An alternative relies on the observation that we do not need to be
    able to distribute any arbitrary entangled quantum state.  We only
    need to be able to distribute any one of what are known as the Bell
-   pair states[12].
+   pair states[13].
 
 
 
@@ -501,7 +501,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020               [Page 9]
+Kozlowski, et al.       Expires November 20, 2020               [Page 9]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -518,14 +518,14 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    where the constant 1/sqrt(2) normalisation factor has been ignored
    for clarity.  Any of the four Bell pair states above will do, as it
    is possible to transform any Bell pair into another Bell pair with
-   local operations performed on only one of the qubits.  That is,
-   either of the nodes that hold the two qubits of the Bell pair can
-   apply a series of single qubit gates to just their qubit in order to
-   transform the ensemble between the different variants.
+   local operations performed on only one of the qubits.  When each
+   qubit in a Bell pair is held by a separate node, either can apply a
+   series of single qubit gates to their qubit alone in order to
+   transform the state between the different variants.
 
    Distributing a Bell pair between two nodes is much easier than
    transmitting an arbitrary quantum state over a network.  Since the
-   state is known handling errors becomes easier and small-scale error-
+   state is known, handling errors becomes easier and small-scale error-
    correction (such as entanglement distillation discussed in a later
    section) combined with reattempts becomes a valid strategy.
 
@@ -552,17 +552,17 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    To achieve this, an entangled pair needs to be distributed between
    the source and destination before teleportation commences.  The
    source then entangles the transmission qubit with its end of the pair
-   and performs a read out on the two qubits (the sum of these
+   and performs a read out of the two qubits (the sum of these
    operations is called a Bell state measurement).  This consumes the
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 10]
+Kozlowski, et al.       Expires November 20, 2020              [Page 10]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
-   Bell pair's entanglement turning the source and destination qubits
+   Bell pair's entanglement, turning the source and destination qubits
    into independent states.  The measurements yields two classical bits
    which the source sends to the destination over a classical channel.
    Based on the value of the received two classical bits, the
@@ -578,8 +578,8 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    Reducing the problem of quantum connectivity to one of generating a
    Bell pair has facilitated the problem, but it has not solved it.  In
-   this section we discuss, how these entangled pairs are generated in
-   the first place, and how its two qubits are delivered to the end-
+   this section, we discuss how these entangled pairs are generated in
+   the first place, and how their two qubits are delivered to the end-
    points.
 
 4.5.1.  Elementary link generation
@@ -588,12 +588,12 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    (at a node or an auxiliary element) followed by a movement of one or
    both of the entangled qubits across the link through quantum
    channels.  In this context, photons (particles of light) are the
-   natural candidate for entanglement carriers, the so-called flying
-   qubits.  The rationale for this choice is related to the advantages
-   provided by photons such as moderate interaction with the environment
-   leading to moderate decoherence, convenient control with standard
-   optical components, and high-speed low-loss transmissions.  However,
-   since photons cannot be stored, a transducer must transfer the flying
+   natural candidate for entanglement carriers, called flying qubits.
+   The rationale for this choice is related to the advantages provided
+   by photons such as moderate interaction with the environment leading
+   to moderate decoherence, convenient control with standard optical
+   components, and high-speed, low-loss transmissions.  However, since
+   photons cannot be stored, a transducer must transfer the flying
    qubit's state to a qubit suitable for information processing and/or
    storage (often referred to as a matter qubit).
 
@@ -605,19 +605,20 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    There exist three basic schemes for heralded entanglement generation
    on a link through coordinated action of the two nodes at the two ends
-   of the link [13]:
+   of the link [14]:
 
-   o  "At mid-point" scheme: the key idea is that an entangled pair
-      source sends an entangled photon through a quantum channel to each
-      of the nodes, where transducers are invoked to transfer the
+   o  "At mid-point" scheme: the key idea is that an entangled photon
+      pair source sitting midway between the two nodes with matter
+      qubits sends an entangled photon through a quantum channel to each
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 11]
+Kozlowski, et al.       Expires November 20, 2020              [Page 11]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+      of the nodes, where transducers are invoked to transfer the
       entanglement from the flying qubits to the matter qubits.  In this
       scheme, the transducers know if the transfers succeeded and are
       able to herald successful entanglement generation via a message
@@ -640,36 +641,35 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
       able to herald successful entanglement generation by sending a
       message to each node over the classical channel.
 
-   The "mid-point" scheme is more robust to photon loss, but in the
-   other schemes the nodes retain greater control over the entangled
+   The "mid-point source" scheme is more robust to photon loss, but in
+   the other schemes the nodes retain greater control over the entangled
    pair generation.
 
-   Note that whilst photons are emitted in a particular direction the
-   resulting entangled pair of qubits does not have a direction
-   associated with it.  Physically, there is no upstream or downstream
-   end of the pair.
+   Note that whilst photons travel in a particular direction through the
+   quantum channel the resulting entangled pair of qubits does not have
+   a direction associated with it.  Physically, there is no upstream or
+   downstream end of the pair.
 
 4.5.2.  Entanglement swapping
 
    The problem with generating entangled pairs directly across a link is
-   that its efficiency decreases with its length.  Beyond a few 10s of
+   that efficiency decreases with channel length.  Beyond a few 10s of
    kms in optical fibre or 1000 kms in free space (via satellite) the
    rate is effectively zero and due to the no-cloning theorem we cannot
    simply amplify the signal.  The solution is entanglement swapping.
 
    A Bell pair between any two nodes in the network can be constructed
-   by combining the pairs generated along each individual link on the
-   path between the two end-points.  Each node along the path can
-   consume the two pairs on the two links that it is connected to in
-   order to produce a new entangled Pair between the two remote ends.
-   This process is known as entanglement swapping.  Pictorially it can
-   be represented as follows:
+   by combining the pairs generated along each individual link on a path
+   between the two end-points.  Each node along the path can consume the
+   two pairs on the two links that it is connected to in order to
+   produce a new entangled pair between the two remote ends.  This
+   process is known as entanglement swapping.  Pictorially it can be
+   represented as follows:
 
 
 
 
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 12]
+Kozlowski, et al.       Expires November 20, 2020              [Page 12]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -682,15 +682,14 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    where X1 and X2 are the qubits of the entangled pair X and Y1 and Y2
    are the qubits of entangled pair Y.  The entanglement is denoted with
-   ~~. In the diagram above nodes A and B share the pair X and nodes B
+   ~~. In the diagram above, nodes A and B share the pair X and nodes B
    and C share the pair Y, but we want entanglement between A and C.
 
-   To achieve this goal we simply teleport the qubit X2 using the pair
-   Y.  This requires node B to performs a Bell state measurement on the
+   To achieve this goal, we simply teleport the qubit X2 using the pair
+   Y.  This requires node B to perform a Bell state measurement on the
    qubits X2 and Y1 which result in the destruction of the entanglement
-   between Y1 and Y2.  However, X2 is transmitted and recreated in Y2's
-   place carrying with it its entanglement with X1.  The end-result is
-   shown below:
+   between Y1 and Y2.  However, X2 is recreated in Y2's place, carrying
+   with it its entanglement with X1.  The end-result is shown below:
 
    +---------+      +---------+      +---------+
    |    A    |      |    B    |      |    C    |
@@ -698,7 +697,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    |      X1~~~~~~~~~~~~~~~~~~~~~~~~~~~X2      |
    +---------+      +---------+      +---------+
 
-   Depending on the needs of the network and/or application a final
+   Depending on the needs of the network and/or application, a final
    Pauli correction at the recipient node may not be necessary since the
    result of this operation is also a Bell pair.  However, the two
    classical bits that form the read out from the measurement at node B
@@ -710,7 +709,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    This process of teleporting Bell pairs using other entangled pairs is
    called entanglement swapping.  Quantum nodes that create long-
    distance entangled pairs via entanglement swapping are called quantum
-   repeaters in academic literature [12] and we will use the same
+   repeaters in academic literature [13] and we will use the same
    terminology in this memo.
 
 4.5.3.  Distillation
@@ -725,24 +724,26 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 13]
+
+Kozlowski, et al.       Expires November 20, 2020              [Page 13]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
    To distil a quantum state, a second (and sometimes third) quantum
    state is used as a "test tool" to test a proposition about the first
-   state, e.g., "the parity of the first state is even."  When the test
-   succeeds, confidence in the state is improved, and thus the fidelity
-   is improved.  The test tool states are destroyed in the process, so
-   resource demands increase substantially when distillation is used.
-   When the test fails, the tested state must also be discarded.
-   Distillation makes low demands on fidelity and resources, but
-   distributed protocols incur round-trip delays [11].
+   state, e.g., "the parity of the two qubits in the first state is
+   even."  When the test succeeds, confidence in the state is improved,
+   and thus the fidelity is improved.  The test tool states are
+   destroyed in the process, so resource demands increase substantially
+   when distillation is used.  When the test fails, the tested state
+   must also be discarded.  Distillation makes low demands on fidelity
+   and resources compared to quantum error correction, but distributed
+   protocols incur round-trip delays [12].
 
 4.5.4.  Delivery
 
-   Eventually the Bell pairs must be delivered to an application (or
+   Eventually, the Bell pairs must be delivered to an application (or
    higher layer protocol) at the two end-nodes.  A detailed list of such
    requirements is beyond the scope of this memo.  At minimum, the end-
    nodes require information to map a particular Bell pair to the qubit
@@ -760,42 +761,44 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    This subsection covers the major fundamental challenges building
    quantum networks.  Here, we only describe the fundamental
-   differences, technological limitations are described later.
+   differences.  Technological limitations are described later.
 
    1.  Bell pairs are not equivalent to payload carrying packets.
 
        In most classical networks, including Ethernet, Internet Protocol
        (IP), and Multi-Protocol Label Switching (MPLS) networks, user
-       data is grouped into packets.  In addition to the user data each
+       data is grouped into packets.  In addition to the user data, each
        packet also contains a series of headers which contain the
        control information that lets routers and switches forward it
        towards its destination.  Packets are the fundamental unit in a
        classical network.
 
-       In a quantum network the entangled pairs of qubits are the basic
+       In a quantum network, the entangled pairs of qubits are the basic
        unit of networking.  These pairs are handled individually -- they
        are not grouped into packets and they do not carry any headers.
        Therefore, quantum networks will have to send all control
-       information via separate classical channels which the repeaters
-       will have to correlate with the qubits stored in their memory.
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 14]
+
+Kozlowski, et al.       Expires November 20, 2020              [Page 14]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+       information via separate classical channels which the repeaters
+       will have to correlate with the qubits stored in their memory.
+
    2.  First generations of quantum networks will not be store-and-
        forward networks.
 
-       As described in Section 4.5.1, Quantum links provide Bell pairs
+       As described in Section 4.5.1, quantum links provide Bell pairs
        that are undirected network resources, in contrast to directed
        frames of classical networks.  This phenomenological distinction
        should result in architectural differences between quantum
        networks and classical networks; quantum networks combine
        multiple elementary link Bell pairs together to create one an
-       end-to-end Bell pair where classical networks deliver messages
+       end-to-end Bell pair, whereas classical networks deliver messages
        from one end to the other end hop by hop.
 
        Classical networks receive data on one interface, store it in
@@ -813,9 +816,9 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
        A classical network packet logically exists only at one location
        at any point in time.  If a packet is modified in some way,
-       headers or payload, this information does not need to be conveyed
-       to anybody else in the network.  The packet can be simply
-       forwarded as before.
+       whether headers or payload, this information does not need to be
+       conveyed to anybody else in the network.  The packet can be
+       simply forwarded as before.
 
        In contrast, entanglement is a phenomenon in which two or more
        qubits exist in a physically distributed state.  Operations on
@@ -831,17 +834,17 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    4.  Generating entanglement requires temporary state.
 
-       Packet forwarding in a classical network is largely a stateless
-       operation.  When a packet is received, the router looks up its
-       forwarding table and sends the packet out of the appropriate
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 15]
+Kozlowski, et al.       Expires November 20, 2020              [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+       Packet forwarding in a classical network is largely a stateless
+       operation.  When a packet is received, the router looks up its
+       forwarding table and sends the packet out of the appropriate
        output.  There is no need to keep any memory of the packet any
        more.
 
@@ -863,8 +866,8 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    o  communicate classical bits of information as part of distributed
       protocols such as entanglement swapping and teleportation,
 
-   o  communicate control information within a network - this includes
-      both background protocols such as routing as well as signalling
+   o  communicate control information within a network, including both
+      background protocols such as routing as well as signalling
       protocols to set up end-to-end entanglement generation.
 
    Classical communication is a crucial building block of any quantum
@@ -872,9 +875,10 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    classical connectivity with each other (within typical administrative
    domain limts).  Therefore, quantum routers will need to manage two
    data planes in parallel, a classical one and a quantum one.
-   Additionally, it must be able to correlate information between them
-   so that the control information received on a classical channel can
-   be applied to the qubits managed by the quantum data plane.
+   Additionally, a node must be able to correlate information between
+   the two planes so that the control information received on a
+   classical channel can be applied to the qubits managed by the quantum
+   data plane.
 
 5.3.  Abstract model of the network
 
@@ -887,23 +891,22 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    1.  Creating link-local entanglement between neighbouring nodes.
 
-   2.  Extending entanglement from link-local pairs to long-range pairs
-       through entanglement swapping.
 
 
-
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 16]
+Kozlowski, et al.       Expires November 20, 2020              [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+   2.  Extending entanglement from link-local pairs to long-range pairs
+       through entanglement swapping.
+
    3.  Performing distillation to manage the fidelity of the produced
-       pairs
+       pairs.
 
-   4.  Participate in the management of the network (routing etc.).
+   4.  Participating in the management of the network (routing, etc.).
 
-   Not all quantum repeaters in the network will be the same, here we
+   Not all quantum repeaters in the network will be the same; here we
    break them down further:
 
    o  Quantum routers (controllable quantum nodes) - A quantum router is
@@ -914,7 +917,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    o  Automated quantum nodes - An automated quantum node is a data
       plane only quantum repeater that does not participate in network
       management.  Since the no-cloning theorem precludes the use of
-      amplification long-range links will be established by chaining
+      amplification, long-range links will be established by chaining
       multiple such automated nodes together.
 
    o  End-nodes - End-nodes in a quantum network must be able to receive
@@ -940,19 +943,20 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    o  Classical links - A classical link is a link between any node in
       the network that is capable of carrying classical network traffic.
 
-5.3.2.  Putting it all together
-
-   A two-hop path in a generic quantum network can be represented as:
 
 
 
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 17]
+Kozlowski, et al.       Expires November 20, 2020              [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+5.3.2.  Putting it all together
+
+   A two-hop path in a generic quantum network can be represented as:
 
    | App |-------------------CC-------------------| App |
       ||                                            ||
@@ -976,39 +980,40 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    When the network receives a request to generate end-to-end entangled
    pairs it uses the classical communication channels to coordinate and
-   claim the resources necessary to fulfil this request.  This may be
-   some combination of prior control information (e.g. routing tables)
+   claim the resources necessary to fulfill this request.  This may be
+   some combination of prior control information (e.g.  routing tables)
    and signalling protocols, but the details of how this is achieved are
    an active research question and thus beyond the scope of this memo.
 
-   During or after the control information is distributed the network
+   During or after the distribution of control information, the network
    performs the necessary quantum operations such as generating
-   entangled over individual links, performing entanglement swaps, and
-   further signalling to transmit the swap outcomes and other control
-   information.  Since none of the entangled pairs carry any user data,
-   some of these operations can be performed before the request is
-   received in anticipation of the demand.
+   entanglement over individual links, performing entanglement swaps,
+   and further signalling to transmit the swap outcomes and other
+   control information.  Since none of the entangled pairs carry any
+   user data, some of these operations can be performed before the
+   request is received in anticipation of the demand.
 
    The entangled pair is delivered to the application once it is ready,
    together with the relevant pair identifier.  However, being ready
-   does not necessarily mean once all link pairs and entanglement swaps
-   are complete as some applications can start executing on an
+   does not necessarily mean that all link pairs and entanglement swaps
+   are complete, as some applications can start executing on an
    incomplete pair.  In this case the remaining entanglement swaps will
-   propagate the actions across the network to the other end.
-
-5.4.  Network boundaries
-
-   Just like classical network, there will various boundaries will exist
-   in quantum networks.
+   propagate the actions across the network to the other end, sometimes
+   necessitating fixup operations at the end node.
 
 
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 18]
+Kozlowski, et al.       Expires November 20, 2020              [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+5.4.  Network boundaries
+
+   Just like classical networks, various boundaries will exist in
+   quantum networks.
 
 5.4.1.  Boundaries between different physical architectures
 
@@ -1023,8 +1028,8 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    For example, architectures based on optical elements and atomic
    ensembles are very efficient at generating entanglement, but provide
    little control over the qubits once the pair is generated.  On the
-   other hand nitrogen-vacancy architectures offer a much greater degree
-   of control over qubits, but have a harder time generating the
+   other hand, nitrogen-vacancy architectures offer a much greater
+   degree of control over qubits, but have a harder time generating the
    entanglement across a link.
 
    It is an open research question where exactly the boundary will lie.
@@ -1051,6 +1056,16 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    consider a highly abstract scenario and refer to [5] for pointers to
    the physics literature.
 
+
+
+
+
+
+Kozlowski, et al.       Expires November 20, 2020              [Page 19]
+
+Internet-Draft      Principles for a Quantum Internet           May 2020
+
+
 5.5.1.  Memory lifetimes
 
    In addition to discrete operations being imperfect, storing a qubit
@@ -1058,14 +1073,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    achieving persistent storage is that it is extremely challenging to
    isolate a quantum system from the environment.  The environment
    introduces an uncontrollable source of noise into the system which
-
-
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 19]
-
-Internet-Draft      Principles for a Quantum Internet           May 2020
-
-
    affects the fidelity of the state.  This process is known as
    decoherence.  Eventually, the state has to be discarded once its
    fidelity degrades too much.
@@ -1085,7 +1092,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    fast repetition rate for Bell pair generation is achievable, but only
    a small fraction will succeed.  Currently, the highest achievable
    rates of success between nodes capable of storing the resulting
-   qubits are of the order of 10 Hz.  Combined with short memory
+   qubits are on the order of 10 Hz.  Combined with short memory
    lifetimes this leads to very tight timing windows to build up
    network-wide connectivity.
 
@@ -1107,31 +1114,27 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    combine different quantum information processing technologies at
    present.  Coupling different technologies with each other is of great
    interest as it may help overcome the weaknesses of the different
-   implementations, but this may take a long time to be realised with
-   high reliability and thus is not a near-term goal.
 
 
 
-
-
-
-
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 20]
+Kozlowski, et al.       Expires November 20, 2020              [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+   implementations, but this may take a long time to be realised with
+   high reliability and thus is not a near-term goal.
 
 6.  Architectural principles
 
    Given that the most practical way of realising quantum network
    connectivity is using Bell Pair and entanglement swapping repeater
-   technology what sort of principles should guide us in assembling such
-   networks such that they are functional, robust, efficient, and most
-   importantly: they work.  Furthermore, how do we design networks so
-   that they work under the constraints imposed by the hardware
-   available today, but do not impose unnecessary burden on future
-   technology.
+   technology, what sort of principles should guide us in assembling
+   such networks such that they are functional, robust, efficient, and
+   most importantly, they work?  Furthermore, how do we design networks
+   so that they work under the constraints imposed by the hardware
+   available today, but do not impose unnecessary burdens on future
+   technology?
 
    As this is a completely new technology that is likely to see many
    iterations over its lifetime, this memo must not serve as a
@@ -1162,26 +1165,27 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
        transmission certainly could be used as a building block for all
        quantum applications, it is certainly not the most basic one
        possible.  For example, QKD, the most well known quantum
-       application protocol only relies on the stronger than classical
+       application protocol, only relies on the stronger-than-classical
        correlations and inherent secrecy of entangled Bell pairs and
        does not transmit arbitrary quantum states.
+
+
+
+
+
+Kozlowski, et al.       Expires November 20, 2020              [Page 21]
+
+Internet-Draft      Principles for a Quantum Internet           May 2020
+
 
        The primary purpose of a quantum internet is to support
        distributed quantum application protocols and it is of utmost
        importance that they can run well and efficiently.  Thus, it is
        important to develop performance metrics meaningful to
-
-
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 21]
-
-Internet-Draft      Principles for a Quantum Internet           May 2020
-
-
        application to drive the development of quantum network
        protocols.  For example, the Bell pair generation rate is
        meaningless if one does not also consider their fidelity.  It is
-       generally, much easier to generate pairs of lower fidelity, but
+       generally much easier to generate pairs of lower fidelity, but
        quantum applications may have to make multiple re-attempts or
        even abort if the fidelity is too low.  A review of the
        requirements for different known quantum applications can be
@@ -1192,7 +1196,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
        Early-stage quantum networks will be very limited in terms of
        their capabilities and will only be able to run a limited set of
        applications.  As quantum repeater technology becomes more
-       advanced and acquire more sophisticated capabilities, new
+       advanced and acquires more sophisticated capabilities, new
        applications will become possible.  The different stages of this
        development are described in [5].
 
@@ -1203,7 +1207,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
        already possible to run QKD efficiently on metropolitan scales
        and such networks are already commercially available.  However,
        they are not based on quantum repeaters and thus will not be able
-       to easily transition more sophisticated applications.
+       to easily transition to more sophisticated applications.
 
    3.  Support hardware heterogeneity
 
@@ -1222,18 +1226,18 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    4.  Be flexible with regards to hardware capabilities and limitations
 
-       This goal encompasses two important points.  First, the
-       architecture should be able to function under the physical
-       constraints imposed by the current generation hardware.  Second,
-       it should not make it difficult to run the network over any
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 22]
+Kozlowski, et al.       Expires November 20, 2020              [Page 22]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+       This goal encompasses two important points.  First, the
+       architecture should be able to function under the physical
+       constraints imposed by the current generation hardware.  Second,
+       it should not make it difficult to run the network over any
        hardware that may come along in the future.  The physical
        capabilities of repeaters will improve and redeploying a
        technology is extremely challenging.
@@ -1262,7 +1266,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
        authenticity, confidentiality, or integrity of the transmitted
        qubits or the generated entanglement.  Instead, applications,
        such as QKD, establish such guarantees using the classical
-       network in conjunction with he quantum one.  This is much easier
+       network in conjunction with the quantum one.  This is much easier
        than demanding that the network deliver secure entanglement in
        the first place.
 
@@ -1278,17 +1282,17 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
        actively monitored as any readout irreversibly destroys its
        contents.  Furthermore, given one end of an entangled pair, it is
        impossible to tell where the other qubit is without any
-       additional information.  Therefore, monitoring quantum networks
-       will be more challenging and more important if any meaningful
-       network management solution is to be developed.
 
 
 
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 23]
+Kozlowski, et al.       Expires November 20, 2020              [Page 23]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+       additional information.  Therefore, monitoring quantum networks
+       will be more challenging and more important if any meaningful
+       network management solution is to be developed.
 
    7.  Ensure availability and resilience
 
@@ -1333,19 +1337,20 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    3.  Fidelity is part of the service
 
-       In addition to being able to deliver Bell Pairs to the
-       communication end-points, the Bell Pairs must be of sufficient
-       fidelity.  Unlike in classical networks where errors should
-       essentially be eliminated for most application protocols, many
-       quantum applications only need imperfect entanglement to
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 24]
+
+Kozlowski, et al.       Expires November 20, 2020              [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+       In addition to being able to deliver Bell Pairs to the
+       communication end-points, the Bell Pairs must be of sufficient
+       fidelity.  Unlike in classical networks where errors are
+       effectively eliminated for most application protocols, many
+       quantum applications only need imperfect entanglement to
        function.  However, different applications will have different
        requirements for what fidelity they can work with.  It is the
        network's responsibility to balance the resource usage with
@@ -1389,19 +1394,18 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    multipartite entanglement.  As an analogy, MPLS networks have the
    concept of multi-point LSPs for multicast.
 
-   When a quantum application creates a quantum virtual circuit, it can
-   indicate quality of service (QoS) parameters such as the required
-   capacity in end-to-end Bell pairs per second (BPPS) and the required
-   fidelity of the Bell pairs.  As an analogy, in MPLS networks
 
 
 
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 25]
+Kozlowski, et al.       Expires November 20, 2020              [Page 25]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
+   When a quantum application creates a quantum virtual circuit, it can
+   indicate quality of service (QoS) parameters such as the required
+   capacity in end-to-end Bell pairs per second (BPPS) and the required
+   fidelity of the Bell pairs.  As an analogy, in MPLS networks
    applications specify the required bandwidth in bits per second (BPS)
    and other constraints when they create a new LSP.
 
@@ -1446,19 +1450,19 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
    Quantum networks need an abstraction of the hardware for specifying
    the forwarding rules.  This allows us to de-couple the control plane
-   (routing and signaling) from the data plane (actual creation of Bell
-   pairs).  The forwarding rules are specified using abstract building
-   blocks such as "creating local Bell pairs", "swapping Bell pairs",
-   "distillation of Bell pairs".  As an analogy, classical networks use
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 26]
+Kozlowski, et al.       Expires November 20, 2020              [Page 26]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
-   abstractions that as based on match conditions (e.g. looking up
+   (routing and signaling) from the data plane (actual creation of Bell
+   pairs).  The forwarding rules are specified using abstract building
+   blocks such as "creating local Bell pairs", "swapping Bell pairs",
+   "distillation of Bell pairs".  As an analogy, classical networks use
+   abstractions that are based on match conditions (e.g. looking up
    header fields in tables) and actions (e.g. modifying fields or
    forwarding a packet to a specific interface).  The data-plane
    abstractions in quantum networks will be very different from those in
@@ -1481,7 +1485,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 8.  Security Considerations
 
-   Even though no user data enters a quantum network security is listed
+   Even though no user data enters a quantum network, security is listed
    as an explicit goal for the architecture and this issue is addressed
    in the section on goals.  Even though user data doesn't enter the
    network, it is still possible to attack the control protocols and
@@ -1500,19 +1504,19 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
    classical network in conjunction with he quantum one.  This is much
    easier than demanding that the network deliver secure entanglement.
 
-9.  IANA Considerations
-
-   This memo includes no request to IANA.
 
 
 
 
 
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 27]
+Kozlowski, et al.       Expires November 20, 2020              [Page 27]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+9.  IANA Considerations
+
+   This memo includes no request to IANA.
 
 10.  Acknowledgements
 
@@ -1557,18 +1561,19 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
               <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.47.460>.
 
-   [7]        Muralidharan, S., Kim, J., Lutkenhaus, N., Lukin, M., and
-              L. Jiang, "Ultrafast and Fault-Tolerant Quantum
-              Communication across Long Distances", Phys. Rev. Lett. 112
-              (25-27), 250501, 2014, <https://arxiv.org/abs/1310.5291>.
 
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 28]
+Kozlowski, et al.       Expires November 20, 2020              [Page 28]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
+
+   [7]        Muralidharan, S., Li, L., Kim, J., Lutkenhaus, N., Lukin,
+              M., and L. Jiang, "Optimal architectures for long distance
+              quantum communication", Scientific Reports 6, 20463, 2016,
+              <https://www.nature.com/articles/srep20463>.
 
    [8]        Van Meter, R. and J. Touch, "Designing quantum repeater
               networks", IEEE Communications Magazine 51, 64-71, 2013,
@@ -1581,20 +1586,22 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
               arXiv 1903.09778, 2019,
               <https://arxiv.org/abs/1903.09778>.
 
-   [10]       Nielsen, M. and I. Chuang, "Quantum Computation and
+   [10]       Sutor, R., "Dancing with Qubits", Packt Publishing , 2019.
+
+   [11]       Nielsen, M. and I. Chuang, "Quantum Computation and
               Quantum Information", Cambridge University Press , 2011.
 
-   [11]       Bennett, C., DiVincenzo, D., Smolin, J., and W. Wootters,
+   [12]       Bennett, C., DiVincenzo, D., Smolin, J., and W. Wootters,
               "Mixed State Entanglement and Quantum Error Correction",
               Phys. Rev. A Vol. 54, Iss. 5, 1996,
               <https://arxiv.org/abs/quant-ph/9604024>.
 
-   [12]       Briegel, H., Dur, W., Cirac, J., and P. Zoller, "Quantum
+   [13]       Briegel, H., Dur, W., Cirac, J., and P. Zoller, "Quantum
               Repeaters: The Role of Imperfect Local Operations in
               Quantum Communication", Phys. Rev. Lett. Vol. 81, Num. 26,
               1998, <https://arxiv.org/abs/quant-ph/9803056>.
 
-   [13]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
+   [14]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
               "When Entanglement meets Classical Communications: Quantum
               Teleportation for the Quantum Internet",   , 2019,
               <https://arxiv.org/abs/1907.06197>.
@@ -1614,14 +1621,7 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-
-Kozlowski, et al.       Expires November 13, 2020              [Page 29]
+Kozlowski, et al.       Expires November 20, 2020              [Page 29]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -1677,7 +1677,7 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 30]
+Kozlowski, et al.       Expires November 20, 2020              [Page 30]
 
 Internet-Draft      Principles for a Quantum Internet           May 2020
 
@@ -1733,4 +1733,4 @@ Internet-Draft      Principles for a Quantum Internet           May 2020
 
 
 
-Kozlowski, et al.       Expires November 13, 2020              [Page 31]
+Kozlowski, et al.       Expires November 20, 2020              [Page 31]

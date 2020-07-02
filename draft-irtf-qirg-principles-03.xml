@@ -493,7 +493,7 @@
 
        </section>
 
-       <section title="Fidelity">
+       <section anchor="fidelity" title="Fidelity">
 
          <t>In general, it is expected that a classical packet arrives at its
          destination without any errors introduced by hardware noise along the
@@ -528,7 +528,7 @@
        <t>Conceptually, the most straightforward way to distribute an entangled
        state is to simply transmit one of the qubits directly to the other end
        across a series of nodes while performing sufficient forward quantum
-       error correction to bring losses down to an acceptable level. Despite
+       error correction <xref target="qec"></xref> to bring losses down to an acceptable level. Despite
        the no-cloning theorem and the inability to directly measure a quantum
        state, error-correcting mechanisms for quantum communication exist <xref
        target="mural14"></xref>. However, quantum error correction makes very
@@ -748,7 +748,7 @@
 
        </section>
 
-       <section title="Distillation">
+       <section anchor="ent-dis" title="Distillation">
 
          <t>Neither the generation of Bell pairs nor the swapping operations
          are noiseless operations. Therefore, with each link and each swap the
@@ -767,6 +767,26 @@
          Distillation makes low demands on fidelity and resources, but
          distributed protocols incur round-trip delays <xref
          target="epp"></xref>.</t>
+
+       </section>
+
+       <section anchor="qec" title="Quantum Error Correction">
+         <t>Like classical error correction, quantum error correction (QEC)
+         encodes logical qubits on physical (raw) qubits and protect the
+         logical qubits from errors described in <xref target="fidelity"></xref>.
+         Again like classical error correction, QEC can not only correct state
+         errors but complement lost qubits. Additionally, if all physical qubits
+         which encodes a logical qubit are in a station, the correction procedure
+         can be executed locally, even if the logical qubit is entangled with
+         remote qubits. Some QEC codes has encoded universal quantum gate set,
+         therefore enables fault-tolerant quantum computation.</t>
+
+         <t>Though QEC is originally a scheme to protect a from noises,
+         QEC can be applied to entanglement distillation. Such QEC-applied
+         distillation is cost-effective but needs higher base fidelity.</t>
+         
+         <t>One big difference from classical error correction is the code-rate.
+         QEC encodes a logical qubits on many physical qubits.</t>
 
        </section>
 
@@ -1079,125 +1099,115 @@ CC - classical channel
          that special quantum links delineate the boundary.</t>
 
        </section>
-
+       
        <section title="Boundaries between different administrative regions">
-
+         
          <t>Just like in classical networks, multiple quantum networks will
          connect into a global quantum internet. This necessarily implies the
          existence of borders between different administrative regions. How
          these boundaries will be handled is also an open question and thus
          beyond the scope of this memo.</t>
-
+         
        </section>
+       
+       <section anchor="generations" title="Boundaries between different
+                                            error management schemes">
+         
+         <t>Not only are there physical differences and administrative
+         boundaries, but there are important distinctions in how errors
+         will be managed, which affects the content and semantics of
+         messages that must cross those boundaries, as well -- both for
+         connection setup and real-time operation.
+         Quantum networks have been categorized into three "generations"
+         by error management schemes<xref target="mural16"></xref>.
+         Note that those "generations" are more like categories;
+         they do not mean time progression and do not obsolete each other.
+         Which generation is used depends on the hardware platform and the
+         choise by upper layers.</t>
+         
+         <t>Table <xref target="gens"></xref> summalizes the generations.
+         Every scheme requires uni-directional quantum signaling beforehand.</t>
+         <texttable anchor="gens" title="Classical signaling and  generations">
+           <ttcol align="center"></ttcol>
+           <ttcol align="center">First generation</ttcol>
+           <ttcol align="center">Second generation</ttcol>
+           <ttcol align="center">Third generation</ttcol>
+           
+           <c>Loss tolerance</c>
+           <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+           <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+           <c>Quantum Error Correction (no classical signaling)</c>
+           
+           <c>Error tolerance</c>
+           <c>Entanglement distillation (bi-directional classical signaling)</c>
+           <c>Entanglement distillation (uni-directional classical signaling) or
+           Quantum Error Correction (no classical signaling) </c>
+           <c>Quantum Error Correction (no classical signaling)</c>
+         </texttable>
 
+         <t>Generations are defined by the directions of classical signaling
+         required in their distributed protocols for loss tolerance
+         and error tolerance. Classical signaling carries the
+         classical bits and incur round-trip delays described in
+         <xref target="ent-dis"></xref>, hence they affect the performance
+         of quantum networks, especially between non-adjacent nodes.</t>
+         
+         <t>Loss tolerance is how to tolerate photon losses. Heralded
+         entanglement generation is, as described in <xref target="elg"></xref>,
+         confirming receiption of qubits by herald signal.
+         As described in <xref target="qec"></xref>, QEC can be applied to
+         complement lost qubits and the correction procedure is composed of
+         local operations, therefore it does not require classical signaling,
+         provided loss rate is less than 0.5.</t>
+         
+         <t>Error tolerance is how to tolerate state errors.
+         Entanglement distillation is easier to implement,
+         however, incur round-trip delays by bi-directional classical
+         signaling.
+         QEC corrects state errors locally so that it does not
+         need classical signaling.
+         Between those two, QEC-applied distillation is there,
+         which needs uni-directional classical signaling.</t>
+         
+         <t>
+           Each generation achieves different Bell pairs.
+           <list style="numbers">
+             <t>Quantum networks of the first generation generate end-to-end
+             physical Bell pairs by shallow and small quantum circuits.</t>
+             
+             <t>The second generations is enpowered by QEC code.
+             The first halves of the second generation apply QEC code
+             to distillation to generate end-to-end physical Bell pairs.
+             The latter halves generate end-to-end logical Bell pairs
+             encoded by QEC codes.</t>
+             
+             <t>The third genereations directly transmits encoded qubits
+             to adjacent nodes, as discussed in <xref target="dt"></xref>.
+             The receiver can forward received logical qubits to another node.
+             Provided that logical half Bell pairs are sent, the sender and the
+             receiver can execute logical-level entanglement swapping
+             between the half Bell pairs they share and other half Bell pairs
+             shared with other nodes.
+             
+             The logical-level entanglement swapping scheme will have many systems
+             in common with other generations.
+             
+             The forwarding scheme will be
+             able to communicate in a "store and forward" manner
+             since they will be able to carry arbitrary states hop by hop.
+             Thus, the networking algorithms of the later generations of
+             quantum networks may end up having more in common with
+             classical networks.
+             </t>
+           </list>
+         </t>
+         
+         <t>The later generation requires higher technologies. This document
+         concentrates quantum networks of entanglement swapping.</t>
+       </section>
+       
      </section>
      
-     <section anchor="generations" title="Generations of Quantum Networks">
-
-       <t>Quantum networks are categorized into three generations
-       <xref target="mural16"></xref>. Those generations are defined by
-       the directions of signaling required in their distributed protocols
-       for loss tolerance and error tolerance. Such signalings
-       block the networking procedure; hence they affect the performance
-       of quantum networks, especially between non-adjacent nodes.
-       Table <xref target="gens"></xref> summalizes the generations.</t>
-
-
-       <texttable anchor="gens" title="Table">
-         <ttcol align="center"></ttcol>
-         <ttcol align="center">First generation</ttcol>
-         <ttcol align="center">Second generation</ttcol>
-         <ttcol align="center">Third generation</ttcol>
-         
-         <c>Loss tolerance</c>
-         <c>Heralded entanglement generation (bi-directional classical signaling)</c>
-         <c>Heralded entanglement generation (bi-directional classical signaling)</c>
-         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
-         
-         <c>Error tolerance</c>
-         <c>Entanglement distillation (bi-directional classical signaling)</c>
-         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
-         <c>Quantum Error Correction (uni-directional quantum signaling)</c>
-         
-       </texttable>
-
-       <t>
-         <list style="numbers">
-           <t>Quantum networks of the first generation generate end-to-end
-           physical Bell pairs. The procedure is:
-           <list style="numbers">
-             <t> Generate physical Bell pairs between adjacent nodes. Photon
-             losses are managed by the heralded entanglement generation schemes
-             shown in <xref target="elg"></xref>. Classical messages are sent in
-             the reverse way to tell which photons are received (hence
-             bi-directional signaling between adjacent nodes).</t>
-             <t> Entanglement distillation between adjacent nodes is executed
-             if the fidelity of Bell pairs is not enough. Claccical messages
-             are sent to tell the measurement outcomes to each other
-             (bi-directional signaling between adjacent nodes).</t>
-             <t> Entanglement swapping is executed. The measurement outcome
-             must be sent to a node that holds the other half Bell pair,
-             however, processing the measurement outcomes does not
-             block the networking procedure.</t>
-             <t> If the fidelity of Bell pairs between non-adjacent nodes
-             is estimated to be low, entanglement distillation is performed.
-             This entanglement distillation requires nodes to send measurement
-             outcomes to each other, which blocks the networking procedure
-             (bi-directional signaling between non-adjacent nodes).</t> 
-           </list>
-           </t>
-
-           <t>The second generations generate end-to-end logical Bell pairs
-           encoded on physical Bell pairs by quantum error correcting codes.
-           The procedure:
-           <list style="numbers">
-             <t> Generate physical Bell pairs between adjacent nodes. Photon
-             losses are managed by the heralded entanglement generation schemes
-             shown in <xref target="elg"></xref>. Classical messages are sent in
-             the reverse way to tell which photons are received (hence
-             bi-directional signaling between adjacent nodes).</t>
-             <t> Entanglement distillation between adjacent nodes is executed
-             if the fidelity of Bell pairs is not enough. Claccical messages
-             are sent to tell the measurement outcomes to each other
-             (bi-directional signaling between adjacent nodes).</t>
-             <t> Encode (|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2)
-             and |0> by a quantum  error correcting code in a set of adjacent
-             nodes respectively. Errors will be managed by this error correcting
-             code locally.</t>
-             <t> Execute teleportation-based transversal non-local CNOT gates 
-             to generate logical Bell pairs between adjacent nodes.</t>
-             <t> (Logicl) entanglement swapping is executed. The measurement
-             outcome must be sent to a node that holds the other half Bell pair,
-             however, processing the measurement outcomes does not
-             block the networking procedure.</t>
-           </list>
-           </t>
-           
-           <t>The third genereations are of direct transmission discussed in
-           <xref target="dt"></xref>, that forwards logical qubits hop by hop.
-           The procedure is:
-           <list style="numbers">
-             <t> Encode arbitrary quantum state on photons with a quantum
-             error correcting code.</t>
-             <t> Send the photons to an adjacent node. (uni-directional signaling
-             between adjacent nodes)</t>
-             <t> Execute error correction to restore lost photons and to
-             correct errors.</t>
-           </list>
-           It is worth noting, that third generation quantum repeaters will be
-           able to transmit qubits directly in a "store and forward" manner
-           since they will be able to carry arbitrary states hop by hop.
-           Thus, the networking algorithms of the later generations of
-           quantum networks may end up having more in common with
-           classical networks.
-           </t>
-         </list>
-       </t>
-
-       <t>The later generation requires higher technologies. This document
-       concentrates the first generation of the quantum networks.</t>
-     </section>
-
      <section title="Physical constraints">
        <t>The model above has effectively abstracted away the particulars of
        the hardware implementation. However, certain physical constraints need

@@ -1463,7 +1463,7 @@ CC - classical channel
            applications remain secure they are not necessarily operational or
            as efficient in the presence of an attacker. Security concerns in
            quantum networks are described in more detail in <xref
-           target="satoh20" />.</t>
+           target="satoh17" /> <xref target="satoh20" />.</t>
 
            <t>Make them easy to monitor
            <vspace blankLines="1" />
@@ -1872,7 +1872,20 @@ CC - classical channel
 
          <date year="2020" />
        </front>
-       <seriesInfo name=" " value=" " />
+       <seriesInfo name="arXiv" value="2005.04617" />
+     </reference>
+
+     <reference anchor="satoh17" target="https://arxiv.org/abs/1701.04587">
+       <front>
+         <title>The Network Impact of Hijacking a Quantum Repeater</title>
+
+         <author initials="T" surname="Satoh" />
+         <author initials="S" surname="Nagayama" />
+         <author initials="R" surname="Van Meter" />
+
+         <date year="2017" />
+       </front>
+       <seriesInfo name="arXiv" value="1701.04587" />
      </reference>
 
      <reference anchor="dahlberg18" target="https://arxiv.org/abs/1903.09778">

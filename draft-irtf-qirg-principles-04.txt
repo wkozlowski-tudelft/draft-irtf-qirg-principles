@@ -181,7 +181,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    the principles of operation of a quantum network.  This exposition
    was written with a classical networking audience in mind.  It is
    assumed that the reader has never before been exposed to any quantum
-   physics.  We refer to e.g. [14] [15] for an in-depth introduction to
+   physics.  We refer to e.g. [15] [16] for an in-depth introduction to
    quantum information.
 
 2.1.  Qubit
@@ -488,7 +488,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    An alternative relies on the observation that we do not need to be
    able to distribute any arbitrary entangled quantum state.  We only
    need to be able to distribute any one of what are known as the Bell
-   pair states[17].
+   pair states[18].
 
 4.2.  Bell pairs
 
@@ -601,7 +601,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
 
    There exist three basic schemes for heralded entanglement generation
    on a link through coordinated action of the two nodes at the two ends
-   of the link [18]:
+   of the link [19]:
 
    o  "At mid-point": in this scheme an entangled photon pair source
       sitting midway between the two nodes with matter qubits sends an
@@ -709,7 +709,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    This process of teleporting Bell pairs using other entangled pairs is
    called entanglement swapping.  Quantum nodes that create long-
    distance entangled pairs via entanglement swapping are called quantum
-   repeaters in academic literature [17] and we will use the same
+   repeaters in academic literature [18] and we will use the same
    terminology in this memo.
 
 4.4.3.  Error Management
@@ -740,7 +740,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    must also be discarded.  Distillation makes low demands on fidelity
    and resources compared to quantum error correction, but distributed
    protocols incur round-trip delays due to classical communication
-   [16].
+   [17].
 
 4.4.3.2.  Quantum Error Correction
 
@@ -1297,7 +1297,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    sort of goals should drive a quantum network architecture?  The
    following list has been inspired by the history of computer
    networking and thus it is inevitably very similar to one that could
-   be produced for the classical Internet [20].  However, whilst the
+   be produced for the classical Internet [21].  However, whilst the
    goals may be similar the challenges involved are often fundamentally
    different.  The list will also most likely evolve with time and the
    needs of its users.
@@ -1408,7 +1408,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
        Whilst the applications remain secure they are not necessarily
        operational or as efficient in the presence of an attacker.
        Security concerns in quantum networks are described in more
-       detail in [12].
+       detail in [13] [12].
 
    5.  Make them easy to monitor
 
@@ -1459,7 +1459,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
 
 
    between success and failure.  For more information about design
-   considerations for quantum networks see [11] [13] .
+   considerations for quantum networks see [11] [14] .
 
    1.  Entanglement is the fundamental service
 
@@ -1469,7 +1469,7 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
        resource.  Bell pairs are the minimal entanglement building block
        that is sufficient to develop these applications.  However, a
        quantum network may also distribute multipartite entangled states
-       (entangled states of three or more qubits)[19] as this may be
+       (entangled states of three or more qubits)[20] as this may be
        more efficient under certain circumstances.
 
    2.  Bell Pairs are indistinguishable
@@ -1748,44 +1748,44 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
               <https://ieeexplore.ieee.org/document/6576340>.
 
    [12]       Satoh, T., Nagayama, S., Suzuki, S., Matsuo, T., and R.
-              Van Meter, "Attacking the Quantum Internet",   , 2020,
+              Van Meter, "Attacking the Quantum Internet",
+              arXiv 2005.04617, 2020,
               <https://arxiv.org/abs/2005.04617>.
 
-   [13]       Dahlberg, A., Skrzypczyk, M., Coopmans, T., Wubben, L.,
+   [13]       Satoh, T., Nagayama, S., and R. Van Meter, "The Network
+              Impact of Hijacking a Quantum Repeater", arXiv 1701.04587,
+              2017, <https://arxiv.org/abs/1701.04587>.
+
+   [14]       Dahlberg, A., Skrzypczyk, M., Coopmans, T., Wubben, L.,
               Rozpedek, F., Pompili, M., Stolk, A., Pawelczak, P.,
               Knegjens, R., de Oliveira Filho, J., Hanson, R., and S.
               Wehner, "A Link Layer Protocol for Quantum Networks",
               arXiv 1903.09778, 2019,
               <https://arxiv.org/abs/1903.09778>.
 
-   [14]       Sutor, R., "Dancing with Qubits", Packt Publishing , 2019.
+   [15]       Sutor, R., "Dancing with Qubits", Packt Publishing , 2019.
 
-   [15]       Nielsen, M. and I. Chuang, "Quantum Computation and
+   [16]       Nielsen, M. and I. Chuang, "Quantum Computation and
               Quantum Information", Cambridge University Press , 2011.
 
-   [16]       Bennett, C., DiVincenzo, D., Smolin, J., and W. Wootters,
+   [17]       Bennett, C., DiVincenzo, D., Smolin, J., and W. Wootters,
               "Mixed State Entanglement and Quantum Error Correction",
               Phys. Rev. A Vol. 54, Iss. 5, 1996,
               <https://arxiv.org/abs/quant-ph/9604024>.
 
-   [17]       Briegel, H., Dur, W., Cirac, J., and P. Zoller, "Quantum
+   [18]       Briegel, H., Dur, W., Cirac, J., and P. Zoller, "Quantum
               Repeaters: The Role of Imperfect Local Operations in
               Quantum Communication", Phys. Rev. Lett. Vol. 81, Num. 26,
               1998, <https://arxiv.org/abs/quant-ph/9803056>.
 
-   [18]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
+   [19]       Cacciapuoti, A., Caleffi, M., Van Meter, R., and L. Hanzo,
               "When Entanglement meets Classical Communications: Quantum
               Teleportation for the Quantum Internet",   , 2019,
               <https://arxiv.org/abs/1907.06197>.
 
-   [19]       Meignant, C., Markham, D., and F. Grosshans, "Distributing
-              graph states over arbitrary quantum networks", Phys. Rev.
-              A Vol. 100, Iss. 5, 2019,
-              <https://arxiv.org/abs/1811.05445>.
 
-   [20]       Clark, D., "The design philosophy of the DARPA internet
-              protocols", SIGCOMM '88, 1988,
-              <https://dl.acm.org/doi/abs/10.1145/52324.52336>.
+
+
 
 
 
@@ -1793,6 +1793,15 @@ Kozlowski, et al.       Expires January 13, 2021               [Page 32]
 
 Internet-Draft      Principles for a Quantum Internet          July 2020
 
+
+   [20]       Meignant, C., Markham, D., and F. Grosshans, "Distributing
+              graph states over arbitrary quantum networks", Phys. Rev.
+              A Vol. 100, Iss. 5, 2019,
+              <https://arxiv.org/abs/1811.05445>.
+
+   [21]       Clark, D., "The design philosophy of the DARPA internet
+              protocols", SIGCOMM '88, 1988,
+              <https://dl.acm.org/doi/abs/10.1145/52324.52336>.
 
 Authors' Addresses
 
@@ -1831,15 +1840,6 @@ Authors' Addresses
    Email: brunorijsman@gmail.com
 
 
-   Angela Sara Cacciapuoti
-   University of Naples Federico II
-   Department of Electrical Engineering and Information Technologies
-   Claudio 21
-   Naples  80125
-   Italy
-
-   Email: angelasara.cacciapuoti@unina.it
-
 
 
 
@@ -1848,6 +1848,16 @@ Authors' Addresses
 Kozlowski, et al.       Expires January 13, 2021               [Page 33]
 
 Internet-Draft      Principles for a Quantum Internet          July 2020
+
+
+   Angela Sara Cacciapuoti
+   University of Naples Federico II
+   Department of Electrical Engineering and Information Technologies
+   Claudio 21
+   Naples  80125
+   Italy
+
+   Email: angelasara.cacciapuoti@unina.it
 
 
    Marcello Caleffi
@@ -1868,16 +1878,6 @@ Internet-Draft      Principles for a Quantum Internet          July 2020
    Japan
 
    Email: shota.nagayama@mercari.com
-
-
-
-
-
-
-
-
-
-
 
 
 

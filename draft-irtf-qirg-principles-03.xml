@@ -846,6 +846,11 @@
              <c>Heralded entanglement generation (bi-directional classical signaling)</c>
              <c>Quantum Error Correction (no classical signaling)</c>
 
+             <c></c>
+             <c></c>
+             <c></c>
+             <c></c>
+
              <c>Error tolerance</c>
              <c>Entanglement distillation (bi-directional classical signaling)</c>
              <c>Entanglement distillation (uni-directional classical signaling) or
@@ -1704,10 +1709,11 @@ CC - classical channel
    <!-- Possibly a 'Contributors' section ... -->
 
    <section anchor="Acknowledgements" title="Acknowledgements">
-     The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
+
+     <t>The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
      Dahlberg, Mathias van den Bossche, Patrick Gelard, Chonggang Wang, Scott
      Fluhrer, and the rest of the QIRG community as a whole for their very
-     useful reviews and comments to the document.
+     useful reviews and comments to the document.</t>
 
      <!-- TODO: fill out acks appropriately to IETF rules -->
    </section>
@@ -1732,6 +1738,9 @@ CC - classical channel
 
    <references title="Informative References">
      <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+
+     &rfc1958;
+     &I-D.irtf-qirg-quantum-internet-use-cases;
 
      <reference anchor="bennett14" target="http://www.sciepub.com/reference/53249">
        <front>
@@ -1888,29 +1897,29 @@ CC - classical channel
        <seriesInfo name="arXiv" value="1903.09778" />
      </reference>
 
-          <reference anchor="sutor">
-            <front>
-              <title>Dancing with Qubits</title>
+     <reference anchor="sutor">
+       <front>
+         <title>Dancing with Qubits</title>
 
-              <author initials="R.S" surname="Sutor" />
+         <author initials="R.S" surname="Sutor" />
 
-              <date year="2019" />
-            </front>
-            <seriesInfo name="Packt Publishing" value="" />
-          </reference>
+         <date year="2019" />
+       </front>
+       <seriesInfo name="Packt Publishing" value="" />
+     </reference>
 
 
-               <reference anchor="nielsen">
-                 <front>
-                   <title>Quantum Computation and Quantum Information</title>
+     <reference anchor="nielsen">
+       <front>
+         <title>Quantum Computation and Quantum Information</title>
 
-                   <author initials="M.A" surname="Nielsen" />
-                   <author initials="I.L" surname="Chuang" />
+         <author initials="M.A" surname="Nielsen" />
+         <author initials="I.L" surname="Chuang" />
 
-                   <date year="2011" />
-                 </front>
-                 <seriesInfo name="Cambridge University Press" value="" />
-               </reference>
+         <date year="2011" />
+       </front>
+       <seriesInfo name="Cambridge University Press" value="" />
+     </reference>
 
      <reference anchor="epp" target="https://arxiv.org/abs/quant-ph/9604024">
        <front>
@@ -1967,6 +1976,17 @@ CC - classical channel
          <date year="2019" />
        </front>
        <seriesInfo name="Phys. Rev. A" value="Vol. 100, Iss. 5" />
+     </reference>
+
+     <reference anchor="clark" target="https://dl.acm.org/doi/abs/10.1145/52324.52336">
+       <front>
+         <title>The design philosophy of the DARPA internet protocols</title>
+
+         <author initials="D" surname="Clark" />
+
+         <date year="1988" />
+       </front>
+       <seriesInfo name="SIGCOMM" value="'88" />
      </reference>
 
    </references>

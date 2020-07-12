@@ -243,9 +243,9 @@
      computers of the future. A quantum network is not meant to replace
      classical networks, but rather form an overall hybrid classical quantum
      network supporting new capabilities which are otherwise impossible to
-     realise.
+     realise.</t>
 
-     This new networking paradigm offers promise for a range of new
+     <t>This new networking paradigm offers promise for a range of new
      applications such as secure communications <xref
      target="bennett14"></xref> <xref target="ekert91"></xref>, distributed
      quantum computation <xref target="crep02"></xref>, or quantum-enhanced
@@ -269,9 +269,11 @@
      exist. Furthermore, whilst physical mechanisms for transmitting quantum
      states exist, there are no robust protocols for managing such
      transmissions.</t>
-     </section>
+
+   </section>
 
    <section title="Quantum information">
+
      <t>In order to understand the framework for quantum networking, a basic
      understanding of quantum information is necessary. The following sections
      aim to introduce the bare minimum necessary to understand the principles
@@ -314,9 +316,11 @@
        NOT gate:</t>
 
        <t>NOT (a |0> + b |1>) -> a |1> + b |0>.</t>
+
      </section>
 
      <section title="Multiple qubits">
+
        <t>When multiple qubits are combined in a single quantum state the space
        of possible states grows exponentially and all these states can coexist
        in a superposition. For example, the general form of a two-qubit
@@ -381,6 +385,7 @@
        be prepared again.</t>
 
      </section>
+
    </section>
 
    <section title="Entanglement as the fundamental resource">
@@ -451,6 +456,7 @@
      <t>More complex services and applications can be built on top of entangled
      states distributed by the network, see e.g. <xref
      target="wehner18"></xref>></t>
+
    </section>
 
    <section title="Achieving quantum connectivity">
@@ -797,15 +803,15 @@
 
          <section anchor="qec" title="Quantum Error Correction">
 
-           <t>Like classical error correction, quantum error correction (QEC)
-           encodes logical qubits using several physical (raw) qubits to
+           <t>Just like classical error correction, quantum error correction
+           (QEC) encodes logical qubits using several physical (raw) qubits to
            protect them from errors described in <xref
-           target="fidelity"></xref>. Like classical error correction, QEC can
-           not only correct state errors but also account for lost qubits.
-           Additionally, if all physical qubits which encode a logical qubit
-           are located at the same node, the correction procedure can be
-           executed locally, even if the logical qubit is entangled with remote
-           qubits.</t>
+           target="fidelity"></xref>. Furthermore, similarly to its classical
+           counterpart, QEC can not only correct state errors but also account
+           for lost qubits. Additionally, if all physical qubits which encode a
+           logical qubit are located at the same node, the correction procedure
+           can be executed locally, even if the logical qubit is entangled with
+           remote qubits.</t>
 
            <t>Although QEC was originally a scheme proposed to protect a qubit
            from noise, QEC can also be applied to entanglement distillation.
@@ -858,14 +864,14 @@
            <t>Loss tolerance is about tolerating qubit transmission losses
            between nodes. Heralded entanglement generation, as described in
            <xref target="elg"></xref>, confirms the receipt of an entangled
-           qubit using a heralding signal. In the most basic implementation, a
-           quantum node transmits photons until the a heralding signal is
-           received. As described in <xref target="qec"></xref>, QEC can be
-           applied to complement lost qubits eliminating the need for
-           re-attempts. Furthermore, since the correction procedure is composed
-           of local operations, it does not require a heralding signal.
-           However, it is feasible only when the photon loss rate is less than
-           0.5.</t>
+           qubit using a heralding signal. A pair of directly connected quantum
+           nodes repeatedly attempt to generate an entangled pair until the a
+           heralding signal is received. As described in <xref
+           target="qec"></xref>, QEC can be applied to complement lost qubits
+           eliminating the need for re-attempts. Furthermore, since the
+           correction procedure is composed of local operations, it does not
+           require a heralding signal. However, it is feasible only when the
+           photon loss rate is less than 0.5.</t>
 
            <t>Error tolerance is about tolerating quantum state errors.
            Entanglement distillation is the easiest mechanism for improved
@@ -898,10 +904,9 @@
                encoded qubits to adjacent nodes, as discussed in <xref
                target="dt"></xref>. Elementary link Bell pairs can now be
                created without heralding or any other classical signalling.
-               Furthermore, this also enables "store and forward" architectures
-               in which qubits are forwarded end-to-end, like classical
-               packets, rather than relying on Bell pairs and entanglement
-               swapping.</t>
+               Furthermore, this also enables direct transmission architectures
+               in which qubits are forwarded end-to-end like classical packets
+               rather than relying on Bell pairs and entanglement swapping.</t>
 
              </list>
            </t>
@@ -965,13 +970,12 @@
            Bell pairs that are undirected network resources, in contrast to
            directed frames of classical networks. This phenomenological
            distinction leads to architectural differences between quantum
-           networks and classical networks;=. Quantum networks combine multiple
+           networks and classical networks. Quantum networks combine multiple
            elementary link Bell pairs together to create one an end-to-end Bell
            pair, whereas classical networks deliver messages from one end to
            the other end hop by hop.
            <vspace blankLines="1" />
 
-           <!-- TODO: must refer to generations -->
            Classical networks receive data on one interface, store it in local
            buffers, then forward the data to another appropriate interface.
            Quantum networks store Bell pairs and then execute entanglement
@@ -979,8 +983,11 @@
            networks are "store and swap" networks. In "store and swap"
            networks, we do not need to care about the order in which the Bell
            pairs were generated since they are undirected. This distinction
-           makes control algorithms and optimization of quantum networks
-           different from classical ones.</t>
+           makes control algorithms and optimisation of quantum networks
+           different from classical ones. Note that third generation quantum
+           networks, as described in <xref target="elg"></xref>, will be able
+           to support a "store and forward" architecture in addition to "store
+           and swap".</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.
@@ -1221,8 +1228,6 @@ CC - classical channel
 
        </section>
 
-       <!-- TODO: boundary between 1G/2G/3G based on error management -->
-
        <section title="Boundaries between different administrative regions">
 
          <t>Just like in classical networks, multiple quantum networks will
@@ -1247,6 +1252,7 @@ CC - classical channel
      </section>
 
      <section title="Physical constraints">
+
        <t>The model above has effectively abstracted away the particulars of
        the hardware implementation. However, certain physical constraints need
        to be considered in order to build a practical network. Some of these
@@ -1257,6 +1263,7 @@ CC - classical channel
        the physics literature.</t>
 
        <section title="Memory lifetimes">
+
          <t>In addition to discrete operations being imperfect, storing a qubit
          in memory is also highly non-trivial. The main difficulty in achieving
          persistent storage is that it is extremely challenging to isolate a
@@ -1273,9 +1280,11 @@ CC - classical channel
          quantum networks are to be realised in the near future, they need to
          be able to handle short memory lifetimes, for example by reducing
          latency on critical paths.</t>
+
        </section>
 
        <section title="Rates">
+
          <t>Entanglement generation on a link between two connected nodes is
          not a very efficient process and it requires many attempts to succeed.
          A fast repetition rate for Bell pair generation is achievable, but
@@ -1284,9 +1293,11 @@ CC - classical channel
          are on the order of 10 Hz. Combined with short memory lifetimes this
          leads to very tight timing windows to build up network-wide
          connectivity.</t>
+
        </section>
 
        <section title="Communication qubits">
+
          <t>Most physical architectures capable of storing qubits are only able
          to generate entanglement using only a subset of its available qubits
          called communication qubits. Once a Bell pair has been generated using
@@ -1295,9 +1306,11 @@ CC - classical channel
          given node has only one communication qubit it cannot simultaneously
          generate Bell Pairs over two links. It must generate entanglement over
          the links one at a time.</t>
+
        </section>
 
        <section title="Homogeneity">
+
          <t>Currently all hardware implementations are homogeneous and they do
          not interface with each other. In general, it is very challenging to
          combine different quantum information processing technologies at
@@ -1305,11 +1318,15 @@ CC - classical channel
          interest as it may help overcome the weaknesses of the different
          implementations, but this may take a long time to be realised with
          high reliability and thus is not a near-term goal.</t>
+
        </section>
+
      </section>
+
    </section>
 
    <section title="Architectural principles">
+
      <t>Given that the most practical way of realising quantum network
      connectivity is using Bell pair and entanglement swapping repeater
      technology, what sort of principles should guide us in assembling such
@@ -1328,6 +1345,7 @@ CC - classical channel
      internet.</t>
 
      <section title="Goals of a quantum internet">
+
        <t>When outlining any set of principles we must ask ourselves what goals
        do we want to achieve as inevitably trade-offs must be made. So what
        sort of goals should drive a quantum network architecture? The following
@@ -1397,8 +1415,6 @@ CC - classical channel
            <t>Support heterogeneity
            <vspace blankLines="1" />
 
-           <!-- TODO: refer to the network boudnaries section -->
-
            There are multiple proposals for realising practical quantum
            repeater hardware and they all have their advantages and
            disadvantages. Some may offer higher Bell pair generation rates on
@@ -1408,8 +1424,8 @@ CC - classical channel
            <vspace blankLines="1" />
 
            In addition to physical boundaries, there may be distinctions in how
-           errors are managed <xref target="gen" />. These difference will
-           affect the content and semantics of messages that cross these
+           errors are managed <xref target="generations" />. These difference
+           will affect the content and semantics of messages that cross these
            boundaries -- both for connection setup and real-time operation.
            <vspace blankLines="1" />
 
@@ -1434,7 +1450,6 @@ CC - classical channel
            Instead, applications, such as QKD, establish such guarantees in an
            end-to-end fashion using the classical network in conjunction with
            the quantum one.
-           <!-- TODO: citation -->
            <vspace blankLines="1" />
 
            Nevertheless, whilst applications can ensure their own secure
@@ -1442,8 +1457,8 @@ CC - classical channel
            order to protect the network itself and limit disruption. Whilst the
            applications remain secure they are not necessarily operational or
            as efficient in the presence of an attacker. Security concerns in
-           quantum networks are described in more detail in <xref target="..."
-           />.</t>
+           quantum networks are described in more detail in <xref
+           target="satoh20" />.</t>
 
            <t>Make them easy to monitor
            <vspace blankLines="1" />
@@ -1452,6 +1467,7 @@ CC - classical channel
            it is necessary to have the ability to monitor the network. Quantum
            networks bring new challenges in this area so it should be a goal of
            a quantum network architecture to make this task easy.
+           <vspace blankLines="1" />
 
            The fundamental unit of quantum information, the qubit, cannot be
            actively monitored as any readout irreversibly destroys its
@@ -1460,6 +1476,7 @@ CC - classical channel
            only as a statistical quantity which requires the constant
            monitoring and the sacrifice of generated Bell pairs for tomography
            or other methods.
+           <vspace blankLines="1" />
 
            Furthermore, given one end of an entangled pair, it is impossible to
            tell where the other qubit is without any additional classical
@@ -1574,7 +1591,9 @@ CC - classical channel
 
          </list>
        </t>
+
      </section>
+
    </section>
 
    <section title="Comparison with classical networks">
@@ -1685,6 +1704,11 @@ CC - classical channel
    <!-- Possibly a 'Contributors' section ... -->
 
    <section anchor="Acknowledgements" title="Acknowledgements">
+     The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
+     Dahlberg, Mathias van den Bossche, Patrick Gelard, Chonggang Wang, Scott
+     Fluhrer, and the rest of the QIRG community as a whole for their very
+     useful reviews and comments to the document.
+
      <!-- TODO: fill out acks appropriately to IETF rules -->
    </section>
 

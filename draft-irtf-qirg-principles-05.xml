@@ -1069,6 +1069,35 @@
 
      <section title="Abstract model of the network">
 
+       <section title="One control plane and two data planes">
+
+         Control plane protocols for quantum networks will have
+         responsibilities similar to their classical counterparts, namely
+         drawing the network topology, resource management, populating data
+         plane tables, etc. They will not manipulate quantum data themselves
+         and they operate by exchanging classical messages only. Therefore
+         there is no separate quantum and classical control plane. There is
+         only one network control plane.
+
+         However, as we have already mentioned earlier in this memo, there will
+         be two data planes: a classical data plane and a quantum data plane.
+         The classical data plane processes and forwards classical packets. The
+         quantum data plane processes and swaps entangled pairs. Third
+         generation quantum networks may also forward qubits in addition to
+         swapping Bell pairs.
+
+         In addition to control plane messages, there will also be control
+         information messages that operate at the granularity of individual
+         entangled pairs, such as heralding messages used for elementary link
+         generation <xref target="elg" />. In terms of functionality, these
+         messages are closer to classical packet headers than control plane
+         messages and thus we consider them to be part of the quantum data
+         plane. Therefore, a quantum data plane also includes the exchange of
+         classical control information at the granularity of individual qubits
+         and entangled pairs.
+
+       </section>
+
        <section title="Elements of a quantum network">
 
          <t>We have identified quantum repeaters as the core building block of
@@ -1134,9 +1163,11 @@
 
              <t>Quantum links - A quantum link is a link which can be used to
              generate an entangled pair between two directly connected quantum
-             repeaters. It may include a dedicated classical channel that is to
-             be used solely for the purpose of coordinating the entanglement
-             generation on this quantum link.</t>
+             repeaters. This may include additional mid-point elements
+             described in <xref target="elg" />. It may also include a
+             dedicated classical channel that is to be used solely for the
+             purpose of coordinating the entanglement generation on this
+             quantum link.</t>
 
              <t>Classical links - A classical link is a link between any node
              in the network that is capable of carrying classical network
@@ -1144,6 +1175,15 @@
 
            </list>
          </t>
+
+         <t>Note that passive elements, such as optical switches, do not
+         destroy the quantum state. Therefore, it is possible to connect
+         multiple quantum nodes with each other over an optical network and
+         perform optical switching rather than routing via entanglement
+         swapping at quantum routers. This does require coordination with the
+         elementary link entanglement generation process and it still requires
+         repeaters to overcome the short-distance limitations. However, this is
+         a potentially feasible architecture for local area networks.</t>
 
        </section>
 
@@ -1157,24 +1197,24 @@
 | App |-------------------CC-------------------| App |
    ||                                            ||
  ------                 ------                 ------
-|  EN  |----QC & CC----|  QR  |----QC & CC----|  EN  |
+|  EN  |----QL & CC----|  QR  |----QL & CC----|  EN  |
  ------                 ------                 ------
 
 App - user-level application
 QR - quantum repeater
 EN - end-node
-QC - quantum channel
-CC - classical channel
+QL - quantum link
+CC - classical channel (can consist of many classical links)
            ]]></artwork>
          </figure>
 
          <t>An application running on two end-nodes attached to a network will
          at some point need the network to generate entangled pairs for its
-         use. This will require negotiation between the end-nodes, because they
-         must both open a communication end-point (a quantum socket) which the
-         network can use to identify the two ends of the connection. The two
-         end-nodes use the classical connectivity available in the network to
-         achieve this goal.</t>
+         use. This may require negotiation between the end-nodes (possibly
+         ahead of time), because they must both open a communication end-point
+         which the network can use to identify the two ends of the connection.
+         The two end-nodes use the classical connectivity available in the
+         network to achieve this goal.</t>
 
          <t>When the network receives a request to generate end-to-end
          entangled pairs it uses the classical communication channels to
@@ -1188,9 +1228,9 @@ CC - classical channel
          network performs the necessary quantum operations such as generating
          entanglement over individual links, performing entanglement swaps, and
          further signalling to transmit the swap outcomes and other control
-         information. Since none of the entangled pairs carry any user data,
-         some of these operations can be performed before the request is
-         received in anticipation of the demand.</t>
+         information. Since Bell pairs do not carry any user data, some of
+         these operations can be performed before the request is received in
+         anticipation of the demand.</t>
 
          <t>The entangled pair is delivered to the application once it is
          ready, together with the relevant pair identifier. However, being
@@ -1375,7 +1415,7 @@ CC - classical channel
            applications, it is not the most basic one possible. For example,
            QKD, the most well known quantum application protocol, only relies
            on the stronger-than-classical correlations and inherent secrecy of
-           entangled Bell pairs and does not transmit arbitrary quantum
+           entangled Bell pairs and does not have to transmit arbitrary quantum
            states<xref target="ekert91"></xref>.
            <vspace blankLines="1" />
 
@@ -1469,9 +1509,11 @@ CC - classical channel
            <vspace blankLines="1" />
 
            In order to manage, evaluate the performance of, or debug a network
-           it is necessary to have the ability to monitor the network. Quantum
-           networks bring new challenges in this area so it should be a goal of
-           a quantum network architecture to make this task easy.
+           it is necessary to have the ability to monitor the network while
+           ensuring there will be mechanisms in place to protect the
+           confidentiality and integrity of the devices connected to it.
+           Quantum networks bring new challenges in this area so it should be a
+           goal of a quantum network architecture to make this task easy.
            <vspace blankLines="1" />
 
            The fundamental unit of quantum information, the qubit, cannot be
@@ -1485,9 +1527,14 @@ CC - classical channel
 
            Furthermore, given one end of an entangled pair, it is impossible to
            tell where the other qubit is without any additional classical
-           information. It is impossible to extract this information from the
+           metadata. It is impossible to extract this information from the
            qubits themselves. This implies that tracking entangled pairs
-           necessitates some exchange of classical information.</t>
+           necessitates some exchange of classical information. This
+           information might include (i) a reference to the entangled pair that
+           allows distributed applications to coordinate actions on qubits of
+           the same pair, (ii) the two bits from each entanglement swap
+           necessary to identify the final state of the Bell pair<xref
+           target="es" />.</t>
 
            <t>Ensure availability and resilience
            <vspace blankLines="1" />
@@ -1514,7 +1561,7 @@ CC - classical channel
        architecture, whereas the principles in themselves do not distinguish
        between success and failure. For more information about design
        considerations for quantum networks see <xref
-       target="van-meter13"></xref> <xref target="dahlberg18"></xref> .</t>
+       target="van-meter13a"></xref> <xref target="dahlberg18"></xref> .</t>
 
        <t>
          <list style="numbers">
@@ -1633,8 +1680,10 @@ CC - classical channel
      circuit. The routing function may be centralized or distributed. In the
      latter case, the quantum network needs a distributed routing protocol. As
      an analogy, classical networks use routing protocols such as open shortest
-     path first (OSPF) and intermediate-system to intermediate system
-     (IS-IS).</t>
+     path first (OSPF) and intermediate-system to intermediate system (IS-IS).
+     However, note that the definition of "shortest-path"/"least-cost" may be
+     different in a quantum network to account for its non-classical features,
+     such as fidelity<xref target="van-meter13b" />.</t>
 
      <t>Given the very scarce availability of resources in early quantum
      networks, a traffic engineering function is likely to be beneficial.
@@ -1695,10 +1744,10 @@ CC - classical channel
    </section>
 
    <section anchor="Security" title="Security Considerations">
-     <t>Even though no user data enters a quantum network, security is listed
-     as an explicit goal for the architecture and this issue is addressed in
-     the section on goals. However, as this is an informational memo it does
-     not propose any concrete mechanisms to achieve these goals.</t>
+     <t>Security is listed as an explicit goal for the architecture and this
+     issue is addressed in the section on goals. However, as this is an
+     informational memo it does not propose any concrete mechanisms to achieve
+     these goals.</t>
 
    </section>
 
@@ -1712,8 +1761,8 @@ CC - classical channel
 
      <t>The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
      Dahlberg, Mathias van den Bossche, Patrick Gelard, Chonggang Wang, Scott
-     Fluhrer, and the rest of the QIRG community as a whole for their very
-     useful reviews and comments to the document.</t>
+     Fluhrer, Joey Salazar, Joseph Touch, and the rest of the QIRG community as
+     a whole for their very useful reviews and comments to the document.</t>
 
      <!-- TODO: fill out acks appropriately to IETF rules -->
    </section>
@@ -1848,7 +1897,7 @@ CC - classical channel
        <seriesInfo name="Nat. Sci. Rep." value="6, 20463" />
      </reference>
 
-     <reference anchor="van-meter13" target="https://ieeexplore.ieee.org/document/6576340">
+     <reference anchor="van-meter13a" target="https://ieeexplore.ieee.org/document/6576340">
        <front>
          <title>Designing quantum repeater networks</title>
 
@@ -1989,6 +2038,21 @@ CC - classical channel
          <date year="2019" />
        </front>
        <seriesInfo name="Phys. Rev. A" value="Vol. 100, Iss. 5" />
+     </reference>
+
+     <reference anchor="van-meter13b" target="https://arxiv.org/abs/1206.5655">
+       <front>
+         <title>Path Selection for Quantum Repeater Networks</title>
+
+         <author initials="R" surname="Van Meter" />
+         <author initials="T" surname="Satoh" />
+         <author initials="T.D" surname="Ladd" />
+         <author initials="W.J" surname="Munro" />
+         <author initials="K" surname="Nemoto" />
+
+         <date year="2013" />
+       </front>
+       <seriesInfo name="Networking Science" value="Vol. 3, Iss. 1-4, pp 82-95" />
      </reference>
 
      <reference anchor="clark" target="https://dl.acm.org/doi/abs/10.1145/52324.52336">

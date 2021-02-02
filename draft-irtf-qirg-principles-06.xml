@@ -1072,17 +1072,23 @@
 
      <section title="Abstract model of the network">
 
-       <section title="One control plane and two data planes">
+       <section title="The control and data planes">
 
-         <t>Control plane protocols for quantum networks will have
+         <t>Control plane protocols for quantum networks will have many
          responsibilities similar to their classical counterparts, namely
          drawing the network topology, resource management, populating data
-         plane tables, etc. They will not manipulate quantum data themselves
-         and they operate by exchanging classical messages only. Therefore
-         there is no separate quantum and classical control plane. There is
-         only one network control plane.</t>
+         plane tables, etc. Most of these protocols do not require the
+         manipulation of quantum data and can operate simply by exchanging
+         classical messages only. There may also be some control plane
+         functionality that does require the handling of quantum data, e.g. a
+         quantum ping <xref target="I-D.irtf-qirg-quantum-internet-use-cases"
+         />. As it is not clear if there is much benefit in defining a separate
+         quantum control plane given the significant overlap in
+         responsibilities with its classical counterpart, the question of
+         whether there should be a separate quantum control plane is beyond the
+         scope of this document.</t>
 
-         <t>However, as we have already mentioned earlier in this memo, there
+         <t>However, the data plane separation is much more distinct and there
          will be two data planes: a classical data plane and a quantum data
          plane. The classical data plane processes and forwards classical
          packets. The quantum data plane processes and swaps entangled pairs.

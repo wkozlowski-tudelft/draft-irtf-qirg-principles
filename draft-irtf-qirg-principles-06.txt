@@ -96,7 +96,7 @@ Table of Contents
      5.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .  16
      5.2.  Classical communication . . . . . . . . . . . . . . . . .  18
      5.3.  Abstract model of the network . . . . . . . . . . . . . .  19
-       5.3.1.  One control plane and two data planes . . . . . . . .  19
+       5.3.1.  The control and data planes . . . . . . . . . . . . .  19
        5.3.2.  Elements of a quantum network . . . . . . . . . . . .  19
        5.3.3.  Putting it all together . . . . . . . . . . . . . . .  21
      5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  22
@@ -105,7 +105,7 @@ Table of Contents
        5.4.2.  Boundaries between different administrative
                regions . . . . . . . . . . . . . . . . . . . . . . .  22
        5.4.3.  Boundaries between different error management
-               schemes . . . . . . . . . . . . . . . . . . . . . . .  22
+               schemes . . . . . . . . . . . . . . . . . . . . . . .  23
 
 
 
@@ -116,7 +116,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
      5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  23
        5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  23
-       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  23
+       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  24
        5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  24
        5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  24
    6.  Architectural principles  . . . . . . . . . . . . . . . . . .  24
@@ -1016,17 +1016,22 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 5.3.  Abstract model of the network
 
-5.3.1.  One control plane and two data planes
+5.3.1.  The control and data planes
 
-   Control plane protocols for quantum networks will have
+   Control plane protocols for quantum networks will have many
    responsibilities similar to their classical counterparts, namely
    drawing the network topology, resource management, populating data
-   plane tables, etc.  They will not manipulate quantum data themselves
-   and they operate by exchanging classical messages only.  Therefore
-   there is no separate quantum and classical control plane.  There is
-   only one network control plane.
+   plane tables, etc.  Most of these protocols do not require the
+   manipulation of quantum data and can operate simply by exchanging
+   classical messages only.  There may also be some control plane
+   functionality that does require the handling of quantum data, e.g. a
+   quantum ping [2].  As it is not clear if there is much benefit in
+   defining a separate quantum control plane given the significant
+   overlap in responsibilities with its classical counterpart, the
+   question of whether there should be a separate quantum control plane
+   is beyond the scope of this document.
 
-   However, as we have already mentioned earlier in this memo, there
+   However, the data plane separation is much more distinct and there
    will be two data planes: a classical data plane and a quantum data
    plane.  The classical data plane processes and forwards classical
    packets.  The quantum data plane processes and swaps entangled pairs.
@@ -1052,11 +1057,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    1.  Creating link-local entanglement between neighbouring nodes.
 
-   2.  Extending entanglement from link-local pairs to long-range pairs
-       through entanglement swapping.
-
-   3.  Performing distillation to manage the fidelity of the produced
-       pairs.
 
 
 
@@ -1065,6 +1065,12 @@ Kozlowski, et al.         Expires 6 August 2021                [Page 19]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
+
+   2.  Extending entanglement from link-local pairs to long-range pairs
+       through entanglement swapping.
+
+   3.  Performing distillation to manage the fidelity of the produced
+       pairs.
 
    4.  Participating in the management of the network (routing, etc.).
 
@@ -1106,6 +1112,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    *  Classical links - A classical link is a link between any node in
       the network that is capable of carrying classical network traffic.
 
+
+
+
+
+
+Kozlowski, et al.         Expires 6 August 2021                [Page 20]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    Note that passive elements, such as optical switches, do not destroy
    the quantum state.  Therefore, it is possible to connect multiple
    quantum nodes with each other over an optical network and perform
@@ -1114,13 +1130,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    link entanglement generation process and it still requires repeaters
    to overcome the short-distance limitations.  However, this is a
    potentially feasible architecture for local area networks.
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 20]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
 5.3.3.  Putting it all together
 
@@ -1161,15 +1170,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    some of these operations can be performed before the request is
    received in anticipation of the demand.
 
-   The entangled pair is delivered to the application once it is ready,
-   together with the relevant pair identifier.  However, being ready
-   does not necessarily mean that all link pairs and entanglement swaps
-   are complete, as some applications can start executing on an
-   incomplete pair.  In this case the remaining entanglement swaps will
-   propagate the actions across the network to the other end, sometimes
-   necessitating fixup operations at the end node.
-
-
 
 
 
@@ -1177,6 +1177,14 @@ Kozlowski, et al.         Expires 6 August 2021                [Page 21]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
+
+   The entangled pair is delivered to the application once it is ready,
+   together with the relevant pair identifier.  However, being ready
+   does not necessarily mean that all link pairs and entanglement swaps
+   are complete, as some applications can start executing on an
+   incomplete pair.  In this case the remaining entanglement swaps will
+   propagate the actions across the network to the other end, sometimes
+   necessitating fixup operations at the end node.
 
 5.4.  Network boundaries
 
@@ -1213,14 +1221,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    these boundaries will be handled is also an open question and thus
    beyond the scope of this memo.
 
-5.4.3.  Boundaries between different error management schemes
-
-   Not only are there physical differences and administrative
-   boundaries, but there are important distinctions in how errors will
-   be managed, as described in Section 4.4.3.3, which affect the content
-   and semantics of messages that must cross those boundaries -- both
-   for connection setup and real-time operation.  How to interconnect
-   those schemes is also an open research question.
 
 
 
@@ -1233,6 +1233,15 @@ Kozlowski, et al.         Expires 6 August 2021                [Page 22]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
+
+5.4.3.  Boundaries between different error management schemes
+
+   Not only are there physical differences and administrative
+   boundaries, but there are important distinctions in how errors will
+   be managed, as described in Section 4.4.3.3, which affect the content
+   and semantics of messages that must cross those boundaries -- both
+   for connection setup and real-time operation.  How to interconnect
+   those schemes is also an open research question.
 
 5.5.  Physical constraints
 
@@ -1266,15 +1275,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    near future, they need to be able to handle short memory lifetimes,
    for example by reducing latency on critical paths.
 
-5.5.2.  Rates
-
-   Entanglement generation on a link between two connected nodes is not
-   a very efficient process and it requires many attempts to succeed
-   [27] [14].  Currently, the highest achievable rates of success
-   between nodes capable of storing the resulting qubits are on the
-   order of 10 Hz.  Combined with short memory lifetimes this leads to
-   very tight timing windows to build up network-wide connectivity.
-
 
 
 
@@ -1289,6 +1289,15 @@ Kozlowski, et al.         Expires 6 August 2021                [Page 23]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
+
+5.5.2.  Rates
+
+   Entanglement generation on a link between two connected nodes is not
+   a very efficient process and it requires many attempts to succeed
+   [27] [14].  Currently, the highest achievable rates of success
+   between nodes capable of storing the resulting qubits are on the
+   order of 10 Hz.  Combined with short memory lifetimes this leads to
+   very tight timing windows to build up network-wide connectivity.
 
 5.5.3.  Communication qubits
 
@@ -1322,15 +1331,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    available today, but do not impose unnecessary burdens on future
    technology?
 
-   As quantum networking is a completely new technology that is likely
-   to see many iterations over its lifetime, this memo must not serve as
-   a definitive set of rules, but merely as a general set of recommended
-   guidelines for the first generations of quantum networks based on
-   principles and observations made by the community.  The benefit of
-   having a community built document at this early stage is that
-   expertise in both quantum information and network architecture is
-   needed in order to successfully build a quantum internet.
-
 
 
 
@@ -1345,6 +1345,15 @@ Kozlowski, et al.         Expires 6 August 2021                [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
+
+   As quantum networking is a completely new technology that is likely
+   to see many iterations over its lifetime, this memo must not serve as
+   a definitive set of rules, but merely as a general set of recommended
+   guidelines for the first generations of quantum networks based on
+   principles and observations made by the community.  The benefit of
+   having a community built document at this early stage is that
+   expertise in both quantum information and network architecture is
+   needed in order to successfully build a quantum internet.
 
 6.1.  Goals of a quantum internet
 
@@ -1386,6 +1395,13 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
        requirements for different known quantum applications can be
        found in [8] and an overview of use-cases can be found in [2].
 
+
+
+Kozlowski, et al.         Expires 6 August 2021                [Page 25]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    2.  Support tomorrow's distributed quantum applications
 
        The only principle of the Internet that should survive
@@ -1394,14 +1410,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
        internet will change by orders of magnitude.  Therefore, it is an
        explicit goal that a quantum internet architecture be able to
        embrace this change.  We have the benefit of having been witness
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 25]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
        to the evolution of the classical Internet over several decades
        and seen what worked and what did not.  It is vital for a quantum
        internet to avoid the need for flag days (e.g.  NCP to TCP/IP) or
@@ -1442,14 +1450,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
        as it is in the classical Internet, especially since enhanced
        security offered by quantum entanglement is one of the key
        driving factors.
-
-
-
-
-
-
-
-
 
 
 

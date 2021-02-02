@@ -1299,8 +1299,9 @@ CC - classical channel (can consist of many classical links)
          boundaries, but there are important distinctions in how errors will be
          managed, as described in <xref target="generations" />, which affect
          the content and semantics of messages that must cross those boundaries
-         -- both for connection setup and real-time operation. How to
-         interconnect those schemes is also an open research question.</t>
+         -- both for connection setup and real-time operation <xref
+         target="nagayama16" />. How to interconnect those schemes is also an
+         open research question.</t>
 
        </section>
 
@@ -2405,6 +2406,21 @@ CC - classical channel (can consist of many classical links)
          <date year="2019" />
        </front>
        <seriesInfo name="Phys. Rev. X" value="Vol. 9, Iss. 3" />
+     </reference>
+
+     <reference anchor="nagayama16" target="https://arxiv.org/abs/1508.04599">
+       <front>
+         <title>Interoperability in encoded quantum repeater networks</title>
+
+         <author surname="Nagayama" initials="S" />
+         <author surname="Choi" initials="B.-S" />
+         <author surname="Devitt" initials="S" />
+         <author surname="Suzuki" initials="S" />
+         <author surname="Van Meter" initials="R" />
+
+         <date year="2016" />
+       </front>
+       <seriesInfo name="Phys. Rev. A" value="Vol. 93, Iss. 4" />
      </reference>
 
    </references>

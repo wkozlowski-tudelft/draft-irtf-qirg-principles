@@ -1240,8 +1240,8 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    boundaries, but there are important distinctions in how errors will
    be managed, as described in Section 4.4.3.3, which affect the content
    and semantics of messages that must cross those boundaries -- both
-   for connection setup and real-time operation.  How to interconnect
-   those schemes is also an open research question.
+   for connection setup and real-time operation [42].  How to
+   interconnect those schemes is also an open research question.
 
 5.5.  Physical constraints
 
@@ -2025,6 +2025,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
               X Vol. 9, Iss. 3, 2019,
               <https://arxiv.org/abs/1905.02094>.
 
+   [42]       Nagayama, S., Choi, B.-S., Devitt, S., Suzuki, S., and R.
+              Van Meter, "Interoperability in encoded quantum repeater
+              networks", Phys. Rev. A Vol. 93, Iss. 4, 2016,
+              <https://arxiv.org/abs/1508.04599>.
+
 Authors' Addresses
 
    Wojciech Kozlowski
@@ -2063,17 +2068,15 @@ Authors' Addresses
    Email: brunorijsman@gmail.com
 
 
-   Angela Sara Cacciapuoti
-   University of Naples Federico II
-   Department of Electrical Engineering and Information Technologies
-
-
 
 Kozlowski, et al.         Expires 6 August 2021                [Page 37]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
+   Angela Sara Cacciapuoti
+   University of Naples Federico II
+   Department of Electrical Engineering and Information Technologies
    Claudio 21
    80125 Naples
    Italy
@@ -2100,9 +2103,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    Japan
 
    Email: shota.nagayama@mercari.com
-
-
-
 
 
 

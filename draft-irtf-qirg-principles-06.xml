@@ -36,7 +36,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-irtf-qirg-principles-05" ipr="trust200902">
+<rfc category="info" docName="draft-irtf-qirg-principles-06" ipr="trust200902">
  <!-- category values: std, bcp, info, exp, and historic
     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
        or pre5378Trust200902
@@ -106,7 +106,7 @@
          <street>5322 Endo</street>
 
          <!-- Reorder these if your country does things differently -->
-         <city>Fujisawa</city>
+         <extaddr>Fujisawa</extaddr>
          <region>Kanagawa</region>
          <code>252-0882</code>
          <country>Japan</country>
@@ -175,7 +175,7 @@
 
          <!-- Reorder these if your country does things differently -->
          <code>106-6118</code>
-         <city>Tokyo</city>
+         <extaddr>Tokyo</extaddr>
          <country>Japan</country>
        </postal>
 
@@ -185,7 +185,7 @@
      </address>
    </author>
 
-   <date year="2020" />
+   <date year="2021" />
 
    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
         in the current day for you. If only the current year is specified, xml2rfc will fill
@@ -572,9 +572,9 @@
        <t>Bell pair states are the entangled two-qubit states:</t>
 
        <t>
-         |00> + |11>,<vspace blankLines="0" />
-         |00> - |11>,<vspace blankLines="0" />
-         |01> + |10>,<vspace blankLines="0" />
+         |00> + |11>,
+         |00> - |11>,
+         |01> + |10>,
          |01> - |10>,
        </t>
 

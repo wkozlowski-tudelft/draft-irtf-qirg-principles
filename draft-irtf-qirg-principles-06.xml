@@ -233,17 +233,18 @@
 
  <middle>
    <section title="Introduction">
-     <t>Quantum networks are distributed systems of quantum devices that
-     utilise fundamental quantum mechanical phenomena such as superposition,
-     entanglement, and quantum measurement to achieve capabilities beyond what
-     is possible with non-quantum (classical) networks <xref target="kimble08"
-     />. Depending on the stage of a quantum network <xref target="wehner18" />
-     such devices may be simple photonic devices capable of preparing and
-     measuring only one quantum bit (qubit) at a time, all the way to
-     large-scale quantum computers of the future. A quantum network is not
-     meant to replace classical networks, but rather form an overall hybrid
-     classical quantum network supporting new capabilities which are otherwise
-     impossible to realise <xref target="van-meter-book" />.</t>
+     <t>Quantum networks are distributed systems of quantum devices
+     that utilise fundamental quantum mechanical phenomena such as
+     superposition, entanglement, and quantum measurement to achieve
+     capabilities beyond what is possible with non-quantum (classical)
+     networks <xref target="kimble08" />. Depending on the stage of a
+     quantum network <xref target="wehner18" /> such devices may range
+     from simple photonic devices capable of preparing and measuring
+     only one quantum bit (qubit) at a time all the way to large-scale
+     quantum computers of the future. A quantum network is not meant
+     to replace classical networks, but rather form an overall hybrid
+     classical-quantum network supporting new capabilities which are
+     otherwise impossible to realise <xref target="van-meter-book" />.</t>
 
      <t>This new networking paradigm offers promise for a range of new
      applications such as secure communications <xref target="bennett14" />
@@ -267,7 +268,7 @@
      with a classical network, we are at a stage where we can start to
      physically connect our devices and send data, but all sending, receiving,
      buffer management, connection synchronisation, and so on, must be managed
-     by the application itself at a level below convential assembly language,
+     by the application itself at a level below conventional assembly language,
      where no common interfaces yet exist. Furthermore, whilst physical
      mechanisms for transmitting quantum states exist, there are no robust
      protocols for managing such transmissions.</t>
@@ -288,7 +289,7 @@
      <section title="Qubit">
        <t>The differences between quantum computation and classical computation
        begin at the bit-level. A classical computer operates on the binary
-       alphabet { 0, 1 }. A quantum bit, a qubit, exists over the same binary
+       alphabet { 0, 1 }. A quantum bit, called a qubit, exists over the same binary
        space, but unlike the classical bit, it can exist in a
        superposition of the two possibilities:</t>
 
@@ -302,12 +303,14 @@
 
        <t>Upon measurement, the qubit loses its superposition and irreversibly
        collapses into one of the two basis states, either |0> or |1>. Which of
-       the two states it ends up in is not deterministic, but it can be
-       determined from the readout of the measurement, a classical bit, 0 or 1
+       the two states it ends up in may not be deterministic, but can be
+       determined from the readout of the measurement.  The
+       measurement result is a classical bit, 0 or 1, corresponding to
+       |0> and |1>
        respectively. The probability of measuring the state in the |0> state is
        |a|^2 and similarly the probability of measuring the state in the |1>
        state is |b|^2, where |a|^2 + |b|^2 = 1. This randomness is not due to
-       our ignorance of the underlying mechanisms, but rather it is a
+       our ignorance of the underlying mechanisms, but rather is a
        fundamental feature of a quantum mechanical system <xref
        target="aspect81" />.</t>
 
@@ -497,7 +500,7 @@
        <section title="No-cloning theorem">
 
          <t>Since directly reading the state of a qubit is not possible, one
-         could ask the question if we can simply copy a qubit without looking
+         could ask if we can simply copy a qubit without looking
          at it. Unfortunately, this is fundamentally not possible in quantum
          mechanics <xref target="park70" /> <xref target="wootters82" />.</t>
 
@@ -583,7 +586,7 @@
        for clarity. Any of the four Bell pair states above will do, as it is
        possible to transform any Bell pair into another Bell pair with local
        operations performed on only one of the qubits. When each qubit in a
-       Bell pair is held by a separate node, either can apply a series of
+       Bell pair is held by a separate node, either node can apply a series of
        single qubit gates to their qubit alone in order to transform the state
        between the different variants.</t>
 
@@ -594,7 +597,7 @@
        section) combined with reattempts becomes a valid strategy.</t>
 
        <t>The reason for using Bell pairs specifically as opposed to any other
-       two-qubit state, is that they are the maximally entangled two-qubit set
+       two-qubit state is that they are the maximally entangled two-qubit set
        of basis states. Maximal entanglement means that these states have the
        strongest non-classical correlations of all possible two-qubit states.
        Furthermore, since single-qubit local operations can never increase
@@ -611,7 +614,7 @@
        relies on the fact that this enables the distribution of any other
        arbitrary entangled state. This can be achieved via quantum state
        teleportation <xref target="bennett93" />. Quantum state teleportation
-       consumes an unknown quantum state that we want to transmit and recreates
+       consumes an unknown qubit state that we want to transmit and recreates
        it at the desired destination. This does not violate the no-cloning
        theorem as the original state is destroyed in the process.</t>
 
@@ -625,7 +628,7 @@
        sends to the destination over a classical channel. Based on the value of
        the received two classical bits, the destination performs one of four
        possible corrections (called the Pauli corrections) on its end of the
-       pair which turns it into the unknown quantum state that we wanted to
+       pair, which turns it into the unknown qubit state that we wanted to
        transmit. This requirement to communicate the measurement read out over
        a classical channel unfortunately means that entanglement cannot be used
        to transmit information faster than the speed of light.</t>
@@ -877,8 +880,9 @@
            QEC can be applied to complement lost qubits eliminating the need
            for re-attempts. Furthermore, since the correction procedure is
            composed of local operations, it does not require a heralding
-           signal. However, it is feasible only when the photon loss rate is
-           less than 0.5.</t>
+           signal. However, it is possible only when the photon loss
+	   rate from transmission to measurement is
+           less than 50%.</t>
 
            <t>Error tolerance is about tolerating quantum state errors.
            Entanglement distillation is the easiest mechanism for improved

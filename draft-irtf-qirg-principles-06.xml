@@ -106,7 +106,7 @@
          <street>5322 Endo</street>
 
          <!-- Reorder these if your country does things differently -->
-         <extaddr>Fujisawa</extaddr>
+         <city>Fujisawa</city>
          <region>Kanagawa</region>
          <code>252-0882</code>
          <country>Japan</country>
@@ -175,7 +175,7 @@
 
          <!-- Reorder these if your country does things differently -->
          <code>106-6118</code>
-         <extaddr>Tokyo</extaddr>
+         <city>Tokyo</city>
          <country>Japan</country>
        </postal>
 

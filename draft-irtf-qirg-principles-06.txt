@@ -5,7 +5,7 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: 6 August 2021                                      R. Van Meter
+Expires: 23 August 2021                                     R. Van Meter
                                                          Keio University
                                                               B. Rijsman
                                                               Individual
@@ -14,7 +14,7 @@ Expires: 6 August 2021                                      R. Van Meter
                                         University of Naples Federico II
                                                              S. Nagayama
                                                            Mercari, Inc.
-                                                         2 February 2021
+                                                        19 February 2021
 
 
             Architectural Principles for a Quantum Internet
@@ -49,11 +49,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 August 2021.
+   This Internet-Draft will expire on 23 August 2021.
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                 [Page 1]
+Kozlowski, et al.        Expires 23 August 2021                 [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -82,52 +82,52 @@ Table of Contents
    4.  Achieving quantum connectivity  . . . . . . . . . . . . . . .   8
      4.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .   8
        4.1.1.  The measurement problem . . . . . . . . . . . . . . .   8
-       4.1.2.  No-cloning theorem  . . . . . . . . . . . . . . . . .   8
+       4.1.2.  No-cloning theorem  . . . . . . . . . . . . . . . . .   9
        4.1.3.  Fidelity  . . . . . . . . . . . . . . . . . . . . . .   9
-       4.1.4.  Inadequacy of direct transmission . . . . . . . . . .   9
+       4.1.4.  Inadequacy of direct transmission . . . . . . . . . .  10
      4.2.  Bell pairs  . . . . . . . . . . . . . . . . . . . . . . .  10
-     4.3.  Teleportation . . . . . . . . . . . . . . . . . . . . . .  10
+     4.3.  Teleportation . . . . . . . . . . . . . . . . . . . . . .  11
      4.4.  The life cycle of entanglement  . . . . . . . . . . . . .  11
-       4.4.1.  Elementary link generation  . . . . . . . . . . . . .  11
-       4.4.2.  Entanglement swapping . . . . . . . . . . . . . . . .  12
-       4.4.3.  Error Management  . . . . . . . . . . . . . . . . . .  13
-       4.4.4.  Delivery  . . . . . . . . . . . . . . . . . . . . . .  16
-   5.  Architecture of a quantum internet  . . . . . . . . . . . . .  16
-     5.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .  16
-     5.2.  Classical communication . . . . . . . . . . . . . . . . .  18
-     5.3.  Abstract model of the network . . . . . . . . . . . . . .  19
-       5.3.1.  The control and data planes . . . . . . . . . . . . .  19
-       5.3.2.  Elements of a quantum network . . . . . . . . . . . .  19
-       5.3.3.  Putting it all together . . . . . . . . . . . . . . .  21
-     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  22
+       4.4.1.  Elementary link generation  . . . . . . . . . . . . .  12
+       4.4.2.  Entanglement swapping . . . . . . . . . . . . . . . .  13
+       4.4.3.  Error Management  . . . . . . . . . . . . . . . . . .  14
+       4.4.4.  Delivery  . . . . . . . . . . . . . . . . . . . . . .  17
+   5.  Architecture of a quantum internet  . . . . . . . . . . . . .  17
+     5.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .  18
+     5.2.  Classical communication . . . . . . . . . . . . . . . . .  19
+     5.3.  Abstract model of the network . . . . . . . . . . . . . .  20
+       5.3.1.  The control and data planes . . . . . . . . . . . . .  20
+       5.3.2.  Elements of a quantum network . . . . . . . . . . . .  21
+       5.3.3.  Putting it all together . . . . . . . . . . . . . . .  22
+     5.4.  Network boundaries  . . . . . . . . . . . . . . . . . . .  23
        5.4.1.  Boundaries between different physical
-               architectures . . . . . . . . . . . . . . . . . . . .  22
+               architectures . . . . . . . . . . . . . . . . . . . .  23
        5.4.2.  Boundaries between different administrative
-               regions . . . . . . . . . . . . . . . . . . . . . . .  22
+               regions . . . . . . . . . . . . . . . . . . . . . . .  24
        5.4.3.  Boundaries between different error management
-               schemes . . . . . . . . . . . . . . . . . . . . . . .  23
+               schemes . . . . . . . . . . . . . . . . . . . . . . .  24
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                 [Page 2]
+Kozlowski, et al.        Expires 23 August 2021                 [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
-     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  23
-       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  23
-       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  24
-       5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  24
-       5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  24
-   6.  Architectural principles  . . . . . . . . . . . . . . . . . .  24
-     6.1.  Goals of a quantum internet . . . . . . . . . . . . . . .  25
-     6.2.  The principles of a quantum internet  . . . . . . . . . .  28
-   7.  A thought experiment inspired by classical networks . . . . .  30
-   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  32
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  32
-   10. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  32
-   11. Informative References  . . . . . . . . . . . . . . . . . . .  32
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  37
+     5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  24
+       5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  24
+       5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  25
+       5.5.3.  Communication qubits  . . . . . . . . . . . . . . . .  25
+       5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  25
+   6.  Architectural principles  . . . . . . . . . . . . . . . . . .  25
+     6.1.  Goals of a quantum internet . . . . . . . . . . . . . . .  26
+     6.2.  The principles of a quantum internet  . . . . . . . . . .  29
+   7.  A thought experiment inspired by classical networks . . . . .  31
+   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  33
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  33
+   10. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  33
+   11. Informative References  . . . . . . . . . . . . . . . . . . .  33
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  38
 
 1.  Introduction
 
@@ -136,11 +136,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    superposition, entanglement, and quantum measurement to achieve
    capabilities beyond what is possible with non-quantum (classical)
    networks [37].  Depending on the stage of a quantum network [8] such
-   devices may be simple photonic devices capable of preparing and
-   measuring only one quantum bit (qubit) at a time, all the way to
+   devices may range from simple photonic devices capable of preparing
+   and measuring only one quantum bit (qubit) at a time all the way to
    large-scale quantum computers of the future.  A quantum network is
    not meant to replace classical networks, but rather form an overall
-   hybrid classical quantum network supporting new capabilities which
+   hybrid classical-quantum network supporting new capabilities which
    are otherwise impossible to realise [24].
 
    This new networking paradigm offers promise for a range of new
@@ -165,13 +165,13 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                 [Page 3]
+Kozlowski, et al.        Expires 23 August 2021                 [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
    and so on, must be managed by the application itself at a level below
-   convential assembly language, where no common interfaces yet exist.
+   conventional assembly language, where no common interfaces yet exist.
    Furthermore, whilst physical mechanisms for transmitting quantum
    states exist, there are no robust protocols for managing such
    transmissions.
@@ -191,8 +191,8 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    The differences between quantum computation and classical computation
    begin at the bit-level.  A classical computer operates on the binary
-   alphabet { 0, 1 }. A quantum bit, a qubit, exists over the same
-   binary space, but unlike the classical bit, it can exist in a
+   alphabet { 0, 1 }. A quantum bit, called a qubit, exists over the
+   same binary space, but unlike the classical bit, it can exist in a
    superposition of the two possibilities:
 
    a |0> + b |1>,
@@ -205,26 +205,32 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    Upon measurement, the qubit loses its superposition and irreversibly
    collapses into one of the two basis states, either |0> or |1>.  Which
-   of the two states it ends up in is not deterministic, but it can be
-   determined from the readout of the measurement, a classical bit, 0 or
-   1 respectively.  The probability of measuring the state in the |0>
+   of the two states it ends up in may not be deterministic, but can be
+   determined from the readout of the measurement.  The measurement
+   result is a classical bit, 0 or 1, corresponding to |0> and |1>
+   respectively.  The probability of measuring the state in the |0>
    state is |a|^2 and similarly the probability of measuring the state
    in the |1> state is |b|^2, where |a|^2 + |b|^2 = 1.  This randomness
    is not due to our ignorance of the underlying mechanisms, but rather
-   it is a fundamental feature of a quantum mechanical system [9].
+   is a fundamental feature of a quantum mechanical system [9].
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 4]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
    The superposition property plays an important role in fundamental
    gate operations on qubits.  Since a qubit can exist in a
    superposition of its basis states, the elementary quantum gates are
    able to act on all states of the superposition at the same time.  For
    example, consider the NOT gate:
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 4]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    NOT (a |0> + b |1>) -> a |1> + b |0>.
 
@@ -260,6 +266,22 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    two qubits, a control and target, and applies the NOT gate to the
    target if the control qubit is set.  The truth table looks like
 
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 5]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
                                +====+=====+
                                | IN | OUT |
                                +====+=====+
@@ -273,14 +295,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
                                +----+-----+
 
                                  Table 1
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 5]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    Now, consider performing a CNOT gate on the state with the first
    qubit being the control.  We apply a two-qubit gate on all the
@@ -314,6 +328,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    (|00> + |11>)/sqrt(2).
 
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 6]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    Neither of the two qubits is in a definite |0> or |1> state and we
    need to know the state of the entire register to be able to fully
    describe the behaviour of the two qubits.
@@ -325,18 +349,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    has been introduced, the two qubits will forever remain in the
    entangled state until a measurement is performed.  The physical
    distance does not matter at all for entanglement.
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 6]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    This lies at the heart of quantum networking, because it is possible
    to leverage the non-classical correlations provided by entanglement
@@ -374,6 +386,14 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    Entanglement is created through local interactions between two qubits
    or as a product of the way the qubits were created (e.g. entangled
    photon pairs).  To create a distributed entangled state, one can then
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 7]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    physically send one of the qubits to a remote node.  It is also
    possible to directly entangle qubits that are physically separated,
    but this still requires local interactions between some other qubits
@@ -386,13 +406,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    exchange qubits and distribute entangled states amongst themselves.
    A quantum node that is able only to communicate classically with
    another quantum node is not a member of a quantum network.
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 7]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    More complex services and applications can be built on top of
    entangled states distributed by the network, see e.g. [35]
@@ -427,11 +440,21 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    schemes exist that take this problem into account and how a network
    chooses to manage errors will have an impact on its architecture.
 
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 8]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 4.1.2.  No-cloning theorem
 
    Since directly reading the state of a qubit is not possible, one
-   could ask the question if we can simply copy a qubit without looking
-   at it.  Unfortunately, this is fundamentally not possible in quantum
+   could ask if we can simply copy a qubit without looking at it.
+   Unfortunately, this is fundamentally not possible in quantum
    mechanics [30] [31].
 
    The no-cloning theorem states that it is impossible to create an
@@ -442,13 +465,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    Since any physical channel will always be lossy, connecting nodes
    within a quantum network is a challenging endeavour and its
    architecture must at its core address this very issue.
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 8]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
 4.1.3.  Fidelity
 
@@ -479,6 +495,17 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    fidelity (sometimes one can sacrifice rate for higher fidelity) or by
    employing quantum error detection and correction mechanisms.
 
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                 [Page 9]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 4.1.4.  Inadequacy of direct transmission
 
    Conceptually, the most straightforward way to distribute an entangled
@@ -498,14 +525,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    need to be able to distribute any one of what are known as the Bell
    pair states [19].
 
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                 [Page 9]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
 4.2.  Bell pairs
 
    Bell pair states are the entangled two-qubit states:
@@ -516,8 +535,8 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    for clarity.  Any of the four Bell pair states above will do, as it
    is possible to transform any Bell pair into another Bell pair with
    local operations performed on only one of the qubits.  When each
-   qubit in a Bell pair is held by a separate node, either can apply a
-   series of single qubit gates to their qubit alone in order to
+   qubit in a Bell pair is held by a separate node, either node can
+   apply a series of single qubit gates to their qubit alone in order to
    transform the state between the different variants.
 
    Distributing a Bell pair between two nodes is much easier than
@@ -527,7 +546,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    section) combined with reattempts becomes a valid strategy.
 
    The reason for using Bell pairs specifically as opposed to any other
-   two-qubit state, is that they are the maximally entangled two-qubit
+   two-qubit state is that they are the maximally entangled two-qubit
    set of basis states.  Maximal entanglement means that these states
    have the strongest non-classical correlations of all possible two-
    qubit states.  Furthermore, since single-qubit local operations can
@@ -536,15 +555,22 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    particularly useful as a generic building block for distributed
    quantum applications.
 
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 10]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 4.3.  Teleportation
 
    The observation that we only need to be able to distribute Bell pairs
    relies on the fact that this enables the distribution of any other
    arbitrary entangled state.  This can be achieved via quantum state
    teleportation [18].  Quantum state teleportation consumes an unknown
-   quantum state that we want to transmit and recreates it at the
-   desired destination.  This does not violate the no-cloning theorem as
-   the original state is destroyed in the process.
+   qubit state that we want to transmit and recreates it at the desired
+   destination.  This does not violate the no-cloning theorem as the
+   original state is destroyed in the process.
 
    To achieve this, an entangled pair needs to be distributed between
    the source and destination before teleportation commences.  The
@@ -554,19 +580,11 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    Bell pair's entanglement, turning the source and destination qubits
    into independent states.  The measurements yields two classical bits
    which the source sends to the destination over a classical channel.
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 10]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
    Based on the value of the received two classical bits, the
    destination performs one of four possible corrections (called the
-   Pauli corrections) on its end of the pair which turns it into the
-   unknown quantum state that we wanted to transmit.  This requirement
-   to communicate the measurement read out over a classical channel
+   Pauli corrections) on its end of the pair, which turns it into the
+   unknown qubit state that we wanted to transmit.  This requirement to
+   communicate the measurement read out over a classical channel
    unfortunately means that entanglement cannot be used to transmit
    information faster than the speed of light.
 
@@ -585,6 +603,20 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    this section, we discuss how these entangled pairs are generated in
    the first place, and how their two qubits are delivered to the end-
    points.
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 11]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
 4.4.1.  Elementary link generation
 
@@ -611,13 +643,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    on a link through coordinated action of the two nodes at the two ends
    of the link [20]:
 
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 11]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
    *  "At mid-point": in this scheme an entangled photon pair source
       sitting midway between the two nodes with matter qubits sends an
       entangled photon through a quantum channel to each of the nodes.
@@ -634,6 +659,20 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
       Just like in the previous scheme, the transducer knows if its
       transfer succeeded and is able to herald successful entanglement
       generation with a classical message sent to the other node.
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 12]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
    *  "At both end-points": in this scheme both nodes send a flying
       qubit that is entangled with one of their matter qubits.  A
@@ -666,14 +705,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    by combining the pairs generated along each individual link on a path
    between the two end-points.  Each node along the path can consume the
    two pairs on the two links that it is connected to in order to
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 12]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
    produce a new entangled pair between the two remote ends.  This
    process is known as entanglement swapping.  Pictorially it can be
    represented as follows:
@@ -688,6 +719,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    are the qubits of entangled pair Y.  The entanglement is denoted with
    ~~. In the diagram above, nodes A and B share the pair X and nodes B
    and C share the pair Y, but we want entanglement between A and C.
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 13]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
    To achieve this goal, we simply teleport the qubit X2 using the pair
    Y.  This requires node B to perform a Bell state measurement on the
@@ -718,18 +759,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 4.4.3.  Error Management
 
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 13]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
 4.4.3.1.  Distillation
 
    Neither the generation of Bell pairs nor the swapping operations are
@@ -738,6 +767,24 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    higher fidelity Bell pair states from two or more lower fidelity
    pairs through a process called distillation (sometimes also referred
    to as purification) [36].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 14]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
    To distil a quantum state, a second (and sometimes third) quantum
    state is used as a "test tool" to test a proposition about the first
@@ -781,7 +828,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 14]
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -824,7 +880,23 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    can be applied to complement lost qubits eliminating the need for re-
    attempts.  Furthermore, since the correction procedure is composed of
    local operations, it does not require a heralding signal.  However,
-   it is feasible only when the photon loss rate is less than 0.5.
+   it is possible only when the photon loss rate from transmission to
+   measurement is less than 50%.
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 16]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
 
    Error tolerance is about tolerating quantum state errors.
    Entanglement distillation is the easiest mechanism for improved error
@@ -834,13 +906,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    does not need any classical signalling between the quantum nodes.  In
    between these two extremes, there is also QEC-applied distillation,
    which requires uni-directional classical signalling.
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 15]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    The three "generations" summarised:
 
@@ -882,6 +947,13 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    architecture of a quantum internet will itself be very different from
    that of the classical Internet.
 
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 17]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 5.1.  Challenges
 
    This subsection covers the major fundamental challenges building
@@ -889,14 +961,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    differences.  Technological limitations are described later.
 
    1.  Bell pairs are not equivalent to payload carrying packets.
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 16]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
        In most classical networks, including Ethernet, Internet Protocol
        (IP), and Multi-Protocol Label Switching (MPLS) networks, user
@@ -937,6 +1001,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
        be able to support a "store and forward" architecture in addition
        to "store and swap".
 
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 18]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    3.  An entangled pair is only useful if the locations of both qubits
        are known.
 
@@ -945,14 +1018,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
        whether headers or payload, this information does not need to be
        conveyed to anybody else in the network.  The packet can be
        simply forwarded as before.
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 17]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
        In contrast, entanglement is a phenomenon in which two or more
        qubits exist in a physically distributed state.  Operations on
@@ -992,6 +1057,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    *  communicate classical bits of information as part of distributed
       protocols such as entanglement swapping and teleportation,
 
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 19]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    *  communicate control information within a network, including both
       background protocols such as routing as well as signalling
       protocols to set up end-to-end entanglement generation.
@@ -1002,14 +1076,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    domain limts).  Therefore, quantum routers will need to manage two
    data planes in parallel, a classical one and a quantum one.
    Additionally, a node must be able to correlate information between
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 18]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
    the two planes so that the control information received on a
    classical channel can be applied to the qubits managed by the quantum
    data plane.
@@ -1048,6 +1114,14 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    classical control information at the granularity of individual qubits
    and entangled pairs.
 
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 20]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 5.3.2.  Elements of a quantum network
 
    We have identified quantum repeaters as the core building block of a
@@ -1056,15 +1130,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    key responsibilities will include:
 
    1.  Creating link-local entanglement between neighbouring nodes.
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 19]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    2.  Extending entanglement from link-local pairs to long-range pairs
        through entanglement swapping.
@@ -1105,22 +1170,20 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    *  Quantum links - A quantum link is a link which can be used to
       generate an entangled pair between two directly connected quantum
       repeaters.  This may include additional mid-point elements
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 21]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
       described in Section 4.4.1.  It may also include a dedicated
       classical channel that is to be used solely for the purpose of
       coordinating the entanglement generation on this quantum link.
 
    *  Classical links - A classical link is a link between any node in
       the network that is capable of carrying classical network traffic.
-
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 20]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    Note that passive elements, such as optical switches, do not destroy
    the quantum state.  Therefore, it is possible to connect multiple
@@ -1162,6 +1225,15 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    and signalling protocols, but the details of how this is achieved are
    an active research question and thus beyond the scope of this memo.
 
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 22]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
    During or after the distribution of control information, the network
    performs the necessary quantum operations such as generating
    entanglement over individual links, performing entanglement swaps,
@@ -1169,14 +1241,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    control information.  Since Bell pairs do not carry any user data,
    some of these operations can be performed before the request is
    received in anticipation of the demand.
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 21]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
    The entangled pair is delivered to the application once it is ready,
    together with the relevant pair identifier.  However, being ready
@@ -1213,6 +1277,19 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    backplane connection between the architectures, but it also could be
    that special quantum links delineate the boundary.
 
+
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 23]
+
+Internet-Draft      Principles for a Quantum Internet      February 2021
+
+
 5.4.2.  Boundaries between different administrative regions
 
    Just like in classical networks, multiple quantum networks will
@@ -1220,19 +1297,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    existence of borders between different administrative regions.  How
    these boundaries will be handled is also an open question and thus
    beyond the scope of this memo.
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 22]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
 
 5.4.3.  Boundaries between different error management schemes
 
@@ -1277,15 +1341,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 6 August 2021                [Page 23]
+Kozlowski, et al.        Expires 23 August 2021                [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1341,7 +1397,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 24]
+Kozlowski, et al.        Expires 23 August 2021                [Page 25]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1397,7 +1453,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 25]
+Kozlowski, et al.        Expires 23 August 2021                [Page 26]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1453,7 +1509,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 26]
+Kozlowski, et al.        Expires 23 August 2021                [Page 27]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1509,7 +1565,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 27]
+Kozlowski, et al.        Expires 23 August 2021                [Page 28]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1565,7 +1621,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 28]
+Kozlowski, et al.        Expires 23 August 2021                [Page 29]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1621,7 +1677,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 29]
+Kozlowski, et al.        Expires 23 August 2021                [Page 30]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1677,7 +1733,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 30]
+Kozlowski, et al.        Expires 23 August 2021                [Page 31]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1733,7 +1789,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 31]
+Kozlowski, et al.        Expires 23 August 2021                [Page 32]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1789,7 +1845,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 32]
+Kozlowski, et al.        Expires 23 August 2021                [Page 33]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1845,7 +1901,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 33]
+Kozlowski, et al.        Expires 23 August 2021                [Page 34]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1901,7 +1957,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 34]
+Kozlowski, et al.        Expires 23 August 2021                [Page 35]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -1957,7 +2013,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 35]
+Kozlowski, et al.        Expires 23 August 2021                [Page 36]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -2013,7 +2069,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 36]
+Kozlowski, et al.        Expires 23 August 2021                [Page 37]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -2054,7 +2110,6 @@ Authors' Addresses
 
    Rodney Van Meter
    Keio University
-   Fujisawa
    5322 Endo, Kanagawa
    252-0882
    Japan
@@ -2069,7 +2124,8 @@ Authors' Addresses
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 37]
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 38]
 
 Internet-Draft      Principles for a Quantum Internet      February 2021
 
@@ -2096,7 +2152,6 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    Shota Nagayama
    Mercari, Inc.
-   Tokyo
    Roppongi Hills Mori Tower 18F
    6-10-1 Roppongi, Minato-ku,
    106-6118
@@ -2125,4 +2180,5 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.         Expires 6 August 2021                [Page 38]
+
+Kozlowski, et al.        Expires 23 August 2021                [Page 39]

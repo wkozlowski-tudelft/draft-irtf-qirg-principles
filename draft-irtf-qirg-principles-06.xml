@@ -260,7 +260,7 @@
 
      <t>Fully quantum networks capable of transmitting and managing entangled
      quantum states in order to send, receive, and manipulate distributed
-     quantum information are now imminent <xref target="Castel18" /> <xref
+     quantum information are now imminent <xref target="Castelvecchi18" /> <xref
      target="Wehner18" />. Whilst a lot of effort has gone into physically
      realising and connecting such devices <xref target="Hensen15" />, and
      making improvements to their speed and error tolerance, there are no
@@ -1810,7 +1810,7 @@ CC - classical channel (can consist of many classical links)
      &rfc1958;
      &I-D.irtf-qirg-quantum-internet-use-cases;
 
-     <reference anchor="Bennett14" target="http://www.sciepub.com/reference/53249">
+     <reference anchor="Bennett14" target="https://arxiv.org/abs/2003.06557">
        <front>
          <title>Quantum cryptography: Public key distribution and coin tossing</title>
 
@@ -1819,7 +1819,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2014" />
        </front>
-       <seriesInfo name="Theoretical Computer Science" value="560, 7-11" />
+       <seriesInfo name="Theoretical Computer Science" value="Vol. 560 (Part 1), pp. 7-11" />
      </reference>
 
      <reference anchor="Ekert91" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.67.661">
@@ -1830,7 +1830,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1991" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="Vol. 67, Iss. 6" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 67, Iss. 6, pp. 661-663" />
      </reference>
 
      <reference anchor="Crepeau02" target="https://arxiv.org/abs/quant-ph/0206138">
@@ -1843,13 +1843,12 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2002" />
        </front>
-       <seriesInfo name="Proceedings of Symposium on Theory of Computing" value="" />
+       <seriesInfo name="Proceedings of the thiry-fourth annual ACM symposium on Theory of computing" value="pp. 643-652" />
      </reference>
 
      <reference anchor="Giovanetti04" target="https://arxiv.org/abs/quant-ph/0412078">
        <front>
-         <title>Quantum-enhanced measurements: beating the standard quantum
-         limit</title>
+         <title>Quantum-enhanced measurements: beating the standard quantum limit</title>
 
          <author initials="V" surname="Giovanetti" />
          <author initials="S" surname="Lloyd" />
@@ -1857,10 +1856,10 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2004" />
        </front>
-       <seriesInfo name="Science" value="306(5700), 1330-1336" />
+       <seriesInfo name="Science" value="Vol. 306, Iss. 5700, pp. 1330-1336" />
      </reference>
 
-     <reference anchor="Castel18" target="https://www.nature.com/articles/d41586-018-01835-3">
+     <reference anchor="Castelvecchi18" target="https://www.nature.com/articles/d41586-018-01835-3">
        <front>
          <title>The Quantum Internet has arrived (and it hasn't)</title>
 
@@ -1868,7 +1867,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2018" />
        </front>
-       <seriesInfo name="Nature" value="554, 289-292" />
+       <seriesInfo name="Nature" value="Vol. 554, pp. 289-292" />
      </reference>
 
      <reference anchor="Wehner18" target="http://science.sciencemag.org/content/362/6412/eaam9288.full">
@@ -1881,7 +1880,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2018" />
        </front>
-       <seriesInfo name="Science" value="362, 6412" />
+       <seriesInfo name="Science" value="Vol. 362, Iss. 6412" />
      </reference>
 
      <reference anchor="Aspect81" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.47.460">
@@ -1894,7 +1893,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1981" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="47 (7): 460-463" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 47, Iss. 7, pp. 460-463" />
      </reference>
 
      <reference anchor="Mural16" target="https://www.nature.com/articles/srep20463">
@@ -1910,7 +1909,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2016" />
        </front>
-       <seriesInfo name="Nat. Sci. Rep." value="6, 20463" />
+       <seriesInfo name="Scientific Reports" value="Vol. 6, Iss. 1, pp. 1-10" />
      </reference>
 
      <reference anchor="VanMeter13.1" target="https://ieeexplore.ieee.org/document/6576340">
@@ -1922,7 +1921,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2013" />
        </front>
-       <seriesInfo name="IEEE Communications Magazine" value="51, 64-71" />
+       <seriesInfo name="IEEE Communications Magazine" value="Vol. 51, Iss. 8, pp. 64-71" />
      </reference>
 
      <reference anchor="Satoh20" target="https://arxiv.org/abs/2005.04617">
@@ -1950,7 +1949,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2017" />
        </front>
-       <seriesInfo name="Quantum Science and Technology" value="Vol. 3, Iss. 3" />
+       <seriesInfo name="Quantum Science and Technology" value="Vol. 3, Iss. 3, pp. 034008" />
      </reference>
 
      <reference anchor="Dahlberg19" target="https://arxiv.org/abs/1903.09778">
@@ -1972,7 +1971,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2019" />
        </front>
-       <seriesInfo name="SIGCOMM '19 Proceedings of the ACM Special Interest Group on Data Communication" value="159-173" />
+       <seriesInfo name="Proceedings of the ACM Special Interest Group on Data Communication" value="pp. 159-173" />
      </reference>
 
      <reference anchor="SutorBook">
@@ -2010,7 +2009,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1996" />
        </front>
-       <seriesInfo name="Phys. Rev. A" value="Vol. 54, Iss. 5" />
+       <seriesInfo name="Physical Review A" value="Vol. 54, Iss. 5, pp. 3824-3851" />
      </reference>
 
      <reference anchor="Bennett93" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.70.1895">
@@ -2026,13 +2025,12 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1993" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="Vol. 70, Iss. 13" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 70, Iss. 13, pp. 1895-1899" />
      </reference>
 
      <reference anchor="Briegel98" target="https://arxiv.org/abs/quant-ph/9803056">
        <front>
-         <title>Quantum repeaters: The role of imperfect local operations in
-         quantum communication</title>
+         <title>Quantum repeaters: The role of imperfect local operations in quantum communication</title>
 
          <author initials="H.-J" surname="Briegel" />
          <author initials="W" surname="Dur" />
@@ -2041,13 +2039,12 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1998" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="Vol. 81, Num. 26" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 81, Iss. 26, pp. 5932-5935" />
      </reference>
 
      <reference anchor="Cacciapuoti19" target="https://arxiv.org/abs/1907.06197">
        <front>
-         <title>When Entanglement meets Classical Communications: Quantum
-         Teleportation for the Quantum Internet</title>
+         <title>When Entanglement meets Classical Communications: Quantum Teleportation for the Quantum Internet</title>
 
          <author initials="A.S" surname="Cacciapuoti" />
          <author initials="M" surname="Caleffi" />
@@ -2056,7 +2053,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2019" />
        </front>
-       <seriesInfo name=" " value=" " />
+       <seriesInfo name="IEEE Transactions on Communications" value="Vol. 68, Iss. 6, pp. 3808-3833" />
      </reference>
 
      <reference anchor="Meignant19" target="https://arxiv.org/abs/1811.05445">
@@ -2069,7 +2066,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2019" />
        </front>
-       <seriesInfo name="Phys. Rev. A" value="Vol. 100, Iss. 5" />
+       <seriesInfo name="Physical Review A" value="Vol. 100, Iss. 5, pp. 052333" />
      </reference>
 
      <reference anchor="VanMeter13.2" target="https://arxiv.org/abs/1206.5655">
@@ -2084,7 +2081,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2013" />
        </front>
-       <seriesInfo name="Networking Science" value="Vol. 3, Iss. 1-4, pp 82-95" />
+       <seriesInfo name="Networking Science" value="Vol. 3, Iss. 1-4, pp. 82-95" />
      </reference>
 
      <reference anchor="Clark88" target="https://dl.acm.org/doi/abs/10.1145/52324.52336">
@@ -2095,7 +2092,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1988" />
        </front>
-       <seriesInfo name="SIGCOMM" value="'88" />
+       <seriesInfo name="Symposium proceedings on Communications architectures and protocols" value="pp. 106-114" />
      </reference>
 
      <reference anchor="VanMeterBook">
@@ -2124,7 +2121,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2019" />
        </front>
-       <seriesInfo name="IEEE Communications Magazine" value="Vol. 57, Iss. 7" />
+       <seriesInfo name="IEEE Communications Magazine" value="Vol. 57, Iss. 7, pp. 20-26" />
      </reference>
 
      <reference anchor="Peev09" target="http://stacks.iop.org/1367-2630/11/i=7/a=075001">
@@ -2192,12 +2189,12 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2009" />
        </front>
-       <seriesInfo name="New J. Phys." value="Vol. 11" />
+       <seriesInfo name="New Journal of Physics" value="Vol. 11, Iss. 7, pp. 075001" />
      </reference>
 
      <reference anchor="Hensen15" target="https://arxiv.org/abs/1508.05949">
        <front>
-         <title>Loophole-free {Bell} inequality violation using electron spins separated by 1.3 kilometres</title>
+         <title>Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres</title>
 
          <author surname="Hensen" initials="B" />
          <author surname="Bernien" initials="H" />
@@ -2221,7 +2218,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2015" />
        </front>
-       <seriesInfo name="Nature" value="526, 682-686" />
+       <seriesInfo name="Nature" value="Vol. 526, Iss. 7575, pp. 682-686" />
      </reference>
 
      <reference anchor="Fitzsimons17" target="https://arxiv.org/abs/1203.5217">
@@ -2233,7 +2230,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2017" />
        </front>
-       <seriesInfo name="Phys. Rev. A" value="Vol. 96, Iss. 1" />
+       <seriesInfo name="Physical Review A" value="Vol. 96, Iss. 1, pp. 012303" />
      </reference>
 
      <reference anchor="Terhal04" target="https://ieeexplore.ieee.org/document/5388928">
@@ -2244,7 +2241,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2004" />
        </front>
-       <seriesInfo name="IBM Journal of Research and Development" value="Vol. 48, Iss. 1" />
+       <seriesInfo name="IBM Journal of Research and Development" value="Vol. 48, Iss. 1, pp. 71-78" />
      </reference>
 
      <reference anchor="Park70" target="https://link.springer.com/content/pdf/10.1007/BF00708652.pdf">
@@ -2255,7 +2252,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1970" />
        </front>
-       <seriesInfo name="Foundations of Physics" value="Vol. 1, Iss. 1" />
+       <seriesInfo name="Foundations of Physics" value="Vol. 1, Iss. 1, pp. 23-33" />
      </reference>
 
      <reference anchor="Wootters82" target="https://www.nature.com/articles/299802a0">
@@ -2267,7 +2264,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="1982" />
        </front>
-       <seriesInfo name="Nature" value="299, 802-803" />
+       <seriesInfo name="Nature" value="Vol. 299, Iss. 5886, pp. 802-803" />
      </reference>
 
      <reference anchor="Fowler10" target="https://arxiv.org/abs/0910.4074">
@@ -2283,7 +2280,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2010" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="Vol. 104, Iss. 18" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 104, Iss. 18, pp. 180503" />
      </reference>
 
      <reference anchor="Jiang09" target="https://arxiv.org/abs/0809.3629">
@@ -2299,7 +2296,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2009" />
        </front>
-       <seriesInfo name="Phys. Rev. A" value="Vol. 79, Iss. 3" />
+       <seriesInfo name="Physical Review A" value="Vol. 79, Iss. 3, pp. 032325" />
      </reference>
 
      <reference anchor="Gottesman12" target="https://arxiv.org/abs/1107.2939">
@@ -2312,7 +2309,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2012" />
        </front>
-       <seriesInfo name="Phys. Rev. Lett." value="Vol. 109, Iss. 7" />
+       <seriesInfo name="Physical Review Letters" value="Vol. 109, Iss. 7, pp. 070503" />
      </reference>
 
      <reference anchor="ZOO" target="https://wiki.veriqloud.fr/">
@@ -2335,7 +2332,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2007" />
        </front>
-       <seriesInfo name="Rep. Prog. Phys." value="Vol. 70, Iss. 8" />
+       <seriesInfo name="Reports on Progress in Physics" value="Vol. 70, Iss. 8, pp. 1381-1424" />
      </reference>
 
      <reference anchor="Kimble08" target="http://arxiv.org/abs/0806.4195">
@@ -2346,7 +2343,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2008" />
        </front>
-       <seriesInfo name="Nature" value="453, 1023-1030" />
+       <seriesInfo name="Nature" value="Vol. 453, Iss. 7198, pp. 1023-1030" />
      </reference>
 
      <reference anchor="Devitt13" target="https://arxiv.org/abs/0905.2794">
@@ -2359,7 +2356,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2013" />
        </front>
-       <seriesInfo name="Rep. Prog. Phys." value="Vol. 76, Iss. 7" />
+       <seriesInfo name="Reports on Progress in Physics" value="Vol. 76, Iss. 7, pp. 076001" />
      </reference>
 
      <reference anchor="Sangouard11" target="https://arxiv.org/abs/0906.2699">
@@ -2373,7 +2370,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2011" />
        </front>
-       <seriesInfo name="Rev. Mod. Phys." value="Vol. 83, Iss. 1" />
+       <seriesInfo name="Reviews of Modern Physics" value="Vol. 83, Iss. 1, pp. 33-80" />
      </reference>
 
      <reference anchor="Abobeih18" target="https://arxiv.org/abs/1801.01196">
@@ -2390,7 +2387,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2018" />
        </front>
-       <seriesInfo name="Nat. Comm." value="9, 2552" />
+       <seriesInfo name="Nature communications" value="Vol. 9, Iss. 1, pp. 1-8" />
      </reference>
 
      <reference anchor="Bradley19" target="https://arxiv.org/abs/1905.02094">
@@ -2409,7 +2406,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2019" />
        </front>
-       <seriesInfo name="Phys. Rev. X" value="Vol. 9, Iss. 3" />
+       <seriesInfo name="Physical Review X" value="Vol. 9, Iss. 3, pp. 031045" />
      </reference>
 
      <reference anchor="Nagayama16" target="https://arxiv.org/abs/1508.04599">
@@ -2424,7 +2421,7 @@ CC - classical channel (can consist of many classical links)
 
          <date year="2016" />
        </front>
-       <seriesInfo name="Phys. Rev. A" value="Vol. 93, Iss. 4" />
+       <seriesInfo name="Physical Review A" value="Vol. 93, Iss. 4, pp. 042338" />
      </reference>
 
    </references>

@@ -159,9 +159,9 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
    Fully quantum networks capable of transmitting and managing entangled
    quantum states in order to send, receive, and manipulate distributed
-   quantum information are now imminent [Castel18] [Wehner18].  Whilst a
-   lot of effort has gone into physically realising and connecting such
-   devices [Hensen15], and making improvements to their speed and error
+   quantum information are now imminent [Castelvecchi18] [Wehner18].
+   Whilst a lot of effort has gone into physically realising and
+   connecting such devices [Hensen15], and making improvements to their
 
 
 
@@ -170,15 +170,15 @@ Kozlowski, et al.       Expires 30 September 2021               [Page 3]
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
-   tolerance, there are no worked out proposals for how to run these
-   networks.  To draw an analogy with a classical network, we are at a
-   stage where we can start to physically connect our devices and send
-   data, but all sending, receiving, buffer management, connection
-   synchronisation, and so on, must be managed by the application itself
-   at a level below conventional assembly language, where no common
-   interfaces yet exist.  Furthermore, whilst physical mechanisms for
-   transmitting quantum states exist, there are no robust protocols for
-   managing such transmissions.
+   speed and error tolerance, there are no worked out proposals for how
+   to run these networks.  To draw an analogy with a classical network,
+   we are at a stage where we can start to physically connect our
+   devices and send data, but all sending, receiving, buffer management,
+   connection synchronisation, and so on, must be managed by the
+   application itself at a level below conventional assembly language,
+   where no common interfaces yet exist.  Furthermore, whilst physical
+   mechanisms for transmitting quantum states exist, there are no robust
+   protocols for managing such transmissions.
 
 2.  Quantum information
 
@@ -1854,50 +1854,50 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               Abobeih, M.H., Cramer, J., Bakker, M.A., Kalb, N.,
               Markham, M., Twitchen, D.J., and T.H. Taminiau, "One-
               second coherence for a single electron spin coupled to a
-              multi-qubit nuclear-spin environment", Nat. Comm. 9, 2552,
-              2018, <https://arxiv.org/abs/1801.01196>.
+              multi-qubit nuclear-spin environment", Nature
+              communications Vol. 9, Iss. 1, pp. 1-8, 2018,
+              <https://arxiv.org/abs/1801.01196>.
 
    [Aguado19] Aguado, A., Lopez, V., Diego, D., Peev, M., Poppe, A.,
               Pastor, A., Folgueira, J., and M. Vicente, "The
               engineering of software-defined quantum key distribution
               networks", IEEE Communications Magazine Vol. 57, Iss. 7,
-              2019, <http://arxiv.org/abs/1907.00174>.
+              pp. 20-26, 2019, <http://arxiv.org/abs/1907.00174>.
 
    [Aspect81] Aspect, A., Grangier, P., and G. Roger, "Experimental
               tests of realistic local theories via Bell's theorem",
-              Phys. Rev. Lett. 47 (7): 460-463, 1981,
-              <https://journals.aps.org/prl/abstract/10.1103/
+              Physical Review Letters Vol. 47, Iss. 7, pp. 460-463,
+              1981, <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.47.460>.
 
    [Bennett14]
               Bennett, C.H. and G. Brassard, "Quantum cryptography:
               Public key distribution and coin tossing", Theoretical
-              Computer Science 560, 7-11, 2014,
-              <http://www.sciepub.com/reference/53249>.
+              Computer Science Vol. 560 (Part 1), pp. 7-11, 2014,
+              <https://arxiv.org/abs/2003.06557>.
 
    [Bennett93]
               Bennett, C.H., Brassard, G., Crepeau, C., Jozsa, R.,
               Peres, A., and W.K. Wootters, "Teleporting an unknown
               quantum state via dual classical and Einstein-Podolsky-
-              Rosen channels", Phys. Rev. Lett. Vol. 70, Iss. 13, 1993,
+              Rosen channels", Physical Review Letters Vol. 70, Iss. 13,
+              pp. 1895-1899, 1993,
               <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.70.1895>.
 
    [Bennett96]
               Bennett, C.H., DiVincenzo, D.P., Smolin, J.A., and W.K.
               Wootters, "Mixed state entanglement and quantum error
-              correction", Phys. Rev. A Vol. 54, Iss. 5, 1996,
-              <https://arxiv.org/abs/quant-ph/9604024>.
+              correction", Physical Review A Vol. 54, Iss. 5, pp.
+              3824-3851, 1996, <https://arxiv.org/abs/quant-ph/9604024>.
 
    [Bradley19]
               Bradley, C.E., Randall, J., Abobeih, M.H., Berrevoets,
               R.C., Degen, M.J., Bakker, M.A., Markham, M., Twitchen,
               D.J., and T.H. Taminiau, "A 10-qubit solid-state spin
-              register with quantum memory up to one minute", Phys. Rev.
-              X Vol. 9, Iss. 3, 2019,
+              register with quantum memory up to one minute", Physical
+              Review X Vol. 9, Iss. 3, pp. 031045, 2019,
               <https://arxiv.org/abs/1905.02094>.
-
-
 
 
 
@@ -1909,51 +1909,51 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
    [Briegel98]
               Briegel, H.-J., Dur, W., Cirac, J.I., and P. Zoller,
               "Quantum repeaters: The role of imperfect local operations
-              in quantum communication", Phys. Rev. Lett. Vol. 81, Num.
-              26, 1998, <https://arxiv.org/abs/quant-ph/9803056>.
+              in quantum communication", Physical Review Letters Vol.
+              81, Iss. 26, pp. 5932-5935, 1998,
+              <https://arxiv.org/abs/quant-ph/9803056>.
 
    [Cacciapuoti19]
               Cacciapuoti, A.S., Caleffi, M., Van Meter, R., and L.
               Hanzo, "When Entanglement meets Classical Communications:
-              Quantum Teleportation for the Quantum Internet",  , 2019,
-              <https://arxiv.org/abs/1907.06197>.
+              Quantum Teleportation for the Quantum Internet", IEEE
+              Transactions on Communications Vol. 68, Iss. 6, pp.
+              3808-3833, 2019, <https://arxiv.org/abs/1907.06197>.
 
-   [Castel18] Castelvecchi, D., "The Quantum Internet has arrived (and
-              it hasn't)", Nature 554, 289-292, 2018,
+   [Castelvecchi18]
+              Castelvecchi, D., "The Quantum Internet has arrived (and
+              it hasn't)", Nature Vol. 554, pp. 289-292, 2018,
               <https://www.nature.com/articles/d41586-018-01835-3>.
 
    [Clark88]  Clark, D., "The design philosophy of the DARPA internet
-              protocols", SIGCOMM '88, 1988,
+              protocols", Symposium proceedings on Communications
+              architectures and protocols pp. 106-114, 1988,
               <https://dl.acm.org/doi/abs/10.1145/52324.52336>.
 
    [Crepeau02]
               Crepeau, C., Gottesman, D., and A. Smith, "Secure multi-
-              party quantum computation", Proceedings of Symposium on
-              Theory of Computing , 2002,
-              <https://arxiv.org/abs/quant-ph/0206138>.
+              party quantum computation", Proceedings of the thiry-
+              fourth annual ACM symposium on Theory of computing pp.
+              643-652, 2002, <https://arxiv.org/abs/quant-ph/0206138>.
 
    [Dahlberg19]
               Dahlberg, A., Skrzypczyk, M., Coopmans, T., Wubben, L.,
               Rozpedek, F., Pompili, M., Stolk, A., Pawelczak, P.,
               Knegjens, R., de Oliveira Filho, J., Hanson, R., and S.
               Wehner, "A link layer protocol for quantum networks",
-              SIGCOMM '19 Proceedings of the ACM Special Interest Group
-              on Data Communication 159-173, 2019,
+              Proceedings of the ACM Special Interest Group on Data
+              Communication pp. 159-173, 2019,
               <https://arxiv.org/abs/1903.09778>.
 
    [Devitt13] Devitt, S.J., Nemoto, K., and W.J. Munro, "Quantum error
-              correction for beginners", Rep. Prog. Phys. Vol. 76, Iss.
-              7, 2013, <https://arxiv.org/abs/0905.2794>.
+              correction for beginners", Reports on Progress in
+              Physics Vol. 76, Iss. 7, pp. 076001, 2013,
+              <https://arxiv.org/abs/0905.2794>.
 
    [Dur07]    Duer, W. and H.J. Briegel, "Entanglement purification and
-              quantum error correction", Rep. Prog. Phys. Vol. 70, Iss.
-              8, 2007, <https://arxiv.org/abs/0705.4165>.
-
-   [Ekert91]  Ekert, A.K., "Quantum cryptography based on Bell's
-              theorem", Phys. Rev. Lett. Vol. 67, Iss. 6, 1991,
-              <https://journals.aps.org/prl/abstract/10.1103/
-              PhysRevLett.67.661>.
-
+              quantum error correction", Reports on Progress in
+              Physics Vol. 70, Iss. 8, pp. 1381-1424, 2007,
+              <https://arxiv.org/abs/0705.4165>.
 
 
 
@@ -1962,26 +1962,33 @@ Kozlowski, et al.       Expires 30 September 2021              [Page 35]
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
+   [Ekert91]  Ekert, A.K., "Quantum cryptography based on Bell's
+              theorem", Physical Review Letters Vol. 67, Iss. 6, pp.
+              661-663, 1991,
+              <https://journals.aps.org/prl/abstract/10.1103/
+              PhysRevLett.67.661>.
+
    [Fitzsimons17]
               Fitzsimons, J.F. and E. Kashefi, "Unconditionally
-              verifiable blind quantum computation", Phys. Rev. A Vol.
-              96, Iss. 1, 2017, <https://arxiv.org/abs/1203.5217>.
+              verifiable blind quantum computation", Physical Review
+              A Vol. 96, Iss. 1, pp. 012303, 2017,
+              <https://arxiv.org/abs/1203.5217>.
 
    [Fowler10] Fowler, A.G., Wang, D.S., Hill, C.D., Ladd, T.D., Van
               Meter, R., and L.C.L. Hollenberg, "Surface code quantum
-              communication", Phys. Rev. Lett. Vol. 104, Iss. 18, 2010,
-              <https://arxiv.org/abs/0910.4074>.
+              communication", Physical Review Letters Vol. 104, Iss. 18,
+              pp. 180503, 2010, <https://arxiv.org/abs/0910.4074>.
 
    [Giovanetti04]
               Giovanetti, V., Lloyd, S., and L. Maccone, "Quantum-
               enhanced measurements: beating the standard quantum
-              limit", Science 306(5700), 1330-1336, 2004,
+              limit", Science Vol. 306, Iss. 5700, pp. 1330-1336, 2004,
               <https://arxiv.org/abs/quant-ph/0412078>.
 
    [Gottesman12]
               Gottesman, D., Jennewein, T., and S. Croke, "Longer-
-              baseline telescopes using quantum repeaters", Phys. Rev.
-              Lett. Vol. 109, Iss. 7, 2012,
+              baseline telescopes using quantum repeaters", Physical
+              Review Letters Vol. 109, Iss. 7, pp. 070503, 2012,
               <https://arxiv.org/abs/1107.2939>.
 
    [Hensen15] Hensen, B., Bernien, H., Dreau, A.E., Reiserer, A., Kalb,
@@ -1989,9 +1996,9 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               Schouten, R.N., Abellan, C., Amaya, W., Pruneri, V.,
               Mitchell, M.W., Markham, M., Twitchen, D.J., Elkouss, D.,
               Wehner, S., Taminiau, T.H., and R. Hanson, "Loophole-free
-              {Bell} inequality violation using electron spins separated
-              by 1.3 kilometres", Nature 526, 682-686, 2015,
-              <https://arxiv.org/abs/1508.05949>.
+              Bell inequality violation using electron spins separated
+              by 1.3 kilometres", Nature Vol. 526, Iss. 7575, pp.
+              682-686, 2015, <https://arxiv.org/abs/1508.05949>.
 
    [I-D.irtf-qirg-quantum-internet-use-cases]
               Wang, C., Rahman, A., Li, R., and M. Aelmans,
@@ -2001,13 +2008,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               <http://www.ietf.org/internet-drafts/draft-irtf-qirg-
               quantum-internet-use-cases-04.txt>.
 
-   [Jiang09]  Jiang, L., Taylor, J.M., Nemoto, K., Munro, W.J., Van
-              Meter, R., and M.D. Lukin, "Quantum repeater with
-              encoding", Phys. Rev. A Vol. 79, Iss. 3, 2009,
-              <https://arxiv.org/abs/0809.3629>.
-
-   [Kimble08] Kimble, H.J., "The Quantum Internet", Nature 453,
-              1023-1030, 2008, <http://arxiv.org/abs/0806.4195>.
 
 
 
@@ -2018,29 +2018,40 @@ Kozlowski, et al.       Expires 30 September 2021              [Page 36]
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
+   [Jiang09]  Jiang, L., Taylor, J.M., Nemoto, K., Munro, W.J., Van
+              Meter, R., and M.D. Lukin, "Quantum repeater with
+              encoding", Physical Review A Vol. 79, Iss. 3, pp. 032325,
+              2009, <https://arxiv.org/abs/0809.3629>.
+
+   [Kimble08] Kimble, H.J., "The Quantum Internet", Nature Vol. 453,
+              Iss. 7198, pp. 1023-1030, 2008,
+              <http://arxiv.org/abs/0806.4195>.
+
    [Meignant19]
               Meignant, C., Markham, D., and F. Grosshans, "Distributing
-              graph states over arbitrary quantum networks", Phys. Rev.
-              A Vol. 100, Iss. 5, 2019,
+              graph states over arbitrary quantum networks", Physical
+              Review A Vol. 100, Iss. 5, pp. 052333, 2019,
               <https://arxiv.org/abs/1811.05445>.
 
    [Mural16]  Muralidharan, S., Li, L., Kim, J., Lutkenhaus, N., Lukin,
               M., and L. Jiang, "Optimal architectures for long distance
-              quantum communication", Nat. Sci. Rep. 6, 20463, 2016,
+              quantum communication", Scientific Reports Vol. 6, Iss. 1,
+              pp. 1-10, 2016,
               <https://www.nature.com/articles/srep20463>.
 
    [Nagayama16]
               Nagayama, S., Choi, B.-S., Devitt, S., Suzuki, S., and R.
               Van Meter, "Interoperability in encoded quantum repeater
-              networks", Phys. Rev. A Vol. 93, Iss. 4, 2016,
-              <https://arxiv.org/abs/1508.04599>.
+              networks", Physical Review A Vol. 93, Iss. 4, pp. 042338,
+              2016, <https://arxiv.org/abs/1508.04599>.
 
    [NielsenChuang]
               Nielsen, M.A. and I.L. Chuang, "Quantum Computation and
               Quantum Information", Cambridge University Press , 2011.
 
    [Park70]   Park, J.L., "The concept of transition in quantum
-              mechanics", Foundations of Physics Vol. 1, Iss. 1, 1970,
+              mechanics", Foundations of Physics Vol. 1, Iss. 1, pp.
+              23-33, 1970,
               <https://link.springer.com/content/pdf/10.1007/
               BF00708652.pdf>.
 
@@ -2055,17 +2066,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               A., Querasser, E., Ribordy, G., Robyr, S., Salvail, L.,
               Sharpe, A.W., Shields, A.J., Stucki, D., Suda, M., Tamas,
               C., Themel, T., Thew, R.T., Thoma, Y., Treiber, A.,
-              Trinkler, P., Tualle-Brouri, R., Vannel, F., Walenta, N.,
-              Weier, H., Weinfurter, H., Wimberger, I., Yuan, Z.L.,
-              Zbinden, H., and A. Zeilinger, "The SECOQC quantum key
-              distribution network in Vienna", New J. Phys. Vol. 11,
-              2009, <http://stacks.iop.org/1367-2630/11/i=7/a=075001>.
-
-   [RFC1958]  Carpenter, B., Ed., "Architectural Principles of the
-              Internet", RFC 1958, DOI 10.17487/RFC1958, June 1996,
-              <https://www.rfc-editor.org/info/rfc1958>.
-
-
 
 
 
@@ -2074,15 +2074,26 @@ Kozlowski, et al.       Expires 30 September 2021              [Page 37]
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
+              Trinkler, P., Tualle-Brouri, R., Vannel, F., Walenta, N.,
+              Weier, H., Weinfurter, H., Wimberger, I., Yuan, Z.L.,
+              Zbinden, H., and A. Zeilinger, "The SECOQC quantum key
+              distribution network in Vienna", New Journal of
+              Physics Vol. 11, Iss. 7, pp. 075001, 2009,
+              <http://stacks.iop.org/1367-2630/11/i=7/a=075001>.
+
+   [RFC1958]  Carpenter, B., Ed., "Architectural Principles of the
+              Internet", RFC 1958, DOI 10.17487/RFC1958, June 1996,
+              <https://www.rfc-editor.org/info/rfc1958>.
+
    [Sangouard11]
               Sangouard, N., Simon, C., de Riedmatten, H., and N. Gisin,
               "Quantum repeaters based on atomic ensembles and linear
-              optics", Rev. Mod. Phys. Vol. 83, Iss. 1, 2011,
-              <https://arxiv.org/abs/0906.2699>.
+              optics", Reviews of Modern Physics Vol. 83, Iss. 1, pp.
+              33-80, 2011, <https://arxiv.org/abs/0906.2699>.
 
    [Satoh17]  Satoh, T., Nagayama, S., and R. Van Meter, "The network
               impact of hijacking a quantum repeater", Quantum Science
-              and Technology Vol. 3, Iss. 3, 2017,
+              and Technology Vol. 3, Iss. 3, pp. 034008, 2017,
               <https://arxiv.org/abs/1701.04587>.
 
    [Satoh20]  Satoh, T., Nagayama, S., Suzuki, S., Matsuo, T., and R.
@@ -2095,33 +2106,22 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               2019.
 
    [Terhal04] Terhal, B.M., "Is entanglement monogamous?", IBM Journal
-              of Research and Development Vol. 48, Iss. 1, 2004,
-              <https://ieeexplore.ieee.org/document/5388928>.
+              of Research and Development Vol. 48, Iss. 1, pp. 71-78,
+              2004, <https://ieeexplore.ieee.org/document/5388928>.
 
    [VanMeter13.1]
               Van Meter, R. and J. Touch, "Designing quantum repeater
-              networks", IEEE Communications Magazine 51, 64-71, 2013,
+              networks", IEEE Communications Magazine Vol. 51, Iss. 8,
+              pp. 64-71, 2013,
               <https://ieeexplore.ieee.org/document/6576340>.
 
    [VanMeter13.2]
               Van Meter, R., Satoh, T., Ladd, T.D., Munro, W.J., and K.
               Nemoto, "Path selection for quantum repeater networks",
-              Networking Science Vol. 3, Iss. 1-4, pp 82-95, 2013,
+              Networking Science Vol. 3, Iss. 1-4, pp. 82-95, 2013,
               <https://arxiv.org/abs/1206.5655>.
 
-   [VanMeterBook]
-              Van Meter, R., "Quantum Networking", ISTE Ltd/John Wiley
-              and Sons Inc 978-1-84821-537-5, 2014.
 
-   [Wehner18] Wehner, S., Elkouss, D., and R. Hanson, "Quantum internet:
-              A vision for the road ahead", Science 362, 6412, 2018,
-              <http://science.sciencemag.org/content/362/6412/
-              eaam9288.full>.
-
-   [Wootters82]
-              Wootters, W.K. and W.H. Zurek, "A single quantum cannot be
-              cloned", Nature 299, 802-803, 1982,
-              <https://www.nature.com/articles/299802a0>.
 
 
 
@@ -2129,6 +2129,20 @@ Kozlowski, et al.       Expires 30 September 2021              [Page 38]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
+
+   [VanMeterBook]
+              Van Meter, R., "Quantum Networking", ISTE Ltd/John Wiley
+              and Sons Inc 978-1-84821-537-5, 2014.
+
+   [Wehner18] Wehner, S., Elkouss, D., and R. Hanson, "Quantum internet:
+              A vision for the road ahead", Science Vol. 362, Iss. 6412,
+              2018, <http://science.sciencemag.org/content/362/6412/
+              eaam9288.full>.
+
+   [Wootters82]
+              Wootters, W.K. and W.H. Zurek, "A single quantum cannot be
+              cloned", Nature Vol. 299, Iss. 5886, pp. 802-803, 1982,
+              <https://www.nature.com/articles/299802a0>.
 
    [ZOO]      "The Quantum Protocol Zoo", <https://wiki.veriqloud.fr/>.
 
@@ -2163,6 +2177,15 @@ Authors' Addresses
    Email: rdv@sfc.wide.ad.jp
 
 
+
+
+
+
+Kozlowski, et al.       Expires 30 September 2021              [Page 39]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
    Bruno Rijsman
    Individual
 
@@ -2177,13 +2200,6 @@ Authors' Addresses
    Italy
 
    Email: angelasara.cacciapuoti@unina.it
-
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 39]
-
-Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    Marcello Caleffi
@@ -2204,22 +2220,6 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
    Japan
 
    Email: shota.nagayama@mercari.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

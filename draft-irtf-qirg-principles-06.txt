@@ -5,7 +5,7 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: 23 August 2021                                     R. Van Meter
+Expires: 30 September 2021                                  R. Van Meter
                                                          Keio University
                                                               B. Rijsman
                                                               Individual
@@ -14,7 +14,7 @@ Expires: 23 August 2021                                     R. Van Meter
                                         University of Naples Federico II
                                                              S. Nagayama
                                                            Mercari, Inc.
-                                                        19 February 2021
+                                                           29 March 2021
 
 
             Architectural Principles for a Quantum Internet
@@ -27,12 +27,13 @@ Abstract
    on Earth.  To achieve this goal, a quantum network stack should be
    built from the ground up to account for the fundamentally new
    properties of quantum entanglement.  The first realisations of
-   quantum networks are imminent, but there is no practical proposal for
-   how to organise, utilise, and manage such networks.  In this memo, we
-   attempt to lay down the framework and introduce some basic
-   architectural principles for a quantum internet.  This is intended
-   for general guidance and general interest, but also to provide a
-   foundation for discussion between physicists and network specialists.
+   quantum entanglement networks are imminent, but there is no practical
+   proposal for how to organise, utilise, and manage such networks.  In
+   this memo, we attempt to lay down the framework and introduce some
+   basic architectural principles for a quantum internet.  This is
+   intended for general guidance and general interest, but also to
+   provide a foundation for discussion between physicists and network
+   specialists.
 
 Status of This Memo
 
@@ -49,14 +50,15 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 August 2021.
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 1]
+Kozlowski, et al.       Expires 30 September 2021               [Page 1]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
+
+   This Internet-Draft will expire on 30 September 2021.
 
 Copyright Notice
 
@@ -104,16 +106,16 @@ Table of Contents
                architectures . . . . . . . . . . . . . . . . . . . .  23
        5.4.2.  Boundaries between different administrative
                regions . . . . . . . . . . . . . . . . . . . . . . .  24
+
+
+
+Kozlowski, et al.       Expires 30 September 2021               [Page 2]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
        5.4.3.  Boundaries between different error management
                schemes . . . . . . . . . . . . . . . . . . . . . . .  24
-
-
-
-Kozlowski, et al.        Expires 23 August 2021                 [Page 2]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
      5.5.  Physical constraints  . . . . . . . . . . . . . . . . . .  24
        5.5.1.  Memory lifetimes  . . . . . . . . . . . . . . . . . .  24
        5.5.2.  Rates . . . . . . . . . . . . . . . . . . . . . . . .  25
@@ -144,7 +146,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    are otherwise impossible to realise [24].
 
    This new networking paradigm offers promise for a range of new
-   applications such as secure communications [3] [4], distributed
+   applications such as quantum cryptography [3] [4], distributed
    quantum computation [5], secure quantum computing in the cloud [28],
    quantum-enhanced measurement networks [6], or higher-precision, long-
    baseline telescopes [34].  The field of quantum communication has
@@ -160,16 +162,16 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    and making improvements to their speed and error tolerance, there are
    no worked out proposals for how to run these networks.  To draw an
    analogy with a classical network, we are at a stage where we can
+
+
+
+Kozlowski, et al.       Expires 30 September 2021               [Page 3]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
    start to physically connect our devices and send data, but all
    sending, receiving, buffer management, connection synchronisation,
-
-
-
-Kozlowski, et al.        Expires 23 August 2021                 [Page 3]
-
-Internet-Draft      Principles for a Quantum Internet      February 2021
-
-
    and so on, must be managed by the application itself at a level below
    conventional assembly language, where no common interfaces yet exist.
    Furthermore, whilst physical mechanisms for transmitting quantum
@@ -219,11 +221,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-
-
-Kozlowski, et al.        Expires 23 August 2021                 [Page 4]
+Kozlowski, et al.       Expires 30 September 2021               [Page 4]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    The superposition property plays an important role in fundamental
@@ -277,9 +277,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 5]
+Kozlowski, et al.       Expires 30 September 2021               [Page 5]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
                                +====+=====+
@@ -333,9 +333,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 6]
+Kozlowski, et al.       Expires 30 September 2021               [Page 6]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    Neither of the two qubits is in a definite |0> or |1> state and we
@@ -389,9 +389,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 7]
+Kozlowski, et al.       Expires 30 September 2021               [Page 7]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    physically send one of the qubits to a remote node.  It is also
@@ -445,9 +445,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 8]
+Kozlowski, et al.       Expires 30 September 2021               [Page 8]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 4.1.2.  No-cloning theorem
@@ -501,9 +501,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                 [Page 9]
+Kozlowski, et al.       Expires 30 September 2021               [Page 9]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 4.1.4.  Inadequacy of direct transmission
@@ -557,9 +557,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 10]
+Kozlowski, et al.       Expires 30 September 2021              [Page 10]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 4.3.  Teleportation
@@ -613,9 +613,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 11]
+Kozlowski, et al.       Expires 30 September 2021              [Page 11]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 4.4.1.  Elementary link generation
@@ -629,7 +629,7 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
    by photons such as moderate interaction with the environment leading
    to moderate decoherence, convenient control with standard optical
    components, and high-speed, low-loss transmissions.  However, since
-   photons cannot be stored, a transducer must transfer the flying
+   photons are hard to store, a transducer must transfer the flying
    qubit's state to a qubit suitable for information processing and/or
    storage (often referred to as a matter qubit).
 
@@ -669,9 +669,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 12]
+Kozlowski, et al.       Expires 30 September 2021              [Page 12]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    *  "At both end-points": in this scheme both nodes send a flying
@@ -696,10 +696,10 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
    The problem with generating entangled pairs directly across a link is
    that efficiency decreases with channel length.  Beyond a few 10s of
-   kms in optical fibre or 1000 kms in free space (via satellite) the
-   rate is effectively zero and due to the no-cloning theorem we cannot
-   simply amplify the signal.  The solution is entanglement swapping
-   [19].
+   kilometres in optical fibre or 1000 kilometres in free space (via
+   satellite) the rate is effectively zero and due to the no-cloning
+   theorem we cannot simply amplify the signal.  The solution is
+   entanglement swapping [19].
 
    A Bell pair between any two nodes in the network can be constructed
    by combining the pairs generated along each individual link on a path
@@ -725,9 +725,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 13]
+Kozlowski, et al.       Expires 30 September 2021              [Page 13]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    To achieve this goal, we simply teleport the qubit X2 using the pair
@@ -781,9 +781,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 14]
+Kozlowski, et al.       Expires 30 September 2021              [Page 14]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    To distil a quantum state, a second (and sometimes third) quantum
@@ -837,9 +837,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 15]
+Kozlowski, et al.       Expires 30 September 2021              [Page 15]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    +===========+=================+=======================+============+
@@ -893,9 +893,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 16]
+Kozlowski, et al.       Expires 30 September 2021              [Page 16]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    Error tolerance is about tolerating quantum state errors.
@@ -949,9 +949,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 17]
+Kozlowski, et al.       Expires 30 September 2021              [Page 17]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 5.1.  Challenges
@@ -1005,9 +1005,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 18]
+Kozlowski, et al.       Expires 30 September 2021              [Page 18]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    3.  An entangled pair is only useful if the locations of both qubits
@@ -1061,9 +1061,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 19]
+Kozlowski, et al.       Expires 30 September 2021              [Page 19]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    *  communicate control information within a network, including both
@@ -1117,9 +1117,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 20]
+Kozlowski, et al.       Expires 30 September 2021              [Page 20]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 5.3.2.  Elements of a quantum network
@@ -1173,9 +1173,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 21]
+Kozlowski, et al.       Expires 30 September 2021              [Page 21]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
       described in Section 4.4.1.  It may also include a dedicated
@@ -1229,9 +1229,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 22]
+Kozlowski, et al.       Expires 30 September 2021              [Page 22]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    During or after the distribution of control information, the network
@@ -1285,9 +1285,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 23]
+Kozlowski, et al.       Expires 30 September 2021              [Page 23]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 5.4.2.  Boundaries between different administrative regions
@@ -1341,9 +1341,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 24]
+Kozlowski, et al.       Expires 30 September 2021              [Page 24]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 5.5.2.  Rates
@@ -1397,9 +1397,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 25]
+Kozlowski, et al.       Expires 30 September 2021              [Page 25]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    As quantum networking is a completely new technology that is likely
@@ -1453,9 +1453,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 26]
+Kozlowski, et al.       Expires 30 September 2021              [Page 26]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    2.  Support tomorrow's distributed quantum applications
@@ -1509,9 +1509,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 27]
+Kozlowski, et al.       Expires 30 September 2021              [Page 27]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
        It turns out that as long as the underlying implementation
@@ -1565,9 +1565,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 28]
+Kozlowski, et al.       Expires 30 September 2021              [Page 28]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
        Any practical and usable network, classical or quantum, must be
@@ -1621,9 +1621,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 29]
+Kozlowski, et al.       Expires 30 September 2021              [Page 29]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
        effectively eliminated before reaching the application, many
@@ -1677,9 +1677,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 30]
+Kozlowski, et al.       Expires 30 September 2021              [Page 30]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 7.  A thought experiment inspired by classical networks
@@ -1733,9 +1733,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 31]
+Kozlowski, et al.       Expires 30 September 2021              [Page 31]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    With traffic engineering, quantum virtual circuits choose a path that
@@ -1789,9 +1789,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 32]
+Kozlowski, et al.       Expires 30 September 2021              [Page 32]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    In quantum networks, control plane traffic (routing and signaling
@@ -1845,9 +1845,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 33]
+Kozlowski, et al.       Expires 30 September 2021              [Page 33]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    [4]        Ekert, A.K., "Quantum cryptography based on Bell's
@@ -1901,9 +1901,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 34]
+Kozlowski, et al.       Expires 30 September 2021              [Page 34]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    [14]       Dahlberg, A., Skrzypczyk, M., Coopmans, T., Wubben, L.,
@@ -1957,9 +1957,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 35]
+Kozlowski, et al.       Expires 30 September 2021              [Page 35]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    [23]       Clark, D., "The design philosophy of the DARPA internet
@@ -2013,9 +2013,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 36]
+Kozlowski, et al.       Expires 30 September 2021              [Page 36]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    [30]       Park, J.L., "The concept of transition in quantum
@@ -2069,9 +2069,9 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 37]
+Kozlowski, et al.       Expires 30 September 2021              [Page 37]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    [41]       Bradley, C.E., Randall, J., Abobeih, M.H., Berrevoets,
@@ -2125,9 +2125,9 @@ Authors' Addresses
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 38]
+Kozlowski, et al.       Expires 30 September 2021              [Page 38]
 
-Internet-Draft      Principles for a Quantum Internet      February 2021
+Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    Angela Sara Cacciapuoti
@@ -2181,4 +2181,4 @@ Internet-Draft      Principles for a Quantum Internet      February 2021
 
 
 
-Kozlowski, et al.        Expires 23 August 2021                [Page 39]
+Kozlowski, et al.       Expires 30 September 2021              [Page 39]

@@ -221,12 +221,12 @@
      technology by enabling quantum communication between any two points on
      Earth. To achieve this goal, a quantum network stack should be built from
      the ground up to account for the fundamentally new properties of quantum
-     entanglement. The first realisations of quantum networks are imminent, but
-     there is no practical proposal for how to organise, utilise, and manage
-     such networks. In this memo, we attempt to lay down the framework and
-     introduce some basic architectural principles for a quantum internet. This
-     is intended for general guidance and general interest, but also to provide
-     a foundation for discussion between physicists and network
+     entanglement. The first realisations of quantum entanglement networks are
+     imminent, but there is no practical proposal for how to organise, utilise,
+     and manage such networks. In this memo, we attempt to lay down the
+     framework and introduce some basic architectural principles for a quantum
+     internet. This is intended for general guidance and general interest, but
+     also to provide a foundation for discussion between physicists and network
      specialists.</t>
    </abstract>
  </front>
@@ -247,7 +247,7 @@
      otherwise impossible to realise <xref target="van-meter-book" />.</t>
 
      <t>This new networking paradigm offers promise for a range of new
-     applications such as secure communications <xref target="bennett14" />
+     applications such as quantum cryptography <xref target="bennett14" />
      <xref target="ekert91" />, distributed quantum computation <xref
      target="crep02" />, secure quantum computing in the cloud <xref
      target="fitzsimons17" />, quantum-enhanced measurement networks <xref
@@ -661,7 +661,7 @@
          photons such as moderate interaction with the environment leading to
          moderate decoherence, convenient control with standard optical
          components, and high-speed, low-loss transmissions. However, since
-         photons cannot be stored, a transducer must transfer the flying
+         photons are hard to store, a transducer must transfer the flying
          qubit's state to a qubit suitable for information processing and/or
          storage (often referred to as a matter qubit).</t>
 
@@ -722,10 +722,10 @@
 
          <t>The problem with generating entangled pairs directly across a link
          is that efficiency decreases with channel length. Beyond a few 10s of
-         kms in optical fibre or 1000 kms in free space (via satellite) the
-         rate is effectively zero and due to the no-cloning theorem we cannot
-         simply amplify the signal. The solution is entanglement swapping <xref
-         target="briegel98" />.</t>
+         kilometres in optical fibre or 1000 kilometres in free space (via
+         satellite) the rate is effectively zero and due to the no-cloning
+         theorem we cannot simply amplify the signal. The solution is
+         entanglement swapping <xref target="briegel98" />.</t>
 
          <t>A Bell pair between any two nodes in the network can be constructed
          by combining the pairs generated along each individual link on a path

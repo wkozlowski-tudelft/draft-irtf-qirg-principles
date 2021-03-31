@@ -5,7 +5,7 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: 30 September 2021                                  R. Van Meter
+Expires: 2 October 2021                                     R. Van Meter
                                                          Keio University
                                                               B. Rijsman
                                                               Individual
@@ -14,7 +14,7 @@ Expires: 30 September 2021                                  R. Van Meter
                                         University of Naples Federico II
                                                              S. Nagayama
                                                            Mercari, Inc.
-                                                           29 March 2021
+                                                           31 March 2021
 
 
             Architectural Principles for a Quantum Internet
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 1]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
-   This Internet-Draft will expire on 30 September 2021.
+   This Internet-Draft will expire on 2 October 2021.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 2]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -155,7 +155,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
    of active research for many years and the most well-known application
    of quantum communication, quantum key distribution (QKD) for secure
    communications, has already been deployed at short (roughly 100km)
-   distances [Peev09] [Aguado19].
+   distances [Elliott03] [Peev09] [Aguado19].
 
    Fully quantum networks capable of transmitting and managing entangled
    quantum states in order to send, receive, and manipulate distributed
@@ -165,7 +165,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 3]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -221,7 +221,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 4]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 4]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -277,7 +277,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 5]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 5]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -333,7 +333,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 6]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 6]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -389,7 +389,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 7]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 7]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -445,7 +445,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 8]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 8]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -501,7 +501,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021               [Page 9]
+Kozlowski, et al.        Expires 2 October 2021                 [Page 9]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -557,7 +557,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 10]
+Kozlowski, et al.        Expires 2 October 2021                [Page 10]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -613,7 +613,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 11]
+Kozlowski, et al.        Expires 2 October 2021                [Page 11]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -669,7 +669,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 12]
+Kozlowski, et al.        Expires 2 October 2021                [Page 12]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -725,7 +725,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 13]
+Kozlowski, et al.        Expires 2 October 2021                [Page 13]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -781,7 +781,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 14]
+Kozlowski, et al.        Expires 2 October 2021                [Page 14]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -837,7 +837,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 15]
+Kozlowski, et al.        Expires 2 October 2021                [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -893,7 +893,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 16]
+Kozlowski, et al.        Expires 2 October 2021                [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -949,7 +949,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 17]
+Kozlowski, et al.        Expires 2 October 2021                [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1005,7 +1005,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 18]
+Kozlowski, et al.        Expires 2 October 2021                [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1061,7 +1061,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 19]
+Kozlowski, et al.        Expires 2 October 2021                [Page 19]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1117,7 +1117,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 20]
+Kozlowski, et al.        Expires 2 October 2021                [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1173,7 +1173,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 21]
+Kozlowski, et al.        Expires 2 October 2021                [Page 21]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1229,7 +1229,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 22]
+Kozlowski, et al.        Expires 2 October 2021                [Page 22]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1285,7 +1285,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 23]
+Kozlowski, et al.        Expires 2 October 2021                [Page 23]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1341,7 +1341,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 24]
+Kozlowski, et al.        Expires 2 October 2021                [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1397,7 +1397,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 25]
+Kozlowski, et al.        Expires 2 October 2021                [Page 25]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1453,7 +1453,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 26]
+Kozlowski, et al.        Expires 2 October 2021                [Page 26]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1509,7 +1509,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 27]
+Kozlowski, et al.        Expires 2 October 2021                [Page 27]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1565,7 +1565,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 28]
+Kozlowski, et al.        Expires 2 October 2021                [Page 28]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1621,7 +1621,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 29]
+Kozlowski, et al.        Expires 2 October 2021                [Page 29]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1677,7 +1677,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 30]
+Kozlowski, et al.        Expires 2 October 2021                [Page 30]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1733,7 +1733,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 31]
+Kozlowski, et al.        Expires 2 October 2021                [Page 31]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1789,7 +1789,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 32]
+Kozlowski, et al.        Expires 2 October 2021                [Page 32]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1845,7 +1845,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 33]
+Kozlowski, et al.        Expires 2 October 2021                [Page 33]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1901,7 +1901,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 34]
+Kozlowski, et al.        Expires 2 October 2021                [Page 34]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1957,7 +1957,7 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-Kozlowski, et al.       Expires 30 September 2021              [Page 35]
+Kozlowski, et al.        Expires 2 October 2021                [Page 35]
 
 Internet-Draft      Principles for a Quantum Internet         March 2021
 
@@ -1967,6 +1967,13 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               661-663, 1991,
               <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.67.661>.
+
+   [Elliott03]
+              Elliott, C., Pearson, D., and G. Troxel, "Quantum
+              cryptography in practice", Proceedings of the 2003
+              conference on Applications, technologies, architectures,
+              and protocols for computer communications pp. 227-238,
+              2003, <https://arxiv.org/abs/quant-ph/0307049>.
 
    [Fitzsimons17]
               Fitzsimons, J.F. and E. Kashefi, "Unconditionally
@@ -2003,20 +2010,18 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
    [I-D.irtf-qirg-quantum-internet-use-cases]
               Wang, C., Rahman, A., Li, R., and M. Aelmans,
               "Applications and Use Cases for the Quantum Internet",
+
+
+
+Kozlowski, et al.        Expires 2 October 2021                [Page 36]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
               Work in Progress, Internet-Draft, draft-irtf-qirg-quantum-
               internet-use-cases-04, 22 January 2021,
               <http://www.ietf.org/internet-drafts/draft-irtf-qirg-
               quantum-internet-use-cases-04.txt>.
-
-
-
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 36]
-
-Internet-Draft      Principles for a Quantum Internet         March 2021
-
 
    [Jiang09]  Jiang, L., Taylor, J.M., Nemoto, K., Munro, W.J., Van
               Meter, R., and M.D. Lukin, "Quantum repeater with
@@ -2061,19 +2066,19 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               M., Gautier, J.-D., Gay, O., Gisin, N., Grangier, P.,
               Happe, A., Hasani, Y., Hentschel, M., Huebel, H., Humer,
               G., Laenger, T., Legre, M., Lieger, R., Lodewyck, J.,
+
+
+
+Kozlowski, et al.        Expires 2 October 2021                [Page 37]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
               Loruenser, T., Luetkenhaus, N., Marhold, A., Matyus, T.,
               Maurhart, O., Monat, L., Nauerth, S., Page, J.-B., Poppe,
               A., Querasser, E., Ribordy, G., Robyr, S., Salvail, L.,
               Sharpe, A.W., Shields, A.J., Stucki, D., Suda, M., Tamas,
               C., Themel, T., Thew, R.T., Thoma, Y., Treiber, A.,
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 37]
-
-Internet-Draft      Principles for a Quantum Internet         March 2021
-
-
               Trinkler, P., Tualle-Brouri, R., Vannel, F., Walenta, N.,
               Weier, H., Weinfurter, H., Wimberger, I., Yuan, Z.L.,
               Zbinden, H., and A. Zeilinger, "The SECOQC quantum key
@@ -2115,20 +2120,21 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
               pp. 64-71, 2013,
               <https://ieeexplore.ieee.org/document/6576340>.
 
+
+
+
+
+
+Kozlowski, et al.        Expires 2 October 2021                [Page 38]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
    [VanMeter13.2]
               Van Meter, R., Satoh, T., Ladd, T.D., Munro, W.J., and K.
               Nemoto, "Path selection for quantum repeater networks",
               Networking Science Vol. 3, Iss. 1-4, pp. 82-95, 2013,
               <https://arxiv.org/abs/1206.5655>.
-
-
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 38]
-
-Internet-Draft      Principles for a Quantum Internet         March 2021
-
 
    [VanMeterBook]
               Van Meter, R., "Quantum Networking", ISTE Ltd/John Wiley
@@ -2168,6 +2174,18 @@ Authors' Addresses
    Email: s.d.c.wehner@tudelft.nl
 
 
+
+
+
+
+
+
+
+Kozlowski, et al.        Expires 2 October 2021                [Page 39]
+
+Internet-Draft      Principles for a Quantum Internet         March 2021
+
+
    Rodney Van Meter
    Keio University
    5322 Endo, Kanagawa
@@ -2175,15 +2193,6 @@ Authors' Addresses
    Japan
 
    Email: rdv@sfc.wide.ad.jp
-
-
-
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 39]
-
-Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
    Bruno Rijsman
@@ -2228,13 +2237,4 @@ Internet-Draft      Principles for a Quantum Internet         March 2021
 
 
 
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.       Expires 30 September 2021              [Page 40]
+Kozlowski, et al.        Expires 2 October 2021                [Page 40]

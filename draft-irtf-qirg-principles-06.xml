@@ -251,12 +251,13 @@
      <xref target="Ekert91" />, distributed quantum computation <xref
      target="Crepeau02" />, secure quantum computing in the cloud <xref
      target="Fitzsimons17" />, quantum-enhanced measurement networks <xref
-     target="Giovanetti04" />, or higher-precision, long-baseline telescopes <xref
-     target="Gottesman12" />. The field of quantum communication has been a
-     subject of active research for many years and the most well-known
+     target="Giovanetti04" />, or higher-precision, long-baseline telescopes
+     <xref target="Gottesman12" />. The field of quantum communication has been
+     a subject of active research for many years and the most well-known
      application of quantum communication, quantum key distribution (QKD) for
      secure communications, has already been deployed at short (roughly 100km)
-     distances <xref target="Peev09" /> <xref target="Aguado19" />.</t>
+     distances <xref target="Elliott03" /> <xref target="Peev09" /> <xref
+     target="Aguado19" />.</t>
 
      <t>Fully quantum networks capable of transmitting and managing entangled
      quantum states in order to send, receive, and manipulate distributed
@@ -2422,6 +2423,19 @@ CC - classical channel (can consist of many classical links)
          <date year="2016" />
        </front>
        <seriesInfo name="Physical Review A" value="Vol. 93, Iss. 4, pp. 042338" />
+     </reference>
+
+     <reference anchor="Elliott03" target="https://arxiv.org/abs/quant-ph/0307049">
+       <front>
+         <title>Quantum cryptography in practice</title>
+
+         <author surname="Elliott" initials="C" />
+         <author surname="Pearson" initials="D" />
+         <author surname="Troxel" initials="G" />
+
+         <date year="2003" />
+       </front>
+       <seriesInfo name="Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications" value="pp. 227-238" />
      </reference>
 
    </references>

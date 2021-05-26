@@ -33,7 +33,8 @@ Abstract
    basic architectural principles for a quantum internet.  This is
    intended for general guidance and general interest, but also to
    provide a foundation for discussion between physicists and network
-   specialists.
+   specialists.  This document is a product of the Quantum Internet
+   Research Group (QIRG).
 
 Status of This Memo
 
@@ -49,7 +50,6 @@ Status of This Memo
    and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
-
 
 
 
@@ -80,7 +80,7 @@ Table of Contents
    2.  Quantum information . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Qubit . . . . . . . . . . . . . . . . . . . . . . . . . .   4
      2.2.  Multiple qubits . . . . . . . . . . . . . . . . . . . . .   5
-   3.  Entanglement as the fundamental resource  . . . . . . . . . .   6
+   3.  Entanglement as the fundamental resource  . . . . . . . . . .   7
    4.  Achieving quantum connectivity  . . . . . . . . . . . . . . .   8
      4.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .   8
        4.1.1.  The measurement problem . . . . . . . . . . . . . . .   8
@@ -133,6 +133,17 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
 
 1.  Introduction
 
+   This document, the result of the Quantum Internet Research Group
+   (QIRG), introduces the subject matter for quantum networks and
+   presents general guidelines for the design and construction of such
+   networks.  Overall, it is intended as an introduction to the subject
+   for network engineers and researchers.  It should not be considered
+   as a conclusive statement on how quantum network should or will be
+   implemented.  This document was discussed on the QIRG mailing list
+   and several IETF meetings and represents the consensus of the QIRG
+   members, both of experts in the subject matter as well as newcomers
+   who are the target audience.
+
    Quantum networks are distributed systems of quantum devices that
    utilise fundamental quantum mechanical phenomena such as
    superposition, entanglement, and quantum measurement to achieve
@@ -151,6 +162,14 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    distributed quantum computation [Crepeau02], secure quantum computing
    in the cloud [Fitzsimons17], quantum-enhanced measurement networks
    [Giovanetti04], or higher-precision, long-baseline telescopes
+
+
+
+Kozlowski, et al.       Expires 27 November 2021                [Page 3]
+
+Internet-Draft      Principles for a Quantum Internet           May 2021
+
+
    [Gottesman12].  The field of quantum communication has been a subject
    of active research for many years and the most well-known application
    of quantum communication, quantum key distribution (QKD) for secure
@@ -162,14 +181,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    quantum information are now imminent [Castelvecchi18] [Wehner18].
    Whilst a lot of effort has gone into physically realising and
    connecting such devices [Hensen15], and making improvements to their
-
-
-
-Kozlowski, et al.       Expires 27 November 2021                [Page 3]
-
-Internet-Draft      Principles for a Quantum Internet           May 2021
-
-
    speed and error tolerance, there are no worked out proposals for how
    to run these networks.  To draw an analogy with a classical network,
    we are at a stage where we can start to physically connect our
@@ -207,6 +218,14 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    realised using a variety of different technologies such as electron
    spin, photon polarisation, atomic energy levels, and so on.
 
+
+
+
+Kozlowski, et al.       Expires 27 November 2021                [Page 4]
+
+Internet-Draft      Principles for a Quantum Internet           May 2021
+
+
    Upon measurement, the qubit loses its superposition and irreversibly
    collapses into one of the two basis states, either |0> or |1>.  Which
    of the two states it ends up in may not be deterministic, but can be
@@ -217,14 +236,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    in the |1> state is |b|^2, where |a|^2 + |b|^2 = 1.  This randomness
    is not due to our ignorance of the underlying mechanisms, but rather
    is a fundamental feature of a quantum mechanical system [Aspect81].
-
-
-
-
-Kozlowski, et al.       Expires 27 November 2021                [Page 4]
-
-Internet-Draft      Principles for a Quantum Internet           May 2021
-
 
    The superposition property plays an important role in fundamental
    gate operations on qubits.  Since a qubit can exist in a
@@ -260,17 +271,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
 
    (|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2),
 
-   where x denotes a tensor product (the mathematical mechanism for
-   combining quantum states together).  Let us now consider the two-
-   qubit controlled-NOT, or CNOT, gate.  The CNOT gate takes as input
-   two qubits, a control and target, and applies the NOT gate to the
-   target if the control qubit is set.  The truth table looks like
-
-
-
-
-
-
 
 
 
@@ -281,6 +281,12 @@ Kozlowski, et al.       Expires 27 November 2021                [Page 5]
 
 Internet-Draft      Principles for a Quantum Internet           May 2021
 
+
+   where x denotes a tensor product (the mathematical mechanism for
+   combining quantum states together).  Let us now consider the two-
+   qubit controlled-NOT, or CNOT, gate.  The CNOT gate takes as input
+   two qubits, a control and target, and applies the NOT gate to the
+   target if the control qubit is set.  The truth table looks like
 
                                +====+=====+
                                | IN | OUT |
@@ -321,12 +327,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    individual qubits.  The entanglement has been consumed and the
    entangled state must be prepared again.
 
-3.  Entanglement as the fundamental resource
-
-   Entanglement is the fundamental building block of quantum networks.
-   Consider the state from the previous section:
-
-   (|00> + |11>)/sqrt(2).
 
 
 
@@ -337,6 +337,13 @@ Kozlowski, et al.       Expires 27 November 2021                [Page 6]
 
 Internet-Draft      Principles for a Quantum Internet           May 2021
 
+
+3.  Entanglement as the fundamental resource
+
+   Entanglement is the fundamental building block of quantum networks.
+   Consider the state from the previous section:
+
+   (|00> + |11>)/sqrt(2).
 
    Neither of the two qubits is in a definite |0> or |1> state and we
    need to know the state of the entire register to be able to fully
@@ -377,13 +384,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    classical correlations generalise to more complicated measurement
    schemes as well.
 
-   The second feature of entanglement is that it cannot be shared, in
-   the sense that if two qubits are maximally entangled with each other,
-   then it is physically impossible for any other system to have any
-   share of this entanglement [Terhal04].  Hence, entanglement forms a
-   sort of private and inherently untappable connection between two
-   nodes once established.
-
 
 
 
@@ -393,6 +393,13 @@ Kozlowski, et al.       Expires 27 November 2021                [Page 7]
 
 Internet-Draft      Principles for a Quantum Internet           May 2021
 
+
+   The second feature of entanglement is that it cannot be shared, in
+   the sense that if two qubits are maximally entangled with each other,
+   then it is physically impossible for any other system to have any
+   share of this entanglement [Terhal04].  Hence, entanglement forms a
+   sort of private and inherently untappable connection between two
+   nodes once established.
 
    Entanglement is created through local interactions between two qubits
    or as a product of the way the qubits were created (e.g. entangled
@@ -433,6 +440,16 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    such as copying, error detection and correction, and so on.  This is
    not possible with qubits.
 
+
+
+
+
+
+Kozlowski, et al.       Expires 27 November 2021                [Page 8]
+
+Internet-Draft      Principles for a Quantum Internet           May 2021
+
+
    A measurement of a qubit's state will destroy its superposition and
    with it any entanglement it may have been part of.  Once a qubit is
    being processed, it cannot be read out until a suitable point in the
@@ -442,13 +459,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    correction.  Nevertheless, quantum error detection and correction
    schemes exist that take this problem into account and how a network
    chooses to manage errors will have an impact on its architecture.
-
-
-
-Kozlowski, et al.       Expires 27 November 2021                [Page 8]
-
-Internet-Draft      Principles for a Quantum Internet           May 2021
-
 
 4.1.2.  No-cloning theorem
 
@@ -488,16 +498,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    be able to execute -- as long as the fidelity is above some
    application-specific threshold, they will simply operate at lower
    rates.  Therefore, rather than trying to ensure that we always
-   deliver perfect states (a technologically challenging task)
-   applications will specify a minimum threshold for the fidelity and
-   the network will try its best to deliver it.  A higher fidelity can
-   be achieved by either having hardware produce states of better
-   fidelity (sometimes one can sacrifice rate for higher fidelity) or by
-   employing quantum error detection and correction mechanisms.
-
-
-
-
 
 
 
@@ -505,6 +505,13 @@ Kozlowski, et al.       Expires 27 November 2021                [Page 9]
 
 Internet-Draft      Principles for a Quantum Internet           May 2021
 
+
+   deliver perfect states (a technologically challenging task)
+   applications will specify a minimum threshold for the fidelity and
+   the network will try its best to deliver it.  A higher fidelity can
+   be achieved by either having hardware produce states of better
+   fidelity (sometimes one can sacrifice rate for higher fidelity) or by
+   employing quantum error detection and correction mechanisms.
 
 4.1.4.  Inadequacy of direct transmission
 
@@ -545,13 +552,6 @@ Internet-Draft      Principles for a Quantum Internet           May 2021
    state is known, handling errors becomes easier and small-scale error-
    correction (such as entanglement distillation discussed in a later
    section) combined with reattempts becomes a valid strategy.
-
-
-
-
-
-
-
 
 
 

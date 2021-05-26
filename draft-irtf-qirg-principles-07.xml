@@ -227,12 +227,23 @@
      framework and introduce some basic architectural principles for a quantum
      internet. This is intended for general guidance and general interest, but
      also to provide a foundation for discussion between physicists and network
-     specialists.</t>
+     specialists. This document is a product of the Quantum Internet Research
+     Group (QIRG).</t>
    </abstract>
  </front>
 
  <middle>
    <section title="Introduction">
+     <t>This document, the result of the Quantum Internet Research Group
+     (QIRG), introduces the subject matter for quantum networks and presents
+     general guidelines for the design and construction of such networks.
+     Overall, it is intended as an introduction to the subject for network
+     engineers and researchers. It should not be considered as a conclusive
+     statement on how quantum network should or will be implemented. This
+     document was discussed on the QIRG mailing list and several IETF meetings
+     and represents the consensus of the QIRG members, both of experts in the
+     subject matter as well as newcomers who are the target audience.</t>
+
      <t>Quantum networks are distributed systems of quantum devices
      that utilise fundamental quantum mechanical phenomena such as
      superposition, entanglement, and quantum measurement to achieve

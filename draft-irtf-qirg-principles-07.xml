@@ -242,7 +242,8 @@
      statement on how quantum network should or will be implemented. This
      document was discussed on the QIRG mailing list and several IETF meetings
      and represents the consensus of the QIRG members, both of experts in the
-     subject matter as well as newcomers who are the target audience.</t>
+     subject matter (from the quantum as well networking domain) as well as
+     newcomers who are the target audience.</t>
 
      <t>Quantum networks are distributed systems of quantum devices
      that utilise fundamental quantum mechanical phenomena such as

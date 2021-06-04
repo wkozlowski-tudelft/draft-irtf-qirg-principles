@@ -1079,9 +1079,9 @@
        <t>Classical communication is a crucial building block of any quantum
        network. All nodes in a quantum network are assumed to have classical
        connectivity with each other (within typical administrative domain
-       limts). Therefore, quantum routers will need to manage two data planes
-       in parallel, a classical one and a quantum one. Additionally, a node
-       must be able to correlate information between the two planes so that the
+       limts). Therefore, quantum nodes will need to manage two data planes in
+       parallel, a classical one and a quantum one. Additionally, a node must
+       be able to correlate information between the two planes so that the
        control information received on a classical channel can be applied to
        the qubits managed by the quantum data plane.</t>
 

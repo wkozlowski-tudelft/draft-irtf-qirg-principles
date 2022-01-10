@@ -185,7 +185,7 @@
      </address>
    </author>
 
-   <date year="2021" />
+   <date year="2022" />
 
    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
         in the current day for you. If only the current year is specified, xml2rfc will fill
@@ -996,7 +996,7 @@
            directed frames of classical networks. This phenomenological
            distinction leads to architectural differences between quantum
            networks and classical networks. Quantum networks combine multiple
-           elementary link Bell pairs together to create one an end-to-end Bell
+           elementary link Bell pairs together to create one end-to-end Bell
            pair, whereas classical networks deliver messages from one end to
            the other end hop by hop.
            <vspace blankLines="1" />
@@ -1079,7 +1079,7 @@
        <t>Classical communication is a crucial building block of any quantum
        network. All nodes in a quantum network are assumed to have classical
        connectivity with each other (within typical administrative domain
-       limts). Therefore, quantum nodes will need to manage two data planes in
+       limits). Therefore, quantum nodes will need to manage two data planes in
        parallel, a classical one and a quantum one. Additionally, a node must
        be able to correlate information between the two planes so that the
        control information received on a classical channel can be applied to
@@ -1330,7 +1330,7 @@ CC - classical channel (can consist of many classical links)
        the hardware implementation. However, certain physical constraints need
        to be considered in order to build a practical network. Some of these
        are fundamental constraints and no matter how much the technology
-       improves, they will always need to be addressed. Others are artefacts of
+       improves, they will always need to be addressed. Others are artifacts of
        the early stages of a new technology. Here, we consider a highly
        abstract scenario and refer to <xref target="Wehner18"/> for pointers to
        the physics literature.</t>
@@ -1406,7 +1406,7 @@ CC - classical channel (can consist of many classical links)
      connectivity is using Bell pair and entanglement swapping repeater
      technology, what sort of principles should guide us in assembling such
      networks such that they are functional, robust, efficient, and most
-     importantly, they work? Furthermore, how do we design networks so that
+     importantly, do they work? Furthermore, how do we design networks so that
      they work under the constraints imposed by the hardware available today,
      but do not impose unnecessary burdens on future technology?</t>
 
@@ -1564,7 +1564,7 @@ CC - classical channel (can consist of many classical links)
            necessitates some exchange of classical information. This
            information might include (i) a reference to the entangled pair that
            allows distributed applications to coordinate actions on qubits of
-           the same pair, (ii) the two bits from each entanglement swap
+           the same pair, and (ii) the two bits from each entanglement swap
            necessary to identify the final state of the Bell pair (<xref
            target="es" />).</t>
 

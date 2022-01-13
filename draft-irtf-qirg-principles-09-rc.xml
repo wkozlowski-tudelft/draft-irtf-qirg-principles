@@ -1240,21 +1240,18 @@
          <figure align="center">
            <artwork align="left"><![CDATA[
 +-----+                                        +-----+
-| App |                                        | App |
+| App |- - - - - - - - - -CC- - - - - - - - - -| App |
 +-----+                +------+                +-----+
-|     |------ CL ------|  CR  |------ CL ------|     |
-|     |                +------+                |     |
-| EN  |                                        | EN  |
-|     |                +------+                |     |
-|     |------ QL ------|  QR  |------ QL ------|     |
+| EN  |------ CL ------|  QR  |------ CL ------| EN  |
+|     |------ QL ------|      |------ QL ------|     |
 +-----+                +------+                +-----+
 
 App - user-level application
 EN - end-node
 QL - quantum link
-CC - classical link
+CL - classical link
+CC - classical channel (traverses one or more CLs)
 QR - classical repeater
-CR - classical router or switch (optional)
            ]]></artwork>
          </figure>
 

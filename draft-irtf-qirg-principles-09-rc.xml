@@ -37,193 +37,192 @@
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
 <rfc category="info" docName="draft-irtf-qirg-principles-08" ipr="trust200902">
-  <!-- category values: std, bcp, info, exp, and historic
+ <!-- category values: std, bcp, info, exp, and historic
     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
        or pre5378Trust200902
     you can add the attributes updates="NNNN" and obsoletes="NNNN"
     they will automatically be output with "(if approved)" -->
 
-  <!-- ***** FRONT MATTER ***** -->
+ <!-- ***** FRONT MATTER ***** -->
 
-  <front>
-    <!-- The abbreviated title is used in the page header - it is only necessary if the
+ <front>
+   <!-- The abbreviated title is used in the page header - it is only necessary if the
         full title is longer than 39 characters -->
 
-    <title abbrev="Principles for a Quantum Internet">Architectural Principles
+   <title abbrev="Principles for a Quantum Internet">Architectural Principles
    for a Quantum Internet</title>
 
-    <!-- add 'role="editor"' below for the editors if appropriate -->
+   <!-- add 'role="editor"' below for the editors if appropriate -->
 
-    <!-- Another author who claims to be an editor -->
+   <!-- Another author who claims to be an editor -->
 
-    <author fullname="Wojciech Kozlowski" initials="W" surname="Kozlowski">
-      <organization>QuTech</organization>
+   <author fullname="Wojciech Kozlowski" initials="W" surname="Kozlowski">
+     <organization>QuTech</organization>
 
-      <address>
-        <postal>
-          <street>Building 22</street>
-          <street>Lorentzweg 1</street>
+     <address>
+       <postal>
+         <street>Building 22</street>
+         <street>Lorentzweg 1</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <code>2628 CJ</code>
-          <city>Delft</city>
-          <region></region>
-          <country>Netherlands</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <code>2628 CJ</code>
+         <city>Delft</city>
+         <region></region>
+         <country>Netherlands</country>
+       </postal>
 
-        <email>w.kozlowski@tudelft.nl</email>
+       <email>w.kozlowski@tudelft.nl</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <author fullname="Stephanie Wehner" initials="S" surname="Wehner">
-      <organization>QuTech</organization>
+   <author fullname="Stephanie Wehner" initials="S" surname="Wehner">
+     <organization>QuTech</organization>
 
-      <address>
-        <postal>
-          <street>Building 22</street>
-          <street>Lorentzweg 1</street>
+     <address>
+       <postal>
+         <street>Building 22</street>
+         <street>Lorentzweg 1</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <code>2628 CJ</code>
-          <city>Delft</city>
-          <region></region>
-          <country>Netherlands</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <code>2628 CJ</code>
+         <city>Delft</city>
+         <region></region>
+         <country>Netherlands</country>
+       </postal>
 
-        <email>s.d.c.wehner@tudelft.nl</email>
+       <email>s.d.c.wehner@tudelft.nl</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <author fullname="Rodney Van Meter" initials="R" surname="Van Meter">
-      <organization>Keio University</organization>
+   <author fullname="Rodney Van Meter" initials="R" surname="Van Meter">
+     <organization>Keio University</organization>
 
-      <address>
-        <postal>
-          <street>5322 Endo</street>
+     <address>
+       <postal>
+         <street>5322 Endo</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <city>Fujisawa</city>
-          <region>Kanagawa</region>
-          <code>252-0882</code>
-          <country>Japan</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <city>Fujisawa</city>
+         <region>Kanagawa</region>
+         <code>252-0882</code>
+         <country>Japan</country>
+       </postal>
 
-        <email>rdv@sfc.wide.ad.jp</email>
+       <email>rdv@sfc.wide.ad.jp</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <author fullname="Bruno Rijsman" initials="B" surname="Rijsman">
-      <organization>Individual</organization>
-      <address>
-        <email>brunorijsman@gmail.com</email>
-      </address>
-    </author>
+   <author fullname="Bruno Rijsman" initials="B" surname="Rijsman">
+     <organization>Individual</organization>
+     <address>
+       <email>brunorijsman@gmail.com</email>
+     </address>
+   </author>
 
-    <author fullname="Angela Sara Cacciapuoti" initials="A" surname="S. Cacciapuoti">
-      <organization>University of Naples Federico II</organization>
+   <author fullname="Angela Sara Cacciapuoti" initials="A" surname="S. Cacciapuoti">
+     <organization>University of Naples Federico II</organization>
 
-      <address>
-        <postal>
-          <street>Department of Electrical Engineering and Information Technologies</street>
-          <street>Claudio 21</street>
+     <address>
+       <postal>
+         <street>Department of Electrical Engineering and Information Technologies</street>
+         <street>Claudio 21</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <code>80125</code>
-          <city>Naples</city>
-          <country>Italy</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <code>80125</code>
+         <city>Naples</city>
+         <country>Italy</country>
+       </postal>
 
-        <email>angelasara.cacciapuoti@unina.it</email>
+       <email>angelasara.cacciapuoti@unina.it</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <author fullname="Marcello Caleffi" initials="M" surname="Caleffi">
-      <organization>University of Naples Federico II</organization>
+   <author fullname="Marcello Caleffi" initials="M" surname="Caleffi">
+     <organization>University of Naples Federico II</organization>
 
-      <address>
-        <postal>
-          <street>Department of Electrical Engineering and Information Technologies</street>
-          <street>Claudio 21</street>
+     <address>
+       <postal>
+         <street>Department of Electrical Engineering and Information Technologies</street>
+         <street>Claudio 21</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <code>80125</code>
-          <city>Naples</city>
-          <country>Italy</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <code>80125</code>
+         <city>Naples</city>
+         <country>Italy</country>
+       </postal>
 
-        <email>marcello.caleffi@unina.it</email>
+       <email>marcello.caleffi@unina.it</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <author fullname="Shota Nagayama" initials="S" surname="Nagayama">
-      <organization>Mercari, Inc.</organization>
+   <author fullname="Shota Nagayama" initials="S" surname="Nagayama">
+     <organization>Mercari, Inc.</organization>
 
-      <address>
-        <postal>
-          <street>Roppongi Hills Mori Tower 18F</street>
-          <street>6-10-1 Roppongi, Minato-ku</street>
+     <address>
+       <postal>
+         <street>Roppongi Hills Mori Tower 18F</street>
+         <street>6-10-1 Roppongi, Minato-ku</street>
 
-          <!-- Reorder these if your country does things differently -->
-          <code>106-6118</code>
-          <city>Tokyo</city>
-          <country>Japan</country>
-        </postal>
+         <!-- Reorder these if your country does things differently -->
+         <code>106-6118</code>
+         <city>Tokyo</city>
+         <country>Japan</country>
+       </postal>
 
-        <email>shota.nagayama@mercari.com</email>
+       <email>shota.nagayama@mercari.com</email>
 
-        <!-- uri and facsimile elements may also be added -->
-      </address>
-    </author>
+       <!-- uri and facsimile elements may also be added -->
+     </address>
+   </author>
 
-    <date year="2022" />
+   <date year="2022" />
 
-    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
+   <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
         in the current day for you. If only the current year is specified, xml2rfc will fill
          in the current day and month for you. If the year is not the current one, it is
          necessary to specify at least a month (xml2rfc assumes day="1" if not specified for the
          purpose of calculating the expiry date).  With drafts it is normally sufficient to
          specify just the year. -->
 
-    <!-- Meta-data Declarations -->
+   <!-- Meta-data Declarations -->
 
-    <area>General</area>
+   <area>General</area>
 
-    <workgroup>Quantum Internet Research Group</workgroup>
+   <workgroup>Quantum Internet Research Group</workgroup>
 
-    <!-- WG name at the upperleft corner of the doc,
+   <!-- WG name at the upperleft corner of the doc,
         IETF is fine for individual submissions.
          If this element is not present, the default is "Network Working Group",
         which is used by the RFC Editor as a nod to the history of the IETF. -->
 
-    <keyword>Quantum Internet</keyword>
-    <keyword>Architecture</keyword>
-    <keyword>Repeater</keyword>
-    <keyword>Bell Pair</keyword>
-    <keyword>EPR Pair</keyword>
+   <keyword>Quantum Internet</keyword>
+   <keyword>Architecture</keyword>
+   <keyword>Repeater</keyword>
+   <keyword>Bell Pair</keyword>
+   <keyword>EPR Pair</keyword>
 
-    <!-- Keywords will be incorporated into HTML output
+   <!-- Keywords will be incorporated into HTML output
         files in a meta tag but they have no effect on text or nroff
         output. If you submit your draft to the RFC Editor, the
         keywords will be used for the search engine. -->
 
-    <abstract>
-      <t>The vision of a quantum Internet is to enhance existing Internet
+   <abstract>
+     <t>The vision of a quantum Internet is to enhance existing Internet
      technology by enabling quantum communication between any two points on
      Earth. To achieve this goal, a quantum network stack should be built from
      the ground up to account for the fundamentally new properties of quantum
      entanglement. The first quantum entanglement networks have been realised
-        <xref target="Pompili21" />
-, but there is no practical proposal for how to
+     <xref target="Pompili21" />, but there is no practical proposal for how to
      organise, utilise,
      and manage such networks. In this draft, we attempt to lay down the
      framework and introduce some basic architectural principles for a quantum
@@ -231,57 +230,46 @@
      also to provide a foundation for discussion between physicists and network
      specialists. This document is a product of the Quantum Internet Research
      Group (QIRG).</t>
-    </abstract>
-  </front>
+   </abstract>
+ </front>
 
-  <middle>
-    <section title="Introduction">
-      <t>Quantum networks are distributed systems of quantum devices
+ <middle>
+   <section title="Introduction">
+     <t>Quantum networks are distributed systems of quantum devices
      that utilise fundamental quantum mechanical phenomena such as
      superposition, entanglement, and quantum measurement to achieve
      capabilities beyond what is possible with non-quantum (classical)
-     networks <xref target="Kimble08" />
-. Depending on the stage of a
-     quantum network <xref target="Wehner18" />
- such devices may range
+     networks <xref target="Kimble08" />. Depending on the stage of a
+     quantum network <xref target="Wehner18" /> such devices may range
      from simple photonic devices capable of preparing and measuring
      only one quantum bit (qubit) at a time all the way to large-scale
      quantum computers of the future. A quantum network is not meant
      to replace classical networks, but rather form an overall hybrid
      classical-quantum network supporting new capabilities which are
-     otherwise impossible to realise <xref target="VanMeterBook" />
-,
+     otherwise impossible to realise <xref target="VanMeterBook" />,
      such as clustered or distributed quantum computing, quantum 
      secure communications, and distributed quantum sensing.</t>
 
-  <t>The quantum networking paradigm offers promise for a range of new
+     <t>The quantum networking paradigm offers promise for a range of new
      applications such as quantum cryptography <xref target="Bennett14" />
-  <xref target="Ekert91" />
-, distributed quantum computation <xref target="Crepeau02" />
-, secure quantum computing in the cloud <xref target="Fitzsimons17" />
-, quantum-enhanced measurement networks <xref target="Giovanetti04" />
-, or higher-precision, long-baseline telescopes
-<xref target="Gottesman12" />
-. The field of quantum communication has been
+     <xref target="Ekert91" />, distributed quantum computation <xref
+     target="Crepeau02" />, secure quantum computing in the cloud <xref
+     target="Fitzsimons17" />, quantum-enhanced measurement networks <xref
+     target="Giovanetti04" />, or higher-precision, long-baseline telescopes
+     <xref target="Gottesman12" />. The field of quantum communication has been
      a subject of active research for many years and the most well-known
      application of quantum communication, quantum key distribution (QKD) for
      secure communications, has already been deployed at short (roughly 100km)
-     distances <xref target="Elliott03" />
-<xref target="Peev09" />
-<xref target="Aguado19" />
-.</t>
+     distances <xref target="Elliott03" /> <xref target="Peev09" /> <xref
+     target="Aguado19" />.</t>
 
-<t>The first fully quantum networks capable of transmitting and managing
-     entangled quantum states (defined in <xref target="entanglement" />
-) in order
+     <t>The first fully quantum networks capable of transmitting and managing
+     entangled quantum states (defined in <xref target="entanglement" />) in order
      to send, receive, and manipulate distributed quantum information have 
      recently been realized <xref target="Pompili21" />
-<xref target="Castelvecchi18" />
-<xref target="Wehner18" />
-. 
+     <xref target="Castelvecchi18" /> <xref target="Wehner18" />. 
      Whilst a lot of effort has gone into physically
-     realising and connecting such devices <xref target="Hensen15" />
-, and
+     realising and connecting such devices <xref target="Hensen15" />, and
      making improvements to their speed and error tolerance, there are no
      worked out proposals for how to run these networks. To draw an analogy
      with a classical network, we are at a stage where we can start to
@@ -292,7 +280,7 @@
      mechanisms for transmitting quantum states exist, there are no robust
      protocols for managing such transmissions.</t>
 
-<t>This document, produced by the Quantum Internet Research Group
+     <t>This document, produced by the Quantum Internet Research Group
      (QIRG), introduces quantum networks and presents
      general guidelines for the design and construction of such networks.
      Overall, it is intended as an introduction to the subject for network
@@ -303,37 +291,36 @@
      subject matter (from the quantum as well networking domain) as well as
      newcomers who are the target audience.</t>
 
-</section>
+   </section>
 
-<section title="Quantum information">
+   <section title="Quantum information">
 
-<t>In order to understand the framework for quantum networking, a basic
+     <t>In order to understand the framework for quantum networking, a basic
      understanding of quantum information theory is necessary. The following sections
      aim to introduce the minimum amount of knowledge necessary to understand the principles
      of operation of a quantum network. This exposition was written with a
      classical networking audience in mind. It is assumed that the reader has
-     never before been exposed to any quantum physics. We refer the reader to <xref target="SutorBook" />
- and <xref target="NielsenChuang"/>
- for an in-depth
+     never before been exposed to any quantum physics. We refer the reader to <xref
+     target="SutorBook" /> and <xref target="NielsenChuang"/> for an in-depth
      introduction to quantum information theory.</t>
 
-<section title="Qubit">
-<t>The differences between quantum computation and classical computation
+     <section title="Qubit">
+       <t>The differences between quantum computation and classical computation
        begin at the bit-level. A classical computer operates on the binary
        alphabet { 0, 1 }. A quantum bit, called a qubit, exists over the same binary
        space, but unlike the classical bit, it can exist in a
        superposition of the two possibilities:</t>
 
-<t>a |0> + b |1>,</t>
+       <t>a |0> + b |1>,</t>
 
-<t>where |X> is Dirac's ket notation for a quantum state (the value that a 
+       <t>where |X> is Dirac's ket notation for a quantum state (the value that a 
        qubit holds), here the
        binary 0 and 1, and the coefficients a and b are complex numbers called
        probability amplitudes. Physically, such a state can be realised using a
        variety of different technologies such as electron spin, photon
        polarisation, atomic energy levels, and so on.</t>
 
-<t>Upon measurement, the qubit loses its superposition and irreversibly
+       <t>Upon measurement, the qubit loses its superposition and irreversibly
        collapses into one of the two basis states, either |0> or |1>. Which of
        the two states it ends up in may not be deterministic, but can be
        determined from the readout of the measurement.  The
@@ -343,77 +330,73 @@
        |a|^2 and similarly the probability of measuring the state in the |1>
        state is |b|^2, where |a|^2 + |b|^2 = 1. This randomness is not due to
        our ignorance of the underlying mechanisms, but rather is a
-       fundamental feature of a quantum mechanical system <xref target="Aspect81" />
-.</t>
+       fundamental feature of a quantum mechanical system <xref
+       target="Aspect81" />.</t>
 
-<t>The superposition property plays an important role in fundamental
+       <t>The superposition property plays an important role in fundamental
        gate operations on qubits. Since a qubit can exist in a superposition of
        its basis states, the elementary quantum gates are able to act on all
        states of the superposition at the same time. For example, consider the
        NOT gate:</t>
 
-<t>NOT (a |0> + b |1>) -> a |1> + b |0>.</t>
+       <t>NOT (a |0> + b |1>) -> a |1> + b |0>.</t>
 
-</section>
+     </section>
 
-<section title="Multiple qubits">
+     <section title="Multiple qubits">
 
-<t>When multiple qubits are combined in a single quantum state the space
+       <t>When multiple qubits are combined in a single quantum state the space
        of possible states grows exponentially and all these states can coexist
        in a superposition. For example, the general form of a two-qubit
        register is</t>
 
-<t>a |00> + b |01> + c |10> + d |11></t>
+       <t>a |00> + b |01> + c |10> + d |11></t>
 
-<t>where the coefficients have the same probability amplitude
+       <t>where the coefficients have the same probability amplitude
        interpretation as for the single qubit state. Each state represents a
        possible outcome of a measurement of the two-qubit register. For
        example, |01> denotes a state in which the first qubit is in the state
        |0> and the second is in the state |1>.</t>
 
-<t>Performing single qubit gates affects the relevant qubit in each of
+       <t>Performing single qubit gates affects the relevant qubit in each of
        the superposition states. Similarly, two-qubit gates also act on all the
        relevant superposition states, but their outcome is far more
        interesting.</t>
 
-<t>Consider a two-qubit register where the first qubit is in the
+       <t>Consider a two-qubit register where the first qubit is in the
        superposed state (|0> + |1>)/sqrt(2) and the other is in the state |0>.
        This combined state can be written as:</t>
 
-<t>(|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2),</t>
+       <t>(|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2),</t>
 
-<t>where x denotes a tensor product (the mathematical mechanism for
+       <t>where x denotes a tensor product (the mathematical mechanism for
        combining quantum states together).</t>
-
-<t>The constant 1/sqrt(2) is called the normalisation factor and reflects the
+       
+       <t>The constant 1/sqrt(2) is called the normalisation factor and reflects the
        fact that the probabilities of measuring either a |0> or a |1> for
        the first qubit add up to one.</t>
-
-<t>Let us now consider the two-qubit
+       
+       <t>Let us now consider the two-qubit
        controlled-NOT, or CNOT, gate. The CNOT gate takes as input two qubits,
        a control and target, and applies the NOT gate to the target if the
        control qubit is set. The truth table looks like</t>
 
-<texttable>
-<ttcol align="center">IN</ttcol>
-<ttcol align="center">OUT</ttcol>
-<c>00</c>
-<c>00</c>
-<c>01</c>
-<c>01</c>
-<c>10</c>
-<c>11</c>
-<c>11</c>
-<c>10</c>
-</texttable>
+       <texttable>
+         <ttcol align="center">IN</ttcol>
+         <ttcol align="center">OUT</ttcol>
+         <c>00</c><c>00</c>
+         <c>01</c><c>01</c>
+         <c>10</c><c>11</c>
+         <c>11</c><c>10</c>
+       </texttable>
 
-<t>Now, consider performing a CNOT gate on the state with the first
+       <t>Now, consider performing a CNOT gate on the state with the first
        qubit being the control. We apply a two-qubit gate on all the
        superposition states:</t>
 
-<t>CNOT (|00> + |10>)/sqrt(2) -> (|00> + |11>)/sqrt(2).</t>
+       <t>CNOT (|00> + |10>)/sqrt(2) -> (|00> + |11>)/sqrt(2).</t>
 
-<t>What is so interesting about this two-qubit gate operation? The final
+       <t>What is so interesting about this two-qubit gate operation? The final
        state is *entangled*. There is no possible way of representing that
        quantum state as a product of two individual qubits; they are no longer
        independent and the behaviour of either qubit cannot be fully described
@@ -425,28 +408,28 @@
        it's |00> or |11>, is fundamentally random as before, but the states of
        the two qubits following a measurement will always be identical.</t>
 
-<t>Once a measurement is performed, the two qubits are once again
+       <t>Once a measurement is performed, the two qubits are once again
        independent. The final state is either |00> or |11> and both of these
        states can be trivially decomposed into a product of two individual
        qubits. The entanglement has been consumed and the entangled state must
        be prepared again.</t>
 
-</section>
+     </section>
 
-</section>
+   </section>
 
-<section anchor="entanglement" title="Entanglement as the fundamental resource">
+   <section anchor="entanglement" title="Entanglement as the fundamental resource">
 
-<t>Entanglement is the fundamental building block of quantum networks.
+     <t>Entanglement is the fundamental building block of quantum networks.
      Consider the state from the previous section:</t>
 
-<t>(|00> + |11>)/sqrt(2).</t>
+     <t>(|00> + |11>)/sqrt(2).</t>
 
-<t>Neither of the two qubits is in a definite |0> or |1> state and we need
+     <t>Neither of the two qubits is in a definite |0> or |1> state and we need
      to know the state of the entire register to be able to fully describe the
      behaviour of the two qubits.</t>
 
-<t>Entangled qubits have interesting non-local properties. Consider
+     <t>Entangled qubits have interesting non-local properties. Consider
      sending one of the qubits to another device. This device could in
      principle be anywhere: on the other side of the room, in a different
      country, or even on a different planet. Provided negligible noise has been
@@ -454,21 +437,19 @@
      until a measurement is performed. The physical distance does not matter at
      all for entanglement.</t>
 
-<t>This lies at the heart of quantum networking, because it is possible to
+     <t>This lies at the heart of quantum networking, because it is possible to
      leverage the non-classical correlations provided by entanglement in order
      to design completely new types of application protocols that are not
      possible to achieve with just classical communication. Examples of such
-     applications are quantum cryptography <xref target="Bennett14" />
-<xref target="Ekert91" />
-, blind quantum computation <xref target="Fitzsimons17" />
-, or distributed quantum computation <xref target="Crepeau02" />
-.</t>
+     applications are quantum cryptography <xref target="Bennett14" /> <xref
+     target="Ekert91" />, blind quantum computation <xref target="Fitzsimons17"
+     />, or distributed quantum computation <xref target="Crepeau02" />.</t>
 
-<t>Entanglement has two very special features from which one can derive
+     <t>Entanglement has two very special features from which one can derive
      some intuition about the types of applications enabled by a quantum
      network.</t>
 
-<t>The first stems from the fact that entanglement enables stronger than
+     <t>The first stems from the fact that entanglement enables stronger than
      classical correlations, leading to opportunities for tasks that require
      coordination. As a trivial example, consider the problem of consensus
      between two nodes who want to agree on the value of a single bit. They can
@@ -482,15 +463,14 @@
      stronger than classical correlations generalise to more complicated
      measurement schemes as well.</t>
 
-<t>The second feature of entanglement is that it cannot be shared, in the
+     <t>The second feature of entanglement is that it cannot be shared, in the
      sense that if two qubits are maximally entangled with each other, then it
      is physically impossible for these two qubits to also be entangled with a
-     third qubit <xref target="Terhal04" />
-. Hence, entanglement forms a sort
+     third qubit <xref target="Terhal04" />. Hence, entanglement forms a sort
      of private and inherently untappable connection between two nodes once
      established.</t>
 
-<t>Entanglement is created through local interactions between two qubits
+     <t>Entanglement is created through local interactions between two qubits
      or as a product of the way the qubits were created (e.g. entangled photon
      pairs). To create a distributed entangled state, one can then physically
      send one of the qubits to a remote node. It is also possible to directly
@@ -500,38 +480,37 @@
      draws the line between a genuine quantum network and a collection of
      quantum computers connected over a classical network.</t>
 
-<t>A quantum network is defined as a collection of nodes that is able to
+     <t>A quantum network is defined as a collection of nodes that is able to
      exchange qubits and distribute entangled states amongst themselves. A
      quantum node that is able only to communicate classically with another
      quantum node is not a member of a quantum network.</t>
 
-<t>More complex services and applications can be built on top of entangled
-     states distributed by the network, see e.g. <xref target="ZOO" />
-</t>
+     <t>More complex services and applications can be built on top of entangled
+     states distributed by the network, see e.g. <xref target="ZOO" /></t>
 
-</section>
+   </section>
 
-<section title="Achieving quantum connectivity">
+   <section title="Achieving quantum connectivity">
 
-<t>This section explains the meaning of quantum connectivity and the
+     <t>This section explains the meaning of quantum connectivity and the
      necessary physical processes at an abstract level.</t>
 
-<section title="Challenges">
+     <section title="Challenges">
 
-<t>A quantum network cannot be built by simply extrapolating all the
+       <t>A quantum network cannot be built by simply extrapolating all the
        classical models to their quantum analogues. Sending qubits over a wire
        like we send classical bits is simply not as easy to do. There are
        several technological as well as fundamental challenges that make
        classical approaches unsuitable in a quantum context.</t>
 
-<section title="The measurement problem">
+       <section title="The measurement problem">
 
-<t>In classical computers and networks we can read out the bits stored
+         <t>In classical computers and networks we can read out the bits stored
          in memory at any time. This is helpful for a variety of purposes such
          as copying, error detection and correction, and so on. This is not
          possible with qubits.</t>
 
-<t>A measurement of a qubit's state will destroy its superposition and
+         <t>A measurement of a qubit's state will destroy its superposition and
          with it any entanglement it may have been part of. Once a qubit is
          being processed, it cannot be read out until a suitable point in the
          computation, determined by the protocol handling the qubit, has been
@@ -541,18 +520,16 @@
          schemes exist that take this problem into account and how a network
          chooses to manage errors will have an impact on its architecture.</t>
 
-</section>
+       </section>
 
-<section title="No-cloning theorem">
+       <section title="No-cloning theorem">
 
-<t>Since directly reading the state of a qubit is not possible, one
+         <t>Since directly reading the state of a qubit is not possible, one
          could ask if we can simply copy a qubit without looking
          at it. Unfortunately, this is fundamentally not possible in quantum
-         mechanics <xref target="Park70" />
-<xref target="Wootters82" />
-.</t>
+         mechanics <xref target="Park70" /> <xref target="Wootters82" />.</t>
 
-<t>The no-cloning theorem states that it is impossible to create an
+         <t>The no-cloning theorem states that it is impossible to create an
          identical copy of an arbitrary, unknown quantum state. Therefore, it
          is also impossible to use the same mechanisms that worked for
          classical networks for signal amplification, retransmission, and so on
@@ -561,19 +538,18 @@
          quantum network is a challenging endeavour and its architecture must
          at its core address this very issue.</t>
 
-</section>
+       </section>
 
-<section anchor="fidelity" title="Fidelity">
+       <section anchor="fidelity" title="Fidelity">
 
-<t>In general, it is expected that a classical packet arrives at its
+         <t>In general, it is expected that a classical packet arrives at its
          destination without any errors introduced by hardware noise along the
          way. This is verified at various levels through a variety of error
          detection and correction mechanisms. Since we cannot read or copy a
          quantum state, error detection and correction is more involved.</t>
 
-<t>To describe the quality of a quantum state, a physical quantity
-         called fidelity is used <xref target="NielsenChuang" />
-. Fidelity takes a
+         <t>To describe the quality of a quantum state, a physical quantity
+         called fidelity is used <xref target="NielsenChuang" />. Fidelity takes a
          value between 0 and 1 -- higher is better, and less than 0.5 means the
          state is unusable. It measures how close a quantum state is to the
          state we have tried to create. It expresses the probability measuring
@@ -584,7 +560,7 @@
          much a particular state has been affected by noise from various
          sources (gate errors, channel losses, environment noise).</t>
 
-<t>Interestingly, quantum applications do not need perfect fidelity to
+         <t>Interestingly, quantum applications do not need perfect fidelity to
          be able to execute -- as long as the fidelity is above some
          application-specific threshold, they will simply operate at lower
          rates. Therefore, rather than trying to ensure that we always deliver
@@ -596,53 +572,47 @@
          detection and correction mechanisms (see <xref target="VanMeterBook" />
          chapter 11).</t>
 
-</section>
+       </section>
 
-<section anchor="dt" title="Inadequacy of direct transmission">
+       <section anchor="dt" title="Inadequacy of direct transmission">
 
-<t>Conceptually, the most straightforward way to distribute an
+         <t>Conceptually, the most straightforward way to distribute an
          entangled state is to simply transmit one of the qubits directly to
          the other end across a series of nodes while performing sufficient
-         forward quantum error correction (<xref target="qec" />
-) to bring
+         forward quantum error correction (<xref target="qec" />) to bring
          losses down to an acceptable level. Despite the no-cloning theorem and
          the inability to directly measure a quantum state, error-correcting
          mechanisms for quantum communication exist <xref target="Jiang09" />
-<xref target="Fowler10" />
-<xref target="Devitt13" />
-<xref target="Mural16" />
-. However, quantum error correction makes very high
+         <xref target="Fowler10" /> <xref target="Devitt13" /> <xref
+         target="Mural16" />. However, quantum error correction makes very high
          demands on both resources (physical qubits needed) and their initial
          fidelity. Implementation is very challenging and quantum error
          correction is not expected to be used until later generations of
          quantum networks. Until then, quantum networks rely on entanglement
-         swapping (<xref target="es" />
-) and teleportation
-         (<xref target="teleportation" />
-).</t>
+         swapping (<xref target="es" />) and teleportation
+         (<xref target="teleportation" />).</t>
 
-<t>An alternative relies on the observation that we do not need to be
+         <t>An alternative relies on the observation that we do not need to be
          able to distribute any arbitrary entangled quantum state. We only need
          to be able to distribute any one of what are known as the Bell pair
-         states <xref target="Briegel98" />
-.</t>
+         states <xref target="Briegel98" />.</t>
 
-</section>
+       </section>
 
-</section>
+     </section>
 
-<section title="Bell pairs">
+     <section title="Bell pairs">
 
-<t>Bell pair states are the entangled two-qubit states:</t>
+       <t>Bell pair states are the entangled two-qubit states:</t>
 
-<t>
+       <t>
          |00> + |11>,
          |00> - |11>,
          |01> + |10>,
          |01> - |10>,
-</t>
+       </t>
 
-<t>where the constant 1/sqrt(2) normalisation factor has been ignored
+       <t>where the constant 1/sqrt(2) normalisation factor has been ignored
        for clarity. Any of the four Bell pair states above will do, as it is
        possible to transform any Bell pair into another Bell pair with local
        operations performed on only one of the qubits. When each qubit in a
@@ -650,13 +620,13 @@
        single qubit gates to their qubit alone in order to transform the state
        between the different variants.</t>
 
-<t>Distributing a Bell pair between two nodes is much easier than
+       <t>Distributing a Bell pair between two nodes is much easier than
        transmitting an arbitrary quantum state over a network. Since the state
        is known, handling errors becomes easier and small-scale
        error-correction (such as entanglement distillation discussed in a later
        section) combined with reattempts becomes a valid strategy.</t>
 
-<t>The reason for using Bell pairs specifically as opposed to any other
+       <t>The reason for using Bell pairs specifically as opposed to any other
        two-qubit state is that they are the maximally entangled two-qubit set
        of basis states. Maximal entanglement means that these states have the
        strongest non-classical correlations of all possible two-qubit states.
@@ -666,20 +636,19 @@
        useful as a generic building block for distributed quantum
        applications.</t>
 
-</section>
+     </section>
 
-<section anchor="teleportation" title="Teleportation">
+     <section anchor="teleportation" title="Teleportation">
 
-<t>The observation that we only need to be able to distribute Bell pairs
+       <t>The observation that we only need to be able to distribute Bell pairs
        relies on the fact that this enables the distribution of any other
        arbitrary entangled state. This can be achieved via quantum state
-       teleportation <xref target="Bennett93" />
-. Quantum state teleportation
+       teleportation <xref target="Bennett93" />. Quantum state teleportation
        consumes an unknown qubit state that we want to transmit and recreates
        it at the desired destination. This does not violate the no-cloning
        theorem as the original state is destroyed in the process.</t>
 
-<t>To achieve this, an entangled pair needs to be distributed between
+       <t>To achieve this, an entangled pair needs to be distributed between
        the source and destination before teleportation commences. The source
        then entangles the transmission qubit with its end of the pair and
        performs a read out of the two qubits (the sum of these operations is
@@ -694,7 +663,7 @@
        a classical channel unfortunately means that entanglement cannot be used
        to transmit information faster than the speed of light.</t>
 
-<t>The unknown quantum state that was transmitted was never fed into the
+       <t>The unknown quantum state that was transmitted was never fed into the
        network itself. Therefore, the network needs to only be able to reliably
        produce Bell pairs between any two nodes in the network. Thus, a key
        difference between a classical and quantum data planes is that a
@@ -702,18 +671,18 @@
        resources for the user to transmit user data themselves without further
        involvement of the network.</t>
 
-</section>
+     </section>
 
-<section title="The life cycle of entanglement">
+     <section title="The life cycle of entanglement">
 
-<t>Reducing the problem of quantum connectivity to one of generating a
+       <t>Reducing the problem of quantum connectivity to one of generating a
        Bell pair has facilitated the problem, but it has not solved it. In this
        section, we discuss how these entangled pairs are generated in the first
        place, and how their two qubits are delivered to the end-points.</t>
 
-<section anchor="elg" title="Elementary link generation">
+       <section anchor="elg" title="Elementary link generation">
 
-<t>In a quantum network, entanglement is always first generated
+         <t>In a quantum network, entanglement is always first generated
          locally (at a node or an auxiliary element) followed by a movement of
          one or both of the entangled qubits across the link through quantum
          channels. In this context, photons (particles of light) are the
@@ -726,21 +695,20 @@
          qubit's state to a qubit suitable for information processing and/or
          storage (often referred to as a matter qubit).</t>
 
-<t>Since this process may fail, in order to generate and store
+         <t>Since this process may fail, in order to generate and store
          entanglement efficiently, we must be able to distinguish successful
          attempts from failures. Entanglement generation schemes that are able
          to announce successful generation are called heralded entanglement
          generation schemes.</t>
 
-<t>There exist three basic schemes for heralded entanglement
+         <t>There exist three basic schemes for heralded entanglement
          generation on a link through coordinated action of the two nodes at
-         the two ends of the link <xref target="Cacciapuoti19" />
-:</t>
+         the two ends of the link <xref target="Cacciapuoti19" />:</t>
 
-<t>
-<list style="symbols">
+         <t>
+           <list style="symbols">
 
-<t>"At mid-point": in this scheme an entangled photon pair source
+             <t>"At mid-point": in this scheme an entangled photon pair source
              sitting midway between the two nodes with matter qubits sends an
              entangled photon through a quantum channel to each of the nodes.
              There, transducers are invoked to transfer the entanglement from
@@ -749,7 +717,7 @@
              successful entanglement generation via a message exchange over the
              classical channel.</t>
 
-<t>"At source": in this scheme one of the two nodes sends a flying
+             <t>"At source": in this scheme one of the two nodes sends a flying
              qubit that is entangled with one of its matter qubits. A
              transducer at the other end of the link will transfer the
              entanglement from the flying qubit to one of its matter qubits.
@@ -757,7 +725,7 @@
              transfer succeeded and is able to herald successful entanglement
              generation with a classical message sent to the other node.</t>
 
-<t>"At both end-points": in this scheme both nodes send a flying
+             <t>"At both end-points": in this scheme both nodes send a flying
              qubit that is entangled with one of their matter qubits. A
              detector somewhere in between the nodes performs a joint
              measurement on the two qubits, which stochastically projects the
@@ -766,31 +734,30 @@
              successful entanglement generation by sending a message to each
              node over the classical channel.</t>
 
-</list>
-</t>
+           </list>
+         </t>
 
-<t>The "mid-point source" scheme is more robust to photon loss, but in
+         <t>The "mid-point source" scheme is more robust to photon loss, but in
          the other schemes the nodes retain greater control over the entangled
          pair generation.</t>
 
-<t> Note that whilst photons travel in a particular direction through
+         <t> Note that whilst photons travel in a particular direction through
          the quantum channel the resulting entangled pair of qubits does not
          have a direction associated with it. Physically, there is no upstream
          or downstream end of the pair.</t>
 
-</section>
+       </section>
 
-<section anchor="es" title="Entanglement swapping">
+       <section anchor="es" title="Entanglement swapping">
 
-<t>The problem with generating entangled pairs directly across a link
+         <t>The problem with generating entangled pairs directly across a link
          is that efficiency decreases with channel length. Beyond a few 10s of
          kilometres in optical fibre or 1000 kilometres in free space (via
          satellite) the rate is effectively zero and due to the no-cloning
          theorem we cannot simply amplify the signal. The solution is
-         entanglement swapping <xref target="Briegel98" />
-.</t>
+         entanglement swapping <xref target="Briegel98" />.</t>
 
-<t>A Bell pair between any two nodes in the network can be constructed
+         <t>A Bell pair between any two nodes in the network can be constructed
          by combining the pairs generated along each individual link on a path
          between the two end-points. Each node along the path can consume the
          two pairs on the two links that it is connected to in order to produce
@@ -798,40 +765,40 @@
          known as entanglement swapping. Pictorially it can be represented as
          follows:</t>
 
-<figure align="center">
-<artwork align="left"><![CDATA[
+         <figure align="center">
+           <artwork align="left"><![CDATA[
 +---------+      +---------+      +---------+
 |    A    |      |    B    |      |    C    |
 |         |------|         |------|         |
 |      X1~~~~~~~~~~X2   Y1~~~~~~~~~~Y2      |
 +---------+      +---------+      +---------+
            ]]></artwork>
-</figure>
+         </figure>
 
-<t>where X1 and X2 are the qubits of the entangled pair X and Y1 and
+         <t>where X1 and X2 are the qubits of the entangled pair X and Y1 and
          Y2 are the qubits of entangled pair Y. The entanglement is denoted
          with ~~. In the diagram above, nodes A and B share the pair X and
          nodes B and C share the pair Y, but we want entanglement between A and
          C.</t>
 
-<t>To achieve this goal, we simply teleport the qubit X2 using the
+         <t>To achieve this goal, we simply teleport the qubit X2 using the
          pair Y. This requires node B to perform a Bell state measurement on
          the qubits X2 and Y1 which result in the destruction of the
          entanglement between Y1 and Y2. However, X2 is recreated in Y2's
          place, carrying with it its entanglement with X1. The end-result is
          shown below:</t>
 
-<figure align="center">
-<artwork align="left"><![CDATA[
+         <figure align="center">
+           <artwork align="left"><![CDATA[
 +---------+      +---------+      +---------+
 |    A    |      |    B    |      |    C    |
 |         |------|         |------|         |
 |      X1~~~~~~~~~~~~~~~~~~~~~~~~~~~X2      |
 +---------+      +---------+      +---------+
            ]]></artwork>
-</figure>
+         </figure>
 
-<t>Depending on the needs of the network and/or application, a final
+         <t>Depending on the needs of the network and/or application, a final
          Pauli correction at the recipient node may not be necessary since the
          result of this operation is also a Bell pair. However, the two
          classical bits that form the read out from the measurement at node B
@@ -840,27 +807,26 @@
          performed, the recipient must be informed which Bell pair was
          received.</t>
 
-<t>This process of teleporting Bell pairs using other entangled pairs
+         <t>This process of teleporting Bell pairs using other entangled pairs
          is called entanglement swapping. Quantum nodes that create
          long-distance entangled pairs via entanglement swapping are called
          quantum repeaters in academic literature <xref target="Briegel98" />
          and we will use the same terminology in this draft.</t>
 
-</section>
+       </section>
 
-<section title="Error Management">
+       <section title="Error Management">
 
-<section anchor="ent-dis" title="Distillation">
+         <section anchor="ent-dis" title="Distillation">
 
-<t>Neither the generation of Bell pairs nor the swapping operations
+           <t>Neither the generation of Bell pairs nor the swapping operations
            are noiseless operations. Therefore, with each link and each swap
            the fidelity of the state degrades. However, it is possible to
            create higher fidelity Bell pair states from two or more lower
            fidelity pairs through a process called distillation (sometimes also
-           referred to as purification) <xref target="Dur07" />
-.</t>
+           referred to as purification) <xref target="Dur07" />.</t>
 
-<t>To distil a quantum state, a second (and sometimes third) quantum
+           <t>To distil a quantum state, a second (and sometimes third) quantum
            state is used as a "test tool" to test a proposition about the first
            state, e.g., "the parity of the two qubits in the first state is
            even." When the test succeeds, confidence in the state is improved,
@@ -870,86 +836,77 @@
            must also be discarded. Distillation makes low demands on fidelity
            and resources compared to quantum error correction, but distributed
            protocols incur round-trip delays due to classical communication
-<xref target="Bennett96" />
-.</t>
+           <xref target="Bennett96" />.</t>
 
-</section>
+         </section>
 
-<section anchor="qec" title="Quantum Error Correction">
+         <section anchor="qec" title="Quantum Error Correction">
 
-<t>Just like classical error correction, quantum error correction
+           <t>Just like classical error correction, quantum error correction
            (QEC) encodes logical qubits using several physical (raw) qubits to
            protect them from errors described in <xref target="fidelity" />
-<xref target="Jiang09" />
-<xref target="Fowler10" />
-<xref target="Devitt13" />
-<xref target="Mural16" />
-. Furthermore,
+           <xref target="Jiang09" /> <xref target="Fowler10" /> <xref
+           target="Devitt13" /> <xref target="Mural16" />. Furthermore,
            similarly to its classical counterpart, QEC can not only correct
            state errors but also account for lost qubits. Additionally, if all
            physical qubits which encode a logical qubit are located at the same
            node, the correction procedure can be executed locally, even if the
            logical qubit is entangled with remote qubits.</t>
 
-<t>Although QEC was originally a scheme proposed to protect a qubit
+           <t>Although QEC was originally a scheme proposed to protect a qubit
            from noise, QEC can also be applied to entanglement distillation.
            Such QEC-applied distillation is cost-effective but requires a
            higher base fidelity.</t>
 
-</section>
+         </section>
 
-<section anchor="generations" title="Error management schemes">
+         <section anchor="generations" title="Error management schemes">
 
-<t>Quantum networks have been categorized into three "generations"
-           based on the error management scheme they employ <xref target="Mural16" />
-. Note that these "generations" are more like
+           <t>Quantum networks have been categorized into three "generations"
+           based on the error management scheme they employ <xref
+           target="Mural16" />. Note that these "generations" are more like
            categories; they do not necessarily imply a time progression and do
            not obsolete each other, though the later generations do require
            more advanced technologies. Which generation is used depends on the
            hardware platform and network design choices.</t>
 
-<t>
-<xref target="gens" />
- summarises the generations.</t>
-<texttable anchor="gens" title="Classical signaling and  generations">
-<ttcol align="center"></ttcol>
-<ttcol align="center">First generation</ttcol>
-<ttcol align="center">Second generation</ttcol>
-<ttcol align="center">Third generation</ttcol>
+           <t><xref target="gens" /> summarises the generations.</t>
+           <texttable anchor="gens" title="Classical signaling and  generations">
+             <ttcol align="center"></ttcol>
+             <ttcol align="center">First generation</ttcol>
+             <ttcol align="center">Second generation</ttcol>
+             <ttcol align="center">Third generation</ttcol>
 
-<c>Loss tolerance</c>
-<c>Heralded entanglement generation (bi-directional classical signaling)</c>
-<c>Heralded entanglement generation (bi-directional classical signaling)</c>
-<c>Quantum Error Correction (no classical signaling)</c>
+             <c>Loss tolerance</c>
+             <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+             <c>Heralded entanglement generation (bi-directional classical signaling)</c>
+             <c>Quantum Error Correction (no classical signaling)</c>
 
-<c></c>
-<c></c>
-<c></c>
-<c></c>
+             <c></c>
+             <c></c>
+             <c></c>
+             <c></c>
 
-<c>Error tolerance</c>
-<c>Entanglement distillation (bi-directional classical signaling)</c>
-<c>Entanglement distillation (uni-directional classical signaling) or
+             <c>Error tolerance</c>
+             <c>Entanglement distillation (bi-directional classical signaling)</c>
+             <c>Entanglement distillation (uni-directional classical signaling) or
              Quantum Error Correction (no classical signaling) </c>
-<c>Quantum Error Correction (no classical signaling)</c>
-</texttable>
+             <c>Quantum Error Correction (no classical signaling)</c>
+           </texttable>
 
-<t>Generations are defined by the directions of classical signalling
+           <t>Generations are defined by the directions of classical signalling
            required in their distributed protocols for loss tolerance and error
            tolerance. Classical signalling carries the classical bits and
-           incurs round-trip delays described in <xref target="ent-dis" />
-,
+           incurs round-trip delays described in <xref target="ent-dis" />,
            hence they affect the performance of quantum networks, especially as
            the distance between the communicating nodes increases.</t>
 
-<t>Loss tolerance is about tolerating qubit transmission losses
+           <t>Loss tolerance is about tolerating qubit transmission losses
            between nodes. Heralded entanglement generation, as described in
-<xref target="elg" />
-, confirms the receipt of an entangled qubit
+           <xref target="elg" />, confirms the receipt of an entangled qubit
            using a heralding signal. A pair of directly connected quantum nodes
            repeatedly attempt to generate an entangled pair until the a
-           heralding signal is received. As described in <xref target="qec" />
-,
+           heralding signal is received. As described in <xref target="qec" />,
            QEC can be applied to complement lost qubits eliminating the need
            for re-attempts. Furthermore, since the correction procedure is
            composed of local operations, it does not require a heralding
@@ -957,7 +914,7 @@
 	   rate from transmission to measurement is
            less than 50%.</t>
 
-<t>Error tolerance is about tolerating quantum state errors.
+           <t>Error tolerance is about tolerating quantum state errors.
            Entanglement distillation is the easiest mechanism for improved
            error tolerance to implement, but it incurs round-trip delays due
            the requirement for bi-directional classical signalling. The
@@ -966,17 +923,17 @@
            between these two extremes, there is also QEC-applied distillation,
            which requires uni-directional classical signalling.</t>
 
-<t>The three "generations" summarised:</t>
+           <t>The three "generations" summarised:</t>
 
-<t>
-<list style="numbers">
+           <t>
+             <list style="numbers">
 
-<t>First generation quantum networks use heralding for loss
+               <t>First generation quantum networks use heralding for loss
                tolerance and entanglement distillation for error tolerance.
                These networks can be implemented even with a limited set of
                available quantum gates.</t>
 
-<t>Second generation quantum networks improve upon the first
+               <t>Second generation quantum networks improve upon the first
                generation with QEC codes for error tolerance (but not loss
                tolerance). At first, QEC will be applied to entanglement
                distillation only which requires uni-directional classical
@@ -985,53 +942,53 @@
                purposes of error tolerance. Heralding is still used to
                compensate for transmission losses.</t>
 
-<t>Third generation quantum networks directly transmit QEC
-               encoded qubits to adjacent nodes, as discussed in <xref target="dt" />
-. Elementary link Bell pairs can now be created
+               <t>Third generation quantum networks directly transmit QEC
+               encoded qubits to adjacent nodes, as discussed in <xref
+               target="dt" />. Elementary link Bell pairs can now be created
                without heralding or any other classical signalling.
                Furthermore, this also enables direct transmission architectures
                in which qubits are forwarded end-to-end like classical packets
                rather than relying on Bell pairs and entanglement swapping.</t>
 
-</list>
-</t>
+             </list>
+           </t>
 
-</section>
+         </section>
 
-</section>
+       </section>
 
-<section title="Delivery">
+       <section title="Delivery">
 
-<t>Eventually, the Bell pairs must be delivered to an application (or
+         <t>Eventually, the Bell pairs must be delivered to an application (or
          higher layer protocol) at the two end-nodes. A detailed list of such
          requirements is beyond the scope of this draft. At minimum, the
          end-nodes require information to map a particular Bell pair to the
          qubit in their local memory that is part of this entangled pair.</t>
 
-</section>
+       </section>
 
-</section>
+     </section>
 
-</section>
+   </section>
 
-<section title="Architecture of a quantum internet">
+   <section title="Architecture of a quantum internet">
 
-<t>It is evident from the previous sections that the fundamental service
+     <t>It is evident from the previous sections that the fundamental service
      provided by a quantum network significantly differs from that of a
      classical network. Therefore, it is not surprising that the architecture
      of a quantum internet will itself be very different from that of the
      classical Internet.</t>
 
-<section title="Challenges">
+     <section title="Challenges">
 
-<t>This subsection covers the major fundamental challenges building
+       <t>This subsection covers the major fundamental challenges building
        quantum networks. Here, we only describe the fundamental differences.
        Technological limitations are described later.</t>
 
-<t>
-<list style="numbers">
-<t>Bell pairs are not equivalent to payload carrying packets.
-<vspace blankLines="1" />
+       <t>
+         <list style="numbers">
+           <t>Bell pairs are not equivalent to payload carrying packets.
+           <vspace blankLines="1" />
 
            In most classical networks, including Ethernet, Internet Protocol
            (IP), and Multi-Protocol Label Switching (MPLS) networks, user data
@@ -1040,7 +997,7 @@
            information that lets routers and switches forward it towards its
            destination. Packets are the fundamental unit in a classical
            network.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            In a quantum network, the entangled pairs of qubits are the basic
            unit of networking. These qubits themselves do not carry any
@@ -1048,11 +1005,10 @@
            information via separate classical channels which the repeaters will
            have to correlate with the qubits stored in their memory.</t>
 
-<t>"Store and forward" vs "store and swap" quantum networks.
-<vspace blankLines="1" />
+           <t>"Store and forward" vs "store and swap" quantum networks.
+           <vspace blankLines="1" />
 
-           As described in <xref target="elg" />
-, quantum links provide
+           As described in <xref target="elg" />, quantum links provide
            Bell pairs that are undirected network resources, in contrast to
            directed frames of classical networks. This phenomenological
            distinction leads to architectural differences between quantum
@@ -1060,7 +1016,7 @@
            elementary link Bell pairs together to create one end-to-end Bell
            pair, whereas classical networks deliver messages from one end to
            the other end hop by hop.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            Classical networks receive data on one interface, store it in local
            buffers, then forward the data to another appropriate interface.
@@ -1073,14 +1029,13 @@
            different from classical ones, in the sense that they are more akin
            to a stateful distributed computation than stateless packet-by-packet
            forwarding. Note that third generation quantum
-           networks, as described in <xref target="elg" />
-, will be able
+           networks, as described in <xref target="elg" />, will be able
            to support a "store and forward" architecture in addition to "store
            and swap".</t>
 
-<t>An entangled pair is only useful if the locations of both qubits
+           <t>An entangled pair is only useful if the locations of both qubits
            are known.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            A classical network packet logically exists only at one location at
            any point in time. If a packet is modified in some way, whether
@@ -1099,14 +1054,14 @@
            means of communication between the pair owners, and an association
            between the pair ID and the individual qubits is sufficient.</t>
 
-<t>Generating entanglement requires temporary state.
-<vspace blankLines="1" />
+           <t>Generating entanglement requires temporary state.
+           <vspace blankLines="1" />
 
            Packet forwarding in a classical network is largely a stateless
            operation. When a packet is received, the router does a lookup in its
            forwarding table and sends the packet out of the appropriate output.
            There is no need to keep any memory of the packet any more.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            A quantum node must be able to make decisions about qubits that it
            receives and is holding in its memory. Since qubits do not carry
@@ -1117,30 +1072,30 @@
            the control information and the qubit it pertains to will, in
            general, not arrive at the same time.</t>
 
-</list>
-</t>
+         </list>
+       </t>
 
-</section>
+     </section>
 
-<section title="Classical communication">
+     <section title="Classical communication">
 
-<t>In this draft we have already covered two different roles that
+       <t>In this draft we have already covered two different roles that
        classical communication must perform:</t>
 
-<t>
-<list style="symbols">
+       <t>
+         <list style="symbols">
 
-<t>communicate classical bits of information as part of distributed
+           <t>communicate classical bits of information as part of distributed
            protocols such as entanglement swapping and teleportation,</t>
 
-<t>communicate control information within a network, including
+           <t>communicate control information within a network, including
            both background protocols such as routing as well as signalling
            protocols to set up end-to-end entanglement generation.</t>
 
-</list>
-</t>
+         </list>
+       </t>
 
-<t>Classical communication is a crucial building block of any quantum
+       <t>Classical communication is a crucial building block of any quantum
        network. All nodes in a quantum network are assumed to have classical
        connectivity with each other (within typical administrative domain
        limits). Therefore, quantum nodes will need to manage two data planes in
@@ -1149,89 +1104,88 @@
        control information received on a classical channel can be applied to
        the qubits managed by the quantum data plane.</t>
 
-</section>
+     </section>
 
-<section title="Abstract model of the network">
+     <section title="Abstract model of the network">
 
-<section title="The control and data planes">
+       <section title="The control and data planes">
 
-<t>Control plane protocols for quantum networks will have many
+         <t>Control plane protocols for quantum networks will have many
          responsibilities similar to their classical counterparts, namely
          discovering the network topology, resource management, populating data
          plane tables, etc. Most of these protocols do not require the
          manipulation of quantum data and can operate simply by exchanging
          classical messages only. There may also be some control plane
          functionality that does require the handling of quantum data, e.g. a
-         quantum ping <xref target="I-D.irtf-qirg-quantum-internet-use-cases" />
-. As it is not clear if there is much benefit in defining a separate
+         quantum ping <xref target="I-D.irtf-qirg-quantum-internet-use-cases"
+         />. As it is not clear if there is much benefit in defining a separate
          quantum control plane given the significant overlap in
          responsibilities with its classical counterpart, the question of
          whether there should be a separate quantum control plane is beyond the
          scope of this document.</t>
 
-<t>However, the data plane separation is much more distinct and there
+         <t>However, the data plane separation is much more distinct and there
          will be two data planes: a classical data plane and a quantum data
          plane. The classical data plane processes and forwards classical
          packets. The quantum data plane processes and swaps entangled pairs.
          Third generation quantum networks may also forward qubits in addition
          to swapping Bell pairs.</t>
 
-<t>In addition to control plane messages, there will also be control
+         <t>In addition to control plane messages, there will also be control
          information messages that operate at the granularity of individual
          entangled pairs, such as heralding messages used for elementary link
-         generation (<xref target="elg" />
-). In terms of functionality, these
+         generation (<xref target="elg" />). In terms of functionality, these
          messages are closer to classical packet headers than control plane
          messages and thus we consider them to be part of the quantum data
          plane. Therefore, a quantum data plane also includes the exchange of
          classical control information at the granularity of individual qubits
          and entangled pairs.</t>
 
-</section>
+       </section>
 
-<section title="Elements of a quantum network">
+       <section title="Elements of a quantum network">
 
-<t>We have identified quantum repeaters as the core building block of
+         <t>We have identified quantum repeaters as the core building block of
          a quantum network. However, a quantum repeater will have to do more
          than just entanglement swapping in a functional quantum network. Its
          key responsibilities will include:</t>
 
-<t>
-<list style="numbers">
+         <t>
+           <list style="numbers">
 
-<t>Creating link-local entanglement between neighbouring
+             <t>Creating link-local entanglement between neighbouring
              nodes.</t>
 
-<t>Extending entanglement from link-local pairs to long-range
+             <t>Extending entanglement from link-local pairs to long-range
              pairs through entanglement swapping.</t>
 
-<t>Performing distillation to manage the fidelity of the produced
+             <t>Performing distillation to manage the fidelity of the produced
              pairs.</t>
 
-<t>Participating in the management of the network (routing,
+             <t>Participating in the management of the network (routing,
              etc.).</t>
 
-</list>
-</t>
+           </list>
+         </t>
 
-<t>Not all quantum repeaters in the network will be the same; here we
+         <t>Not all quantum repeaters in the network will be the same; here we
          break them down further:</t>
 
-<t>
-<list style="symbols">
+         <t>
+           <list style="symbols">
 
-<t>Quantum routers (controllable quantum nodes) - A quantum router
+             <t>Quantum routers (controllable quantum nodes) - A quantum router
              is a quantum repeater with a control plane that participates in
              the management of the network and will make decisions about which
              qubits to swap to generate the requested end-to-end pairs.</t>
 
-<t>Automated quantum nodes - An automated quantum node is a data
+             <t>Automated quantum nodes - An automated quantum node is a data
              plane only quantum repeater that does not participate in the
              network control plane. Since the no-cloning theorem precludes the
              use of amplification, long-range links will be established by
              chaining multiple such automated nodes together.</t>
 
-<t>End-nodes - End-nodes in a quantum network must be able to
+             <t>End-nodes - End-nodes in a quantum network must be able to
              receive and handle an entangled pair, but they do not need to be
              able to perform an entanglement swap (and thus are not necessarily
              quantum repeaters). End-nodes are also not required to have any
@@ -1239,36 +1193,35 @@
              having the end-node measure its qubit as soon as it is
              received.</t>
 
-<t>Non-quantum nodes - Not all nodes in a quantum network need to
+             <t>Non-quantum nodes - Not all nodes in a quantum network need to
              have a quantum data plane. A non-quantum node is any device that
              can handle classical network traffic.</t>
 
-</list>
-</t>
+           </list>
+         </t>
 
-<t>Additionally, we need to identify two kinds of links that will
+         <t>Additionally, we need to identify two kinds of links that will
          be used in a quantum network:</t>
 
-<t>
-<list style="symbols">
+         <t>
+           <list style="symbols">
 
-<t>Quantum links - A quantum link is a link which can be used to
+             <t>Quantum links - A quantum link is a link which can be used to
              generate an entangled pair between two directly connected quantum
              repeaters. This may include additional mid-point elements
-             described in <xref target="elg" />
-. It may also include a
+             described in <xref target="elg" />. It may also include a
              dedicated classical channel that is to be used solely for the
              purpose of coordinating the entanglement generation on this
              quantum link.</t>
 
-<t>Classical links - A classical link is a link between any node
+             <t>Classical links - A classical link is a link between any node
              in the network that is capable of carrying classical network
              traffic.</t>
 
-</list>
-</t>
+           </list>
+         </t>
 
-<t>Note that passive elements, such as optical switches, do not
+         <t>Note that passive elements, such as optical switches, do not
          destroy the quantum state. Therefore, it is possible to connect
          multiple quantum nodes with each other over an optical network and
          perform optical switching rather than routing via entanglement
@@ -1277,33 +1230,35 @@
          repeaters to overcome the short-distance limitations. However, this is
          a potentially feasible architecture for local area networks.</t>
 
-</section>
+       </section>
 
-<section title="Putting it all together">
+       <section title="Putting it all together">
 
-<t>A two-hop path in a generic quantum network can be represented
+         <t>A two-hop path in a generic quantum network can be represented
          as:</t>
 
-<figure align="center">
-<artwork align="left"><![CDATA[
+         <figure align="center">
+           <artwork align="left"><![CDATA[
 +-----+                                        +-----+
-| App |- - - - - - - - - -CC- - - - - - - - - -| App |
+| App |                                        | App |
 +-----+                +------+                +-----+
-| EN  |------ CL ------|  QR  |------ CL ------| EN  |
-|     |------ QL ------|      |------ QL ------|     |
+|     |------ CL ------|  CR  |------ CL ------|     |
+|     |                +------+                |     |
+| EN  |                                        | EN  |
+|     |                +------+                |     |
+|     |------ QL ------|  QR  |------ QL ------|     |
 +-----+                +------+                +-----+
 
 App - user-level application
 EN - end-node
 QL - quantum link
-CL - classical link
-CC - classical channel (traverses one or more CLs)
+CC - classical link
 QR - classical repeater
-
+CR - classical router or switch (optional)
            ]]></artwork>
-</figure>
+         </figure>
 
-<t>An application running on two end-nodes attached to a network will
+         <t>An application running on two end-nodes attached to a network will
          at some point need the network to generate entangled pairs for its
          use. This may require negotiation between the end-nodes (possibly
          ahead of time), because they must both open a communication end-point
@@ -1311,7 +1266,7 @@ QR - classical repeater
          The two end-nodes use the classical connectivity available in the
          network to achieve this goal.</t>
 
-<t>When the network receives a request to generate end-to-end
+         <t>When the network receives a request to generate end-to-end
          entangled pairs it uses the classical communication channels to
          coordinate and claim the resources necessary to fulfill this request.
          This may be some combination of prior control information (e.g.
@@ -1319,7 +1274,7 @@ QR - classical repeater
          is achieved are an active research question and thus beyond the scope
          of this draft.</t>
 
-<t>During or after the distribution of control information, the
+         <t>During or after the distribution of control information, the
          network performs the necessary quantum operations such as generating
          entanglement over individual links, performing entanglement swaps, and
          further signalling to transmit the swap outcomes and other control
@@ -1327,7 +1282,7 @@ QR - classical repeater
          these operations can be performed before the request is received in
          anticipation of the demand.</t>
 
-<t>The entangled pair is delivered to the application once it is
+         <t>The entangled pair is delivered to the application once it is
          ready, together with the relevant pair identifier. However, being
          ready does not necessarily mean that all link pairs and entanglement
          swaps are complete, as some applications can start executing on an
@@ -1335,18 +1290,18 @@ QR - classical repeater
          propagate the actions across the network to the other end, sometimes
          necessitating fixup operations at the end node.</t>
 
-</section>
+       </section>
 
-</section>
+     </section>
 
-<section title="Network boundaries">
+     <section title="Network boundaries">
 
-<t>Just like classical networks, various boundaries will exist in
+       <t>Just like classical networks, various boundaries will exist in
        quantum networks.</t>
 
-<section title="Boundaries between different physical hardware platforms">
+       <section title="Boundaries between different physical hardware platforms">
 
-<t>There are many different physical hardware platforms for implementing
+         <t>There are many different physical hardware platforms for implementing
          quantum repeater technology. The different technologies differ in how
          they store and manipulate qubits in memory and how they generate
          entanglement across a link with their neighbours. Different
@@ -1354,63 +1309,59 @@ QR - classical repeater
          network will likely consist of a mixture of different types of quantum
          repeaters combining the strengths and weaknesses of each hardware platform.</t>
 
-<t>For example, hardware based on optical elements and atomic
-         ensembles <xref target="Sangouard11" />
- is very efficient at
+         <t>For example, hardware based on optical elements and atomic
+         ensembles <xref target="Sangouard11" /> is very efficient at
          generating entanglement, but provide little control over the qubits
          once the pair is generated. On the other hand, nitrogen-vacancy based
-         hardware <xref target="Hensen15" />
- offers a much greater degree
+         hardware <xref target="Hensen15" /> offers a much greater degree
          of control over qubits, but have a harder time generating the
          entanglement across a link.</t>
 
-<t>It is an open research question where exactly the boundary will
+         <t>It is an open research question where exactly the boundary will
          lie. It could be that a single quantum repeater node provides some
          backplane connection between the hardware platforms, but it also could be
          that special quantum links delineate the boundary.</t>
 
-</section>
+       </section>
 
-<section title="Boundaries between different administrative regions">
+       <section title="Boundaries between different administrative regions">
 
-<t>Just like in classical networks, multiple quantum networks will
+         <t>Just like in classical networks, multiple quantum networks will
          connect into a global quantum internet. This necessarily implies the
          existence of borders between different administrative regions. How
          these boundaries will be handled is also an open question and thus
          beyond the scope of this draft.</t>
 
-</section>
+       </section>
 
-<section title="Boundaries between different error management schemes">
+       <section title="Boundaries between different error management schemes">
 
-<t>Not only are there physical differences and administrative
+         <t>Not only are there physical differences and administrative
          boundaries, but there are important distinctions in how errors will be
-         managed, as described in <xref target="generations" />
-, which affect
+         managed, as described in <xref target="generations" />, which affect
          the content and semantics of messages that must cross those boundaries
-         -- both for connection setup and real-time operation <xref target="Nagayama16" />
-. How to interconnect those schemes is also an
+         -- both for connection setup and real-time operation <xref
+         target="Nagayama16" />. How to interconnect those schemes is also an
          open research question.</t>
 
-</section>
+       </section>
 
-</section>
+     </section>
 
-<section title="Physical constraints">
+     <section title="Physical constraints">
 
-<t>The model above has effectively abstracted away the particulars of
+       <t>The model above has effectively abstracted away the particulars of
        the hardware implementation. However, certain physical constraints need
        to be considered in order to build a practical network. Some of these
        are fundamental constraints and no matter how much the technology
        improves, they will always need to be addressed. Others are artifacts of
        the early stages of a new technology. Here, we consider a highly
-       abstract scenario and refer to <xref target="Wehner18"/>
- for pointers to
+       abstract scenario and refer to <xref target="Wehner18"/> for pointers to
        the physics literature.</t>
 
-<section title="Memory lifetimes">
+       <section title="Memory lifetimes">
 
-<t>In addition to discrete operations being imperfect, storing a qubit
+         <t>In addition to discrete operations being imperfect, storing a qubit
          in memory is also highly non-trivial. The main difficulty in achieving
          persistent storage is that it is extremely challenging to isolate a
          quantum system from the environment. The environment introduces an
@@ -1419,80 +1370,75 @@ QR - classical repeater
          Eventually, the state has to be discarded once its fidelity degrades
          too much.</t>
 
-<t>The memory lifetime depends on the particular physical setup, but
+         <t>The memory lifetime depends on the particular physical setup, but
          the highest achievable values in quantum network hardware currently
-         are on the order of seconds <xref target="Abobeih18" />
- although a
+         are on the order of seconds <xref target="Abobeih18" /> although a
          lifetime of a minute has also been demonstrated for qubits not
-         connected to a quantum network <xref target="Bradley19" />
- (as of
+         connected to a quantum network <xref target="Bradley19" /> (as of
          2020). These values have increased tremendously over the lifetime of
          the different technologies and are bound to keep increasing. However,
          if quantum networks are to be realised in the near future, they need
          to be able to handle short memory lifetimes, for example by reducing
          latency on critical paths.</t>
 
-</section>
+       </section>
 
-<section title="Rates">
+       <section title="Rates">
 
-<t>Entanglement generation on a link between two connected nodes is
+         <t>Entanglement generation on a link between two connected nodes is
          not a very efficient process and it requires many attempts to succeed
-<xref target="Hensen15" />
-<xref target="Dahlberg19" />
-. Currently,
+         <xref target="Hensen15" /> <xref target="Dahlberg19" />. Currently,
          the highest achievable rates of success between nodes capable of
          storing the resulting qubits are on the order of 10 Hz. Combined with
          short memory lifetimes this leads to very tight timing windows to
          build up network-wide connectivity.</t>
 
-<t>This rate is expected to improve over time as quantum network
+         <t>This rate is expected to improve over time as quantum network
          technology evolves. Rates much higher than 10 Hz are needed to enable
          practical quantum network applications. </t>
 
-</section>
+       </section>
 
-<section title="Communication qubits">
+       <section title="Communication qubits">
 
-<t>Most physical architectures capable of storing qubits are only able
+         <t>Most physical architectures capable of storing qubits are only able
          to generate entanglement using only a subset of available qubits called
-         communication qubits <xref target="Dahlberg19" />
-. Once a Bell pair has
+         communication qubits <xref target="Dahlberg19" />. Once a Bell pair has
          been generated using a communication qubit, its state can be
          transferred into memory. This may impose additional limitations on the
          network. In particular, if a given node has only one communication
          qubit it cannot simultaneously generate Bell pairs over two links. It
          must generate entanglement over the links one at a time.</t>
 
-</section>
+       </section>
 
-<section title="Homogeneity">
+       <section title="Homogeneity">
 
-<t>Currently all hardware implementations are homogeneous and they do
+         <t>Currently all hardware implementations are homogeneous and they do
          not interface with each other. In general, it is very challenging to
          combine different quantum information processing technologies at
          present.</t>
-
-<t>Coupling different technologies with each other is of great
-         interest for two reasons:</t>
-
-<t>First, it may help overcome the weaknesses of the different
+         
+         <t>Coupling different technologies with each other is of great
+         interest for two reasons:</t> 
+         
+         <t>First, it may help overcome the weaknesses of the different
          implementations, but this may take a long time to be realised with
          high reliability and thus is not a near-term goal.</t>
 
-<t>Second, quantum computing and quantum networking typically use
+         <t>Second, quantum computing and quantum networking typically use
          different hardware platforms and a coupling between the two platforms
          (transduction) is needed.</t>
 
-</section>
+       </section>
 
-</section>
+     </section>
 
-</section>
+   </section>
 
-<section title="Architectural principles">
+   <section title="Architectural principles">
 
-<t>Given that the most practical way of realising quantum network
+     <t>Given that the most practical way of realising quantum network
      connectivity is using Bell pair and entanglement swapping repeater
      technology, what sort of principles should guide us in assembling such
      networks such that they are functional, robust, efficient, and most
@@ -1500,7 +1446,7 @@ QR - classical repeater
      they work under the constraints imposed by the hardware available today,
      but do not impose unnecessary burdens on future technology?</t>
 
-<t>As quantum networking is a completely new technology that is likely to
+     <t>As quantum networking is a completely new technology that is likely to
      see many iterations over its lifetime, this draft must not serve as a
      definitive set of rules, but merely as a general set of recommended
      guidelines for the first generations of quantum networks based on
@@ -1509,37 +1455,36 @@ QR - classical repeater
      quantum information and network architecture is needed in order to
      successfully build a quantum internet.</t>
 
-<section title="Goals of a quantum internet">
+     <section title="Goals of a quantum internet">
 
-<t>When outlining any set of principles we must ask ourselves what goals
+       <t>When outlining any set of principles we must ask ourselves what goals
        do we want to achieve as inevitably trade-offs must be made. So what
        sort of goals should drive a quantum network architecture? The following
        list has been inspired by the history of computer networking and thus it
        is inevitably very similar to one that could be produced for the
-       classical Internet <xref target="Clark88" />
-. However, whilst the goals
+       classical Internet <xref target="Clark88" />. However, whilst the goals
        may be similar the challenges involved are often fundamentally
        different. The list will also most likely evolve with time and the needs
        of its users.</t>
 
-<t>
-<list style="numbers">
-<t>Support distributed quantum applications
-<vspace blankLines="1" />
+       <t>
+         <list style="numbers">
+           <t>Support distributed quantum applications
+           <vspace blankLines="1" />
 
            This goal seems trivially obvious, but makes a subtle, but important
            point which highlights a key difference between quantum and
            classical networks. Ultimately, quantum data transmission is not the
            goal of a quantum network - it is only one possible component of
-           more advanced quantum application protocols <xref target="Wehner18" />
-. Whilst transmission certainly could be used as a building block
+           more advanced quantum application protocols <xref target="Wehner18"
+           />. Whilst transmission certainly could be used as a building block
            for all quantum applications, it is not the most basic one possible.
            For example, entanglement-based QKD, the most well known quantum
            application protocol, only relies on the stronger-than-classical
            correlations and inherent secrecy of entangled Bell pairs and does
-           not have to transmit arbitrary quantum states <xref target="Ekert91" />
-.
-<vspace blankLines="1" />
+           not have to transmit arbitrary quantum states <xref target="Ekert91"
+           />.
+           <vspace blankLines="1" />
 
            The primary purpose of a quantum internet is to support distributed
            quantum application protocols and it is of utmost importance that
@@ -1551,17 +1496,15 @@ QR - classical repeater
            fidelity, but quantum applications may have to make multiple
            re-attempts or even abort if the fidelity is too low. A review of
            the requirements for different known quantum applications can be
-           found in <xref target="Wehner18" />
- and an overview of
-           use-cases can be found in <xref target="I-D.irtf-qirg-quantum-internet-use-cases" />
-.</t>
+           found in <xref target="Wehner18" /> and an overview of
+           use-cases can be found in <xref
+           target="I-D.irtf-qirg-quantum-internet-use-cases" />.</t>
 
-<t>Support tomorrow's distributed quantum applications
-<vspace blankLines="1" />
+           <t>Support tomorrow's distributed quantum applications
+           <vspace blankLines="1" />
 
            The only principle of the Internet that should survive indefinitely
-           is the principle of constant change <xref target="RFC1958" />
-.
+           is the principle of constant change <xref target="RFC1958" />.
            Technical change is continuous and the size and capabilities of the
            quantum internet will change by orders of magnitude. Therefore, it
            is an explicit goal that a quantum internet architecture be able to
@@ -1570,7 +1513,7 @@ QR - classical repeater
            seen what worked and what did not. It is vital for a quantum
            internet to avoid the need for flag days (e.g. NCP to TCP/IP) or
            upgrades that take decades to roll out (e.g. IPv4 to IPv6).
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            Therefore, it is important that any proposed architecture for
            general purpose quantum repeater networks can integrate new devices
@@ -1582,8 +1525,8 @@ QR - classical repeater
            repeaters and thus will not be able to easily transition to more
            sophisticated applications.</t>
 
-<t>Support heterogeneity
-<vspace blankLines="1" />
+           <t>Support heterogeneity
+           <vspace blankLines="1" />
 
            There are multiple proposals for realising practical quantum
            repeater hardware and they all have their advantages and
@@ -1591,27 +1534,26 @@ QR - classical repeater
            individual links at the cost of more difficult entanglement swap
            operations. Other platforms may be good all around, but are more
            difficult to build.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            In addition to physical boundaries, there may be distinctions in how
-           errors are managed (<xref target="generations" />
-). These difference
+           errors are managed (<xref target="generations" />). These difference
            will affect the content and semantics of messages that cross these
            boundaries -- both for connection setup and real-time operation.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            The optimal network configuration will likely leverage the
            advantages of multiple platforms to optimise the provided service.
            Therefore, it is an explicit goal to incorporate varied hardware and
            technology support from the beginning.</t>
 
-<t>Ensure security at the network level
-<vspace blankLines="1" />
+           <t>Ensure security at the network level
+           <vspace blankLines="1" />
 
            The question of security in quantum networks is just as critical as
            it is in the classical Internet, especially since enhanced security
            offered by quantum entanglement is one of the key driving factors.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            It turns out that as long as the underlying implementation
            corresponds to (or sufficiently approximates) theoretical models of
@@ -1621,19 +1563,18 @@ QR - classical repeater
            Instead, applications, such as QKD, establish such guarantees in an
            end-to-end fashion using the classical network in conjunction with
            the quantum one.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            Nevertheless, whilst applications can ensure their own secure
            operation, network protocols themselves should be security aware in
            order to protect the network itself and limit disruption. Whilst the
            applications remain secure they are not necessarily operational or
            as efficient in the presence of an attacker. Security concerns in
-           quantum networks are described in more detail in <xref target="Satoh17" />
-<xref target="Satoh20" />
-.</t>
+           quantum networks are described in more detail in <xref
+           target="Satoh17" /> <xref target="Satoh20" />.</t>
 
-<t>Make them easy to monitor
-<vspace blankLines="1" />
+           <t>Make them easy to monitor
+           <vspace blankLines="1" />
 
            In order to manage, evaluate the performance of, or debug a network
            it is necessary to have the ability to monitor the network while
@@ -1641,7 +1582,7 @@ QR - classical repeater
            confidentiality and integrity of the devices connected to it.
            Quantum networks bring new challenges in this area so it should be a
            goal of a quantum network architecture to make this task easy.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            The fundamental unit of quantum information, the qubit, cannot be
            actively monitored as any readout irreversibly destroys its
@@ -1650,7 +1591,7 @@ QR - classical repeater
            only as a statistical quantity which requires the constant
            monitoring and the sacrifice of generated Bell pairs for tomography
            or other methods.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            Furthermore, given one end of an entangled pair, it is impossible to
            tell where the other qubit is without any additional classical
@@ -1660,11 +1601,11 @@ QR - classical repeater
            information might include (i) a reference to the entangled pair that
            allows distributed applications to coordinate actions on qubits of
            the same pair, and (ii) the two bits from each entanglement swap
-           necessary to identify the final state of the Bell pair (<xref target="es" />
-).</t>
+           necessary to identify the final state of the Bell pair (<xref
+           target="es" />).</t>
 
-<t>Ensure availability and resilience
-<vspace blankLines="1" />
+           <t>Ensure availability and resilience
+           <vspace blankLines="1" />
 
            Any practical and usable network, classical or quantum, must be able
            to continue to operate despite losses and failures, and be robust to
@@ -1675,26 +1616,25 @@ QR - classical repeater
            resilience will most likely require a more advanced treatment than
            they do in classical networks.</t>
 
-</list>
-</t>
-</section>
+         </list>
+       </t>
+     </section>
 
-<section title="The principles of a quantum internet">
+     <section title="The principles of a quantum internet">
 
-<t>The principles support the goals, but are not goals themselves. The
+       <t>The principles support the goals, but are not goals themselves. The
        goals define what we want to build and the principles provide a
        guideline in how we might achieve this. The goals will also be the
        foundation for defining any metric of success for a network
        architecture, whereas the principles in themselves do not distinguish
        between success and failure. For more information about design
        considerations for quantum networks see <xref target="VanMeter13.1" />
-<xref target="Dahlberg19" />
-.</t>
+       <xref target="Dahlberg19" />.</t>
 
-<t>
-<list style="numbers">
-<t>Entanglement is the fundamental service
-<vspace blankLines="1" />
+       <t>
+         <list style="numbers">
+           <t>Entanglement is the fundamental service
+           <vspace blankLines="1" />
 
            The key service that a quantum network provides is the distribution
            of entanglement between the nodes in a network. All distributed
@@ -1708,12 +1648,11 @@ QR - classical repeater
            pairs are the minimal entanglement building block that is sufficient
            to develop these applications. However, a quantum network may also
            distribute multipartite entangled states (entangled states of three
-           or more qubits) <xref target="Meignant19" />
- as this may be more
+           or more qubits) <xref target="Meignant19" /> as this may be more
            efficient under certain circumstances.</t>
 
-<t>Bell Pairs are indistinguishable
-<vspace blankLines="1" />
+           <t>Bell Pairs are indistinguishable
+           <vspace blankLines="1" />
 
            Any two Bell Pairs between the same two nodes are indistinguishable
            for the purposes of an application provided they both satisfy its
@@ -1725,8 +1664,8 @@ QR - classical repeater
            coordinate to make sure they are operating on qubits that belong to
            the same Bell pair.</t>
 
-<t>Fidelity is part of the service
-<vspace blankLines="1" />
+           <t>Fidelity is part of the service
+           <vspace blankLines="1" />
 
            In addition to being able to deliver Bell pairs to the communication
            end-points, the Bell Pairs must be of sufficient fidelity. Unlike in
@@ -1743,8 +1682,8 @@ QR - classical repeater
            guarantee high fidelity pairs to all applications regardless of
            their requirements.</t>
 
-<t>Time is an expensive resource
-<vspace blankLines="1" />
+           <t>Time is an expensive resource
+           <vspace blankLines="1" />
 
            Time is not the only resource that is in short supply (memory, and
            communication qubits are as well), but ultimately it is the lifetime
@@ -1760,8 +1699,8 @@ QR - classical repeater
            time, but potentially also by moving the quantum state for temporary
            storage to a quantum memory with a longer lifetime.</t>
 
-<t>Be flexible with regards to capabilities and limitations
-<vspace blankLines="1" />
+           <t>Be flexible with regards to capabilities and limitations
+           <vspace blankLines="1" />
 
            This goal encompasses two important points. First, the architecture
            should be able to function under the physical constraints imposed by
@@ -1769,29 +1708,29 @@ QR - classical repeater
            entanglement generation rates, quantum memories able to hold a
            handful of qubits at best, and decoherence rates that will render
            many generated pairs unusable.
-<vspace blankLines="1" />
+           <vspace blankLines="1" />
 
            Second, the architecture should not make it difficult to run the
            network over any hardware that may come along in the future. The
            physical capabilities of repeaters will improve and redeploying a
            technology is extremely challenging.</t>
 
-</list>
-</t>
+         </list>
+       </t>
 
-</section>
+     </section>
 
-</section>
+   </section>
 
-<section title="A thought experiment inspired by classical networks">
+   <section title="A thought experiment inspired by classical networks">
 
-<t>To conclude, we discuss a plausible quantum network architecture
+     <t>To conclude, we discuss a plausible quantum network architecture
      inspired by MPLS. This is not an architecture proposal, but rather a
      thought experiment to give the reader an idea of what components are
      necessary for a functional quantum network. We use classical MPLS as a
      basis as it is well known and understood in the networking community.</t>
 
-<t>Creating end-to-end Bell pairs between remote end-points is a stateful
+     <t>Creating end-to-end Bell pairs between remote end-points is a stateful
      distributed task that requires a lot of a-priori coordination. Therefore, a
      connection-oriented approach seems the most natural for quantum networks.
      In connection-oriented quantum networks, when two quantum application
@@ -1803,14 +1742,14 @@ QR - classical repeater
      As an analogy, MPLS networks have the concept of multi-point LSPs for
      multicast.</t>
 
-<t>When a quantum application creates a quantum virtual circuit, it can
+     <t>When a quantum application creates a quantum virtual circuit, it can
      indicate quality of service (QoS) parameters such as the required capacity
      in end-to-end Bell pairs per second (BPPS) and the required fidelity of
      the Bell pairs. As an analogy, in MPLS networks applications specify the
      required bandwidth in bits per second (BPS) and other constraints when
      they create a new LSP.</t>
 
-<t>Quantum networks need a routing function to compute the optimal path
+     <t>Quantum networks need a routing function to compute the optimal path
      (i.e. the best sequence of routers and links) for each new quantum virtual
      circuit. The routing function may be centralized or distributed. In the
      latter case, the quantum network needs a distributed routing protocol. As
@@ -1818,10 +1757,9 @@ QR - classical repeater
      path first (OSPF) and intermediate-system to intermediate system (IS-IS).
      However, note that the definition of "shortest-path"/"least-cost" may be
      different in a quantum network to account for its non-classical features,
-     such as fidelity <xref target="VanMeter13.2" />
-.</t>
+     such as fidelity <xref target="VanMeter13.2" />.</t>
 
-<t>Given the very scarce availability of resources in early quantum
+     <t>Given the very scarce availability of resources in early quantum
      networks, a traffic engineering function is likely to be beneficial.
      Without traffic engineering, quantum virtual circuits always use the
      shortest path. In this case, the quantum network cannot guarantee that
@@ -1829,7 +1767,7 @@ QR - classical repeater
      fidelity. This is analogous to "best effort" service in classical
      networks.</t>
 
-<t>With traffic engineering, quantum virtual circuits choose a path that
+     <t>With traffic engineering, quantum virtual circuits choose a path that
      is guaranteed to have the requested resources (e.g. bandwidth in BPPS)
      available, taking into account the capacity of the routers and links and
      taking into account the resources already consumed by other virtual
@@ -1838,20 +1776,20 @@ QR - classical repeater
      constrained shortest path first (CSPF) to take resource availability and
      other constraints into account when computing the optimal path.</t>
 
-<t>The use of traffic engineering implies the use of call admission
+     <t>The use of traffic engineering implies the use of call admission
      control (CAC): the network denies any virtual circuits for which it cannot
      guarantee the requested quality of service a-priori. Or alternatively, the
      network pre-empts lower priority circuits to make room for the new
      one.</t>
 
-<t>Quantum networks need a signaling function: once the path for a quantum
+     <t>Quantum networks need a signaling function: once the path for a quantum
      virtual circuit has been computed, signaling is used to install the
      "forwarding rules" into the data plane of each quantum router on the path.
      The signaling may be distributed, analogous to the resource reservation
      protocol (RSVP) in MPLS. Or the signaling may be centralized, similar to
      OpenFlow.</t>
 
-<t>Quantum networks need an abstraction of the hardware for specifying the
+     <t>Quantum networks need an abstraction of the hardware for specifying the
      forwarding rules. This allows us to de-couple the control plane (routing
      and signaling) from the data plane (actual creation of Bell pairs). The
      forwarding rules are specified using abstract building blocks such as
@@ -1865,7 +1803,7 @@ QR - classical repeater
      the right abstractions will be one of the biggest challenges when
      designing interoperable quantum network protocols.</t>
 
-<t>In quantum networks, control plane traffic (routing and signaling
+     <t>In quantum networks, control plane traffic (routing and signaling
      messages) is exchanged over a classical channel, whereas data plane
      traffic (the actual Bell pair qubits) is exchanged over a separate quantum
      channel. This is in contrast to most classical networks, where control
@@ -1877,40 +1815,40 @@ QR - classical repeater
      there is no such thing as data plane headers (e.g. DWDM or TDM
      networks).</t>
 
-</section>
+   </section>
 
-<section anchor="Security" title="Security Considerations">
-<t>Security is listed as an explicit goal for the architecture and this
+   <section anchor="Security" title="Security Considerations">
+     <t>Security is listed as an explicit goal for the architecture and this
      issue is addressed in the section on goals. However, as this is an
      informational memo it does not propose any concrete mechanisms to achieve
      these goals.</t>
 
-</section>
+   </section>
 
-<section anchor="IANA" title="IANA Considerations">
-<t>This draft includes no request to IANA.</t>
-</section>
+   <section anchor="IANA" title="IANA Considerations">
+     <t>This draft includes no request to IANA.</t>
+   </section>
 
-<!-- Possibly a 'Contributors' section ... -->
+   <!-- Possibly a 'Contributors' section ... -->
 
-<section anchor="Acknowledgements" title="Acknowledgements">
+   <section anchor="Acknowledgements" title="Acknowledgements">
 
-<t>The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
+     <t>The authors want to thank Carlo Delle Donne, Matthew Skrzypczyk, Axel
      Dahlberg, Mathias van den Bossche, Patrick Gelard, Chonggang Wang, Scott
      Fluhrer, Joey Salazar, Joseph Touch, and the rest of the QIRG community as
      a whole for their very useful reviews and comments to the document.</t>
 
-<!-- TODO: fill out acks appropriately to IETF rules -->
-</section>
+     <!-- TODO: fill out acks appropriately to IETF rules -->
+   </section>
 
-</middle>
+ </middle>
 
-<!--  *****BACK MATTER ***** -->
+ <!--  *****BACK MATTER ***** -->
 
-<back>
-<!-- References split into informative and normative -->
+ <back>
+   <!-- References split into informative and normative -->
 
-<!-- There are 2 ways to insert reference entries from the citation libraries:
+   <!-- There are 2 ways to insert reference entries from the citation libraries:
     1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
     2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
        (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
@@ -1921,662 +1859,662 @@ QR - classical repeater
     with a value containing a set of directories to search.  These can be either in the local
     filing system or remote ones accessed by http (http://domain/dir/... ).-->
 
-<references title="Informative References">
-<!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+   <references title="Informative References">
+     <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
 
      &rfc1958;
      &I-D.irtf-qirg-quantum-internet-use-cases;
 
-<reference anchor="Pompili21" target="https://arxiv.org/abs/2102.04471">
-<front>
-<title>Realization of a multi-node quantum network of remote solid-state qubits</title>
-
-<author initials="M" surname="Pompili" />
-<author initials="S.L.N" surname="Hermans" />
-<author initials="S" surname="Baier" />
-<author initials="H.K.C" surname="Beukers" />
-<author initials="P.C" surname="Humphreys" />
-<author initials="R.N" surname="Schouten" />
-<author initials="R.F.L" surname="Vermeulen" />
-<author initials="M.J" surname="Tiggelman" />
-<author initials="L" surname="dos Santos Martins" />
-<author initials="B" surname="Dirkse" />
-<author initials="S" surname="Wehner" />
-<author initials="R" surname="Hanson" />
-
-<date year="2021" />
-</front>
-<seriesInfo name="Science" value="Vol. 372, Iss. 6539, pp. 259-264" />
-</reference>
-
-<reference anchor="Bennett14" target="https://arxiv.org/abs/2003.06557">
-<front>
-<title>Quantum cryptography: Public key distribution and coin tossing</title>
-
-<author initials="C.H" surname="Bennett" />
-<author initials="G" surname="Brassard" />
-
-<date year="2014" />
-</front>
-<seriesInfo name="Theoretical Computer Science" value="Vol. 560 (Part 1), pp. 7-11" />
-</reference>
-
-<reference anchor="Ekert91" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.67.661">
-<front>
-<title>Quantum cryptography based on Bell's theorem</title>
-
-<author initials="A.K" surname="Ekert" />
-
-<date year="1991" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 67, Iss. 6, pp. 661-663" />
-</reference>
-
-<reference anchor="Crepeau02" target="https://arxiv.org/abs/quant-ph/0206138">
-<front>
-<title>Secure multi-party quantum computation</title>
-
-<author initials="C" surname="Crepeau" />
-<author initials="D" surname="Gottesman" />
-<author initials="A" surname="Smith" />
-
-<date year="2002" />
-</front>
-<seriesInfo name="Proceedings of the thiry-fourth annual ACM symposium on Theory of computing" value="pp. 643-652" />
-</reference>
-
-<reference anchor="Giovanetti04" target="https://arxiv.org/abs/quant-ph/0412078">
-<front>
-<title>Quantum-enhanced measurements: beating the standard quantum limit</title>
-
-<author initials="V" surname="Giovanetti" />
-<author initials="S" surname="Lloyd" />
-<author initials="L" surname="Maccone" />
-
-<date year="2004" />
-</front>
-<seriesInfo name="Science" value="Vol. 306, Iss. 5700, pp. 1330-1336" />
-</reference>
-
-<reference anchor="Castelvecchi18" target="https://www.nature.com/articles/d41586-018-01835-3">
-<front>
-<title>The Quantum Internet has arrived (and it hasn't)</title>
-
-<author initials="D" surname="Castelvecchi" />
-
-<date year="2018" />
-</front>
-<seriesInfo name="Nature" value="Vol. 554, pp. 289-292" />
-</reference>
-
-<reference anchor="Wehner18" target="http://science.sciencemag.org/content/362/6412/eaam9288.full">
-<front>
-<title>Quantum internet: A vision for the road ahead</title>
-
-<author initials="S" surname="Wehner" />
-<author initials="D" surname="Elkouss" />
-<author initials="R" surname="Hanson" />
-
-<date year="2018" />
-</front>
-<seriesInfo name="Science" value="Vol. 362, Iss. 6412" />
-</reference>
-
-<reference anchor="Aspect81" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.47.460">
-<front>
-<title>Experimental tests of realistic local theories via Bell's theorem</title>
-
-<author initials="A" surname="Aspect" />
-<author initials="P" surname="Grangier" />
-<author initials="G" surname="Roger" />
-
-<date year="1981" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 47, Iss. 7, pp. 460-463" />
-</reference>
-
-<reference anchor="Mural16" target="https://www.nature.com/articles/srep20463">
-<front>
-<title>Optimal architectures for long distance quantum communication</title>
-
-<author initials="S" surname="Muralidharan" />
-<author initials="L" surname="Li" />
-<author initials="J" surname="Kim" />
-<author initials="N" surname="Lutkenhaus" />
-<author initials="M" surname="Lukin" />
-<author initials="L" surname="Jiang" />
-
-<date year="2016" />
-</front>
-<seriesInfo name="Scientific Reports" value="Vol. 6, Iss. 1, pp. 1-10" />
-</reference>
-
-<reference anchor="VanMeter13.1" target="https://ieeexplore.ieee.org/document/6576340">
-<front>
-<title>Designing quantum repeater networks</title>
-
-<author initials="R" surname="Van Meter" />
-<author initials="J" surname="Touch" />
-
-<date year="2013" />
-</front>
-<seriesInfo name="IEEE Communications Magazine" value="Vol. 51, Iss. 8, pp. 64-71" />
-</reference>
-
-<reference anchor="Satoh20" target="https://arxiv.org/abs/2005.04617">
-<front>
-<title>Attacking the quantum internet</title>
-
-<author initials="T" surname="Satoh" />
-<author initials="S" surname="Nagayama" />
-<author initials="S" surname="Suzuki" />
-<author initials="T" surname="Matsuo" />
-<author initials="R" surname="Van Meter" />
-
-<date year="2020" />
-</front>
-<seriesInfo name="arXiv" value="2005.04617" />
-</reference>
-
-<reference anchor="Satoh17" target="https://arxiv.org/abs/1701.04587">
-<front>
-<title>The network impact of hijacking a quantum repeater</title>
-
-<author initials="T" surname="Satoh" />
-<author initials="S" surname="Nagayama" />
-<author initials="R" surname="Van Meter" />
-
-<date year="2017" />
-</front>
-<seriesInfo name="Quantum Science and Technology" value="Vol. 3, Iss. 3, pp. 034008" />
-</reference>
-
-<reference anchor="Dahlberg19" target="https://arxiv.org/abs/1903.09778">
-<front>
-<title>A link layer protocol for quantum networks</title>
-
-<author initials="A" surname="Dahlberg" />
-<author initials="M" surname="Skrzypczyk" />
-<author initials="T" surname="Coopmans" />
-<author initials="L" surname="Wubben" />
-<author initials="F" surname="Rozpedek" />
-<author initials="M" surname="Pompili" />
-<author initials="A" surname="Stolk" />
-<author initials="P" surname="Pawelczak" />
-<author initials="R" surname="Knegjens" />
-<author initials="J" surname="de Oliveira Filho" />
-<author initials="R" surname="Hanson" />
-<author initials="S" surname="Wehner" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="Proceedings of the ACM Special Interest Group on Data Communication" value="pp. 159-173" />
-</reference>
-
-<reference anchor="SutorBook">
-<front>
-<title>Dancing with Qubits</title>
-
-<author initials="R.S" surname="Sutor" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="Packt Publishing" value="" />
-</reference>
-
-
-<reference anchor="NielsenChuang">
-<front>
-<title>Quantum Computation and Quantum Information</title>
-
-<author initials="M.A" surname="Nielsen" />
-<author initials="I.L" surname="Chuang" />
-
-<date year="2011" />
-</front>
-<seriesInfo name="Cambridge University Press" value="" />
-</reference>
-
-<reference anchor="Bennett96" target="https://arxiv.org/abs/quant-ph/9604024">
-<front>
-<title>Mixed state entanglement and quantum error correction</title>
-
-<author initials="C.H" surname="Bennett" />
-<author initials="D.P" surname="DiVincenzo" />
-<author initials="J.A" surname="Smolin" />
-<author initials="W.K" surname="Wootters" />
-
-<date year="1996" />
-</front>
-<seriesInfo name="Physical Review A" value="Vol. 54, Iss. 5, pp. 3824-3851" />
-</reference>
-
-<reference anchor="Bennett93" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.70.1895">
-<front>
-<title>Teleporting an unknown quantum state via dual classical and Einstein-Podolsky-Rosen channels</title>
-
-<author initials="C.H" surname="Bennett" />
-<author initials="G" surname="Brassard" />
-<author initials="C" surname="Crepeau" />
-<author initials="R" surname="Jozsa" />
-<author initials="A" surname="Peres" />
-<author initials="W.K" surname="Wootters" />
-
-<date year="1993" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 70, Iss. 13, pp. 1895-1899" />
-</reference>
-
-<reference anchor="Briegel98" target="https://arxiv.org/abs/quant-ph/9803056">
-<front>
-<title>Quantum repeaters: The role of imperfect local operations in quantum communication</title>
-
-<author initials="H.-J" surname="Briegel" />
-<author initials="W" surname="Dur" />
-<author initials="J.I" surname="Cirac" />
-<author initials="P" surname="Zoller" />
-
-<date year="1998" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 81, Iss. 26, pp. 5932-5935" />
-</reference>
-
-<reference anchor="Cacciapuoti19" target="https://arxiv.org/abs/1907.06197">
-<front>
-<title>When Entanglement meets Classical Communications: Quantum Teleportation for the Quantum Internet</title>
-
-<author initials="A.S" surname="Cacciapuoti" />
-<author initials="M" surname="Caleffi" />
-<author initials="R" surname="Van Meter" />
-<author initials="L" surname="Hanzo" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="IEEE Transactions on Communications" value="Vol. 68, Iss. 6, pp. 3808-3833" />
-</reference>
-
-<reference anchor="Meignant19" target="https://arxiv.org/abs/1811.05445">
-<front>
-<title>Distributing graph states over arbitrary quantum networks</title>
-
-<author initials="C" surname="Meignant" />
-<author initials="D" surname="Markham" />
-<author initials="F" surname="Grosshans" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="Physical Review A" value="Vol. 100, Iss. 5, pp. 052333" />
-</reference>
-
-<reference anchor="VanMeter13.2" target="https://arxiv.org/abs/1206.5655">
-<front>
-<title>Path selection for quantum repeater networks</title>
-
-<author initials="R" surname="Van Meter" />
-<author initials="T" surname="Satoh" />
-<author initials="T.D" surname="Ladd" />
-<author initials="W.J" surname="Munro" />
-<author initials="K" surname="Nemoto" />
-
-<date year="2013" />
-</front>
-<seriesInfo name="Networking Science" value="Vol. 3, Iss. 1-4, pp. 82-95" />
-</reference>
-
-<reference anchor="Clark88" target="https://dl.acm.org/doi/abs/10.1145/52324.52336">
-<front>
-<title>The design philosophy of the DARPA internet protocols</title>
-
-<author initials="D" surname="Clark" />
-
-<date year="1988" />
-</front>
-<seriesInfo name="Symposium proceedings on Communications architectures and protocols" value="pp. 106-114" />
-</reference>
-
-<reference anchor="VanMeterBook">
-<front>
-<title>Quantum Networking</title>
-
-<author initials="R" surname="Van Meter" />
-
-<date year="2014" />
-</front>
-<seriesInfo name="ISTE Ltd/John Wiley and Sons Inc" value="978-1-84821-537-5" />
-</reference>
-
-<reference anchor="Aguado19" target="http://arxiv.org/abs/1907.00174">
-<front>
-<title>The engineering of software-defined quantum key distribution networks</title>
-
-<author initials="A" surname="Aguado" />
-<author initials="V" surname="Lopez" />
-<author initials="D" surname="Diego" />
-<author initials="M" surname="Peev" />
-<author initials="A" surname="Poppe" />
-<author initials="A" surname="Pastor" />
-<author initials="J" surname="Folgueira" />
-<author initials="M" surname="Vicente" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="IEEE Communications Magazine" value="Vol. 57, Iss. 7, pp. 20-26" />
-</reference>
-
-<reference anchor="Peev09" target="http://stacks.iop.org/1367-2630/11/i=7/a=075001">
-<front>
-<title>The SECOQC quantum key distribution network in Vienna</title>
-
-<author surname="Peev" initials="M" />
-<author surname="Pacher" initials="C" />
-<author surname="Alleaume" initials="R" />
-<author surname="Barreiro" initials="C" />
-<author surname="Bouda" initials="J" />
-<author surname="Boxleitner" initials="W" />
-<author surname="Debuisschert" initials="T" />
-<author surname="Diamanti" initials="E" />
-<author surname="Dianati" initials="M" />
-<author surname="Dynes" initials="J.F" />
-<author surname="Fasel" initials="S" />
-<author surname="Fossier" initials="S" />
-<author surname="Fuerst" initials="M" />
-<author surname="Gautier" initials="J.-D" />
-<author surname="Gay" initials="O" />
-<author surname="Gisin" initials="N" />
-<author surname="Grangier" initials="P" />
-<author surname="Happe" initials="A" />
-<author surname="Hasani" initials="Y" />
-<author surname="Hentschel" initials="M" />
-<author surname="Huebel" initials="H" />
-<author surname="Humer" initials="G" />
-<author surname="Laenger" initials="T" />
-<author surname="Legre" initials="M" />
-<author surname="Lieger" initials="R" />
-<author surname="Lodewyck" initials="J" />
-<author surname="Loruenser" initials="T" />
-<author surname="Luetkenhaus" initials="N" />
-<author surname="Marhold" initials="A" />
-<author surname="Matyus" initials="T" />
-<author surname="Maurhart" initials="O" />
-<author surname="Monat" initials="L" />
-<author surname="Nauerth" initials="S" />
-<author surname="Page" initials="J.-B" />
-<author surname="Poppe" initials="A" />
-<author surname="Querasser" initials="E" />
-<author surname="Ribordy" initials="G" />
-<author surname="Robyr" initials="S" />
-<author surname="Salvail" initials="L" />
-<author surname="Sharpe" initials="A.W" />
-<author surname="Shields" initials="A.J" />
-<author surname="Stucki" initials="D" />
-<author surname="Suda" initials="M" />
-<author surname="Tamas" initials="C" />
-<author surname="Themel" initials="T" />
-<author surname="Thew" initials="R.T" />
-<author surname="Thoma" initials="Y" />
-<author surname="Treiber" initials="A" />
-<author surname="Trinkler" initials="P" />
-<author surname="Tualle-Brouri" initials="R" />
-<author surname="Vannel" initials="F" />
-<author surname="Walenta" initials="N" />
-<author surname="Weier" initials="H" />
-<author surname="Weinfurter" initials="H" />
-<author surname="Wimberger" initials="I" />
-<author surname="Yuan" initials="Z.L" />
-<author surname="Zbinden" initials="H" />
-<author surname="Zeilinger" initials="A" />
-
-<date year="2009" />
-</front>
-<seriesInfo name="New Journal of Physics" value="Vol. 11, Iss. 7, pp. 075001" />
-</reference>
-
-<reference anchor="Hensen15" target="https://arxiv.org/abs/1508.05949">
-<front>
-<title>Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres</title>
-
-<author surname="Hensen" initials="B" />
-<author surname="Bernien" initials="H" />
-<author surname="Dreau" initials="A.E" />
-<author surname="Reiserer" initials="A" />
-<author surname="Kalb" initials="N" />
-<author surname="Blok" initials="M.S" />
-<author surname="Ruitenberg" initials="J" />
-<author surname="Vermeulen" initials="R.F.L" />
-<author surname="Schouten" initials="R.N" />
-<author surname="Abellan" initials="C" />
-<author surname="Amaya" initials="W" />
-<author surname="Pruneri" initials="V" />
-<author surname="Mitchell" initials="M.W" />
-<author surname="Markham" initials="M" />
-<author surname="Twitchen" initials="D.J" />
-<author surname="Elkouss" initials="D" />
-<author surname="Wehner" initials="S" />
-<author surname="Taminiau" initials="T.H" />
-<author surname="Hanson" initials="R" />
-
-<date year="2015" />
-</front>
-<seriesInfo name="Nature" value="Vol. 526, Iss. 7575, pp. 682-686" />
-</reference>
-
-<reference anchor="Fitzsimons17" target="https://arxiv.org/abs/1203.5217">
-<front>
-<title>Unconditionally verifiable blind quantum computation</title>
-
-<author surname="Fitzsimons" initials="J.F" />
-<author surname="Kashefi" initials="E" />
-
-<date year="2017" />
-</front>
-<seriesInfo name="Physical Review A" value="Vol. 96, Iss. 1, pp. 012303" />
-</reference>
-
-<reference anchor="Terhal04" target="https://ieeexplore.ieee.org/document/5388928">
-<front>
-<title>Is entanglement monogamous?</title>
-
-<author surname="Terhal" initials="B.M" />
-
-<date year="2004" />
-</front>
-<seriesInfo name="IBM Journal of Research and Development" value="Vol. 48, Iss. 1, pp. 71-78" />
-</reference>
-
-<reference anchor="Park70" target="https://link.springer.com/content/pdf/10.1007/BF00708652.pdf">
-<front>
-<title>The concept of transition in quantum mechanics</title>
-
-<author surname="Park" initials="J.L" />
-
-<date year="1970" />
-</front>
-<seriesInfo name="Foundations of Physics" value="Vol. 1, Iss. 1, pp. 23-33" />
-</reference>
-
-<reference anchor="Wootters82" target="https://www.nature.com/articles/299802a0">
-<front>
-<title>A single quantum cannot be cloned</title>
-
-<author surname="Wootters" initials="W.K" />
-<author surname="Zurek" initials="W.H" />
-
-<date year="1982" />
-</front>
-<seriesInfo name="Nature" value="Vol. 299, Iss. 5886, pp. 802-803" />
-</reference>
-
-<reference anchor="Fowler10" target="https://arxiv.org/abs/0910.4074">
-<front>
-<title>Surface code quantum communication</title>
-
-<author surname="Fowler" initials="A.G" />
-<author surname="Wang" initials="D.S" />
-<author surname="Hill" initials="C.D" />
-<author surname="Ladd" initials="T.D" />
-<author surname="Van Meter" initials="R" />
-<author surname="Hollenberg" initials="L.C.L" />
-
-<date year="2010" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 104, Iss. 18, pp. 180503" />
-</reference>
-
-<reference anchor="Jiang09" target="https://arxiv.org/abs/0809.3629">
-<front>
-<title>Quantum repeater with encoding</title>
-
-<author surname="Jiang" initials="L" />
-<author surname="Taylor" initials="J.M" />
-<author surname="Nemoto" initials="K" />
-<author surname="Munro" initials="W.J" />
-<author surname="Van Meter" initials="R" />
-<author surname="Lukin" initials="M.D" />
-
-<date year="2009" />
-</front>
-<seriesInfo name="Physical Review A" value="Vol. 79, Iss. 3, pp. 032325" />
-</reference>
-
-<reference anchor="Gottesman12" target="https://arxiv.org/abs/1107.2939">
-<front>
-<title>Longer-baseline telescopes using quantum repeaters</title>
-
-<author surname="Gottesman" initials="D" />
-<author surname="Jennewein" initials="T" />
-<author surname="Croke" initials="S" />
-
-<date year="2012" />
-</front>
-<seriesInfo name="Physical Review Letters" value="Vol. 109, Iss. 7, pp. 070503" />
-</reference>
-
-<reference anchor="ZOO" target="https://wiki.veriqloud.fr/">
-<front>
-<title>The Quantum Protocol Zoo</title>
-
-<author />
-
-<date year="" />
-
-</front>
-</reference>
-
-<reference anchor="Dur07" target="https://arxiv.org/abs/0705.4165">
-<front>
-<title>Entanglement purification and quantum error correction</title>
-
-<author surname="Duer" initials="W" />
-<author surname="Briegel" initials="H.J" />
-
-<date year="2007" />
-</front>
-<seriesInfo name="Reports on Progress in Physics" value="Vol. 70, Iss. 8, pp. 1381-1424" />
-</reference>
-
-<reference anchor="Kimble08" target="http://arxiv.org/abs/0806.4195">
-<front>
-<title>The Quantum Internet</title>
-
-<author surname="Kimble" initials="H.J" />
-
-<date year="2008" />
-</front>
-<seriesInfo name="Nature" value="Vol. 453, Iss. 7198, pp. 1023-1030" />
-</reference>
-
-<reference anchor="Devitt13" target="https://arxiv.org/abs/0905.2794">
-<front>
-<title>Quantum error correction for beginners</title>
-
-<author surname="Devitt" initials="S.J" />
-<author surname="Nemoto" initials="K" />
-<author surname="Munro" initials="W.J" />
-
-<date year="2013" />
-</front>
-<seriesInfo name="Reports on Progress in Physics" value="Vol. 76, Iss. 7, pp. 076001" />
-</reference>
-
-<reference anchor="Sangouard11" target="https://arxiv.org/abs/0906.2699">
-<front>
-<title>Quantum repeaters based on atomic ensembles and linear optics</title>
-
-<author surname="Sangouard" initials="N" />
-<author surname="Simon" initials="C" />
-<author surname="de Riedmatten" initials="H" />
-<author surname="Gisin" initials="N" />
-
-<date year="2011" />
-</front>
-<seriesInfo name="Reviews of Modern Physics" value="Vol. 83, Iss. 1, pp. 33-80" />
-</reference>
-
-<reference anchor="Abobeih18" target="https://arxiv.org/abs/1801.01196">
-<front>
-<title>One-second coherence for a single electron spin coupled to a multi-qubit nuclear-spin environment</title>
-
-<author surname="Abobeih" initials="M.H" />
-<author surname="Cramer" initials="J" />
-<author surname="Bakker" initials="M.A" />
-<author surname="Kalb" initials="N" />
-<author surname="Markham" initials="M" />
-<author surname="Twitchen" initials="D.J" />
-<author surname="Taminiau" initials="T.H" />
-
-<date year="2018" />
-</front>
-<seriesInfo name="Nature communications" value="Vol. 9, Iss. 1, pp. 1-8" />
-</reference>
-
-<reference anchor="Bradley19" target="https://arxiv.org/abs/1905.02094">
-<front>
-<title>A 10-qubit solid-state spin register with quantum memory up to one minute</title>
-
-<author surname="Bradley" initials="C.E" />
-<author surname="Randall" initials="J" />
-<author surname="Abobeih" initials="M.H" />
-<author surname="Berrevoets" initials="R.C" />
-<author surname="Degen" initials="M.J" />
-<author surname="Bakker" initials="M.A" />
-<author surname="Markham" initials="M" />
-<author surname="Twitchen" initials="D.J" />
-<author surname="Taminiau" initials="T.H" />
-
-<date year="2019" />
-</front>
-<seriesInfo name="Physical Review X" value="Vol. 9, Iss. 3, pp. 031045" />
-</reference>
-
-<reference anchor="Nagayama16" target="https://arxiv.org/abs/1508.04599">
-<front>
-<title>Interoperability in encoded quantum repeater networks</title>
-
-<author surname="Nagayama" initials="S" />
-<author surname="Choi" initials="B.-S" />
-<author surname="Devitt" initials="S" />
-<author surname="Suzuki" initials="S" />
-<author surname="Van Meter" initials="R" />
-
-<date year="2016" />
-</front>
-<seriesInfo name="Physical Review A" value="Vol. 93, Iss. 4, pp. 042338" />
-</reference>
-
-<reference anchor="Elliott03" target="https://arxiv.org/abs/quant-ph/0307049">
-<front>
-<title>Quantum cryptography in practice</title>
-
-<author surname="Elliott" initials="C" />
-<author surname="Pearson" initials="D" />
-<author surname="Troxel" initials="G" />
-
-<date year="2003" />
-</front>
-<seriesInfo name="Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications" value="pp. 227-238" />
-</reference>
-
-</references>
-
-</back>
+     <reference anchor="Pompili21" target="https://arxiv.org/abs/2102.04471">
+       <front>
+         <title>Realization of a multi-node quantum network of remote solid-state qubits</title>
+
+         <author initials="M" surname="Pompili" />
+         <author initials="S.L.N" surname="Hermans" />
+         <author initials="S" surname="Baier" />
+         <author initials="H.K.C" surname="Beukers" />
+         <author initials="P.C" surname="Humphreys" />
+         <author initials="R.N" surname="Schouten" />
+         <author initials="R.F.L" surname="Vermeulen" />
+         <author initials="M.J" surname="Tiggelman" />
+         <author initials="L" surname="dos Santos Martins" />
+         <author initials="B" surname="Dirkse" />
+         <author initials="S" surname="Wehner" />
+         <author initials="R" surname="Hanson" />
+
+         <date year="2021" />
+       </front>
+       <seriesInfo name="Science" value="Vol. 372, Iss. 6539, pp. 259-264" />
+     </reference>
+
+     <reference anchor="Bennett14" target="https://arxiv.org/abs/2003.06557">
+       <front>
+         <title>Quantum cryptography: Public key distribution and coin tossing</title>
+
+         <author initials="C.H" surname="Bennett" />
+         <author initials="G" surname="Brassard" />
+
+         <date year="2014" />
+       </front>
+       <seriesInfo name="Theoretical Computer Science" value="Vol. 560 (Part 1), pp. 7-11" />
+     </reference>
+
+     <reference anchor="Ekert91" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.67.661">
+       <front>
+         <title>Quantum cryptography based on Bell's theorem</title>
+
+         <author initials="A.K" surname="Ekert" />
+
+         <date year="1991" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 67, Iss. 6, pp. 661-663" />
+     </reference>
+
+     <reference anchor="Crepeau02" target="https://arxiv.org/abs/quant-ph/0206138">
+       <front>
+         <title>Secure multi-party quantum computation</title>
+
+         <author initials="C" surname="Crepeau" />
+         <author initials="D" surname="Gottesman" />
+         <author initials="A" surname="Smith" />
+
+         <date year="2002" />
+       </front>
+       <seriesInfo name="Proceedings of the thiry-fourth annual ACM symposium on Theory of computing" value="pp. 643-652" />
+     </reference>
+
+     <reference anchor="Giovanetti04" target="https://arxiv.org/abs/quant-ph/0412078">
+       <front>
+         <title>Quantum-enhanced measurements: beating the standard quantum limit</title>
+
+         <author initials="V" surname="Giovanetti" />
+         <author initials="S" surname="Lloyd" />
+         <author initials="L" surname="Maccone" />
+
+         <date year="2004" />
+       </front>
+       <seriesInfo name="Science" value="Vol. 306, Iss. 5700, pp. 1330-1336" />
+     </reference>
+
+     <reference anchor="Castelvecchi18" target="https://www.nature.com/articles/d41586-018-01835-3">
+       <front>
+         <title>The Quantum Internet has arrived (and it hasn't)</title>
+
+         <author initials="D" surname="Castelvecchi" />
+
+         <date year="2018" />
+       </front>
+       <seriesInfo name="Nature" value="Vol. 554, pp. 289-292" />
+     </reference>
+
+     <reference anchor="Wehner18" target="http://science.sciencemag.org/content/362/6412/eaam9288.full">
+       <front>
+         <title>Quantum internet: A vision for the road ahead</title>
+
+         <author initials="S" surname="Wehner" />
+         <author initials="D" surname="Elkouss" />
+         <author initials="R" surname="Hanson" />
+
+         <date year="2018" />
+       </front>
+       <seriesInfo name="Science" value="Vol. 362, Iss. 6412" />
+     </reference>
+
+     <reference anchor="Aspect81" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.47.460">
+       <front>
+         <title>Experimental tests of realistic local theories via Bell's theorem</title>
+
+         <author initials="A" surname="Aspect" />
+         <author initials="P" surname="Grangier" />
+         <author initials="G" surname="Roger" />
+
+         <date year="1981" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 47, Iss. 7, pp. 460-463" />
+     </reference>
+
+     <reference anchor="Mural16" target="https://www.nature.com/articles/srep20463">
+       <front>
+         <title>Optimal architectures for long distance quantum communication</title>
+
+         <author initials="S" surname="Muralidharan" />
+         <author initials="L" surname="Li" />
+         <author initials="J" surname="Kim" />
+         <author initials="N" surname="Lutkenhaus" />
+         <author initials="M" surname="Lukin" />
+         <author initials="L" surname="Jiang" />
+
+         <date year="2016" />
+       </front>
+       <seriesInfo name="Scientific Reports" value="Vol. 6, Iss. 1, pp. 1-10" />
+     </reference>
+
+     <reference anchor="VanMeter13.1" target="https://ieeexplore.ieee.org/document/6576340">
+       <front>
+         <title>Designing quantum repeater networks</title>
+
+         <author initials="R" surname="Van Meter" />
+         <author initials="J" surname="Touch" />
+
+         <date year="2013" />
+       </front>
+       <seriesInfo name="IEEE Communications Magazine" value="Vol. 51, Iss. 8, pp. 64-71" />
+     </reference>
+
+     <reference anchor="Satoh20" target="https://arxiv.org/abs/2005.04617">
+       <front>
+         <title>Attacking the quantum internet</title>
+
+         <author initials="T" surname="Satoh" />
+         <author initials="S" surname="Nagayama" />
+         <author initials="S" surname="Suzuki" />
+         <author initials="T" surname="Matsuo" />
+         <author initials="R" surname="Van Meter" />
+
+         <date year="2020" />
+       </front>
+       <seriesInfo name="arXiv" value="2005.04617" />
+     </reference>
+
+     <reference anchor="Satoh17" target="https://arxiv.org/abs/1701.04587">
+       <front>
+         <title>The network impact of hijacking a quantum repeater</title>
+
+         <author initials="T" surname="Satoh" />
+         <author initials="S" surname="Nagayama" />
+         <author initials="R" surname="Van Meter" />
+
+         <date year="2017" />
+       </front>
+       <seriesInfo name="Quantum Science and Technology" value="Vol. 3, Iss. 3, pp. 034008" />
+     </reference>
+
+     <reference anchor="Dahlberg19" target="https://arxiv.org/abs/1903.09778">
+       <front>
+         <title>A link layer protocol for quantum networks</title>
+
+         <author initials="A" surname="Dahlberg" />
+         <author initials="M" surname="Skrzypczyk" />
+         <author initials="T" surname="Coopmans" />
+         <author initials="L" surname="Wubben" />
+         <author initials="F" surname="Rozpedek" />
+         <author initials="M" surname="Pompili" />
+         <author initials="A" surname="Stolk" />
+         <author initials="P" surname="Pawelczak" />
+         <author initials="R" surname="Knegjens" />
+         <author initials="J" surname="de Oliveira Filho" />
+         <author initials="R" surname="Hanson" />
+         <author initials="S" surname="Wehner" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="Proceedings of the ACM Special Interest Group on Data Communication" value="pp. 159-173" />
+     </reference>
+
+     <reference anchor="SutorBook">
+       <front>
+         <title>Dancing with Qubits</title>
+
+         <author initials="R.S" surname="Sutor" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="Packt Publishing" value="" />
+     </reference>
+
+
+     <reference anchor="NielsenChuang">
+       <front>
+         <title>Quantum Computation and Quantum Information</title>
+
+         <author initials="M.A" surname="Nielsen" />
+         <author initials="I.L" surname="Chuang" />
+
+         <date year="2011" />
+       </front>
+       <seriesInfo name="Cambridge University Press" value="" />
+     </reference>
+
+     <reference anchor="Bennett96" target="https://arxiv.org/abs/quant-ph/9604024">
+       <front>
+         <title>Mixed state entanglement and quantum error correction</title>
+
+         <author initials="C.H" surname="Bennett" />
+         <author initials="D.P" surname="DiVincenzo" />
+         <author initials="J.A" surname="Smolin" />
+         <author initials="W.K" surname="Wootters" />
+
+         <date year="1996" />
+       </front>
+       <seriesInfo name="Physical Review A" value="Vol. 54, Iss. 5, pp. 3824-3851" />
+     </reference>
+
+     <reference anchor="Bennett93" target="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.70.1895">
+       <front>
+         <title>Teleporting an unknown quantum state via dual classical and Einstein-Podolsky-Rosen channels</title>
+
+         <author initials="C.H" surname="Bennett" />
+         <author initials="G" surname="Brassard" />
+         <author initials="C" surname="Crepeau" />
+         <author initials="R" surname="Jozsa" />
+         <author initials="A" surname="Peres" />
+         <author initials="W.K" surname="Wootters" />
+
+         <date year="1993" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 70, Iss. 13, pp. 1895-1899" />
+     </reference>
+
+     <reference anchor="Briegel98" target="https://arxiv.org/abs/quant-ph/9803056">
+       <front>
+         <title>Quantum repeaters: The role of imperfect local operations in quantum communication</title>
+
+         <author initials="H.-J" surname="Briegel" />
+         <author initials="W" surname="Dur" />
+         <author initials="J.I" surname="Cirac" />
+         <author initials="P" surname="Zoller" />
+
+         <date year="1998" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 81, Iss. 26, pp. 5932-5935" />
+     </reference>
+
+     <reference anchor="Cacciapuoti19" target="https://arxiv.org/abs/1907.06197">
+       <front>
+         <title>When Entanglement meets Classical Communications: Quantum Teleportation for the Quantum Internet</title>
+
+         <author initials="A.S" surname="Cacciapuoti" />
+         <author initials="M" surname="Caleffi" />
+         <author initials="R" surname="Van Meter" />
+         <author initials="L" surname="Hanzo" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="IEEE Transactions on Communications" value="Vol. 68, Iss. 6, pp. 3808-3833" />
+     </reference>
+
+     <reference anchor="Meignant19" target="https://arxiv.org/abs/1811.05445">
+       <front>
+         <title>Distributing graph states over arbitrary quantum networks</title>
+
+         <author initials="C" surname="Meignant" />
+         <author initials="D" surname="Markham" />
+         <author initials="F" surname="Grosshans" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="Physical Review A" value="Vol. 100, Iss. 5, pp. 052333" />
+     </reference>
+
+     <reference anchor="VanMeter13.2" target="https://arxiv.org/abs/1206.5655">
+       <front>
+         <title>Path selection for quantum repeater networks</title>
+
+         <author initials="R" surname="Van Meter" />
+         <author initials="T" surname="Satoh" />
+         <author initials="T.D" surname="Ladd" />
+         <author initials="W.J" surname="Munro" />
+         <author initials="K" surname="Nemoto" />
+
+         <date year="2013" />
+       </front>
+       <seriesInfo name="Networking Science" value="Vol. 3, Iss. 1-4, pp. 82-95" />
+     </reference>
+
+     <reference anchor="Clark88" target="https://dl.acm.org/doi/abs/10.1145/52324.52336">
+       <front>
+         <title>The design philosophy of the DARPA internet protocols</title>
+
+         <author initials="D" surname="Clark" />
+
+         <date year="1988" />
+       </front>
+       <seriesInfo name="Symposium proceedings on Communications architectures and protocols" value="pp. 106-114" />
+     </reference>
+
+     <reference anchor="VanMeterBook">
+       <front>
+         <title>Quantum Networking</title>
+
+         <author initials="R" surname="Van Meter" />
+
+         <date year="2014" />
+       </front>
+       <seriesInfo name="ISTE Ltd/John Wiley and Sons Inc" value="978-1-84821-537-5" />
+     </reference>
+
+     <reference anchor="Aguado19" target="http://arxiv.org/abs/1907.00174">
+       <front>
+         <title>The engineering of software-defined quantum key distribution networks</title>
+
+         <author initials="A" surname="Aguado" />
+         <author initials="V" surname="Lopez" />
+         <author initials="D" surname="Diego" />
+         <author initials="M" surname="Peev" />
+         <author initials="A" surname="Poppe" />
+         <author initials="A" surname="Pastor" />
+         <author initials="J" surname="Folgueira" />
+         <author initials="M" surname="Vicente" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="IEEE Communications Magazine" value="Vol. 57, Iss. 7, pp. 20-26" />
+     </reference>
+
+     <reference anchor="Peev09" target="http://stacks.iop.org/1367-2630/11/i=7/a=075001">
+       <front>
+         <title>The SECOQC quantum key distribution network in Vienna</title>
+
+         <author surname="Peev" initials="M" />
+         <author surname="Pacher" initials="C" />
+         <author surname="Alleaume" initials="R" />
+         <author surname="Barreiro" initials="C" />
+         <author surname="Bouda" initials="J" />
+         <author surname="Boxleitner" initials="W" />
+         <author surname="Debuisschert" initials="T" />
+         <author surname="Diamanti" initials="E" />
+         <author surname="Dianati" initials="M" />
+         <author surname="Dynes" initials="J.F" />
+         <author surname="Fasel" initials="S" />
+         <author surname="Fossier" initials="S" />
+         <author surname="Fuerst" initials="M" />
+         <author surname="Gautier" initials="J.-D" />
+         <author surname="Gay" initials="O" />
+         <author surname="Gisin" initials="N" />
+         <author surname="Grangier" initials="P" />
+         <author surname="Happe" initials="A" />
+         <author surname="Hasani" initials="Y" />
+         <author surname="Hentschel" initials="M" />
+         <author surname="Huebel" initials="H" />
+         <author surname="Humer" initials="G" />
+         <author surname="Laenger" initials="T" />
+         <author surname="Legre" initials="M" />
+         <author surname="Lieger" initials="R" />
+         <author surname="Lodewyck" initials="J" />
+         <author surname="Loruenser" initials="T" />
+         <author surname="Luetkenhaus" initials="N" />
+         <author surname="Marhold" initials="A" />
+         <author surname="Matyus" initials="T" />
+         <author surname="Maurhart" initials="O" />
+         <author surname="Monat" initials="L" />
+         <author surname="Nauerth" initials="S" />
+         <author surname="Page" initials="J.-B" />
+         <author surname="Poppe" initials="A" />
+         <author surname="Querasser" initials="E" />
+         <author surname="Ribordy" initials="G" />
+         <author surname="Robyr" initials="S" />
+         <author surname="Salvail" initials="L" />
+         <author surname="Sharpe" initials="A.W" />
+         <author surname="Shields" initials="A.J" />
+         <author surname="Stucki" initials="D" />
+         <author surname="Suda" initials="M" />
+         <author surname="Tamas" initials="C" />
+         <author surname="Themel" initials="T" />
+         <author surname="Thew" initials="R.T" />
+         <author surname="Thoma" initials="Y" />
+         <author surname="Treiber" initials="A" />
+         <author surname="Trinkler" initials="P" />
+         <author surname="Tualle-Brouri" initials="R" />
+         <author surname="Vannel" initials="F" />
+         <author surname="Walenta" initials="N" />
+         <author surname="Weier" initials="H" />
+         <author surname="Weinfurter" initials="H" />
+         <author surname="Wimberger" initials="I" />
+         <author surname="Yuan" initials="Z.L" />
+         <author surname="Zbinden" initials="H" />
+         <author surname="Zeilinger" initials="A" />
+
+         <date year="2009" />
+       </front>
+       <seriesInfo name="New Journal of Physics" value="Vol. 11, Iss. 7, pp. 075001" />
+     </reference>
+
+     <reference anchor="Hensen15" target="https://arxiv.org/abs/1508.05949">
+       <front>
+         <title>Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres</title>
+
+         <author surname="Hensen" initials="B" />
+         <author surname="Bernien" initials="H" />
+         <author surname="Dreau" initials="A.E" />
+         <author surname="Reiserer" initials="A" />
+         <author surname="Kalb" initials="N" />
+         <author surname="Blok" initials="M.S" />
+         <author surname="Ruitenberg" initials="J" />
+         <author surname="Vermeulen" initials="R.F.L" />
+         <author surname="Schouten" initials="R.N" />
+         <author surname="Abellan" initials="C" />
+         <author surname="Amaya" initials="W" />
+         <author surname="Pruneri" initials="V" />
+         <author surname="Mitchell" initials="M.W" />
+         <author surname="Markham" initials="M" />
+         <author surname="Twitchen" initials="D.J" />
+         <author surname="Elkouss" initials="D" />
+         <author surname="Wehner" initials="S" />
+         <author surname="Taminiau" initials="T.H" />
+         <author surname="Hanson" initials="R" />
+
+         <date year="2015" />
+       </front>
+       <seriesInfo name="Nature" value="Vol. 526, Iss. 7575, pp. 682-686" />
+     </reference>
+
+     <reference anchor="Fitzsimons17" target="https://arxiv.org/abs/1203.5217">
+       <front>
+         <title>Unconditionally verifiable blind quantum computation</title>
+
+         <author surname="Fitzsimons" initials="J.F" />
+         <author surname="Kashefi" initials="E" />
+
+         <date year="2017" />
+       </front>
+       <seriesInfo name="Physical Review A" value="Vol. 96, Iss. 1, pp. 012303" />
+     </reference>
+
+     <reference anchor="Terhal04" target="https://ieeexplore.ieee.org/document/5388928">
+       <front>
+         <title>Is entanglement monogamous?</title>
+
+         <author surname="Terhal" initials="B.M" />
+
+         <date year="2004" />
+       </front>
+       <seriesInfo name="IBM Journal of Research and Development" value="Vol. 48, Iss. 1, pp. 71-78" />
+     </reference>
+
+     <reference anchor="Park70" target="https://link.springer.com/content/pdf/10.1007/BF00708652.pdf">
+       <front>
+         <title>The concept of transition in quantum mechanics</title>
+
+         <author surname="Park" initials="J.L" />
+
+         <date year="1970" />
+       </front>
+       <seriesInfo name="Foundations of Physics" value="Vol. 1, Iss. 1, pp. 23-33" />
+     </reference>
+
+     <reference anchor="Wootters82" target="https://www.nature.com/articles/299802a0">
+       <front>
+         <title>A single quantum cannot be cloned</title>
+
+         <author surname="Wootters" initials="W.K" />
+         <author surname="Zurek" initials="W.H" />
+
+         <date year="1982" />
+       </front>
+       <seriesInfo name="Nature" value="Vol. 299, Iss. 5886, pp. 802-803" />
+     </reference>
+
+     <reference anchor="Fowler10" target="https://arxiv.org/abs/0910.4074">
+       <front>
+         <title>Surface code quantum communication</title>
+
+         <author surname="Fowler" initials="A.G" />
+         <author surname="Wang" initials="D.S" />
+         <author surname="Hill" initials="C.D" />
+         <author surname="Ladd" initials="T.D" />
+         <author surname="Van Meter" initials="R" />
+         <author surname="Hollenberg" initials="L.C.L" />
+
+         <date year="2010" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 104, Iss. 18, pp. 180503" />
+     </reference>
+
+     <reference anchor="Jiang09" target="https://arxiv.org/abs/0809.3629">
+       <front>
+         <title>Quantum repeater with encoding</title>
+
+         <author surname="Jiang" initials="L" />
+         <author surname="Taylor" initials="J.M" />
+         <author surname="Nemoto" initials="K" />
+         <author surname="Munro" initials="W.J" />
+         <author surname="Van Meter" initials="R" />
+         <author surname="Lukin" initials="M.D" />
+
+         <date year="2009" />
+       </front>
+       <seriesInfo name="Physical Review A" value="Vol. 79, Iss. 3, pp. 032325" />
+     </reference>
+
+     <reference anchor="Gottesman12" target="https://arxiv.org/abs/1107.2939">
+       <front>
+         <title>Longer-baseline telescopes using quantum repeaters</title>
+
+         <author surname="Gottesman" initials="D" />
+         <author surname="Jennewein" initials="T" />
+         <author surname="Croke" initials="S" />
+
+         <date year="2012" />
+       </front>
+       <seriesInfo name="Physical Review Letters" value="Vol. 109, Iss. 7, pp. 070503" />
+     </reference>
+
+     <reference anchor="ZOO" target="https://wiki.veriqloud.fr/">
+       <front>
+         <title>The Quantum Protocol Zoo</title>
+
+         <author />
+
+         <date year="" />
+
+       </front>
+     </reference>
+
+     <reference anchor="Dur07" target="https://arxiv.org/abs/0705.4165">
+       <front>
+         <title>Entanglement purification and quantum error correction</title>
+
+         <author surname="Duer" initials="W" />
+         <author surname="Briegel" initials="H.J" />
+
+         <date year="2007" />
+       </front>
+       <seriesInfo name="Reports on Progress in Physics" value="Vol. 70, Iss. 8, pp. 1381-1424" />
+     </reference>
+
+     <reference anchor="Kimble08" target="http://arxiv.org/abs/0806.4195">
+       <front>
+         <title>The Quantum Internet</title>
+
+         <author surname="Kimble" initials="H.J" />
+
+         <date year="2008" />
+       </front>
+       <seriesInfo name="Nature" value="Vol. 453, Iss. 7198, pp. 1023-1030" />
+     </reference>
+
+     <reference anchor="Devitt13" target="https://arxiv.org/abs/0905.2794">
+       <front>
+         <title>Quantum error correction for beginners</title>
+
+         <author surname="Devitt" initials="S.J" />
+         <author surname="Nemoto" initials="K" />
+         <author surname="Munro" initials="W.J" />
+
+         <date year="2013" />
+       </front>
+       <seriesInfo name="Reports on Progress in Physics" value="Vol. 76, Iss. 7, pp. 076001" />
+     </reference>
+
+     <reference anchor="Sangouard11" target="https://arxiv.org/abs/0906.2699">
+       <front>
+         <title>Quantum repeaters based on atomic ensembles and linear optics</title>
+
+         <author surname="Sangouard" initials="N" />
+         <author surname="Simon" initials="C" />
+         <author surname="de Riedmatten" initials="H" />
+         <author surname="Gisin" initials="N" />
+
+         <date year="2011" />
+       </front>
+       <seriesInfo name="Reviews of Modern Physics" value="Vol. 83, Iss. 1, pp. 33-80" />
+     </reference>
+
+     <reference anchor="Abobeih18" target="https://arxiv.org/abs/1801.01196">
+       <front>
+         <title>One-second coherence for a single electron spin coupled to a multi-qubit nuclear-spin environment</title>
+
+         <author surname="Abobeih" initials="M.H" />
+         <author surname="Cramer" initials="J" />
+         <author surname="Bakker" initials="M.A" />
+         <author surname="Kalb" initials="N" />
+         <author surname="Markham" initials="M" />
+         <author surname="Twitchen" initials="D.J" />
+         <author surname="Taminiau" initials="T.H" />
+
+         <date year="2018" />
+       </front>
+       <seriesInfo name="Nature communications" value="Vol. 9, Iss. 1, pp. 1-8" />
+     </reference>
+
+     <reference anchor="Bradley19" target="https://arxiv.org/abs/1905.02094">
+       <front>
+         <title>A 10-qubit solid-state spin register with quantum memory up to one minute</title>
+
+         <author surname="Bradley" initials="C.E" />
+         <author surname="Randall" initials="J" />
+         <author surname="Abobeih" initials="M.H" />
+         <author surname="Berrevoets" initials="R.C" />
+         <author surname="Degen" initials="M.J" />
+         <author surname="Bakker" initials="M.A" />
+         <author surname="Markham" initials="M" />
+         <author surname="Twitchen" initials="D.J" />
+         <author surname="Taminiau" initials="T.H" />
+
+         <date year="2019" />
+       </front>
+       <seriesInfo name="Physical Review X" value="Vol. 9, Iss. 3, pp. 031045" />
+     </reference>
+
+     <reference anchor="Nagayama16" target="https://arxiv.org/abs/1508.04599">
+       <front>
+         <title>Interoperability in encoded quantum repeater networks</title>
+
+         <author surname="Nagayama" initials="S" />
+         <author surname="Choi" initials="B.-S" />
+         <author surname="Devitt" initials="S" />
+         <author surname="Suzuki" initials="S" />
+         <author surname="Van Meter" initials="R" />
+
+         <date year="2016" />
+       </front>
+       <seriesInfo name="Physical Review A" value="Vol. 93, Iss. 4, pp. 042338" />
+     </reference>
+
+     <reference anchor="Elliott03" target="https://arxiv.org/abs/quant-ph/0307049">
+       <front>
+         <title>Quantum cryptography in practice</title>
+
+         <author surname="Elliott" initials="C" />
+         <author surname="Pearson" initials="D" />
+         <author surname="Troxel" initials="G" />
+
+         <date year="2003" />
+       </front>
+       <seriesInfo name="Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications" value="pp. 227-238" />
+     </reference>
+
+   </references>
+
+ </back>
 </rfc>

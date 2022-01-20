@@ -217,7 +217,7 @@
         keywords will be used for the search engine. -->
 
    <abstract>
-     <t>The vision of a quantum Internet is to enhance existing Internet
+     <t>The vision of a quantum internet is to enhance existing Internet
      technology by enabling quantum communication between any two points on
      Earth. To achieve this goal, a quantum network stack should be built from
      the ground up to account for the fundamentally new properties of quantum
@@ -247,8 +247,9 @@
      to replace classical networks, but rather form an overall hybrid
      classical-quantum network supporting new capabilities which are
      otherwise impossible to realise <xref target="VanMeterBook" />,
-     such as clustered or distributed quantum computing, quantum 
-     secure communications, and distributed quantum sensing.</t>
+     such as clustered or distributed quantum computing, blind
+     quantum computing, quantum secure communications, clock
+     synchronization, and distributed quantum sensing.</t>
 
      <t>The quantum networking paradigm offers promise for a range of new
      applications such as quantum cryptography <xref target="Bennett14" />
@@ -266,8 +267,8 @@
      <t>The first fully quantum networks capable of transmitting and managing
      entangled quantum states (defined in <xref target="entanglement" />) in order
      to send, receive, and manipulate distributed quantum information have 
-     recently been realized <xref target="Pompili21" />
-     <xref target="Castelvecchi18" /> <xref target="Wehner18" />. 
+     recently been realized <xref target="Pompili21" />.
+
      Whilst a lot of effort has gone into physically
      realising and connecting such devices <xref target="Hensen15" />, and
      making improvements to their speed and error tolerance, there are no
@@ -1026,9 +1027,9 @@
            networks, we do not need to care about the order in which the Bell
            pairs were generated since they are undirected. This distinction
            makes control algorithms and optimisation of quantum networks
-           different from classical ones, in the sense that they are more akin
-           to a stateful distributed computation than stateless packet-by-packet
-           forwarding. Note that third generation quantum
+           different from classical ones, in the sense that swapping is stateful
+           in contrast to stateless packet-by-packet forwarding. Note that 
+           third generation quantum
            networks, as described in <xref target="elg" />, will be able
            to support a "store and forward" architecture in addition to "store
            and swap".</t>
@@ -1638,12 +1639,16 @@ QR - classical repeater
            quantum applications are built on top of this key resource. 
            Applications such as clustered quantum computing, distributed quantum
            computing, distributed quantum sensing networks, and certain kinds of
-           quantum secure networks require the distribution of quantum state;
-           the distribution of classical state alone is not sufficient.
-           Currently, the only feasible way of reliably distributing quantum state
-           is using teleportation, which requires distribution of entanglement.
-           pairs are the minimal entanglement building block that is sufficient
-           to develop these applications. However, a quantum network may also
+           quantum secure networks all consume quantum entanglement as a resource.
+           Some applications (e.g. quantum key distribution) simply measure the
+           entangled qubits to obtain a shared secret key.
+           Other applications (e.g. distributed quantum computing) build more
+           complex abstractions and operations on the entangled qubits, e.g.,
+           distributed CNOT gates <xref target="DistCNOT" />
+           or teleportation of arbitrary qubit states
+           <xref target="Teleportation" />.
+
+           A quantum network may also
            distribute multipartite entangled states (entangled states of three
            or more qubits) <xref target="Meignant19" /> as this may be more
            efficient under certain circumstances.</t>
@@ -1931,17 +1936,6 @@ QR - classical repeater
          <date year="2004" />
        </front>
        <seriesInfo name="Science" value="Vol. 306, Iss. 5700, pp. 1330-1336" />
-     </reference>
-
-     <reference anchor="Castelvecchi18" target="https://www.nature.com/articles/d41586-018-01835-3">
-       <front>
-         <title>The Quantum Internet has arrived (and it hasn't)</title>
-
-         <author initials="D" surname="Castelvecchi" />
-
-         <date year="2018" />
-       </front>
-       <seriesInfo name="Nature" value="Vol. 554, pp. 289-292" />
      </reference>
 
      <reference anchor="Wehner18" target="http://science.sciencemag.org/content/362/6412/eaam9288.full">
@@ -2511,6 +2505,23 @@ QR - classical repeater
        <seriesInfo name="Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications" value="pp. 227-238" />
      </reference>
 
+     <reference anchor="DistCNOT" target="https://www.quantum-network.com/applications/distributed-cnot/">
+       <front>
+         <title>Distributed CNOT</title>
+         <date year="2021" />
+       </front>
+       <seriesInfo name="Quantum Network Explorer webpage" />
+     </reference>
+
+     <reference anchor="Teleportation" target="https://www.quantum-network.com/applications/state-teleportation/">
+       <front>
+         <title>State teleportation</title>
+         <date year="2021" />
+       </front>
+       <seriesInfo name="Quantum Network Explorer webpage" />
+     </reference>
+
+https://www.quantum-network.com/applications/distributed-cnot/
    </references>
 
  </back>

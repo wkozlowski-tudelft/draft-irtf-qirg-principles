@@ -588,7 +588,8 @@
          demands on both resources (physical qubits needed) and their initial
          fidelity. Implementation is very challenging and quantum error
          correction is not expected to be used until later generations of
-         quantum networks. Until then, quantum networks rely on entanglement
+         quantum networks (see <xref target="Mural16" /> figure 2). 
+         Until then, quantum networks rely on entanglement
          swapping (<xref target="es" />) and teleportation
          (<xref target="teleportation" />).</t>
 

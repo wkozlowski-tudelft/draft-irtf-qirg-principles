@@ -1313,7 +1313,9 @@ QR - classical repeater
          once the pair is generated. On the other hand, nitrogen-vacancy based
          hardware <xref target="Hensen15" /> offers a much greater degree
          of control over qubits, but have a harder time generating the
-         entanglement across a link.</t>
+         entanglement across a link. Yet another approach, with its own
+         set of pros and cons, is ion-trap based hardware 
+         <xref target="Moehring07" /></t>
 
          <t>It is an open research question where exactly the boundary will
          lie. It could be that a single quantum repeater node provides some
@@ -2537,6 +2539,21 @@ QR - classical repeater
          <date year="2021" />
        </front>
        <seriesInfo name="arXiv:1707.03429 [quant-ph]" />
+     </reference>
+
+     <reference anchor="Moehring07" target=https://www.nature.com/articles/nature06118">
+       <front>
+         <title>Entanglement of single-atom quantum bits at a distance</title>
+         <author surname="Moehring" initials="D.L" />
+         <author surname="Maunz" initials="P" />
+         <author surname="Olmschenk" initials="S" />
+         <author surname="Younge" initials="K.C" />
+         <author surname="Matsukevich" initials="D.N" />
+         <author surname="Duan" initials="L.M" />
+         <author surname="Monroe" initials="C" />
+         <date year="2007" />
+       </front>
+       <seriesInfo name="Nature" value="Iss. 449, pp. 68-71" />
      </reference>
 
    </references>

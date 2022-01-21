@@ -275,8 +275,9 @@
      with a classical network, we are at a stage where we can start to
      physically connect our devices and send data, but all sending, receiving,
      buffer management, connection synchronisation, and so on, must be managed
-     by the application itself rather than being managed by the network stack.
-     where no common interfaces yet exist. Furthermore, whilst physical
+     by the application using low-level instructions sets, such as
+     quantum assembly (QASM) languages <xref target="Cross21" />, rather than
+     being managed by the network stack. Furthermore, whilst physical
      mechanisms for transmitting quantum states exist, there are no robust
      protocols for managing such transmissions.</t>
 
@@ -2520,7 +2521,24 @@ QR - classical repeater
        <seriesInfo name="Quantum Network Explorer webpage" />
      </reference>
 
-https://www.quantum-network.com/applications/distributed-cnot/
+     <reference anchor="Cross21" target="https://arxiv.org/pdf/2104.14722.pdf">
+       <front>
+         <title>OpenQASM 3: A broader and deeper quantum assembly language</title>
+         <author surname="Elliott" initials="C" />
+         <author surname="Javadi-Abhari" initials="A" />
+         <author surname="Alexander" initials="T" />
+         <author surname="de Beaudrap" initials="N" />
+         <author surname="Bishop" initials="L.S" />
+         <author surname="Heidel" initials="S" />
+         <author surname="Ryan" initials="C.A" />
+         <author surname="Smolin" initials="J" />
+         <author surname="Gambetta" initials="J.M" />
+         <author surname="Johnson" initials="B.R" />
+         <date year="2021" />
+       </front>
+       <seriesInfo name="arXiv:1707.03429 [quant-ph]" />
+     </reference>
+
    </references>
 
  </back>

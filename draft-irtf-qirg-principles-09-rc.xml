@@ -264,9 +264,8 @@
      distances <xref target="Elliott03" /> <xref target="Peev09" /> <xref
      target="Aguado19" />.</t>
 
-     <t>The first fully quantum networks capable of transmitting and managing
-     entangled quantum states (defined in <xref target="entanglement" />) in order
-     to send, receive, and manipulate distributed quantum information have 
+     <t>The first fully quantum networks capable of
+     sending, receiving, and manipulating distributed quantum information have 
      recently been realized <xref target="Pompili21" />.
 
      Whilst a lot of effort has gone into physically

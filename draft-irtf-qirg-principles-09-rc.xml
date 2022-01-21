@@ -569,8 +569,8 @@
          its best to deliver it. A higher fidelity can be achieved by either
          having hardware produce states of better fidelity (sometimes one can
          sacrifice rate for higher fidelity) or by employing quantum error
-         detection and correction mechanisms (see <xref target="VanMeterBook" />
-         chapter 11).</t>
+         detection and correction mechanisms (see <xref target="Mural16" />
+         and <xref target="VanMeterBook" /> chapter 11).</t>
 
        </section>
 

@@ -553,9 +553,8 @@
          called fidelity is used <xref target="NielsenChuang" />. Fidelity takes a
          value between 0 and 1 -- higher is better, and less than 0.5 means the
          state is unusable. It measures how close a quantum state is to the
-         state we have tried to create. It expresses the probability measuring
-         the actual state yields the same result as measuring the desired target 
-         state.
+         state we have tried to create. It expresses the probability that 
+         the state will behave exactly the same as our desired state.
          Fidelity is an
          important property of a quantum system that allows us to quantify how
          much a particular state has been affected by noise from various

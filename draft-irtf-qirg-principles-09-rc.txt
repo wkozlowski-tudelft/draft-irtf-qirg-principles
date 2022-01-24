@@ -5,7 +5,7 @@
 Quantum Internet Research Group                             W. Kozlowski
 Internet-Draft                                                 S. Wehner
 Intended status: Informational                                    QuTech
-Expires: 17 July 2022                                       R. Van Meter
+Expires: 28 July 2022                                       R. Van Meter
                                                          Keio University
                                                               B. Rijsman
                                                               Individual
@@ -14,15 +14,15 @@ Expires: 17 July 2022                                       R. Van Meter
                                         University of Naples Federico II
                                                              S. Nagayama
                                                            Mercari, Inc.
-                                                         13 January 2022
+                                                         24 January 2022
 
 
             Architectural Principles for a Quantum Internet
-                     draft-irtf-qirg-principles-08
+                     draft-irtf-qirg-principles-09
 
 Abstract
 
-   The vision of a quantum Internet is to enhance existing Internet
+   The vision of a quantum internet is to enhance existing Internet
    technology by enabling quantum communication between any two points
    on Earth.  To achieve this goal, a quantum network stack should be
    built from the ground up to account for the fundamentally new
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                  [Page 1]
+Kozlowski, et al.         Expires 28 July 2022                  [Page 1]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
-   This Internet-Draft will expire on 17 July 2022.
+   This Internet-Draft will expire on 28 July 2022.
 
 Copyright Notice
 
@@ -81,13 +81,13 @@ Table of Contents
      2.1.  Qubit . . . . . . . . . . . . . . . . . . . . . . . . . .   4
      2.2.  Multiple qubits . . . . . . . . . . . . . . . . . . . . .   5
    3.  Entanglement as the fundamental resource  . . . . . . . . . .   7
-   4.  Achieving quantum connectivity  . . . . . . . . . . . . . . .   8
-     4.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .   8
+   4.  Achieving quantum connectivity  . . . . . . . . . . . . . . .   9
+     4.1.  Challenges  . . . . . . . . . . . . . . . . . . . . . . .   9
        4.1.1.  The measurement problem . . . . . . . . . . . . . . .   9
        4.1.2.  No-cloning theorem  . . . . . . . . . . . . . . . . .   9
-       4.1.3.  Fidelity  . . . . . . . . . . . . . . . . . . . . . .   9
+       4.1.3.  Fidelity  . . . . . . . . . . . . . . . . . . . . . .  10
        4.1.4.  Inadequacy of direct transmission . . . . . . . . . .  10
-     4.2.  Bell pairs  . . . . . . . . . . . . . . . . . . . . . . .  10
+     4.2.  Bell pairs  . . . . . . . . . . . . . . . . . . . . . . .  11
      4.3.  Teleportation . . . . . . . . . . . . . . . . . . . . . .  11
      4.4.  The life cycle of entanglement  . . . . . . . . . . . . .  12
        4.4.1.  Elementary link generation  . . . . . . . . . . . . .  12
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                  [Page 2]
+Kozlowski, et al.         Expires 28 July 2022                  [Page 2]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -123,10 +123,10 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        5.5.4.  Homogeneity . . . . . . . . . . . . . . . . . . . . .  25
    6.  Architectural principles  . . . . . . . . . . . . . . . . . .  26
      6.1.  Goals of a quantum internet . . . . . . . . . . . . . . .  26
-     6.2.  The principles of a quantum internet  . . . . . . . . . .  29
-   7.  A thought experiment inspired by classical networks . . . . .  31
-   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  33
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  33
+     6.2.  The principles of a quantum internet  . . . . . . . . . .  30
+   7.  A thought experiment inspired by classical networks . . . . .  32
+   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  34
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  34
    10. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  34
    11. Informative References  . . . . . . . . . . . . . . . . . . .  34
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  40
@@ -145,7 +145,8 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    rather form an overall hybrid classical-quantum network supporting
    new capabilities which are otherwise impossible to realise
    [VanMeterBook], such as clustered or distributed quantum computing,
-   quantum secure communications, and distributed quantum sensing.
+   blind quantum computing, quantum secure communications, clock
+   synchronization, and distributed quantum sensing.
 
    The quantum networking paradigm offers promise for a range of new
    applications such as quantum cryptography [Bennett14] [Ekert91],
@@ -158,29 +159,29 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    communications, has already been deployed at short (roughly 100km)
    distances [Elliott03] [Peev09] [Aguado19].
 
-   The first fully quantum networks capable of transmitting and managing
-   entangled quantum states (defined in Section 3) in order to send,
-   receive, and manipulate distributed quantum information have recently
-   been realized [Pompili21] [Castelvecchi18] [Wehner18].  Whilst a lot
+   The first fully quantum networks capable of sending, receiving, and
+   manipulating distributed quantum information have recently been
+   realized [Pompili21].  Whilst a lot of effort has gone into
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                  [Page 3]
+Kozlowski, et al.         Expires 28 July 2022                  [Page 3]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
-   of effort has gone into physically realising and connecting such
-   devices [Hensen15], and making improvements to their speed and error
-   tolerance, there are no worked out proposals for how to run these
-   networks.  To draw an analogy with a classical network, we are at a
-   stage where we can start to physically connect our devices and send
-   data, but all sending, receiving, buffer management, connection
-   synchronisation, and so on, must be managed by the application itself
-   rather than being managed by the network stack.  where no common
-   interfaces yet exist.  Furthermore, whilst physical mechanisms for
-   transmitting quantum states exist, there are no robust protocols for
-   managing such transmissions.
+   physically realising and connecting such devices [Hensen15], and
+   making improvements to their speed and error tolerance, there are no
+   worked out proposals for how to run these networks.  To draw an
+   analogy with a classical network, we are at a stage where we can
+   start to physically connect our devices and send data, but all
+   sending, receiving, buffer management, connection synchronisation,
+   and so on, must be managed by the application using low-level
+   instructions sets, such as quantum assembly (QASM) languages
+   [Cross21], rather than being managed by the network stack.
+   Furthermore, whilst physical mechanisms for transmitting quantum
+   states exist, there are no robust protocols for managing such
+   transmissions.
 
    This document, produced by the Quantum Internet Research Group
    (QIRG), introduces quantum networks and presents general guidelines
@@ -215,17 +216,19 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
    a |0> + b |1>,
 
-   where |X> is Dirac's ket notation for a quantum state (the value that
-   a qubit holds), here the binary 0 and 1, and the coefficients a and b
-   are complex numbers called probability amplitudes.  Physically, such
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                  [Page 4]
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 4]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
+   where |X> is Dirac's ket notation for a quantum state (the value that
+   a qubit holds), here the binary 0 and 1, and the coefficients a and b
+   are complex numbers called probability amplitudes.  Physically, such
    a state can be realised using a variety of different technologies
    such as electron spin, photon polarisation, atomic energy levels, and
    so on.
@@ -269,18 +272,21 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    the relevant superposition states, but their outcome is far more
    interesting.
 
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 5]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    Consider a two-qubit register where the first qubit is in the
    superposed state (|0> + |1>)/sqrt(2) and the other is in the
    state |0>.  This combined state can be written as:
 
    (|0> + |1>)/sqrt(2) x |0> = (|00> + |10>)/sqrt(2),
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                  [Page 5]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    where x denotes a tensor product (the mathematical mechanism for
    combining quantum states together).
@@ -314,6 +320,24 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
    CNOT (|00> + |10>)/sqrt(2) -> (|00> + |11>)/sqrt(2).
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 6]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    What is so interesting about this two-qubit gate operation?  The
    final state is *entangled*. There is no possible way of representing
    that quantum state as a product of two individual qubits; they are no
@@ -326,17 +350,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    final state, whether it's |00> or |11>, is fundamentally random as
    before, but the states of the two qubits following a measurement will
    always be identical.
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                  [Page 6]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    Once a measurement is performed, the two qubits are once again
    independent.  The final state is either |00> or |11> and both of
@@ -371,6 +384,16 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    [Ekert91], blind quantum computation [Fitzsimons17], or distributed
    quantum computation [Crepeau02].
 
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 7]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    Entanglement has two very special features from which one can derive
    some intuition about the types of applications enabled by a quantum
    network.
@@ -386,14 +409,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    random and does not exist before measurement, the two nodes will
    always measure the same value.  We can also build the more general
    multi-qubit state (|00...> + |11...>)/sqrt(2) and perform the same
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                  [Page 7]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    algorithm between an arbitrary number of nodes.  These stronger than
    classical correlations generalise to more complicated measurement
    schemes as well.
@@ -424,6 +439,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    More complex services and applications can be built on top of
    entangled states distributed by the network, see e.g.  [ZOO]
 
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 8]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
 4.  Achieving quantum connectivity
 
    This section explains the meaning of quantum connectivity and the
@@ -436,19 +462,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    wire like we send classical bits is simply not as easy to do.  There
    are several technological as well as fundamental challenges that make
    classical approaches unsuitable in a quantum context.
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                  [Page 8]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
 4.1.1.  The measurement problem
 
@@ -483,6 +496,16 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    within a quantum network is a challenging endeavour and its
    architecture must at its core address this very issue.
 
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                  [Page 9]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
 4.1.3.  Fidelity
 
    In general, it is expected that a classical packet arrives at its
@@ -495,20 +518,11 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    called fidelity is used [NielsenChuang].  Fidelity takes a value
    between 0 and 1 -- higher is better, and less than 0.5 means the
    state is unusable.  It measures how close a quantum state is to the
-   state we have tried to create.  It expresses the probability
-   measuring the actual state yields the same result as measuring the
-   desired target state.  Fidelity is an important property of a quantum
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                  [Page 9]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
-   system that allows us to quantify how much a particular state has
-   been affected by noise from various sources (gate errors, channel
-   losses, environment noise).
+   state we have tried to create.  It expresses the probability that the
+   state will behave exactly the same as our desired state.  Fidelity is
+   an important property of a quantum system that allows us to quantify
+   how much a particular state has been affected by noise from various
+   sources (gate errors, channel losses, environment noise).
 
    Interestingly, quantum applications do not need perfect fidelity to
    be able to execute -- as long as the fidelity is above some
@@ -520,7 +534,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    be achieved by either having hardware produce states of better
    fidelity (sometimes one can sacrifice rate for higher fidelity) or by
    employing quantum error detection and correction mechanisms (see
-   [VanMeterBook] chapter 11).
+   [Mural16] and [VanMeterBook] chapter 11).
 
 4.1.4.  Inadequacy of direct transmission
 
@@ -535,8 +549,18 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    on both resources (physical qubits needed) and their initial
    fidelity.  Implementation is very challenging and quantum error
    correction is not expected to be used until later generations of
-   quantum networks.  Until then, quantum networks rely on entanglement
-   swapping (Section 4.4.2) and teleportation (Section 4.3).
+   quantum networks (see [Mural16] figure 2).  Until then, quantum
+   networks rely on entanglement swapping (Section 4.4.2) and
+   teleportation (Section 4.3).
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 10]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
 
    An alternative relies on the observation that we do not need to be
    able to distribute any arbitrary entangled quantum state.  We only
@@ -548,19 +572,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    Bell pair states are the entangled two-qubit states:
 
    |00> + |11>, |00> - |11>, |01> + |10>, |01> - |10>,
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 10]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    where the constant 1/sqrt(2) normalisation factor has been ignored
    for clarity.  Any of the four Bell pair states above will do, as it
@@ -596,31 +607,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    desired destination.  This does not violate the no-cloning theorem as
    the original state is destroyed in the process.
 
+   To achieve this, an entangled pair needs to be distributed between
+   the source and destination before teleportation commences.  The
+   source then entangles the transmission qubit with its end of the pair
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 11]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 11]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
-   To achieve this, an entangled pair needs to be distributed between
-   the source and destination before teleportation commences.  The
-   source then entangles the transmission qubit with its end of the pair
    and performs a read out of the two qubits (the sum of these
    operations is called a Bell state measurement).  This consumes the
    Bell pair's entanglement, turning the source and destination qubits
@@ -669,7 +666,10 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 12]
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 12]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -725,7 +725,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 13]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 13]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -781,7 +781,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 14]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 14]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -837,7 +837,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 15]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 15]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -893,7 +893,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 16]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 16]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -949,7 +949,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 17]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 17]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1005,7 +1005,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 18]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 18]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1013,11 +1013,10 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        which the Bell pairs were generated since they are undirected.
        This distinction makes control algorithms and optimisation of
        quantum networks different from classical ones, in the sense that
-       they are more akin to a stateful distributed computation than
-       stateless packet-by-packet forwarding.  Note that third
-       generation quantum networks, as described in Section 4.4.1, will
-       be able to support a "store and forward" architecture in addition
-       to "store and swap".
+       swapping is stateful in contrast to stateless packet-by-packet
+       forwarding.  Note that third generation quantum networks, as
+       described in Section 4.4.1, will be able to support a "store and
+       forward" architecture in addition to "store and swap".
 
    3.  An entangled pair is only useful if the locations of both qubits
        are known.
@@ -1061,7 +1060,8 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 19]
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 19]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1117,7 +1117,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 20]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 20]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1173,7 +1173,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 21]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 21]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1220,7 +1220,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    QL - quantum link
    CL - classical link
    CC - classical channel (traverses one or more CLs)
-   QR - classical repeater
+   QR - quantum repeater
 
    An application running on two end-nodes attached to a network will at
    some point need the network to generate entangled pairs for its use.
@@ -1229,7 +1229,7 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 22]
+Kozlowski, et al.         Expires 28 July 2022                 [Page 22]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
@@ -1277,25 +1277,22 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    quantum repeaters combining the strengths and weaknesses of each
    hardware platform.
 
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 23]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    For example, hardware based on optical elements and atomic ensembles
    [Sangouard11] is very efficient at generating entanglement, but
    provide little control over the qubits once the pair is generated.
    On the other hand, nitrogen-vacancy based hardware [Hensen15] offers
    a much greater degree of control over qubits, but have a harder time
-   generating the entanglement across a link.
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 23]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
+   generating the entanglement across a link.  Yet another approach,
+   with its own set of pros and cons, is ion-trap based hardware
+   [Moehring07]
 
    It is an open research question where exactly the boundary will lie.
    It could be that a single quantum repeater node provides some
@@ -1338,16 +1335,16 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    isolate a quantum system from the environment.  The environment
    introduces an uncontrollable source of noise into the system which
    affects the fidelity of the state.  This process is known as
+   decoherence.  Eventually, the state has to be discarded once its
+   fidelity degrades too much.
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 24]
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 24]
 
 Internet-Draft      Principles for a Quantum Internet       January 2022
 
-
-   decoherence.  Eventually, the state has to be discarded once its
-   fidelity degrades too much.
 
    The memory lifetime depends on the particular physical setup, but the
    highest achievable values in quantum network hardware currently are
@@ -1393,18 +1390,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    Coupling different technologies with each other is of great interest
    for two reasons:
 
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 25]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    First, it may help overcome the weaknesses of the different
    implementations, but this may take a long time to be realised with
    high reliability and thus is not a near-term goal.
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 25]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
 
    Second, quantum computing and quantum networking typically use
    different hardware platforms and a coupling between the two platforms
@@ -1444,20 +1440,30 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
    1.  Support distributed quantum applications
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 26]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
        This goal seems trivially obvious, but makes a subtle, but
        important point which highlights a key difference between quantum
        and classical networks.  Ultimately, quantum data transmission is
        not the goal of a quantum network - it is only one possible
        component of more advanced quantum application protocols
        [Wehner18].  Whilst transmission certainly could be used as a
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 26]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
        building block for all quantum applications, it is not the most
        basic one possible.  For example, entanglement-based QKD, the
        most well known quantum application protocol, only relies on the
@@ -1493,6 +1499,21 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        (e.g.  NCP to TCP/IP) or upgrades that take decades to roll out
        (e.g.  IPv4 to IPv6).
 
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 27]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
        Therefore, it is important that any proposed architecture for
        general purpose quantum repeater networks can integrate new
        devices and solutions as they become available.  The architecture
@@ -1504,15 +1525,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        transition to more sophisticated applications.
 
    3.  Support heterogeneity
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 27]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
        There are multiple proposals for realising practical quantum
        repeater hardware and they all have their advantages and
@@ -1550,25 +1562,20 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        Nevertheless, whilst applications can ensure their own secure
        operation, network protocols themselves should be security aware
        in order to protect the network itself and limit disruption.
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 28]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
        Whilst the applications remain secure they are not necessarily
        operational or as efficient in the presence of an attacker.
        Security concerns in quantum networks are described in more
        detail in [Satoh17] [Satoh20].
 
    5.  Make them easy to monitor
-
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 28]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
        In order to manage, evaluate the performance of, or debug a
        network it is necessary to have the ability to monitor the
@@ -1608,6 +1615,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        Therefore, availability and resilience will most likely require a
        more advanced treatment than they do in classical networks.
 
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 29]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
 6.2.  The principles of a quantum internet
 
    The principles support the goals, but are not goals themselves.  The
@@ -1618,14 +1636,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    between success and failure.  For more information about design
    considerations for quantum networks see [VanMeter13.1] [Dahlberg19].
 
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 29]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    1.  Entanglement is the fundamental service
 
        The key service that a quantum network provides is the
@@ -1633,16 +1643,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        distributed quantum applications are built on top of this key
        resource.  Applications such as clustered quantum computing,
        distributed quantum computing, distributed quantum sensing
-       networks, and certain kinds of quantum secure networks require
-       the distribution of quantum state; the distribution of classical
-       state alone is not sufficient.  Currently, the only feasible way
-       of reliably distributing quantum state is using teleportation,
-       which requires distribution of entanglement.  pairs are the
-       minimal entanglement building block that is sufficient to develop
-       these applications.  However, a quantum network may also
-       distribute multipartite entangled states (entangled states of
-       three or more qubits) [Meignant19] as this may be more efficient
-       under certain circumstances.
+       networks, and certain kinds of quantum secure networks all
+       consume quantum entanglement as a resource.  Some applications
+       (e.g. quantum key distribution) simply measure the entangled
+       qubits to obtain a shared secret key.  Other applications (e.g.
+       distributed quantum computing) build more complex abstractions
+       and operations on the entangled qubits, e.g., distributed CNOT
+       gates [DistCNOT] or teleportation of arbitrary qubit states
+       [Teleportation].  A quantum network may also distribute
+       multipartite entangled states (entangled states of three or more
+       qubits) [Meignant19] as this may be more efficient under certain
+       circumstances.
 
    2.  Bell Pairs are indistinguishable
 
@@ -1663,6 +1674,14 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        communication end-points, the Bell Pairs must be of sufficient
        fidelity.  Unlike in classical networks where most errors are
        effectively eliminated before reaching the application, many
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 30]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
        quantum applications only need imperfect entanglement to
        function.  However, quantum applications will generally have a
        threshold for Bell pair fidelity below which they are no longer
@@ -1674,13 +1693,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        just above the threshold required by the application than it is
        to guarantee high fidelity pairs to all applications regardless
        of their requirements.
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 30]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    4.  Time is an expensive resource
 
@@ -1713,6 +1725,19 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
        physical capabilities of repeaters will improve and redeploying a
        technology is extremely challenging.
 
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 31]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
 7.  A thought experiment inspired by classical networks
 
    To conclude, we discuss a plausible quantum network architecture
@@ -1730,14 +1755,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    creating end-to-end Bell pairs, they must first create a quantum
    virtual circuit (QVC).  As an analogy, in MPLS networks end-points
    must establish a label switched path (LSP) before exchanging traffic.
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 31]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    Connection-oriented quantum networks may also support virtual
    circuits with multiple end-points for creating multipartite
    entanglement.  As an analogy, MPLS networks have the concept of
@@ -1769,6 +1786,14 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    rate or fidelity.  This is analogous to "best effort" service in
    classical networks.
 
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 32]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    With traffic engineering, quantum virtual circuits choose a path that
    is guaranteed to have the requested resources (e.g. bandwidth in
    BPPS) available, taking into account the capacity of the routers and
@@ -1784,15 +1809,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    cannot guarantee the requested quality of service a-priori.  Or
    alternatively, the network pre-empts lower priority circuits to make
    room for the new one.
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 32]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    Quantum networks need a signaling function: once the path for a
    quantum virtual circuit has been computed, signaling is used to
@@ -1816,6 +1832,24 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    right abstractions will be one of the biggest challenges when
    designing interoperable quantum network protocols.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 33]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    In quantum networks, control plane traffic (routing and signaling
    messages) is exchanged over a classical channel, whereas data plane
    traffic (the actual Bell pair qubits) is exchanged over a separate
@@ -1838,17 +1872,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 9.  IANA Considerations
 
    This draft includes no request to IANA.
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 33]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
 10.  Acknowledgements
 
@@ -1874,6 +1897,15 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               networks", IEEE Communications Magazine Vol. 57, Iss. 7,
               pp. 20-26, 2019, <http://arxiv.org/abs/1907.00174>.
 
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 34]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    [Aspect81] Aspect, A., Grangier, P., and G. Roger, "Experimental
               tests of realistic local theories via Bell's theorem",
               Physical Review Letters Vol. 47, Iss. 7, pp. 460-463,
@@ -1894,17 +1926,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               pp. 1895-1899, 1993,
               <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.70.1895>.
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 34]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    [Bennett96]
               Bennett, C.H., DiVincenzo, D.P., Smolin, J.A., and W.K.
@@ -1934,10 +1955,12 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               Transactions on Communications Vol. 68, Iss. 6, pp.
               3808-3833, 2019, <https://arxiv.org/abs/1907.06197>.
 
-   [Castelvecchi18]
-              Castelvecchi, D., "The Quantum Internet has arrived (and
-              it hasn't)", Nature Vol. 554, pp. 289-292, 2018,
-              <https://www.nature.com/articles/d41586-018-01835-3>.
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 35]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
 
    [Clark88]  Clark, D., "The design philosophy of the DARPA internet
               protocols", Symposium proceedings on Communications
@@ -1950,18 +1973,17 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               fourth annual ACM symposium on Theory of computing pp.
               643-652, 2002, <https://arxiv.org/abs/quant-ph/0206138>.
 
+   [Cross21]  Elliott, C., Javadi-Abhari, A., Alexander, T., de
+              Beaudrap, N., Bishop, L.S., Heidel, S., Ryan, C.A.,
+              Smolin, J., Gambetta, J.M., and B.R. Johnson, "OpenQASM 3:
+              A broader and deeper quantum assembly language",
+              arXiv:1707.03429 [quant-ph] , 2021,
+              <https://arxiv.org/pdf/2104.14722.pdf>.
+
    [Dahlberg19]
               Dahlberg, A., Skrzypczyk, M., Coopmans, T., Wubben, L.,
               Rozpedek, F., Pompili, M., Stolk, A., Pawelczak, P.,
               Knegjens, R., de Oliveira Filho, J., Hanson, R., and S.
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 35]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
               Wehner, "A link layer protocol for quantum networks",
               Proceedings of the ACM Special Interest Group on Data
               Communication pp. 159-173, 2019,
@@ -1971,6 +1993,10 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               correction for beginners", Reports on Progress in
               Physics Vol. 76, Iss. 7, pp. 076001, 2013,
               <https://arxiv.org/abs/0905.2794>.
+
+   [DistCNOT] Quantum Network Explorer by QuTech, "Distributed CNOT",
+              2021, <https://www.quantum-network.com/applications/
+              distributed-cnot/>.
 
    [Dur07]    Duer, W. and H.J. Briegel, "Entanglement purification and
               quantum error correction", Reports on Progress in
@@ -1982,6 +2008,15 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               661-663, 1991,
               <https://journals.aps.org/prl/abstract/10.1103/
               PhysRevLett.67.661>.
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 36]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
 
    [Elliott03]
               Elliott, C., Pearson, D., and G. Troxel, "Quantum
@@ -2007,17 +2042,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               limit", Science Vol. 306, Iss. 5700, pp. 1330-1336, 2004,
               <https://arxiv.org/abs/quant-ph/0412078>.
 
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 36]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    [Gottesman12]
               Gottesman, D., Jennewein, T., and S. Croke, "Longer-
               baseline telescopes using quantum repeaters", Physical
@@ -2041,6 +2065,15 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               <https://www.ietf.org/archive/id/draft-irtf-qirg-quantum-
               internet-use-cases-08.txt>.
 
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 37]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    [Jiang09]  Jiang, L., Taylor, J.M., Nemoto, K., Munro, W.J., Van
               Meter, R., and M.D. Lukin, "Quantum repeater with
               encoding", Physical Review A Vol. 79, Iss. 3, pp. 032325,
@@ -2056,23 +2089,18 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               Review A Vol. 100, Iss. 5, pp. 052333, 2019,
               <https://arxiv.org/abs/1811.05445>.
 
+   [Moehring07]
+              Moehring, D.L., Maunz, P., Olmschenk, S., Younge, K.C.,
+              Matsukevich, D.N., Duan, L.M., and C. Monroe,
+              "Entanglement of single-atom quantum bits at a distance",
+              Nature Iss. 449, pp. 68-71, 2007,
+              <https://www.nature.com/articles/nature06118>.
+
    [Mural16]  Muralidharan, S., Li, L., Kim, J., Lutkenhaus, N., Lukin,
               M., and L. Jiang, "Optimal architectures for long distance
               quantum communication", Scientific Reports Vol. 6, Iss. 1,
               pp. 1-10, 2016,
               <https://www.nature.com/articles/srep20463>.
-
-
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 37]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
 
    [Nagayama16]
               Nagayama, S., Choi, B.-S., Devitt, S., Suzuki, S., and R.
@@ -2094,6 +2122,14 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               J., Boxleitner, W., Debuisschert, T., Diamanti, E.,
               Dianati, M., Dynes, J.F., Fasel, S., Fossier, S., Fuerst,
               M., Gautier, J.-D., Gay, O., Gisin, N., Grangier, P.,
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 38]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
               Happe, A., Hasani, Y., Hentschel, M., Huebel, H., Humer,
               G., Laenger, T., Legre, M., Lieger, R., Lodewyck, J.,
               Loruenser, T., Luetkenhaus, N., Marhold, A., Matyus, T.,
@@ -2121,15 +2157,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               Internet", RFC 1958, DOI 10.17487/RFC1958, June 1996,
               <https://www.rfc-editor.org/info/rfc1958>.
 
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 38]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    [Sangouard11]
               Sangouard, N., Simon, C., de Riedmatten, H., and N. Gisin,
               "Quantum repeaters based on atomic ensembles and linear
@@ -2149,6 +2176,20 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    [SutorBook]
               Sutor, R.S., "Dancing with Qubits", Packt Publishing ,
               2019.
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 39]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
+   [Teleportation]
+              Quantum Network Explorer by QuTech, "State teleportation",
+              2021, <https://www.quantum-network.com/applications/state-
+              teleportation/>.
 
    [Terhal04] Terhal, B.M., "Is entanglement monogamous?", IBM Journal
               of Research and Development Vol. 48, Iss. 1, pp. 71-78,
@@ -2175,17 +2216,6 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
               2018, <http://science.sciencemag.org/content/362/6412/
               eaam9288.full>.
 
-
-
-
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 39]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    [Wootters82]
               Wootters, W.K. and W.H. Zurek, "A single quantum cannot be
               cloned", Nature Vol. 299, Iss. 5886, pp. 802-803, 1982,
@@ -2203,6 +2233,13 @@ Authors' Addresses
    Netherlands
 
    Email: w.kozlowski@tudelft.nl
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 40]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
    Stephanie Wehner
@@ -2234,14 +2271,6 @@ Authors' Addresses
    University of Naples Federico II
    Department of Electrical Engineering and Information Technologies
    Claudio 21
-
-
-
-Kozlowski, et al.         Expires 17 July 2022                 [Page 40]
-
-Internet-Draft      Principles for a Quantum Internet       January 2022
-
-
    80125 Naples
    Italy
 
@@ -2261,6 +2290,14 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
    Shota Nagayama
    Mercari, Inc.
    Roppongi Hills Mori Tower 18F
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 41]
+
+Internet-Draft      Principles for a Quantum Internet       January 2022
+
+
    6-10-1 Roppongi, Minato-ku,
    106-6118
    Japan
@@ -2293,4 +2330,23 @@ Internet-Draft      Principles for a Quantum Internet       January 2022
 
 
 
-Kozlowski, et al.         Expires 17 July 2022                 [Page 41]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kozlowski, et al.         Expires 28 July 2022                 [Page 42]

@@ -36,7 +36,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-irtf-qirg-principles-08" ipr="trust200902">
+<rfc category="info" docName="draft-irtf-qirg-principles-09" ipr="trust200902">
  <!-- category values: std, bcp, info, exp, and historic
     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
        or pre5378Trust200902
@@ -1252,7 +1252,7 @@ EN - end-node
 QL - quantum link
 CL - classical link
 CC - classical channel (traverses one or more CLs)
-QR - classical repeater
+QR - quantum repeater
            ]]></artwork>
          </figure>
 
@@ -2510,17 +2510,21 @@ QR - classical repeater
      <reference anchor="DistCNOT" target="https://www.quantum-network.com/applications/distributed-cnot/">
        <front>
          <title>Distributed CNOT</title>
+         <author>
+           <organization>Quantum Network Explorer by QuTech</organization>
+         </author>
          <date year="2021" />
        </front>
-       <seriesInfo name="Quantum Network Explorer webpage" />
      </reference>
 
      <reference anchor="Teleportation" target="https://www.quantum-network.com/applications/state-teleportation/">
        <front>
          <title>State teleportation</title>
+         <author>
+           <organization>Quantum Network Explorer by QuTech</organization>
+         </author>
          <date year="2021" />
        </front>
-       <seriesInfo name="Quantum Network Explorer webpage" />
      </reference>
 
      <reference anchor="Cross21" target="https://arxiv.org/pdf/2104.14722.pdf">
@@ -2538,10 +2542,10 @@ QR - classical repeater
          <author surname="Johnson" initials="B.R" />
          <date year="2021" />
        </front>
-       <seriesInfo name="arXiv:1707.03429 [quant-ph]" />
+       <seriesInfo name="arXiv:1707.03429 [quant-ph]" value=""/>
      </reference>
 
-     <reference anchor="Moehring07" target=https://www.nature.com/articles/nature06118">
+     <reference anchor="Moehring07" target="https://www.nature.com/articles/nature06118">
        <front>
          <title>Entanglement of single-atom quantum bits at a distance</title>
          <author surname="Moehring" initials="D.L" />

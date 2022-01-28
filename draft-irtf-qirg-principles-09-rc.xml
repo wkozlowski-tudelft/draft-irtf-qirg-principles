@@ -223,33 +223,31 @@
      the ground up to account for the fundamentally new properties of quantum
      entanglement. The first quantum entanglement networks have been realised
      <xref target="Pompili21" />, but there is no practical proposal for how to
-     organise, utilise,
-     and manage such networks. In this draft, we attempt to lay down the
-     framework and introduce some basic architectural principles for a quantum
-     internet. This is intended for general guidance and general interest, but
-     also to provide a foundation for discussion between physicists and network
-     specialists. This document is a product of the Quantum Internet Research
-     Group (QIRG).</t>
+     organise, utilise, and manage such networks. In this draft, we attempt to
+     lay down the framework and introduce some basic architectural principles
+     for a quantum internet. This is intended for general guidance and general
+     interest, but also to provide a foundation for discussion between
+     physicists and network specialists. This document is a product of the
+     Quantum Internet Research Group (QIRG).</t>
    </abstract>
  </front>
 
  <middle>
    <section title="Introduction">
-     <t>Quantum networks are distributed systems of quantum devices
-     that utilise fundamental quantum mechanical phenomena such as
-     superposition, entanglement, and quantum measurement to achieve
-     capabilities beyond what is possible with non-quantum (classical)
-     networks <xref target="Kimble08" />. Depending on the stage of a
-     quantum network <xref target="Wehner18" /> such devices may range
-     from simple photonic devices capable of preparing and measuring
-     only one quantum bit (qubit) at a time all the way to large-scale
-     quantum computers of the future. A quantum network is not meant
-     to replace classical networks, but rather form an overall hybrid
-     classical-quantum network supporting new capabilities which are
-     otherwise impossible to realise <xref target="VanMeterBook" />,
-     such as clustered or distributed quantum computing, blind
-     quantum computing, quantum secure communications, clock
-     synchronization, and distributed quantum sensing.</t>
+     <t>Quantum networks are distributed systems of quantum devices that
+     utilise fundamental quantum mechanical phenomena such as superposition,
+     entanglement, and quantum measurement to achieve capabilities beyond what
+     is possible with non-quantum (classical) networks <xref target="Kimble08"
+     />. Depending on the stage of a quantum network <xref target="Wehner18" />
+     such devices may range from simple photonic devices capable of preparing
+     and measuring only one quantum bit (qubit) at a time all the way to
+     large-scale quantum computers of the future. A quantum network is not
+     meant to replace classical networks, but rather form an overall hybrid
+     classical-quantum network supporting new capabilities which are otherwise
+     impossible to realise <xref target="VanMeterBook" />, such as clustered or
+     distributed quantum computing, blind quantum computing, quantum secure
+     communications, clock synchronization, and distributed quantum
+     sensing.</t>
 
      <t>The quantum networking paradigm offers promise for a range of new
      applications such as quantum cryptography <xref target="Bennett14" />
@@ -264,75 +262,72 @@
      distances <xref target="Elliott03" /> <xref target="Peev09" /> <xref
      target="Aguado19" />.</t>
 
-     <t>The first fully quantum networks capable of
-     sending, receiving, and manipulating distributed quantum information have 
-     recently been realized <xref target="Pompili21" />.
+     <t>The first fully quantum networks capable of sending, receiving, and
+     manipulating distributed quantum information have recently been realized
+     <xref target="Pompili21" />.
 
-     Whilst a lot of effort has gone into physically
-     realising and connecting such devices <xref target="Hensen15" />, and
-     making improvements to their speed and error tolerance, there are no
-     worked out proposals for how to run these networks. To draw an analogy
-     with a classical network, we are at a stage where we can start to
-     physically connect our devices and send data, but all sending, receiving,
-     buffer management, connection synchronisation, and so on, must be managed
-     by the application using low-level instructions sets, such as
-     quantum assembly (QASM) languages <xref target="Cross21" />, rather than
-     being managed by the network stack. Furthermore, whilst physical
-     mechanisms for transmitting quantum states exist, there are no robust
-     protocols for managing such transmissions.</t>
+     Whilst a lot of effort has gone into physically realising and connecting
+     such devices <xref target="Hensen15" />, and making improvements to their
+     speed and error tolerance, there are no worked out proposals for how to
+     run these networks. To draw an analogy with a classical network, we are at
+     a stage where we can start to physically connect our devices and send
+     data, but all sending, receiving, buffer management, connection
+     synchronisation, and so on, must be managed by the application using
+     low-level instructions sets, such as quantum assembly (QASM) languages
+     <xref target="Cross21" />, rather than being managed by the network stack.
+     Furthermore, whilst physical mechanisms for transmitting quantum states
+     exist, there are no robust protocols for managing such transmissions.</t>
 
-     <t>This document, produced by the Quantum Internet Research Group
-     (QIRG), introduces quantum networks and presents
-     general guidelines for the design and construction of such networks.
-     Overall, it is intended as an introduction to the subject for network
-     engineers and researchers. It should not be considered as a conclusive
-     statement on how quantum network should or will be implemented. This
-     document was discussed on the QIRG mailing list and several IETF meetings
-     and represents the consensus of the QIRG members, both of experts in the
-     subject matter (from the quantum as well networking domain) as well as
-     newcomers who are the target audience.</t>
+     <t>This document, produced by the Quantum Internet Research Group (QIRG),
+     introduces quantum networks and presents general guidelines for the design
+     and construction of such networks. Overall, it is intended as an
+     introduction to the subject for network engineers and researchers. It
+     should not be considered as a conclusive statement on how quantum network
+     should or will be implemented. This document was discussed on the QIRG
+     mailing list and several IETF meetings and represents the consensus of the
+     QIRG members, both of experts in the subject matter (from the quantum as
+     well networking domain) as well as newcomers who are the target
+     audience.</t>
 
    </section>
 
    <section title="Quantum information">
 
      <t>In order to understand the framework for quantum networking, a basic
-     understanding of quantum information theory is necessary. The following sections
-     aim to introduce the minimum amount of knowledge necessary to understand the principles
-     of operation of a quantum network. This exposition was written with a
-     classical networking audience in mind. It is assumed that the reader has
-     never before been exposed to any quantum physics. We refer the reader to <xref
-     target="SutorBook" /> and <xref target="NielsenChuang"/> for an in-depth
-     introduction to quantum information theory.</t>
+     understanding of quantum information theory is necessary. The following
+     sections aim to introduce the minimum amount of knowledge necessary to
+     understand the principles of operation of a quantum network. This
+     exposition was written with a classical networking audience in mind. It is
+     assumed that the reader has never before been exposed to any quantum
+     physics. We refer the reader to <xref target="SutorBook" /> and <xref
+     target="NielsenChuang"/> for an in-depth introduction to quantum
+     information theory.</t>
 
      <section title="Qubit">
        <t>The differences between quantum computation and classical computation
        begin at the bit-level. A classical computer operates on the binary
-       alphabet { 0, 1 }. A quantum bit, called a qubit, exists over the same binary
-       space, but unlike the classical bit, it can exist in a
+       alphabet { 0, 1 }. A quantum bit, called a qubit, exists over the same
+       binary space, but unlike the classical bit, it can exist in a
        superposition of the two possibilities:</t>
 
        <t>a |0> + b |1>,</t>
 
-       <t>where |X> is Dirac's ket notation for a quantum state (the value that a 
-       qubit holds), here the
-       binary 0 and 1, and the coefficients a and b are complex numbers called
-       probability amplitudes. Physically, such a state can be realised using a
-       variety of different technologies such as electron spin, photon
-       polarisation, atomic energy levels, and so on.</t>
+       <t>where |X> is Dirac's ket notation for a quantum state (the value that
+       a qubit holds), here the binary 0 and 1, and the coefficients a and b
+       are complex numbers called probability amplitudes. Physically, such a
+       state can be realised using a variety of different technologies such as
+       electron spin, photon polarisation, atomic energy levels, and so on.</t>
 
        <t>Upon measurement, the qubit loses its superposition and irreversibly
        collapses into one of the two basis states, either |0> or |1>. Which of
        the two states it ends up in may not be deterministic, but can be
-       determined from the readout of the measurement.  The
-       measurement result is a classical bit, 0 or 1, corresponding to
-       |0> and |1>
-       respectively. The probability of measuring the state in the |0> state is
-       |a|^2 and similarly the probability of measuring the state in the |1>
-       state is |b|^2, where |a|^2 + |b|^2 = 1. This randomness is not due to
-       our ignorance of the underlying mechanisms, but rather is a
-       fundamental feature of a quantum mechanical system <xref
-       target="Aspect81" />.</t>
+       determined from the readout of the measurement. The measurement result
+       is a classical bit, 0 or 1, corresponding to |0> and |1> respectively.
+       The probability of measuring the state in the |0> state is |a|^2 and
+       similarly the probability of measuring the state in the |1> state is
+       |b|^2, where |a|^2 + |b|^2 = 1. This randomness is not due to our
+       ignorance of the underlying mechanisms, but rather is a fundamental
+       feature of a quantum mechanical system <xref target="Aspect81" />.</t>
 
        <t>The superposition property plays an important role in fundamental
        gate operations on qubits. Since a qubit can exist in a superposition of
@@ -373,14 +368,14 @@
        <t>where x denotes a tensor product (the mathematical mechanism for
        combining quantum states together).</t>
        
-       <t>The constant 1/sqrt(2) is called the normalisation factor and reflects the
-       fact that the probabilities of measuring either a |0> or a |1> for
-       the first qubit add up to one.</t>
+       <t>The constant 1/sqrt(2) is called the normalisation factor and
+       reflects the fact that the probabilities of measuring either a |0> or a
+       |1> for the first qubit add up to one.</t>
        
-       <t>Let us now consider the two-qubit
-       controlled-NOT, or CNOT, gate. The CNOT gate takes as input two qubits,
-       a control and target, and applies the NOT gate to the target if the
-       control qubit is set. The truth table looks like</t>
+       <t>Let us now consider the two-qubit controlled-NOT, or CNOT, gate. The
+       CNOT gate takes as input two qubits, a control and target, and applies
+       the NOT gate to the target if the control qubit is set. The truth table
+       looks like</t>
 
        <texttable>
          <ttcol align="center">IN</ttcol>
@@ -526,9 +521,9 @@
        <section title="No-cloning theorem">
 
          <t>Since directly reading the state of a qubit is not possible, one
-         could ask if we can simply copy a qubit without looking
-         at it. Unfortunately, this is fundamentally not possible in quantum
-         mechanics <xref target="Park70" /> <xref target="Wootters82" />.</t>
+         could ask if we can simply copy a qubit without looking at it.
+         Unfortunately, this is fundamentally not possible in quantum mechanics
+         <xref target="Park70" /> <xref target="Wootters82" />.</t>
 
          <t>The no-cloning theorem states that it is impossible to create an
          identical copy of an arbitrary, unknown quantum state. Therefore, it
@@ -550,15 +545,15 @@
          quantum state, error detection and correction is more involved.</t>
 
          <t>To describe the quality of a quantum state, a physical quantity
-         called fidelity is used <xref target="NielsenChuang" />. Fidelity takes a
-         value between 0 and 1 -- higher is better, and less than 0.5 means the
-         state is unusable. It measures how close a quantum state is to the
-         state we have tried to create. It expresses the probability that 
-         the state will behave exactly the same as our desired state.
-         Fidelity is an
-         important property of a quantum system that allows us to quantify how
-         much a particular state has been affected by noise from various
-         sources (gate errors, channel losses, environment noise).</t>
+         called fidelity is used <xref target="NielsenChuang" />. Fidelity
+         takes a value between 0 and 1 -- higher is better, and less than 0.5
+         means the state is unusable. It measures how close a quantum state is
+         to the state we have tried to create. It expresses the probability
+         that the state will behave exactly the same as our desired state.
+         Fidelity is an important property of a quantum system that allows us
+         to quantify how much a particular state has been affected by noise
+         from various sources (gate errors, channel losses, environment
+         noise).</t>
 
          <t>Interestingly, quantum applications do not need perfect fidelity to
          be able to execute -- as long as the fidelity is above some
@@ -569,8 +564,8 @@
          its best to deliver it. A higher fidelity can be achieved by either
          having hardware produce states of better fidelity (sometimes one can
          sacrifice rate for higher fidelity) or by employing quantum error
-         detection and correction mechanisms (see <xref target="Mural16" />
-         and <xref target="VanMeterBook" /> chapter 11).</t>
+         detection and correction mechanisms (see <xref target="Mural16" /> and
+         <xref target="VanMeterBook" /> chapter 11).</t>
 
        </section>
 
@@ -588,10 +583,9 @@
          demands on both resources (physical qubits needed) and their initial
          fidelity. Implementation is very challenging and quantum error
          correction is not expected to be used until later generations of
-         quantum networks (see <xref target="Mural16" /> figure 2). 
-         Until then, quantum networks rely on entanglement
-         swapping (<xref target="es" />) and teleportation
-         (<xref target="teleportation" />).</t>
+         quantum networks (see <xref target="Mural16" /> figure 2). Until then,
+         quantum networks rely on entanglement swapping (<xref target="es" />)
+         and teleportation (<xref target="teleportation" />).</t>
 
          <t>An alternative relies on the observation that we do not need to be
          able to distribute any arbitrary entangled quantum state. We only need
@@ -911,9 +905,8 @@
            QEC can be applied to complement lost qubits eliminating the need
            for re-attempts. Furthermore, since the correction procedure is
            composed of local operations, it does not require a heralding
-           signal. However, it is possible only when the photon loss
-	   rate from transmission to measurement is
-           less than 50%.</t>
+           signal. However, it is possible only when the photon loss rate from
+           transmission to measurement is less than 50%.</t>
 
            <t>Error tolerance is about tolerating quantum state errors.
            Entanglement distillation is the easiest mechanism for improved
@@ -1009,14 +1002,14 @@
            <t>"Store and forward" vs "store and swap" quantum networks.
            <vspace blankLines="1" />
 
-           As described in <xref target="elg" />, quantum links provide
-           Bell pairs that are undirected network resources, in contrast to
-           directed frames of classical networks. This phenomenological
-           distinction leads to architectural differences between quantum
-           networks and classical networks. Quantum networks combine multiple
-           elementary link Bell pairs together to create one end-to-end Bell
-           pair, whereas classical networks deliver messages from one end to
-           the other end hop by hop.
+           As described in <xref target="elg" />, quantum links provide Bell
+           pairs that are undirected network resources, in contrast to directed
+           frames of classical networks. This phenomenological distinction
+           leads to architectural differences between quantum networks and
+           classical networks. Quantum networks combine multiple elementary
+           link Bell pairs together to create one end-to-end Bell pair, whereas
+           classical networks deliver messages from one end to the other end
+           hop by hop.
            <vspace blankLines="1" />
 
            Classical networks receive data on one interface, store it in local
@@ -1027,12 +1020,11 @@
            networks, we do not need to care about the order in which the Bell
            pairs were generated since they are undirected. This distinction
            makes control algorithms and optimisation of quantum networks
-           different from classical ones, in the sense that swapping is stateful
-           in contrast to stateless packet-by-packet forwarding. Note that 
-           third generation quantum
-           networks, as described in <xref target="elg" />, will be able
-           to support a "store and forward" architecture in addition to "store
-           and swap".</t>
+           different from classical ones, in the sense that swapping is
+           stateful in contrast to stateless packet-by-packet forwarding. Note
+           that third generation quantum networks, as described in <xref
+           target="elg" />, will be able to support a "store and forward"
+           architecture in addition to "store and swap".</t>
 
            <t>An entangled pair is only useful if the locations of both qubits
            are known.
@@ -1059,9 +1051,9 @@
            <vspace blankLines="1" />
 
            Packet forwarding in a classical network is largely a stateless
-           operation. When a packet is received, the router does a lookup in its
-           forwarding table and sends the packet out of the appropriate output.
-           There is no need to keep any memory of the packet any more.
+           operation. When a packet is received, the router does a lookup in
+           its forwarding table and sends the packet out of the appropriate
+           output. There is no need to keep any memory of the packet any more.
            <vspace blankLines="1" />
 
            A quantum node must be able to make decisions about qubits that it
@@ -1089,9 +1081,9 @@
            <t>communicate classical bits of information as part of distributed
            protocols such as entanglement swapping and teleportation,</t>
 
-           <t>communicate control information within a network, including
-           both background protocols such as routing as well as signalling
-           protocols to set up end-to-end entanglement generation.</t>
+           <t>communicate control information within a network, including both
+           background protocols such as routing as well as signalling protocols
+           to set up end-to-end entanglement generation.</t>
 
          </list>
        </t>
@@ -1201,8 +1193,8 @@
            </list>
          </t>
 
-         <t>Additionally, we need to identify two kinds of links that will
-         be used in a quantum network:</t>
+         <t>Additionally, we need to identify two kinds of links that will be
+         used in a quantum network:</t>
 
          <t>
            <list style="symbols">
@@ -1299,28 +1291,29 @@ QR - quantum repeater
 
        <section title="Boundaries between different physical hardware platforms">
 
-         <t>There are many different physical hardware platforms for implementing
-         quantum repeater technology. The different technologies differ in how
-         they store and manipulate qubits in memory and how they generate
-         entanglement across a link with their neighbours. Different
-         hardware platforms come with different trade-offs and thus a functional
-         network will likely consist of a mixture of different types of quantum
-         repeaters combining the strengths and weaknesses of each hardware platform.</t>
+         <t>There are many different physical hardware platforms for
+         implementing quantum repeater technology. The different technologies
+         differ in how they store and manipulate qubits in memory and how they
+         generate entanglement across a link with their neighbours. Different
+         hardware platforms come with different trade-offs and thus a
+         functional network will likely consist of a mixture of different types
+         of quantum repeaters combining the strengths and weaknesses of each
+         hardware platform.</t>
 
          <t>For example, hardware based on optical elements and atomic
          ensembles <xref target="Sangouard11" /> is very efficient at
          generating entanglement, but provide little control over the qubits
          once the pair is generated. On the other hand, nitrogen-vacancy based
-         hardware <xref target="Hensen15" /> offers a much greater degree
-         of control over qubits, but have a harder time generating the
-         entanglement across a link. Yet another approach, with its own
-         set of pros and cons, is ion-trap based hardware 
-         <xref target="Moehring07" /></t>
+         hardware <xref target="Hensen15" /> offers a much greater degree of
+         control over qubits, but have a harder time generating the
+         entanglement across a link. Yet another approach, with its own set of
+         pros and cons, is ion-trap based hardware <xref target="Moehring07"
+         /></t>
 
          <t>It is an open research question where exactly the boundary will
          lie. It could be that a single quantum repeater node provides some
-         backplane connection between the hardware platforms, but it also could be
-         that special quantum links delineate the boundary.</t>
+         backplane connection between the hardware platforms, but it also could
+         be that special quantum links delineate the boundary.</t>
 
        </section>
 
@@ -1402,9 +1395,9 @@ QR - quantum repeater
        <section title="Communication qubits">
 
          <t>Most physical architectures capable of storing qubits are only able
-         to generate entanglement using only a subset of available qubits called
-         communication qubits <xref target="Dahlberg19" />. Once a Bell pair has
-         been generated using a communication qubit, its state can be
+         to generate entanglement using only a subset of available qubits
+         called communication qubits <xref target="Dahlberg19" />. Once a Bell
+         pair has been generated using a communication qubit, its state can be
          transferred into memory. This may impose additional limitations on the
          network. In particular, if a given node has only one communication
          qubit it cannot simultaneously generate Bell pairs over two links. It
@@ -1420,7 +1413,7 @@ QR - quantum repeater
          present.</t>
          
          <t>Coupling different technologies with each other is of great
-         interest for two reasons:</t> 
+         interest for two reasons:</t>
          
          <t>First, it may help overcome the weaknesses of the different
          implementations, but this may take a long time to be realised with
@@ -1496,9 +1489,9 @@ QR - quantum repeater
            fidelity, but quantum applications may have to make multiple
            re-attempts or even abort if the fidelity is too low. A review of
            the requirements for different known quantum applications can be
-           found in <xref target="Wehner18" /> and an overview of
-           use-cases can be found in <xref
-           target="I-D.irtf-qirg-quantum-internet-use-cases" />.</t>
+           found in <xref target="Wehner18" /> and an overview of use-cases can
+           be found in <xref target="I-D.irtf-qirg-quantum-internet-use-cases"
+           />.</t>
 
            <t>Support tomorrow's distributed quantum applications
            <vspace blankLines="1" />
@@ -1638,22 +1631,20 @@ QR - quantum repeater
 
            The key service that a quantum network provides is the distribution
            of entanglement between the nodes in a network. All distributed
-           quantum applications are built on top of this key resource. 
-           Applications such as clustered quantum computing, distributed quantum
-           computing, distributed quantum sensing networks, and certain kinds of
-           quantum secure networks all consume quantum entanglement as a resource.
-           Some applications (e.g. quantum key distribution) simply measure the
-           entangled qubits to obtain a shared secret key.
-           Other applications (e.g. distributed quantum computing) build more
-           complex abstractions and operations on the entangled qubits, e.g.,
-           distributed CNOT gates <xref target="DistCNOT" />
-           or teleportation of arbitrary qubit states
-           <xref target="Teleportation" />.
+           quantum applications are built on top of this key resource.
+           Applications such as clustered quantum computing, distributed
+           quantum computing, distributed quantum sensing networks, and certain
+           kinds of quantum secure networks all consume quantum entanglement as
+           a resource. Some applications (e.g. quantum key distribution) simply
+           measure the entangled qubits to obtain a shared secret key. Other
+           applications (e.g. distributed quantum computing) build more complex
+           abstractions and operations on the entangled qubits, e.g.,
+           distributed CNOT gates <xref target="DistCNOT" /> or teleportation
+           of arbitrary qubit states <xref target="Teleportation" />.
 
-           A quantum network may also
-           distribute multipartite entangled states (entangled states of three
-           or more qubits) <xref target="Meignant19" /> as this may be more
-           efficient under certain circumstances.</t>
+           A quantum network may also distribute multipartite entangled states
+           (entangled states of three or more qubits) <xref target="Meignant19"
+           /> as this may be more efficient under certain circumstances.</t>
 
            <t>Bell Pairs are indistinguishable
            <vspace blankLines="1" />
@@ -1673,8 +1664,8 @@ QR - quantum repeater
 
            In addition to being able to deliver Bell pairs to the communication
            end-points, the Bell Pairs must be of sufficient fidelity. Unlike in
-           classical networks where most errors are effectively eliminated before
-           reaching the application, many quantum applications only need
+           classical networks where most errors are effectively eliminated
+           before reaching the application, many quantum applications only need
            imperfect entanglement to function. However, quantum applications
            will generally have a threshold for Bell pair fidelity below which
            they are no longer able to operate. Different applications will have
@@ -1735,16 +1726,16 @@ QR - quantum repeater
      basis as it is well known and understood in the networking community.</t>
 
      <t>Creating end-to-end Bell pairs between remote end-points is a stateful
-     distributed task that requires a lot of a-priori coordination. Therefore, a
-     connection-oriented approach seems the most natural for quantum networks.
-     In connection-oriented quantum networks, when two quantum application
-     end-points wish to start creating end-to-end Bell pairs, they must first
-     create a quantum virtual circuit (QVC). As an analogy, in MPLS networks
-     end-points must establish a label switched path (LSP) before exchanging
-     traffic. Connection-oriented quantum networks may also support virtual
-     circuits with multiple end-points for creating multipartite entanglement.
-     As an analogy, MPLS networks have the concept of multi-point LSPs for
-     multicast.</t>
+     distributed task that requires a lot of a-priori coordination. Therefore,
+     a connection-oriented approach seems the most natural for quantum
+     networks. In connection-oriented quantum networks, when two quantum
+     application end-points wish to start creating end-to-end Bell pairs, they
+     must first create a quantum virtual circuit (QVC). As an analogy, in MPLS
+     networks end-points must establish a label switched path (LSP) before
+     exchanging traffic. Connection-oriented quantum networks may also support
+     virtual circuits with multiple end-points for creating multipartite
+     entanglement. As an analogy, MPLS networks have the concept of multi-point
+     LSPs for multicast.</t>
 
      <t>When a quantum application creates a quantum virtual circuit, it can
      indicate quality of service (QoS) parameters such as the required capacity

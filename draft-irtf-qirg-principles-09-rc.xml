@@ -279,7 +279,7 @@
      sockets. Only recently, was the first ever attempt at such a network stack
      experimentally demonstrated in a laboratory setting <xref
      target="Pompili21.2" />. Furthermore, whilst physical mechanisms for
-     transmitting quantum states exist, there are no robust protocols for
+     transmitting quantum information exist, there are no robust protocols for
      managing such transmissions.</t>
 
      <t>This document, produced by the Quantum Internet Research Group (QIRG),
@@ -309,19 +309,28 @@
 
      <section title="Quantum state">
 
-       <t>A quantum mechanical system is described by its quantum state.
-       Mathematically speaking, a system's quantum state provides a probability
-       distribution for the outcomes of each possible measurement on that
-       system. More intuitively, a quantum state is a complete description of
-       the system at that particular moment. When combined with the rules of
-       the system's evolution in time it also then provides a complete
-       description of the system at all times. A quantum mechanical system can
-       be simple and consist of a single particle, e.g. an atom or a photon of
+       <t>A quantum mechanical system is described by its quantum state. A
+       quantum state is an abstract object that provides a complete description
+       of the system at that particular moment. When combined with the rules of
+       the system's evolution in time, such as a quantum circuit, it also then
+       provides a complete description of the system at all times. For the
+       purposes of computing and networking, the classical equivalent of a
+       quantum state would be a string or stream of logical bit values. These
+       bits provide a complete description of what values we can read out from
+       that string at that particular moment and when combined with its rules
+       for evolution in time, such as a logical circuit, we will also know its
+       value at any other time.</t>
+
+       <t>Just like a single classical bit, a quantum mechanical system can be
+       simple and consist of a single particle, e.g. an atom or a photon of
        light. In this case, the quantum state provides the complete description
-       of that one particle. However, a single quantum state can be used to
-       also describe an ensemble of many particles. This becomes particularly
-       important when we consider entanglement later in this draft in <xref
-       target="entanglement" />.</t>
+       of that one particle. Similarly, just like a string of bits consists of
+       multiple bits, a single quantum state can be used to also describe an
+       ensemble of many particles. However, because quantum states are governed
+       by the laws of quantum mechanics their behaviour is significantly
+       different to that of a string of bits. In this section we will summarise
+       the key concepts to understand these differences and the we will explain
+       their consequences for networking in the rest of the draft.</t>
 
      </section>
 
@@ -360,12 +369,18 @@
        <t>NOT (a |0> + b |1>) -> a |1> + b |0>.</t>
 
        <t>It is important to note that "qubit" can have two meanings. In the
-       first meaning, "qubit" refers to a quantum *system* whose quantum state
-       can be expressed as a superposition of two basis states, which we often
-       label |0> and |1>. In the second meaning, "qubit" refers to the quantum
-       *state* of a quantum system with such two basis states. Both meanings
-       are used interchangeably in literature and the meaning is generally
-       clear from the context.</t>
+       first meaning, "qubit" refers to a physical quantum *system* whose
+       quantum state can be expressed as a superposition of two basis states,
+       which we often label |0> and |1>. Here, "qubit" refers to a physical
+       implementation akin to what a flip-flop, switch, voltage, or current
+       would be for a classical bit. In the second meaning, "qubit" refers to
+       the abstract quantum *state* of a quantum system with such two basis
+       states. In this case, the meaning of "qubit" is akin to the logical
+       value of a bit, from classical computing, i.e. "logical 0" or "logical
+       1". The two concepts are related, because a physical "qubit" (first
+       meaning) can be used to store the abstract "qubit" (second meaning).
+       Both meanings are used interchangeably in literature and the meaning is
+       generally clear from the context.</t>
 
      </section>
 
@@ -1585,22 +1600,26 @@ QR - quantum repeater
            approximates) theoretical models of quantum cryptography, quantum
            cryptographic protocols do not need the network to provide any
            guarantees about the confidentiality or integrity of the transmitted
-           qubits or the generated entanglement. Instead, applications will
-           leverage the classical networks to establish the end-to-end security
-           of the results obtained from the processing of entangled qubits.
-           However, it is important to note that whilst classical networks are
-           necessary to establish these end-to-end guarantees, the security
-           relies on the properties of quantum entanglement. For example, QKD
-           uses classical information reconciliation <xref target= "Tang19" />
-           for error correction and privacy amplification <xref target=
-           "Elkouss11" /> for generating the final secure key, but the raw bits
-           that are fed into these protocols must come from measuring entangled
-           qubits <xref target="Ekert91" />. In another application, secure
-           delegated quantum computing, the client hides its computation from
-           the server by sending qubits to the server and then requesting (in a
-           classical message) it to measure them in an encoded basis. The
-           client then decodes the results it receives from the server to
-           obtain the result of the computation <xref target= "Broadbent10" />.
+           qubits or the generated entanglement (though they may impose
+           requirements on the classical channel, e.g to be authenticated <xref
+           target="Wang21" />). Instead, applications will leverage the
+           classical networks to establish the end-to-end security of the
+           results obtained from the processing of entangled qubits. However,
+           it is important to note that whilst classical networks are necessary
+           to establish these end-to-end guarantees, the security relies on the
+           properties of quantum entanglement. For example, QKD uses classical
+           information reconciliation <xref target= "Tang19" /> for error
+           correction and privacy amplification <xref target= "Elkouss11" />
+           for generating the final secure key, but the raw bits that are fed
+           into these protocols must come from measuring entangled qubits <xref
+           target="Ekert91" />. In another application, secure delegated
+           quantum computing, the client hides its computation from the server
+           by sending qubits to the server and then requesting it (in a
+           classical message) to measure them in an encoded basis. The client
+           then decodes the results it receives from the server to obtain the
+           result of the computation <xref target= "Broadbent10" />. Once
+           again, whilst a classical network is used to achieve the goal of
+           secure computation, the remote computation is strictly quantum.
            <vspace blankLines="1" />
 
            Nevertheless, whilst applications can ensure their own end-to-end
@@ -2767,6 +2786,26 @@ QR - quantum repeater
          <date year="2010" />
        </front>
        <seriesInfo name="Springer-Verlag" value="978-3-642-13678-8" />
+     </reference>
+
+     <reference anchor="Wang21" target="https://www.nature.com/articles/s41534-021-00400-7">
+       <front>
+         <title>Experimental authentication of quantum key distribution with post-quantum cryptography</title>
+         <author initials="L.-J" surname="Wang" />
+         <author initials="K.-Y" surname="Zhang" />
+         <author initials="J.-Y" surname="Wang" />
+         <author initials="J" surname="Cheng" />
+         <author initials="Y.-H" surname="Yang" />
+         <author initials="S.-B" surname="Tang" />
+         <author initials="D" surname="Yan" />
+         <author initials="Y.-L" surname="Tang" />
+         <author initials="Z" surname="Liu" />
+         <author initials="Y" surname="Yu" />
+         <author initials="Q" surname="Zhang" />
+         <author initials="J.-W" surname="Pan" />
+         <date year="2021" />
+       </front>
+       <seriesInfo name="npj Quantum Information" value="Vol. 7, no. 1, pp. 1-7" />
      </reference>
 
    </references>

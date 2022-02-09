@@ -1058,13 +1058,34 @@
            unit of networking. These qubits themselves do not carry any
            headers. Therefore, quantum networks will have to send all control
            information via separate classical channels which the repeaters will
-           have to correlate with the qubits stored in their memory. In
+           have to correlate with the qubits stored in their memory. 
+           The status of a Bell pair exists across two nodes that share the 
+           Bell pair, unlike most classical networks in which a packet stands 
+           in a node. To make long-distance Bell pair, they may have to keep 
+           the quantum memory and wait for a long time to exchange control 
+           information, depending on the distance. Exchanging control information
+           for entanglement disillation is a typical case 
+           <xref target="Nagayama21" />. This fact impacts a temporal 
+           performance and network resource efficiency.
+           <vspace blankLines="1" />
+
+           In 
            addition to the (classical and quantum) memory costs of storing
            qubits and state information, the temporal performance impact of
            this classical messaging depends on whether the classical signalling
            required to compensate for losses and errors is bi-directional,
            uni-directional, or not required at all as described in the section
-           on error management schemes (<xref target="generations" />).</t>
+           on error management schemes (<xref target="generations" />).
+           <vspace blankLines="1" />
+
+           In the first and the second quantum networks, the possible number of 
+           simultaneous photon transmission attempts in a round depends on the 
+           size of quantum memory since the quantum nodes have to keep the 
+           quantum memory until notified from the other node, as described 
+           in <xref target="elg" />. There is a chance that a link has to 
+           repeat such rounds many times to accomplish Bell pair generation 
+           requests, due to random photon loss. This repetition takes 
+           the RTT * #round duration for the link Bell pair sharing.</t>
 
            <t>"Store and forward" vs "store and swap" quantum networks.
            <vspace blankLines="1" />
@@ -2806,6 +2827,15 @@ QR - quantum repeater
          <date year="2021" />
        </front>
        <seriesInfo name="npj Quantum Information" value="Vol. 7, no. 1, pp. 1-7" />
+     </reference>
+
+     <reference anchor="Nagayama21" target="https://arxiv.org/abs/2112.07185">
+       <front>
+         <title>Towards End-to-End Error Management for a Quantum Internet</title>
+         <author initials="S" surname="Nagayama" />
+         <date year="2021" />
+       </front>
+       <seriesInfo name="arXiv" value="2112.07185" />
      </reference>
 
    </references>

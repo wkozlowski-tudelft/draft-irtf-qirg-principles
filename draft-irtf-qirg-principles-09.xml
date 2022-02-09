@@ -1085,7 +1085,8 @@
            in <xref target="elg" />. There is a chance that a link has to 
            repeat such rounds many times to accomplish Bell pair generation 
            requests, due to random photon loss. This repetition takes 
-           the RTT * #round duration for the link Bell pair sharing.</t>
+           the RTT * #round duration for the link Bell pair sharing to
+           fulfill a request.</t>
 
            <t>"Store and forward" vs "store and swap" quantum networks.
            <vspace blankLines="1" />

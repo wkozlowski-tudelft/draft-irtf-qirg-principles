@@ -1058,35 +1058,19 @@
            unit of networking. These qubits themselves do not carry any
            headers. Therefore, quantum networks will have to send all control
            information via separate classical channels which the repeaters will
-           have to correlate with the qubits stored in their memory. 
-           The status of a Bell pair exists across two nodes that share the 
-           Bell pair, unlike most classical networks in which a packet stands 
-           in a node. To make long-distance Bell pair, they may have to keep 
-           the quantum memory and wait for a long time to exchange control 
-           information, depending on the distance. Exchanging control information
-           for entanglement disillation is a typical case 
-           <xref target="Nagayama21" />. This fact impacts a temporal 
-           performance and network resource efficiency.
-           <vspace blankLines="1" />
-
-           In 
-           addition to the (classical and quantum) memory costs of storing
-           qubits and state information, the temporal performance impact of
-           this classical messaging depends on whether the classical signalling
-           required to compensate for losses and errors is bi-directional,
-           uni-directional, or not required at all as described in the section
-           on error management schemes (<xref target="generations" />).
-           <vspace blankLines="1" />
-
-           In the first and the second quantum networks, the possible number of 
-           simultaneous photon transmission attempts in a round depends on the 
-           size of quantum memory since the quantum nodes have to keep the 
-           quantum memory until notified from the other node, as described 
-           in <xref target="elg" />. There is a chance that a link has to 
-           repeat such rounds many times to accomplish Bell pair generation 
-           requests, due to random photon loss. This repetition takes 
-           the RTT * #round duration for the link Bell pair sharing to
-           fulfill a request.</t>
+           have to correlate with the qubits stored in their memory.
+           Furthermore, a Bell pair consists of two qubits distributed across
+           two nodes which is unlike a classical packet which is located at a
+           single node. This has a fundamental impact on how quantum networks
+           will be managed and how protocols need to be designed. To make
+           long-distance Bell pairs, the nodes may have to keep their qubits in
+           their quantum memories and wait until control information is
+           exchanged before proceeding with the next operation. This signalling
+           will result in additional latency which will depend on the distance
+           between the nodes holding the two ends of the Bell pair. Error
+           management, such as entanglement distillation, is a typical example
+           of such control information exchange <xref target="Nagayama21" />
+           (see also <xref target="generations" />).</t>
 
            <t>"Store and forward" vs "store and swap" quantum networks.
            <vspace blankLines="1" />

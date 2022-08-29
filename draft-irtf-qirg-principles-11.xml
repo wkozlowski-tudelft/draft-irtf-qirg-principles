@@ -1344,7 +1344,7 @@ QR - quantum repeater
          routing tables) and signalling protocols, but the details of how this
          is achieved are an active research question. A thought experiment on
          what this might look like be can be found later in this draft in <xref
-         target="gedankenexperiment" /></t>
+         target="gedankenexperiment" />.</t>
 
          <t>During or after the distribution of control information, the
          network performs the necessary quantum operations such as generating
@@ -1354,6 +1354,16 @@ QR - quantum repeater
          Bell pairs do not carry any user data, some of these operations can be
          performed before the request is received in anticipation of the
          demand.</t>
+
+         <t>Note that here, "signalling" is used in a very broad sense and
+         covers many different types of messaging necessary for entanglement
+         generation control. For example, heralded entanglement generation
+         requires very precise timing synchronisation between the neighbouring
+         nodes and thus the triggering of entanglement generation and heralding
+         may happen over its own, perhaps physically separate CL, as was the
+         case in network stack demonstration in <xref target="Pompili21.2" />.
+         Higher level signalling with less stringent timing requirements (e.g.
+         control plane signalling) may then happen over its own CL.</t>
 
          <t>The entangled pair is delivered to the application once it is
          ready, together with the relevant pair identifier. However, being
@@ -1683,6 +1693,21 @@ QR - quantum repeater
 
          </list>
        </t>
+
+       <t>Note that privacy, whilst related to security, is not listed as an
+       explicit goal, because the privacy benefits will depend on the use case.
+       For example, QKD only provides increased security for the distribution
+       of symmetric keys <xref target="Bennett14" /> <xref target="Ekert91" />.
+       The handling, manipulation, sharing, encryption, and decryption of data
+       will remain entirely classical limiting the benefits to privacy that can
+       be gained from using a quantum network. On the other hand, there are
+       applications like blind quantum computation which provides the user with
+       the ability to execute a quantum computation on a remote server without
+       the server knowing what the computation was or its input and output
+       <xref target="Fitzsimons17" />. Therefore, privacy must be considered on
+       a per-application basis. An overview of quantum network use cases can be
+       found in <xref target="I-D.irtf-qirg-quantum-internet-use-cases" />.</t>
+
      </section>
 
      <section title="The principles of a quantum internet">
